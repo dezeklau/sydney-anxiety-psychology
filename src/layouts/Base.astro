@@ -1,0 +1,88 @@
+---
+// Base layout — all pages inherit from this
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  schema?: object;
+}
+
+const { title, description, canonical, schema } = Astro.props;
+const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site).toString();
+const plausibleDomain = 'sydneyanxietypsychology.com.au'; // domain registered; activate when Plausible account is live
+---
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalURL} />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_AU" />
+
+  <!-- Plausible Analytics (privacy-friendly, no cookie banner needed) -->
+  <!-- TODO: uncomment when domain is live and Plausible account confirmed with Derek -->
+  <!--
+  <script defer data-domain={plausibleDomain} src="https://plausible.io/js/script.tagged-events.js"></script>
+  -->
+
+  <!-- Schema.org JSON-LD -->
+  {schema && (
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  )}
+
+  <link rel="stylesheet" href="/styles/global.css" />
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="/" class="site-header__logo">
+        Sydney Anxiety Psychology
+        <span>Telehealth Psychologist Directory</span>
+      </a>
+      <a href="/connect/" class="site-header__cta plausible-event-name=Header+CTA+Click">
+        Find a Psychologist
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <slot />
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div>
+        <strong style="color: rgba(255,255,255,0.9); display: block; margin-bottom: 0.5rem;">Sydney Anxiety Psychology</strong>
+        <p style="margin-bottom: 0;">A directory helping people in Sydney find telehealth psychologists for anxiety. Not a clinical service.</p>
+      </div>
+      <div>
+        <ul style="list-style: none; padding: 0;">
+          <li style="margin-bottom: 0.4rem;"><a href="/guides/cost-telehealth-psychologist-australia/">What does it cost?</a></li>
+          <li style="margin-bottom: 0.4rem;"><a href="/guides/does-online-therapy-work-for-anxiety/">Does online therapy work?</a></li>
+          <li style="margin-bottom: 0.4rem;"><a href="/guides/how-telehealth-psychology-works/">How does it work?</a></li>
+          <li style="margin-bottom: 0.4rem;"><a href="/guides/psychologist-waitlist-sydney/">Waitlists &amp; availability</a></li>
+          <li style="margin-bottom: 0.4rem;"><a href="/connect/">Find a Psychologist</a></li>
+          <li style="margin-bottom: 0.4rem;"><a href="/about/">About This Directory</a></li>
+          <li style="margin-bottom: 0.4rem;"><a href="/privacy/">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <p class="site-footer__disclaimer">
+        This website is a directory resource. It does not provide clinical, psychological, or medical advice. Information is provided in good faith for general educational purposes and should not replace professional advice. For urgent mental health support, contact Lifeline on <strong style="color: rgba(255,255,255,0.7);">13 11 14</strong>, Beyond Blue on <strong style="color: rgba(255,255,255,0.7);">1300 22 4636</strong>, or 13YARN on <strong style="color: rgba(255,255,255,0.7);">13 92 76</strong>. This directory is not a crisis service. Medicare rebate information is current as at 1 July 2025; verify current rates at health.gov.au. Last reviewed June 2026.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

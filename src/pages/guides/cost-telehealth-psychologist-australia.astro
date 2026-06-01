@@ -1,0 +1,218 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What Does a Telehealth Psychologist Cost in Australia? (2025)",
+  "description": "Clear breakdown of telehealth psychology fees, Medicare rebates, and out-of-pocket costs in Australia — including how to get a Mental Health Treatment Plan.",
+  "datePublished": "2026-06-01",
+  "dateModified": "2026-06-01",
+  "author": {
+    "@type": "Person",
+    "name": "Monica Ma",
+    "jobTitle": "Registered Psychologist",
+    "description": "AHPRA Registration No. PSY0002701499"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Sydney Anxiety Psychology",
+    "url": "https://sydneyanxietypsychology.com.au"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://sydneyanxietypsychology.com.au/guides/cost-telehealth-psychologist-australia/"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does a telehealth psychologist cost in Australia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "With a Mental Health Treatment Plan (MHTP), you pay the psychologist's fee minus your Medicare rebate. For a registered psychologist, the rebate is $98.95 per session (from 1 July 2025). If the psychologist charges $200, your out-of-pocket cost is approximately $101.05. Without an MHTP, the full fee applies — typically $150–$250 per session for telehealth."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a referral to see a psychologist online?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No referral is needed to see a psychologist. However, a Mental Health Treatment Plan (MHTP) from your GP is required to access Medicare rebates. Without an MHTP, you pay the full fee."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Medicare cover telehealth psychology?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Telehealth psychology sessions attract the same Medicare rebate as in-person sessions under the Better Access scheme. The rebate is $98.95 per session for a registered psychologist (Medicare item 91170) and $145.25 for a clinical psychologist (item 91167), effective 1 July 2025."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a Mental Health Treatment Plan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Mental Health Treatment Plan (MHTP) is a document prepared by your GP that assesses your mental health needs and refers you to psychological support under Medicare's Better Access scheme. It gives you access to Medicare rebates on up to 10 individual psychology sessions per calendar year."
+      }
+    }
+  ]
+};
+---
+<Base
+  title="Telehealth Psychology Cost Australia 2025 | Medicare Rebates Explained"
+  description="Exactly what a telehealth psychologist costs in Australia — including Medicare rebates, out-of-pocket gaps, and how to get a Mental Health Treatment Plan. Updated July 2025."
+  schema={[schema, faqSchema]}
+>
+  <div class="main-content">
+    <div class="container">
+
+      <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 1.5rem;">
+        <a href="/">Home</a> &rsaquo; <a href="/guides/">Guides</a> &rsaquo; Cost guide
+      </p>
+
+      <h1>What Does a Telehealth Psychologist Cost in Australia?</h1>
+      <p style="font-size: 1.05rem; color: var(--color-text-secondary); margin-bottom: 1.5rem;">The cost depends on two things: whether you have a Mental Health Treatment Plan from your GP, and the fee your psychologist charges. Here's a plain-English breakdown.</p>
+
+      <div class="reviewer-box">
+        <div>
+          <span class="reviewer-box__label">Professionally reviewed by</span>
+          <p class="reviewer-box__meta">Monica Ma — Registered Psychologist, AHPRA No. PSY0002701499. Last reviewed: June 2026. Medicare figures current as at 1 July 2025 (Medicare Benefits Schedule).</p>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <p><strong>The short answer:</strong> With a Mental Health Treatment Plan, your Medicare rebate is <strong>$98.95 per session</strong> (registered psychologist) or <strong>$145.25</strong> (endorsed clinical psychologist). Your out-of-pocket gap depends on your psychologist's fee — typically $50–$150 per session after the rebate. Some psychologists bulk bill, meaning $0 out-of-pocket, but availability is limited.</p>
+      </div>
+
+      <h2>The Two Scenarios</h2>
+
+      <h3>Scenario 1: You have a Mental Health Treatment Plan (recommended)</h3>
+      <p>A Mental Health Treatment Plan (MHTP) from your GP unlocks Medicare rebates on psychology sessions. This is how most people access psychology support in Australia.</p>
+
+      <table class="fee-table">
+        <thead>
+          <tr>
+            <th>Type of psychologist</th>
+            <th>Medicare rebate per session</th>
+            <th>Typical total fee</th>
+            <th>Typical out-of-pocket</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Registered psychologist (telehealth item 91170)</td>
+            <td class="highlight">$98.95</td>
+            <td>$150–$230</td>
+            <td>$51–$131</td>
+          </tr>
+          <tr>
+            <td>Clinical psychologist (telehealth item 91167)</td>
+            <td>$145.25</td>
+            <td>$230–$310</td>
+            <td>$85–$165</td>
+          </tr>
+          <tr>
+            <td>Bulk billing psychologist</td>
+            <td>$98.95</td>
+            <td>$98.95 (bulk billed)</td>
+            <td class="highlight">$0</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size: 0.85rem; color: var(--color-text-secondary);">Source: Medicare Benefits Schedule, effective 1 July 2025. Fee ranges are indicative of the Sydney telehealth market — actual fees vary by practitioner.</p>
+
+      <h3>Scenario 2: No Mental Health Treatment Plan (self-referred)</h3>
+      <p>You can see a psychologist without an MHTP — but no Medicare rebate applies. You pay the full fee, which typically ranges from $150–$260 per session for telehealth in Sydney. If cost is a concern, getting an MHTP first is strongly worth the extra GP appointment.</p>
+
+      <h2 id="mental-health-treatment-plan">How to Get a Mental Health Treatment Plan</h2>
+      <p>An MHTP is prepared by your GP at a standard or longer appointment. Most GPs are familiar with the process. Here's what to expect:</p>
+
+      <ol class="steps">
+        <li>
+          <div>
+            <strong>Book a longer GP appointment and mention mental health</strong>
+            <p>When you call to book, mention you'd like to discuss mental health support. This gives the GP enough time to complete the assessment and plan. A standard 10-minute appointment isn't sufficient — ask for a longer slot if available.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Your GP completes a mental health assessment</strong>
+            <p>The GP will ask about your symptoms, history, and what you're hoping to address. This is not a diagnostic interview — it's a practical assessment to determine whether psychological support is appropriate. Be honest about what you've been experiencing.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Your GP prepares the MHTP and referral</strong>
+            <p>If appropriate, your GP prepares the MHTP and provides a referral to psychology services. From November 2025, Medicare rebates generally require the referral to come from your usual GP or a practice where you're enrolled via MyMedicare. Seeing your regular GP (rather than a walk-in clinic) is therefore advisable.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>You book your psychology appointment</strong>
+            <p>Bring your MHTP referral to your first psychology appointment (or have your GP send it electronically). Sessions are covered up to 10 per calendar year — the first 6 are available immediately, with a GP review required before accessing the remaining 4.</p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="info-box">
+        <p><strong>Important:</strong> The MHTP referral from your GP does not lock you in to a specific psychologist. You can use it with any AHPRA-registered psychologist who participates in the Better Access scheme. Concerned about waitlists? See our guide on <a href="/guides/psychologist-waitlist-sydney/">psychology waitlists in Sydney and how to be seen sooner</a>.</p>
+      </div>
+
+      <h2>How Many Sessions Does Medicare Cover?</h2>
+      <p>Under the Better Access scheme, Medicare covers up to <strong>10 individual psychology sessions per calendar year</strong>. The sessions are structured as follows:</p>
+      <ul>
+        <li>First access: up to 6 sessions on the initial referral</li>
+        <li>GP review after the first 6 sessions (brief appointment to confirm ongoing need)</li>
+        <li>After the review: up to 4 additional sessions per year</li>
+        <li>Total per calendar year: up to 10 sessions</li>
+      </ul>
+      <p>If you need more than 10 sessions in a year, additional sessions can continue — without the Medicare rebate. Fees apply at the full rate unless you have private health insurance that covers extras.</p>
+
+      <h2>Does Telehealth Get the Same Medicare Rebate as In-Person?</h2>
+      <p>Yes. Telehealth psychology sessions attract the same Medicare rebate as in-person appointments under Better Access. This is confirmed by Services Australia and the Medicare Benefits Schedule. The telehealth item numbers are 91170 (registered psychologist) and 91167 (clinical psychologist) — these carry the same rebate as their in-person equivalents.</p>
+
+      <h2>Can I Get Bulk Billing for Psychology?</h2>
+      <p>Some psychologists bulk bill — meaning they accept the Medicare rebate as their full fee, with no out-of-pocket cost to you. However, bulk billing psychology is uncommon in Sydney, particularly for telehealth. Psychologists who do bulk bill typically have limited availability and may prioritise concession card holders, students, or people experiencing financial hardship.</p>
+      <p>When you contact us, you can indicate if bulk billing is a priority and we'll do our best to match you with a psychologist who offers it — though we cannot guarantee availability.</p>
+
+      <h2>What About Private Health Insurance?</h2>
+      <p>Some private health insurance extras policies cover psychology. Coverage varies significantly between funds and policies — check your PDS or contact your fund directly. You cannot double-dip: if you claim Medicare for a session, you cannot also claim private health insurance for the same session. Most people with an MHTP find Medicare rebates sufficient and don't rely on private health for psychology.</p>
+
+      <div class="faq">
+        <h2>Cost Questions</h2>
+        <div class="faq__item">
+          <p class="faq__q">How much does a psychologist cost per session in Sydney?</p>
+          <p class="faq__a">For a registered psychologist via telehealth with a Mental Health Treatment Plan, you typically pay $50–$150 out-of-pocket after the $98.95 Medicare rebate. Total fees in Sydney generally range from $150–$230 for a registered psychologist session. Some psychologists charge more; some bulk bill.</p>
+        </div>
+        <div class="faq__item">
+          <p class="faq__q">Can I see a psychologist without a GP referral?</p>
+          <p class="faq__a">Yes. You can book directly with a psychologist without a GP referral. However, you will not be able to claim Medicare rebates without a Mental Health Treatment Plan. If you want the rebate, the extra step of getting an MHTP from your GP is worth it.</p>
+        </div>
+        <div class="faq__item">
+          <p class="faq__q">What is the difference between a registered psychologist and a clinical psychologist?</p>
+          <p class="faq__a">Both are AHPRA-registered and qualified to treat anxiety. A clinical psychologist holds an additional AHPRA endorsement — typically a doctorate or master's with supervised clinical training. Their Medicare rebate is higher ($145.25 vs $98.95), but their fees are also generally higher. For most anxiety presentations, both are equally effective. The right fit is more important than the specific registration type.</p>
+        </div>
+        <div class="faq__item">
+          <p class="faq__q">Does the November 2025 Medicare change affect me?</p>
+          <p class="faq__a">From November 2025, Medicare rebates for psychology generally require the referral to come from your usual GP or a practice where you are enrolled via MyMedicare. In practice, this means seeing your regular GP (rather than a walk-in or after-hours service) for the MHTP. If you don't have a regular GP, enrolling with one before seeking the referral is advisable. This change is designed to ensure continuity of care, not to block access — most people with an established GP relationship are unaffected.</p>
+        </div>
+      </div>
+
+      <div class="cta-block">
+        <h3>Ready to find a telehealth psychologist?</h3>
+        <p>Tell us what you're looking for and we'll connect you with a suitable psychologist in Sydney. You'll hear back within 1 business day. The directory is free to use.</p>
+        <a href="/connect/" class="btn--cta plausible-event-name=Guide+Cost+CTA+Click">
+          Find a psychologist
+        </a>
+        <p class="cta-block__note">We connect you — we don't provide clinical services. No obligation to proceed.</p>
+      </div>
+
+    </div>
+  </div>
+</Base>

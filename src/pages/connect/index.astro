@@ -1,0 +1,86 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base
+  title="Find a Telehealth Psychologist for Anxiety in Sydney | Connect"
+  description="Tell us what you're looking for and we'll connect you with an AHPRA-registered telehealth psychologist specialising in anxiety in Sydney. Response within 1 business day."
+>
+  <div class="main-content">
+    <div class="container" style="max-width: 620px;">
+
+      <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 1.5rem;">
+        <a href="/">Home</a> &rsaquo; Find a Psychologist
+      </p>
+
+      <h1>Find a Telehealth Psychologist for Anxiety</h1>
+      <p>Tell us a little about what you're looking for and we'll connect you with a suitable telehealth psychologist in Sydney within 1 business day. There's no obligation — you're not committing to anything by filling this in.</p>
+
+      <div class="info-box" style="margin-bottom: 2rem;">
+        <p><strong>What happens next:</strong> When you submit this form, your details are sent to our network of AHPRA-registered psychologists in Sydney who specialise in anxiety and offer telehealth. A psychologist will be in touch within 1 business day to introduce themselves and discuss availability. You can decide whether to proceed from there.</p>
+      </div>
+
+      <!-- Form — Netlify Forms for serverless handling -->
+      <form
+        name="connect-anxiety"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        action="/connect/thank-you/"
+        style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 10px; padding: 2rem;"
+      >
+        <input type="hidden" name="form-name" value="connect-anxiety" />
+        <p style="display: none;"><label>Do not fill this out: <input name="bot-field" /></label></p>
+
+        <div style="margin-bottom: 1.25rem;">
+          <label for="name" style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem; color: var(--color-text);">Your name *</label>
+          <input type="text" id="name" name="name" required autocomplete="name"
+            style="width: 100%; padding: 0.7rem 0.9rem; border: 1.5px solid var(--color-border); border-radius: 6px; font-size: 0.95rem; font-family: inherit; background: var(--color-bg);"
+          />
+        </div>
+
+        <div style="margin-bottom: 1.25rem;">
+          <label for="email" style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem; color: var(--color-text);">Email address *</label>
+          <input type="email" id="email" name="email" required autocomplete="email"
+            style="width: 100%; padding: 0.7rem 0.9rem; border: 1.5px solid var(--color-border); border-radius: 6px; font-size: 0.95rem; font-family: inherit; background: var(--color-bg);"
+          />
+        </div>
+
+        <div style="margin-bottom: 1.25rem;">
+          <label for="suburb" style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem; color: var(--color-text);">Sydney suburb or area (optional)</label>
+          <input type="text" id="suburb" name="suburb" placeholder="e.g. Inner West, Northern Beaches, Parramatta" autocomplete="address-level2"
+            style="width: 100%; padding: 0.7rem 0.9rem; border: 1.5px solid var(--color-border); border-radius: 6px; font-size: 0.95rem; font-family: inherit; background: var(--color-bg);"
+          />
+        </div>
+
+        <div style="margin-bottom: 1.75rem;">
+          <label for="notes" style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem; color: var(--color-text);">What are you hoping to get help with? (optional)</label>
+          <p style="font-size: 0.82rem; color: var(--color-text-secondary); margin-bottom: 0.5rem;">For example: the type of anxiety you experience, any preferences for days or times, or anything else that's useful to know. You don't have to share anything you're not comfortable with.</p>
+          <textarea id="notes" name="notes" rows="4"
+            style="width: 100%; padding: 0.7rem 0.9rem; border: 1.5px solid var(--color-border); border-radius: 6px; font-size: 0.95rem; font-family: inherit; resize: vertical; background: var(--color-bg);"
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="btn btn--primary plausible-event-name=Form+Submit"
+          style="width: 100%; font-size: 1rem; padding: 0.9rem;"
+        >
+          Connect me with a psychologist
+        </button>
+
+        <p style="font-size: 0.8rem; color: var(--color-text-secondary); margin-top: 1rem; text-align: center;">
+          Your information will only be used to connect you with a suitable psychologist. See our <a href="/privacy/">Privacy Policy</a>.
+        </p>
+      </form>
+
+      <hr />
+
+      <h2 style="font-size: 1.1rem; margin-top: 2rem;">Useful before you book</h2>
+      <ul>
+        <li><a href="/guides/cost-telehealth-psychologist-australia/">What does a telehealth psychologist cost?</a> — fees, Medicare rebates, and how to get a Mental Health Treatment Plan</li>
+        <li><a href="/guides/does-online-therapy-work-for-anxiety/">Does online therapy actually work for anxiety?</a> — what the evidence shows</li>
+      </ul>
+
+    </div>
+  </div>
+</Base>
