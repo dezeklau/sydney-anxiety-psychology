@@ -13,9 +13,14 @@
 ---
 
 ## Current state
-- Domain: NOT REGISTERED
+- Domain: REGISTERED — sydneyanxietypsychology.com.au (registered Session 3)
+- Secondary domain: sydneyanxietypsychology.online (redirect-only, not deployed yet)
+- GitHub repo: https://github.com/dezeklau/sydney-anxiety-psychology (created Session 4, awaiting push)
+- Vercel: NOT YET CONNECTED (Derek to do — see skills/deployment-runbook.md)
+- DNS: NOT YET POINTED TO VERCEL
 - GSC: NOT CONNECTED
 - Plausible: NOT CONNECTED
+- Pages built: 10 (clean build, all committed)
 - Pages live: 0
 - Pages indexed: 0
 

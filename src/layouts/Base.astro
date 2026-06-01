@@ -1,4 +1,5 @@
 ---
+import '../styles/global.css';
 // Base layout — all pages inherit from this
 interface Props {
   title: string;
@@ -38,19 +39,20 @@ const plausibleDomain = 'sydneyanxietypsychology.com.au'; // domain registered; 
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   )}
 
-  <link rel="stylesheet" href="/styles/global.css" />
-
-  <!-- Google Fonts: Inter -->
+  <!-- Google Fonts: Lora (headings) + Inter (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
   <header class="site-header">
     <div class="site-header__inner">
       <a href="/" class="site-header__logo">
-        Sydney Anxiety Psychology
-        <span>Telehealth Psychologist Directory</span>
+        <span class="site-header__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg>
+        </span>
+        <span style="font-family: var(--font-serif);">Sydney Anxiety Psychology
+        <span>Telehealth Psychologist Directory</span></span>
       </a>
       <a href="/connect/" class="site-header__cta plausible-event-name=Header+CTA+Click">
         Find a Psychologist
