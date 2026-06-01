@@ -19,17 +19,17 @@ import Base from '../../layouts/Base.astro';
         <p><strong>What happens next:</strong> When you submit this form, your details are sent to our network of AHPRA-registered psychologists in Sydney who specialise in anxiety and offer telehealth. A psychologist will be in touch within 1 business day to introduce themselves and discuss availability. You can decide whether to proceed from there.</p>
       </div>
 
-      <!-- Form — Netlify Forms for serverless handling -->
+      <!-- Form — Formspree for Vercel-compatible serverless handling -->
+      <!-- ACTION NEEDED: Derek — replace YOUR_FORM_ID below with the actual Formspree form ID after creating the form at https://formspree.io/forms/new -->
       <form
-        name="connect-anxiety"
         method="POST"
-        data-netlify="true"
-        netlify-honeypot="bot-field"
-        action="/connect/thank-you/"
+        action="https://formspree.io/f/YOUR_FORM_ID"
         style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 10px; padding: 2rem;"
       >
-        <input type="hidden" name="form-name" value="connect-anxiety" />
-        <p style="display: none;"><label>Do not fill this out: <input name="bot-field" /></label></p>
+        <!-- Redirect to thank-you page after successful submission -->
+        <input type="hidden" name="_next" value="/connect/thank-you/" />
+        <!-- Honeypot spam field — Formspree ignores submissions where this is filled -->
+        <input type="text" name="_gotcha" style="display: none;" tabindex="-1" autocomplete="off" />
 
         <div style="margin-bottom: 1.25rem;">
           <label for="name" style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem; color: var(--color-text);">Your name *</label>
