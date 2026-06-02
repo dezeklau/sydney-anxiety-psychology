@@ -33,11 +33,12 @@ const plausibleDomain = 'sydneyanxietypsychology.com.au'; // domain registered; 
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_AU" />
 
-  <!-- Plausible Analytics (privacy-friendly, no cookie banner needed) -->
-  <!-- TODO: uncomment when domain is live and Plausible account confirmed with Derek -->
-  <!--
-  <script defer data-domain={plausibleDomain} src="https://plausible.io/js/script.tagged-events.js"></script>
-  -->
+  <!-- Privacy-friendly analytics by Plausible -->
+  <script is:inline async src="https://plausible.io/js/pa-y-f7oqo_wQxjvFaqQXMIZ.js"></script>
+  <script is:inline>
+    window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+    plausible.init()
+  </script>
 
   <!-- Schema.org JSON-LD -->
   {schema && (
