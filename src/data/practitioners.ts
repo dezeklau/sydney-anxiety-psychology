@@ -145,6 +145,87 @@ export const practitioners: Practitioner[] = [
     specialties: ["Anxiety", "Trauma"],
     unclaimed: true,
     source: "https://mckinnonpsychology.com.au/about-us/our-team/"
+  },
+  {
+    slug: "tia-ven-psychologist-beverly-hills",
+    name: "Tia Ven",
+    registrationType: "registered_psychologist",
+    suburb: "Beverly Hills",
+    specialties: ["Women's mental health", "Anxiety disorders", "Depression", "Chronic pain", "Grief", "Stress"],
+    unclaimed: true,
+    source: "https://connect2healthpsychology.com.au/"
+  },
+  {
+    slug: "lyndsey-grounds-psychologist-sydney-telehealth",
+    name: "Lyndsey Grounds",
+    registrationType: "registered_psychologist",
+    suburb: "Sydney (telehealth)",
+    specialties: ["Anxiety", "Depression", "Confidence and self-esteem", "Stress"],
+    unclaimed: true,
+    source: "https://www.halaxy.com/profile/onlinepsych-online-psychologist-australia/location/848131"
+  },
+  {
+    slug: "michael-fitzpatrick-psychologist-marrickville",
+    name: "Dr Michael Fitzpatrick",
+    registrationType: "registered_psychologist",
+    suburb: "Marrickville",
+    specialties: ["Anxiety disorders", "Depression", "OCD", "Trauma", "Self-esteem"],
+    unclaimed: true,
+    source: "https://www.mfitzpatrickpsychology.com"
+  },
+  {
+    slug: "sherisse-cohen-psychologist-bondi-junction",
+    name: "Sherisse Cohen",
+    registrationType: "registered_psychologist",
+    suburb: "Bondi Junction",
+    specialties: ["Anxiety", "Depression", "Stress", "Emotion regulation", "Body image"],
+    unclaimed: true,
+    source: "https://www.theselfspace.com.au/"
+  },
+  {
+    slug: "natasha-kiemel-incorvaia-psychologist-sydney-telehealth",
+    name: "Natasha Kiemel-Incorvaia",
+    registrationType: "registered_psychologist",
+    suburb: "Sydney (telehealth)",
+    specialties: ["Anxiety", "Stress", "Trauma", "Depression", "Self-esteem"],
+    unclaimed: true,
+    source: "https://www.graciouslyyoupsychologicalservices.com.au/"
+  },
+  {
+    slug: "kate-munro-psychologist-north-sydney",
+    name: "Kate Munro",
+    registrationType: "registered_psychologist",
+    suburb: "North Sydney",
+    specialties: ["Anxiety", "Stress", "Burnout", "Resilience"],
+    unclaimed: true,
+    source: "https://www.halaxy.com/profile/ms-kate-munro/psychologist/639441"
+  },
+  {
+    slug: "brett-ruehland-psychologist-chippendale",
+    name: "Brett Ruehland",
+    registrationType: "registered_psychologist",
+    suburb: "Chippendale",
+    specialties: ["Anxiety", "ADHD", "Autism", "Depression", "OCD", "Panic"],
+    unclaimed: true,
+    source: "https://www.halaxy.com/profile/mr-brett-ruehland/psychologist/1010181"
+  },
+  {
+    slug: "doone-richmond-psychologist-north-sydney",
+    name: "Doone Richmond",
+    registrationType: "registered_psychologist",
+    suburb: "North Sydney",
+    specialties: ["Anxiety", "Depression", "Career planning", "Workplace issues", "Life transitions"],
+    unclaimed: true,
+    source: "https://www.halaxy.com/profile/ms-doone-richmond/psychologist/538261"
+  },
+  {
+    slug: "toni-kernick-psychologist-sydney-telehealth",
+    name: "Toni Kernick",
+    registrationType: "registered_psychologist",
+    suburb: "Sydney (telehealth)",
+    specialties: ["Anxiety", "Stress", "Burnout", "Life transitions", "Relationships"],
+    unclaimed: true,
+    source: "https://www.halaxy.com/profile/ms-toni-kernick/psychologist/716971"
   }
 ];
 
