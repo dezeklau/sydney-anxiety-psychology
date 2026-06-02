@@ -200,6 +200,14 @@ import Base from '../../layouts/Base.astro';
           </div>
 
           <div style="margin-bottom: 1.25rem;">
+            <label for="description" style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem; color: var(--color-text);">Profile description *</label>
+            <p style="font-size: 0.82rem; color: var(--color-text-secondary); margin-bottom: 0.5rem;">This becomes your public listing on the directory. Describe your approach to anxiety, the presentations you work with, your experience, and what a client can expect. Two to four sentences works well.</p>
+            <textarea id="description" name="description" rows="5" required placeholder="e.g. I am a registered psychologist with over 8 years of experience helping adults manage generalised anxiety, panic, and social anxiety. I use evidence-based approaches including CBT and ACT, delivered via telehealth across NSW. My focus is on practical, collaborative therapy at a pace that suits you."
+              style="width: 100%; padding: 0.7rem 0.9rem; border: 1.5px solid var(--color-border); border-radius: 6px; font-size: 0.95rem; font-family: inherit; resize: vertical; background: var(--color-bg);"
+            ></textarea>
+          </div>
+
+          <div style="margin-bottom: 1.25rem;">
             <label for="booking-url" style="display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem; color: var(--color-text);">Booking page or practice website URL (optional)</label>
             <input type="url" id="booking-url" name="booking_url" placeholder="https://"
               style="width: 100%; padding: 0.7rem 0.9rem; border: 1.5px solid var(--color-border); border-radius: 6px; font-size: 0.95rem; font-family: inherit; background: var(--color-bg);"
