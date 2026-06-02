@@ -8,7 +8,7 @@
  *   publicly self-listed specialty areas. NO contact details are published.
  * - registrationType is set to "registered_psychologist" by default. It is only set to
  *   "clinical_psychologist" once AHPRA endorsement is confirmed on the AHPRA register.
- *   (Several below self-describe as "Clinical Psychologist" on their own sites — verify on
+ *   (Several below self-describe as "Clinical Psychologist" on their own sites - verify on
  *   ahpra.gov.au before upgrading: Eileen Seah, Clinton Moore, Jodie Lowinger, Emma Welch,
  *   Nicholas Caras, Susan Aston, Anna McKinnon, Gabrielle Fynn.)
  * - unclaimed: true until the practitioner submits and we review a claim.

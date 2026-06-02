@@ -68,17 +68,17 @@ const breadcrumbSchema = {
 
       <!-- Quick stats -->
       <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.5rem;">
-        <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1rem 1.5rem; box-shadow: var(--shadow-sm); text-align: center;">
-          <p style="font-size: 2rem; font-family: var(--font-serif); font-weight: 700; color: var(--color-accent); margin: 0;">{practitioners.length}</p>
-          <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin: 0;">Practitioners listed</p>
+        <div class="stat-card">
+          <span class="stat-card__number">{practitioners.length}</span>
+          <span class="stat-card__label">Practitioners listed</span>
         </div>
-        <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1rem 1.5rem; box-shadow: var(--shadow-sm); text-align: center;">
-          <p style="font-size: 2rem; font-family: var(--font-serif); font-weight: 700; color: var(--color-accent); margin: 0;">{allSuburbs.length}</p>
-          <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin: 0;">Sydney suburbs</p>
+        <div class="stat-card">
+          <span class="stat-card__number">{allSuburbs.length}</span>
+          <span class="stat-card__label">Sydney suburbs</span>
         </div>
-        <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1rem 1.5rem; box-shadow: var(--shadow-sm); text-align: center;">
-          <p style="font-size: 2rem; font-family: var(--font-serif); font-weight: 700; color: var(--color-accent); margin: 0;">{allSpecialties.length}</p>
-          <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin: 0;">Specialty areas</p>
+        <div class="stat-card">
+          <span class="stat-card__number">{allSpecialties.length}</span>
+          <span class="stat-card__label">Specialty areas</span>
         </div>
       </div>
 
@@ -127,7 +127,7 @@ const breadcrumbSchema = {
                 {matching.map(p => (
                   <li style="margin-bottom: 0.45rem;">
                     <a href={`/directory/${p.slug}/`} style="font-size: 0.93rem;">{p.name}</a>
-                    <span style="font-size: 0.8rem; color: var(--color-text-secondary);"> · {p.suburb}</span>
+                    <span style="font-size: 0.8rem; color: var(--color-text-secondary);"> ï¿½ {p.suburb}</span>
                   </li>
                 ))}
               </ul>
@@ -137,8 +137,8 @@ const breadcrumbSchema = {
       </div>
 
       <!-- CTA for practitioners -->
-      <div style="background: var(--color-surface-alt); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 2rem; margin-bottom: 2.5rem;">
-        <h2 style="margin-top: 0; font-size: 1.3rem;">Are you a psychologist in Sydney?</h2>
+      <div class="psych-cta-panel">
+        <h2>Are you a psychologist in Sydney?</h2>
         <p>If you specialise in anxiety and offer telehealth, your profile may already be pre-built from the AHPRA public register. Claim it free in two minutes, add your specialties and booking link, and start receiving inbound patient enquiries.</p>
         <div style="display: flex; flex-wrap: wrap; gap: 0.85rem; align-items: center;">
           <a href="/for-psychologists/" class="btn btn--primary" style="font-size: 0.95rem;">Claim your free listing</a>
