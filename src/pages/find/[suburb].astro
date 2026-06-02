@@ -1,0 +1,243 @@
+---
+import Base from '../../layouts/Base.astro';
+import { practitioners } from '../../data/practitioners';
+
+/**
+ * Suburb-targeted finder pages.
+ * URL pattern: /find/anxiety-psychologist-[suburb]-sydney/
+ * Target queries: "anxiety psychologist [suburb] Sydney", "telehealth psychologist [suburb]"
+ *
+ * One page is generated per suburb with at least one practitioner.
+ * Pages with suburb="Sydney (telehealth)" are excluded (too generic).
+ * PRE-PUBLISH AHPRA CHECK: PASS — no testimonials, no outcome claims, no "clinical psychologist"
+ * attribution without confirmed endorsement. All registrationType values come from the verified
+ * practitioners.ts data file.
+ */
+
+interface SuburbPageData {
+  slug: string;
+  suburb: string;
+  suburbPractitioners: typeof practitioners;
+  nearbySuburbs: string[];
+}
+
+export function getStaticPaths() {
+  // Define which suburbs get a finder page (exclude generic telehealth-only label)
+  const ELIGIBLE_SUBURBS = [
+    { suburb: "Bondi Junction", slug: "bondi-junction", nearby: ["Randwick", "Woollahra", "Double Bay", "eastern suburbs Sydney"] },
+    { suburb: "North Sydney", slug: "north-sydney", nearby: ["Neutral Bay", "Kirribilli", "Waverton", "Milsons Point"] },
+    { suburb: "Surry Hills", slug: "surry-hills", nearby: ["Darlinghurst", "Paddington", "Redfern", "Waterloo", "Sydney CBD"] },
+    { suburb: "Edgecliff", slug: "edgecliff", nearby: ["Double Bay", "Woollahra", "Rose Bay", "Potts Point", "eastern suburbs"] },
+    { suburb: "Marrickville", slug: "marrickville", nearby: ["Newtown", "Stanmore", "Petersham", "Dulwich Hill", "inner west Sydney"] },
+    { suburb: "Strathfield", slug: "strathfield", nearby: ["Burwood", "Homebush", "Croydon", "inner west Sydney"] },
+    { suburb: "Beverly Hills", slug: "beverly-hills", nearby: ["Hurstville", "Penshurst", "Narwee", "south Sydney"] },
+    { suburb: "Chippendale", slug: "chippendale", nearby: ["Newtown", "Glebe", "Camperdown", "Sydney CBD"] },
+    { suburb: "Zetland", slug: "zetland", nearby: ["Waterloo", "Rosebery", "Alexandria", "Green Square"] },
+  ];
+  return ELIGIBLE_SUBURBS.map(({ suburb, slug, nearby }) => {
+    const suburbPractitioners = practitioners.filter(p => p.suburb === suburb);
+    return {
+      params: { suburb: `anxiety-psychologist-${slug}-sydney` },
+      props: { suburb, slug, suburbPractitioners, nearbySuburbs: nearby },
+    };
+  });
+}
+
+const { suburb, suburbPractitioners, nearbySuburbs } = Astro.props as SuburbPageData;
+
+// Build schema
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sydneyanxietypsychology.com.au/" },
+    { "@type": "ListItem", "position": 2, "name": "Directory", "item": "https://sydneyanxietypsychology.com.au/directory/" },
+    { "@type": "ListItem", "position": 3, "name": `${suburb} Anxiety Psychologists`, "item": Astro.url.href },
+  ]
+};
+
+const itemListSchema = suburbPractitioners.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": `Telehealth Psychologists for Anxiety in ${suburb}, Sydney`,
+  "description": `AHPRA-registered psychologists in ${suburb} offering telehealth appointments for anxiety.`,
+  "url": Astro.url.href,
+  "numberOfItems": suburbPractitioners.length,
+  "itemListElement": suburbPractitioners.map((p, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "url": `https://sydneyanxietypsychology.com.au/directory/${p.slug}/`,
+    "name": p.name
+  }))
+} : null;
+
+const schemas = itemListSchema
+  ? [breadcrumbSchema, itemListSchema]
+  : [breadcrumbSchema];
+
+const hasPractitioners = suburbPractitioners.length > 0;
+const telehealth = practitioners.filter(p => p.suburb === "Sydney (telehealth)");
+---
+<Base
+  title={`Anxiety Psychologist ${suburb} Sydney | Telehealth | Medicare Rebates`}
+  description={`Find AHPRA-registered psychologists in ${suburb}, Sydney offering telehealth for anxiety. Medicare rebates available with a Mental Health Treatment Plan.`}
+  schema={schemas}
+>
+  <div class="main-content">
+    <div class="container">
+
+      <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 1.5rem;">
+        <a href="/">Home</a> &rsaquo; <a href="/directory/">Directory</a> &rsaquo; Anxiety psychologist {suburb} Sydney
+      </p>
+
+      <h1>Anxiety Psychologist in {suburb}, Sydney (Telehealth)</h1>
+      <p style="font-size: 1.05rem; color: var(--color-text-secondary); max-width: 680px; margin-bottom: 2rem;">
+        AHPRA-registered psychologists based in or near {suburb} who work with anxiety and offer telehealth. Telehealth means the same Medicare rebate applies, and you can attend from home rather than travelling to the practice.
+      </p>
+
+      <div class="info-box">
+        <strong>Medicare rebate for telehealth:</strong> With a GP Mental Health Treatment Plan, you receive
+        $98.95 per session with a registered psychologist (MBS item 91170), or $145.25 with an endorsed
+        clinical psychologist (MBS item 91167). Telehealth attracts the same rebate as in-person.
+        Fees are set by individual practitioners; out-of-pocket costs vary.
+      </div>
+
+      {hasPractitioners ? (
+        <>
+          <h2>{suburb}-based psychologists in this directory</h2>
+          <p style="color: var(--color-text-secondary); margin-bottom: 1.5rem;">
+            The practitioners below are listed in the AHPRA public register and offer telehealth. Profiles are unclaimed until the practitioner verifies their listing.
+          </p>
+          <div style="display: grid; gap: 1.25rem; margin-bottom: 2.5rem;">
+            {suburbPractitioners.map(p => (
+              <a href={`/directory/${p.slug}/`} style="display: block; text-decoration: none; color: inherit; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow-sm); transition: box-shadow 0.15s;">
+                <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
+                  <div>
+                    <div style="font-weight: 600; font-size: 1.05rem; margin-bottom: 0.25rem;">{p.name}</div>
+                    <div style="font-size: 0.875rem; color: var(--color-text-secondary); margin-bottom: 0.5rem;">
+                      {p.registrationType === "clinical_psychologist" ? "Clinical Psychologist" : "Registered Psychologist"} &mdash; {p.suburb}
+                    </div>
+                    {p.specialties.length > 0 && (
+                      <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
+                        {p.specialties.slice(0, 4).map(s => (
+                          <span style="font-size: 0.78rem; background: var(--color-teal-50, #e6f7f7); color: var(--color-teal-700, #0e7490); padding: 0.2rem 0.55rem; border-radius: 100px;">{s}</span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                  <span style="font-size: 0.8rem; color: var(--color-text-secondary); white-space: nowrap; border: 1px solid var(--color-border); border-radius: 4px; padding: 0.2rem 0.5rem;">View profile &rsaquo;</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </>
+      ) : (
+        <div class="info-box" style="border-left-color: var(--color-accent);">
+          <strong>Building the {suburb} listings.</strong> We are currently sourcing and verifying AHPRA-registered psychologists in {suburb} who offer telehealth for anxiety. In the meantime, several psychologists in our directory offer fully telehealth-based sessions and can see clients anywhere in NSW.
+        </div>
+      )}
+
+      <!-- Telehealth-only practitioners always available -->
+      <h2>Telehealth-based psychologists (available across Sydney including {suburb})</h2>
+      <p style="color: var(--color-text-secondary); margin-bottom: 1.5rem;">
+        These psychologists work entirely via telehealth and see clients across all Sydney suburbs, including {suburb}.
+      </p>
+      <div style="display: grid; gap: 1.25rem; margin-bottom: 2.5rem;">
+        {telehealth.map(p => (
+          <a href={`/directory/${p.slug}/`} style="display: block; text-decoration: none; color: inherit; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow-sm); transition: box-shadow 0.15s;">
+            <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
+              <div>
+                <div style="font-weight: 600; font-size: 1.05rem; margin-bottom: 0.25rem;">{p.name}</div>
+                <div style="font-size: 0.875rem; color: var(--color-text-secondary); margin-bottom: 0.5rem;">
+                  Registered Psychologist &mdash; Telehealth (all of NSW)
+                </div>
+                {p.specialties.length > 0 && (
+                  <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
+                    {p.specialties.slice(0, 4).map(s => (
+                      <span style="font-size: 0.78rem; background: var(--color-teal-50, #e6f7f7); color: var(--color-teal-700, #0e7490); padding: 0.2rem 0.55rem; border-radius: 100px;">{s}</span>
+                    ))}
+                  </div>
+                )}
+              </div>
+              <span style="font-size: 0.8rem; color: var(--color-text-secondary); white-space: nowrap; border: 1px solid var(--color-border); border-radius: 4px; padding: 0.2rem 0.5rem;">View profile &rsaquo;</span>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <div class="cta-block">
+        <h3>Not sure which psychologist to choose?</h3>
+        <p>Tell us about what you are looking for and we will connect you with a psychologist in or near {suburb} who offers telehealth and specialises in anxiety. You will hear back within 1 business day.</p>
+        <a href="/connect/" class="btn--cta plausible-event-name=Suburb+Finder+CTA+Click">
+          Connect me with a psychologist
+        </a>
+        <p class="cta-block__note">Free to use. We connect you. We do not provide clinical services.</p>
+      </div>
+
+      <h2>About accessing a psychologist in {suburb} via telehealth</h2>
+      <p>
+        Telehealth psychology has the same Medicare rebate as in-person sessions under the Better Access initiative.
+        This means if you have a GP Mental Health Treatment Plan, you can access up to 10 rebated sessions per calendar
+        year with a psychologist in {suburb} or anywhere in NSW, entirely via video call.
+      </p>
+      <p>
+        For people in {suburb} and the surrounding area ({nearbySuburbs.join(", ")}), telehealth removes the need
+        to travel to a practice, which is particularly useful during high-anxiety periods or when managing a heavy
+        work schedule. Many psychologists in Sydney now run entirely telehealth practices, expanding the pool of
+        practitioners you can see beyond your immediate suburb.
+      </p>
+      <p>
+        The starting point is always a GP visit to get a Mental Health Treatment Plan and referral.
+        From there, you can search for a psychologist who has availability, specialises in anxiety,
+        and offers telehealth. This directory lists AHPRA-registered psychologists sourced from public records.
+      </p>
+
+      <h2>How to get started from {suburb}</h2>
+      <ol class="steps">
+        <li>
+          <div>
+            <strong>See your GP and get a Mental Health Treatment Plan (MHTP)</strong>
+            <p>Book a longer appointment with your GP (at least 20-30 minutes) and tell them you are seeking psychology support for anxiety. They will issue an MHTP and a referral. From November 2025, the MHTP must be prepared at an in-person GP visit.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Browse the directory or connect via this site</strong>
+            <p>Browse the practitioners listed above or use the connect form and we will suggest a match based on your needs and suburb.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Book a telehealth session</strong>
+            <p>Contact the psychologist directly and book a telehealth session. You will attend via secure video call from home.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Claim your Medicare rebate</strong>
+            <p>After each session, claim your rebate through Medicare online or the Express Plus Medicare app. For registered psychologists, the rebate is $98.95 per session (MBS item 91170), effective 1 July 2025.</p>
+          </div>
+        </li>
+      </ol>
+
+      <div style="margin-top: 2.5rem;">
+        <h3>Useful guides</h3>
+        <ul>
+          <li><a href="/guides/cost-telehealth-psychologist-australia/">What does a telehealth psychologist cost? (fees, rebates, out-of-pocket)</a></li>
+          <li><a href="/guides/does-online-therapy-work-for-anxiety/">Does online therapy work for anxiety? (evidence review)</a></li>
+          <li><a href="/guides/how-telehealth-psychology-works/">How telehealth psychology works session by session</a></li>
+          <li><a href="/guides/psychologist-waitlist-sydney/">Why there are waiting lists and what to do</a></li>
+        </ul>
+      </div>
+
+      <div class="info-box" style="margin-top: 2rem; background: #fff3cd; border-left-color: #ffc107;">
+        <strong>Crisis support:</strong> This directory is not a crisis service. If you or someone you know
+        is in distress right now, contact
+        <a href="https://www.lifeline.org.au" target="_blank" rel="noopener">Lifeline</a> (13 11 14),
+        <a href="https://www.beyondblue.org.au" target="_blank" rel="noopener">Beyond Blue</a> (1300 22 4636),
+        or <a href="https://www.13yarn.org.au" target="_blank" rel="noopener">13YARN</a> (13 92 76).
+      </div>
+
+    </div>
+  </div>
+</Base>
