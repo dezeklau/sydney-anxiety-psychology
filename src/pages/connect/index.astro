@@ -19,15 +19,17 @@ import Base from '../../layouts/Base.astro';
         <p><strong>What happens next:</strong> When you submit this form, your details are sent to our network of AHPRA-registered psychologists in Sydney who specialise in anxiety and offer telehealth. A psychologist will be in touch within 1 business day to introduce themselves and discuss availability. You can decide whether to proceed from there.</p>
       </div>
 
-      <!-- Form: Formspree for Vercel-compatible serverless handling -->
+      <!-- Form: posts to Google Apps Script, which appends to the submissions Sheet -->
       <form
         method="POST"
-        action="https://formspree.io/f/maqkrqky"
+        action="https://script.google.com/macros/s/AKfycbxlGPGS_ZjNlbF0uBl_WC0yp3-J6TSl_DYiYqUIjxcitQyCDKDO60E0gOSxFfxwZmQz/exec"
         style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 10px; padding: 2rem;"
       >
-        <!-- Redirect to thank-you page after successful submission -->
-        <input type="hidden" name="_next" value="/connect/thank-you/" />
-        <!-- Honeypot spam field: Formspree ignores submissions where this is filled -->
+        <!-- Which site this came from -->
+        <input type="hidden" name="_site" value="anxiety-sydney" />
+        <!-- Redirect to thank-you page after successful submission (absolute URL for the script redirect) -->
+        <input type="hidden" name="_next" value="https://sydneyanxietypsychology.com.au/connect/thank-you/" />
+        <!-- Honeypot spam field: the handler ignores submissions where this is filled -->
         <input type="text" name="_gotcha" style="display: none;" tabindex="-1" autocomplete="off" />
 
         <div style="margin-bottom: 1.25rem;">
