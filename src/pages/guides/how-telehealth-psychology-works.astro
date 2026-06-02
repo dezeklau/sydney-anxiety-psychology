@@ -108,6 +108,82 @@ const faqSchema = {
         <p><strong>A practical note:</strong> Before your first session, find a quiet room where you will not be interrupted. Headphones help significantly, both for audio clarity and for keeping the conversation private if others are home. Closing other browser tabs reduces the chance of a connection drop.</p>
       </div>
 
+      <!-- Medicare pathway quick-reference -->
+      <figure class="pathway-diagram" style="margin: 2.5rem 0 1rem;">
+        <svg
+          role="img"
+          aria-labelledby="mhtp-pathway-title mhtp-pathway-desc"
+          viewBox="0 0 760 120"
+          xmlns="http://www.w3.org/2000/svg"
+          style="width: 100%; height: auto; display: block;"
+        >
+          <title id="mhtp-pathway-title">How to access Medicare-rebated telehealth psychology sessions</title>
+          <desc id="mhtp-pathway-desc">Four steps: Book a GP appointment and request an MHTP; GP issues the Mental Health Treatment Plan; book a telehealth psychology appointment; claim the Medicare rebate after each session.</desc>
+
+          <defs>
+            <marker id="arr2" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L8,3 z" fill="#157469"/>
+            </marker>
+            <filter id="sh2" x="-5%" y="-10%" width="110%" height="140%">
+              <feDropShadow dx="0" dy="2" stdDeviation="2.5" flood-color="rgba(18,40,34,0.07)"/>
+            </filter>
+          </defs>
+
+          <!-- Step 1 -->
+          <rect x="8" y="12" width="160" height="88" rx="9" fill="#ffffff" stroke="#e3eae8" stroke-width="1.5" filter="url(#sh2)"/>
+          <rect x="8" y="12" width="160" height="7" rx="9" fill="#157469"/>
+          <rect x="8" y="16" width="160" height="3" fill="#157469"/>
+          <circle cx="30" cy="38" r="11" fill="#157469"/>
+          <text x="30" y="43" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-weight="700" fill="#fff">1</text>
+          <text x="50" y="39" font-family="Georgia,serif" font-size="11.5" font-weight="600" fill="#18242c">See Your GP</text>
+          <text x="16" y="57" font-family="-apple-system,sans-serif" font-size="10" fill="#4f5f66">Request a Mental Health</text>
+          <text x="16" y="70" font-family="-apple-system,sans-serif" font-size="10" fill="#4f5f66">Treatment Plan (MHTP).</text>
+          <text x="16" y="83" font-family="-apple-system,sans-serif" font-size="10" fill="#4f5f66">No specialist needed.</text>
+
+          <line x1="170" y1="56" x2="190" y2="56" stroke="#157469" stroke-width="2" marker-end="url(#arr2)"/>
+
+          <!-- Step 2 -->
+          <rect x="193" y="12" width="160" height="88" rx="9" fill="#ffffff" stroke="#e3eae8" stroke-width="1.5" filter="url(#sh2)"/>
+          <rect x="193" y="12" width="160" height="7" rx="9" fill="#157469"/>
+          <rect x="193" y="16" width="160" height="3" fill="#157469"/>
+          <circle cx="215" cy="38" r="11" fill="#157469"/>
+          <text x="215" y="43" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-weight="700" fill="#fff">2</text>
+          <text x="234" y="39" font-family="Georgia,serif" font-size="11.5" font-weight="600" fill="#18242c">MHTP Issued</text>
+          <text x="201" y="57" font-family="-apple-system,sans-serif" font-size="10" fill="#4f5f66">GP writes the plan.</text>
+          <text x="201" y="70" font-family="-apple-system,sans-serif" font-size="10" fill="#4f5f66">Covers up to 6 sessions</text>
+          <text x="201" y="83" font-family="-apple-system,sans-serif" font-size="10" fill="#4f5f66">initially, then 4 more.</text>
+
+          <line x1="355" y1="56" x2="375" y2="56" stroke="#157469" stroke-width="2" marker-end="url(#arr2)"/>
+
+          <!-- Step 3 -->
+          <rect x="378" y="12" width="180" height="88" rx="9" fill="#ffffff" stroke="#e3eae8" stroke-width="1.5" filter="url(#sh2)"/>
+          <rect x="378" y="12" width="180" height="7" rx="9" fill="#157469"/>
+          <rect x="378" y="16" width="180" height="3" fill="#157469"/>
+          <circle cx="400" cy="38" r="11" fill="#157469"/>
+          <text x="400" y="43" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-weight="700" fill="#fff">3</text>
+          <text x="420" y="39" font-family="Georgia,serif" font-size="11.5" font-weight="600" fill="#18242c">Telehealth Sessions</text>
+          <text x="386" y="57" font-family="-apple-system,sans-serif" font-size="10" fill="#4f5f66">Book via video call.</text>
+          <text x="386" y="70" font-family="-apple-system,sans-serif" font-size="10" fill="#157469" font-weight="600">Rebate: $98.95 or $145.25</text>
+          <text x="386" y="83" font-family="-apple-system,sans-serif" font-size="10" fill="#4f5f66">per session (from 1 Jul 2025).</text>
+
+          <line x1="560" y1="56" x2="580" y2="56" stroke="#157469" stroke-width="2" marker-end="url(#arr2)"/>
+
+          <!-- Step 4 -->
+          <rect x="583" y="12" width="169" height="88" rx="9" fill="#effaf8" stroke="#157469" stroke-width="1.5" filter="url(#sh2)"/>
+          <rect x="583" y="12" width="169" height="7" rx="9" fill="#157469"/>
+          <rect x="583" y="16" width="169" height="3" fill="#157469"/>
+          <circle cx="605" cy="38" r="11" fill="#157469"/>
+          <text x="605" y="43" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-weight="700" fill="#fff">4</text>
+          <text x="624" y="39" font-family="Georgia,serif" font-size="11.5" font-weight="600" fill="#18242c">Claim Rebate</text>
+          <text x="591" y="57" font-family="-apple-system,sans-serif" font-size="10" fill="#4f5f66">After each session claim</text>
+          <text x="591" y="70" font-family="-apple-system,sans-serif" font-size="10" fill="#4f5f66">via Medicare app, MyGov,</text>
+          <text x="591" y="83" font-family="-apple-system,sans-serif" font-size="10" fill="#4f5f66">or Medicare service centre.</text>
+        </svg>
+        <figcaption style="font-size: 0.82rem; color: var(--color-text-secondary); text-align: center; margin-top: 0.5rem;">
+          Medicare Better Access pathway. Up to 10 rebated sessions per calendar year (6 initially, GP review, then up to 4 more). Rebates from 1 July 2025. <a href="/guides/cost-telehealth-psychologist-australia/">Full cost guide &rarr;</a>
+        </figcaption>
+      </figure>
+
       <h2>AHPRA Registration: What It Means and Why It Matters</h2>
       <p>"Psychologist" is a protected title in Australia, regulated by AHPRA (the Australian Health Practitioner Regulation Agency). Only people who have completed:</p>
       <ul>

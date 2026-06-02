@@ -1,0 +1,349 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Clinical Psychologist vs Registered Psychologist: What Is the Difference?",
+  "description": "A plain-English guide to the difference between a clinical psychologist and a registered psychologist in Australia: training, AHPRA endorsement, Medicare rebates, and which may suit your situation.",
+  "datePublished": "2026-06-02",
+  "dateModified": "2026-06-02",
+  "author": {
+    "@type": "Person",
+    "name": "Monica Ma",
+    "description": "Registered Psychologist and Clinical Psychology Registrar, AHPRA registration PSY0002701499"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Sydney Anxiety Psychology",
+    "url": "https://sydneyanxietypsychology.com.au"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://sydneyanxietypsychology.com.au/guides/clinical-psychologist-vs-registered-psychologist/"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the difference between a clinical psychologist and a registered psychologist in Australia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both are AHPRA-registered and legally protected titles. A registered psychologist has completed at minimum a four-year Honours degree in psychology and two years of supervised practice. A clinical psychologist has additionally obtained a postgraduate qualification (usually a two-year Master's or Doctor of Psychology in Clinical Psychology) and an AHPRA 'area of practice endorsement' in clinical psychology. The endorsement is not automatic: it requires specific training and formal AHPRA approval. Both can treat anxiety and most common mental health presentations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the Medicare rebate different for a clinical psychologist vs a registered psychologist?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Under the Medicare Better Access scheme (from 1 July 2025), the rebate is $145.25 per session with an endorsed clinical psychologist (MBS item 91167 for telehealth) and $98.95 per session with a registered psychologist (MBS item 91170 for telehealth). You need a Mental Health Treatment Plan from your GP to access either rebate. The rebate amounts are the same for in-person and telehealth sessions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which is better for anxiety: a clinical psychologist or a registered psychologist?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For most anxiety presentations, both are effective. The research does not consistently show clinical psychologists produce better outcomes than registered psychologists for anxiety. The most important factors are therapeutic fit, the psychologist's specific experience with anxiety, and the evidence-based approach used (such as CBT or ACT). A registered psychologist with extensive experience in anxiety may be a better fit than a clinical psychologist without it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I know if a psychologist is endorsed as a clinical psychologist?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Check the AHPRA Registers of Practitioners at ahpra.gov.au. Search by name. An endorsed clinical psychologist will have 'Area of Practice Endorsement: Clinical Psychology' listed on their profile. A registration without this endorsement is a registered (general) psychologist, regardless of what the practitioner or their website says."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does telehealth work differently for clinical psychologists vs registered psychologists?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Telehealth psychology works the same way for both. The session format, technology, Medicare rebate process, and AHPRA requirements are the same. The only difference is the MBS item number used to claim the rebate (91167 for endorsed clinical, 91170 for registered)."
+      }
+    }
+  ]
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://sydneyanxietypsychology.com.au/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Guides",
+      "item": "https://sydneyanxietypsychology.com.au/guides/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Clinical vs Registered Psychologist",
+      "item": "https://sydneyanxietypsychology.com.au/guides/clinical-psychologist-vs-registered-psychologist/"
+    }
+  ]
+};
+---
+<Base
+  title="Clinical Psychologist vs Registered Psychologist: What Is the Difference? | Sydney"
+  description="Training, AHPRA endorsement, Medicare rebate differences ($145.25 vs $98.95 from 1 July 2025), and which may suit your anxiety presentation. Plain-English guide."
+  schema={[schema, faqSchema, breadcrumbSchema]}
+>
+  <div class="main-content">
+    <div class="container">
+
+      <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 1.5rem;">
+        <a href="/">Home</a> &rsaquo; <a href="/guides/">Guides</a> &rsaquo; Clinical vs Registered Psychologist
+      </p>
+
+      <h1>Clinical Psychologist vs Registered Psychologist: What Is the Difference?</h1>
+      <p style="font-size: 1.05rem; color: var(--color-text-secondary); margin-bottom: 1.5rem;">Both are AHPRA-registered and qualified to treat anxiety. The differences come down to training level, an AHPRA endorsement, and the Medicare rebate amount. Here is what you actually need to know.</p>
+
+      <div class="reviewer-box">
+        <div>
+          <span class="reviewer-box__label">Reviewed by</span>
+          <span class="reviewer-box__meta"><strong>Monica Ma</strong> &mdash; Registered Psychologist and Clinical Psychology Registrar, AHPRA registration <a href="https://www.ahpra.gov.au/Registration/Registers-of-Practitioners.aspx" target="_blank" rel="noopener">PSY0002701499</a>. June 2026.</span>
+        </div>
+      </div>
+
+      <nav style="background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 8px; padding: 1.25rem; margin: 2rem 0;">
+        <strong style="display: block; margin-bottom: 0.75rem; font-size: 0.9rem;">On this page:</strong>
+        <ol style="margin: 0; padding-left: 1.25rem; font-size: 0.9rem;">
+          <li style="margin-bottom: 0.3rem;"><a href="#what-each-title-means">What each title means legally</a></li>
+          <li style="margin-bottom: 0.3rem;"><a href="#training-differences">Training differences</a></li>
+          <li style="margin-bottom: 0.3rem;"><a href="#medicare-rebates">Medicare rebate differences</a></li>
+          <li style="margin-bottom: 0.3rem;"><a href="#which-suits-you">Which may suit your situation</a></li>
+          <li style="margin-bottom: 0.3rem;"><a href="#both-qualified">Both are qualified and effective</a></li>
+          <li style="margin-bottom: 0.3rem;"><a href="#telehealth">How telehealth works for both</a></li>
+          <li style="margin-bottom: 0.3rem;"><a href="#questions-to-ask">Questions to ask a psychologist</a></li>
+          <li style="margin-bottom: 0.3rem;"><a href="#faq">Frequently asked questions</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="what-each-title-means">What Each Title Means Legally</h2>
+      <p>Both "registered psychologist" and "clinical psychologist" are protected titles in Australia, regulated by AHPRA (the Australian Health Practitioner Regulation Agency). Neither can be used by someone who has not met the legal requirements. That said, they are different levels of the same profession.</p>
+
+      <h3>Registered psychologist</h3>
+      <p>A registered psychologist (sometimes called a general psychologist) has met AHPRA's minimum requirements for registration:</p>
+      <ul>
+        <li>A four-year Honours degree in psychology (or equivalent)</li>
+        <li>At least two years of supervised professional practice</li>
+        <li>Current registration with AHPRA in good standing</li>
+      </ul>
+      <p>Registered psychologists can assess and treat a wide range of presentations, including anxiety, depression, trauma, relationship difficulties, and other common mental health concerns. They can use evidence-based therapies such as CBT (Cognitive Behavioural Therapy), ACT (Acceptance and Commitment Therapy), and others.</p>
+
+      <h3>Clinical psychologist (endorsed)</h3>
+      <p>A clinical psychologist has all of the above, plus an AHPRA "area of practice endorsement" in clinical psychology. This endorsement requires:</p>
+      <ul>
+        <li>A postgraduate qualification in clinical psychology, usually a two-year Master of Psychology (Clinical) or a Doctor of Psychology (Clinical)</li>
+        <li>Additional supervised clinical practice hours during training</li>
+        <li>Formal AHPRA approval of the endorsement</li>
+      </ul>
+      <p>The endorsement is specific and separately assessed by AHPRA. A psychologist who holds a postgraduate clinical qualification but has not obtained the AHPRA endorsement cannot legally describe themselves as a "clinical psychologist." You can verify endorsement status by checking the AHPRA register: an endorsed clinical psychologist will have "Area of Practice Endorsement: Clinical Psychology" listed on their registration record.</p>
+
+      <div class="info-box">
+        <p><strong>How to check:</strong> Visit the <a href="https://www.ahpra.gov.au/Registration/Registers-of-Practitioners.aspx" target="_blank" rel="noopener">AHPRA Registers of Practitioners</a>, search the psychologist's name, and look for "Area of Practice Endorsement: Clinical Psychology" on their profile. No endorsement listed means they are a registered (general) psychologist, regardless of what their website says.</p>
+      </div>
+
+      <h2 id="training-differences">Training Differences</h2>
+
+      <table class="fee-table">
+        <thead>
+          <tr>
+            <th>Aspect</th>
+            <th>Registered psychologist</th>
+            <th>Clinical psychologist (endorsed)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Undergraduate training</td>
+            <td>4-year Honours degree in psychology</td>
+            <td>4-year Honours degree in psychology</td>
+          </tr>
+          <tr>
+            <td>Postgraduate training</td>
+            <td>2 years supervised practice (2+4 pathway) or postgrad (5+1 pathway)</td>
+            <td>Additional 2-year Master's or Doctorate in Clinical Psychology</td>
+          </tr>
+          <tr>
+            <td>Total training (minimum)</td>
+            <td>6 years minimum</td>
+            <td>8 years minimum (commonly more)</td>
+          </tr>
+          <tr>
+            <td>AHPRA endorsement</td>
+            <td>General registration only</td>
+            <td>Area of Practice Endorsement: Clinical Psychology</td>
+          </tr>
+          <tr>
+            <td>Can treat anxiety?</td>
+            <td>Yes</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Can use CBT, ACT, exposure therapy?</td>
+            <td>Yes</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Psychological assessment and testing</td>
+            <td>Yes (general)</td>
+            <td>Yes (with additional specialist training in complex assessment)</td>
+          </tr>
+          <tr>
+            <td>Complex or comorbid presentations</td>
+            <td>Within scope for many presentations; experience-dependent</td>
+            <td>Additional training specifically for complex clinical presentations</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="font-size: 0.85rem; color: var(--color-text-secondary);">Training pathways vary. Some psychologists hold postgraduate qualifications in areas other than clinical psychology (e.g. counselling, organisational, sport and exercise psychology). These postgraduate qualifications do not confer the clinical endorsement.</p>
+
+      <h2 id="medicare-rebates">Medicare Rebate Differences</h2>
+      <p>This is where the distinction has a direct and practical effect on you. Under the Medicare Better Access scheme, the rebate is different for each:</p>
+
+      <table class="fee-table">
+        <thead>
+          <tr>
+            <th>Psychologist type</th>
+            <th>MBS item (telehealth)</th>
+            <th>Medicare rebate (from 1 July 2025)</th>
+            <th>Typical fee</th>
+            <th>Typical out-of-pocket</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Registered (general) psychologist</td>
+            <td>91170</td>
+            <td class="highlight">$98.95 per session</td>
+            <td>$170 to $240</td>
+            <td>Approximately $71 to $141</td>
+          </tr>
+          <tr>
+            <td>Endorsed clinical psychologist</td>
+            <td>91167</td>
+            <td class="highlight">$145.25 per session</td>
+            <td>$230 to $310</td>
+            <td>Approximately $85 to $165</td>
+          </tr>
+          <tr>
+            <td>No MHTP (no Medicare rebate)</td>
+            <td>Not applicable</td>
+            <td>No rebate</td>
+            <td>Full fee applies</td>
+            <td>Full fee applies</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size: 0.85rem; color: var(--color-text-secondary);">Source: Medicare Benefits Schedule, effective 1 July 2025. MBS items 91167 (clinical, telehealth) and 91170 (registered, telehealth). In-person items are 80010 and 80015 respectively, at the same rebate rates. A Mental Health Treatment Plan from your GP is required to access either rebate. <a href="/guides/cost-telehealth-psychologist-australia/">Full cost guide &rarr;</a></p>
+
+      <div class="info-box">
+        <p><strong>Note on gap fees:</strong> A higher rebate does not always mean a lower out-of-pocket cost. A clinical psychologist with a $310 fee and a $145.25 rebate leaves a gap of $164.75. A registered psychologist charging $180 with a $98.95 rebate leaves a gap of $81.05. Ask about the full fee before booking, not just the rebate.</p>
+      </div>
+
+      <h2 id="which-suits-you">Which May Suit Your Situation</h2>
+
+      <h3>When a registered psychologist may be a strong choice</h3>
+      <ul>
+        <li>You have a common anxiety presentation (GAD, social anxiety, panic disorder, health anxiety, OCD) that is well within the evidence base for both tiers</li>
+        <li>Minimising out-of-pocket cost is a priority, and you find a registered psychologist with specific experience in anxiety</li>
+        <li>You prefer the broader pool of practitioners that comes with choosing from both tiers</li>
+        <li>You have already worked with a registered psychologist and found a good fit</li>
+      </ul>
+
+      <h3>When a clinical psychologist may be worth considering</h3>
+      <ul>
+        <li>Your presentation is complex or involves multiple co-occurring diagnoses (for example: anxiety plus PTSD, eating disorders, personality disorder features, significant trauma history)</li>
+        <li>Previous treatment with a registered psychologist has not been sufficient and you want a practitioner with specialist postgraduate training</li>
+        <li>You need formal psychological assessment or cognitive testing in addition to therapy</li>
+        <li>Your GP or a specialist has specifically recommended a clinical psychologist for your presentation</li>
+      </ul>
+
+      <p>These are considerations, not rules. The most important factor is the individual psychologist's experience with your specific presentation, not their tier. A registered psychologist with ten years of focused anxiety work will generally produce better outcomes than a clinical psychologist who has rarely treated anxiety.</p>
+
+      <h2 id="both-qualified">Both Are Qualified and Effective</h2>
+      <p>The tiered system in Australia sometimes creates a misperception that clinical psychologists are simply "better" than registered psychologists. This is not accurate, particularly for anxiety presentations.</p>
+      <p>The research base for anxiety treatment (CBT, exposure therapy, ACT, and related approaches) is primarily built on studies involving registered psychologists, clinical psychologists, and researchers working together. Outcome equivalence between the two tiers for common anxiety presentations is well-supported.</p>
+      <p>What matters most for outcomes:</p>
+      <ul>
+        <li>The psychologist's specific experience with your type of anxiety</li>
+        <li>Their use of evidence-based approaches (CBT, ACT, exposure-based methods)</li>
+        <li>Therapeutic fit: you feel comfortable enough to engage with the process</li>
+        <li>Consistency: showing up and doing the between-session work</li>
+      </ul>
+
+      <h2 id="telehealth">How Telehealth Works for Both</h2>
+      <p>Telehealth psychology is available from both registered and clinical psychologists. The format is identical: a secure video call, typically 50 to 60 minutes, at a scheduled time. There is no functional difference in the telehealth experience between tiers.</p>
+      <p>Medicare rebates apply equally to telehealth and in-person sessions for both types, under the Better Access scheme. The MBS items are different (as shown in the table above) but the process is the same: your GP provides an MHTP, you see the psychologist, and you claim the rebate after each session via the Medicare app, MyGov, or a Medicare service centre.</p>
+      <p>This directory lists both registered and clinical psychologists who offer telehealth for anxiety in Sydney. We do not distinguish between tiers in our listings, because for most anxiety presentations the choice should be based on fit and availability, not tier alone.</p>
+
+      <div class="info-box">
+        <p><strong>Want to understand the full cost picture?</strong> See our <a href="/guides/cost-telehealth-psychologist-australia/">complete guide to telehealth psychology costs and Medicare rebates</a>, including how to get an MHTP and what to expect out-of-pocket.</p>
+      </div>
+
+      <h2 id="questions-to-ask">Questions to Ask a Psychologist Before Booking</h2>
+      <p>Whether you are considering a registered or clinical psychologist, these questions help assess fit before you commit to a session:</p>
+      <ol>
+        <li><strong>What experience do you have specifically with anxiety?</strong> Ask about the type (GAD, social anxiety, panic disorder) and the approaches they use.</li>
+        <li><strong>What is your fee and what Medicare rebate applies?</strong> Get the full fee and confirm whether they have the AHPRA endorsement that determines the rebate level.</li>
+        <li><strong>Do you have current AHPRA registration?</strong> Ask for their registration number if you want to verify independently.</li>
+        <li><strong>What does a typical course of treatment look like for my presentation?</strong> A rough number of sessions and what the approach involves.</li>
+        <li><strong>What video platform do you use for telehealth?</strong> Some people have strong preferences; this is a reasonable question to ask before booking.</li>
+      </ol>
+
+      <div class="faq">
+        <h2 id="faq">Frequently Asked Questions</h2>
+
+        <div class="faq__item">
+          <p class="faq__q">What is the difference between a clinical psychologist and a registered psychologist in Australia?</p>
+          <p class="faq__a">Both are AHPRA-registered and legally protected titles. A registered psychologist has completed a four-year Honours degree and two years supervised practice. A clinical psychologist has additionally obtained a postgraduate qualification (usually a two-year Master's or Doctorate in Clinical Psychology) and an AHPRA area of practice endorsement in clinical psychology. Both can treat anxiety and most common mental health presentations.</p>
+        </div>
+
+        <div class="faq__item">
+          <p class="faq__q">Is the Medicare rebate different for a clinical psychologist vs a registered psychologist?</p>
+          <p class="faq__a">Yes. Under Medicare Better Access (from 1 July 2025), the rebate is $145.25 per session with an endorsed clinical psychologist and $98.95 with a registered psychologist. Both require a Mental Health Treatment Plan from your GP. The rebate amounts are the same for telehealth and in-person sessions. <a href="/guides/cost-telehealth-psychologist-australia/">Full cost guide &rarr;</a></p>
+        </div>
+
+        <div class="faq__item">
+          <p class="faq__q">Which is better for anxiety: a clinical or registered psychologist?</p>
+          <p class="faq__a">For most anxiety presentations, both are effective. The research does not consistently show clinical psychologists produce better outcomes for anxiety. The most important factors are the psychologist's specific experience with anxiety and therapeutic fit, not which tier they are in.</p>
+        </div>
+
+        <div class="faq__item">
+          <p class="faq__q">How do I know if a psychologist is endorsed as a clinical psychologist?</p>
+          <p class="faq__a">Check the <a href="https://www.ahpra.gov.au/Registration/Registers-of-Practitioners.aspx" target="_blank" rel="noopener">AHPRA Registers of Practitioners</a>. An endorsed clinical psychologist will have "Area of Practice Endorsement: Clinical Psychology" on their profile. No endorsement listed means they are a registered (general) psychologist, regardless of what their website says.</p>
+        </div>
+
+        <div class="faq__item">
+          <p class="faq__q">Does telehealth work differently for clinical vs registered psychologists?</p>
+          <p class="faq__a">No. The session format, technology, and Medicare rebate process are the same. The only difference is the MBS item number used to claim the rebate.</p>
+        </div>
+      </div>
+
+      <div class="cta-block">
+        <h3>Looking for a telehealth psychologist for anxiety in Sydney?</h3>
+        <p>This directory covers both registered and clinical psychologists who specialise in anxiety and offer telehealth. Tell us what you are looking for and we will connect you with someone suitable. You will hear back within 1 business day.</p>
+        <a href="/connect/" class="btn--cta plausible-event-name=Guide+ClinicalVsReg+CTA+Click">
+          Find a psychologist
+        </a>
+        <p class="cta-block__note">Free to use. We connect you. We do not provide clinical services.</p>
+      </div>
+
+    </div>
+  </div>
+</Base>
