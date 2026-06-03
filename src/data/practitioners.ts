@@ -74,12 +74,12 @@ export const practitioners: Practitioner[] = [
   {
     slug: "eileen-seah-psychologist-zetland",
     name: "Eileen Seah",
-    registrationType: "registered_psychologist",
+    registrationType: "clinical_psychologist",
     suburb: "Zetland",
     specialties: ["Anxiety", "Perfectionism", "Stress", "Grief"],
     unclaimed: true,
     source: "https://www.eileenseah.com.au/",
-    yearsExperience: null,
+    yearsExperience: null, // AHPRA registration year not publicly available; registrationType corrected to clinical_psychologist (PSY0001169478, confirmed 2026-06-03)
     bio: "Eileen Seah is a psychologist whose practice focuses on anxiety, stress, perfectionism, fear of failure, imposter syndrome, and grief. Her PhD research background is in perfectionism. She offers LGBTQIA+ affirming and poly-friendly therapy, and draws on CBT, compassion-focused therapy, schema therapy, ACT, and EMDR. She works with clients in a warm, confidential environment and offers concessional rates for eligible clients.",
     photoUrl: null,
     pricing: "$270 / 50-min session (concessional rates available)",
@@ -266,12 +266,12 @@ export const practitioners: Practitioner[] = [
   {
     slug: "tia-ven-psychologist-beverly-hills",
     name: "Tia Ven",
-    registrationType: "registered_psychologist",
+    registrationType: "clinical_psychologist",
     suburb: "Beverly Hills",
     specialties: ["Women's mental health", "Anxiety disorders", "Depression", "Chronic pain", "Grief", "Stress"],
     unclaimed: true,
     source: "https://connect2healthpsychology.com.au/",
-    yearsExperience: null,
+    yearsExperience: 11, // "11 years experience across public health and private settings" — source: talked.com.au/therapist/tia-ven; registrationType confirmed clinical psychologist (AHPRA endorsed)
     bio: "Tia Ven is a psychologist at Connect 2 Health Psychology providing online therapy in Sydney. She specialises in women's mental health, anxiety disorders, depression, chronic pain, grief, stress, and adjustment to chronic health conditions.",
     photoUrl: null,
     pricing: "$224 / 50-min session",
@@ -480,7 +480,7 @@ export const practitioners: Practitioner[] = [
     specialties: ["Anxiety disorders", "OCD", "Depression", "Trauma", "Chronic medical conditions"],
     unclaimed: true,
     source: "https://mckinnonpsychology.com.au/caitlin-pedel/",
-    yearsExperience: null,
+    yearsExperience: 12, // "over 12 years working in roles across government, non-government and private sectors" — source: mckinnonpsychology.com.au/caitlin-pedel/ (via search 2026-06-03)
     bio: "Caitlin Pedel is a psychologist at McKinnon Psychology in Edgecliff (MClinPsych, University of Technology Sydney). She developed her interest in psychology through health roles in the Australian Army. She creates a safe, supportive space focused on values-based work and meaningful change, and works with anxiety disorders, OCD, depression, trauma, substance use, and support for emergency service personnel. She uses CBT, Schema Therapy, ACT, DBT, and Exposure Therapy. Telehealth available across Australia.",
     photoUrl: null,
     pricing: null,
