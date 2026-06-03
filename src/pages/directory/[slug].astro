@@ -65,6 +65,62 @@ const profilePageSchema = {
   description={pageDescription}
   schema={[breadcrumbSchema, profilePageSchema]}
 >
+  <style>
+    /* Tooltip for Unclaimed badge */
+    .unclaimed-badge-wrap {
+      position: relative;
+      display: inline-block;
+    }
+    .unclaimed-badge-wrap .unclaimed-tooltip {
+      visibility: hidden;
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1e1b18;
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 400;
+      line-height: 1.45;
+      padding: 0.55rem 0.8rem;
+      border-radius: 6px;
+      white-space: normal;
+      width: 240px;
+      text-align: left;
+      z-index: 10;
+      transition: opacity 0.15s ease;
+    }
+    .unclaimed-badge-wrap .unclaimed-tooltip::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 5px solid transparent;
+      border-top-color: #1e1b18;
+    }
+    .unclaimed-badge-wrap:hover .unclaimed-tooltip,
+    .unclaimed-badge-wrap:focus-within .unclaimed-tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
+    .unclaimed-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #92400e;
+      background: #fef3c7;
+      border: 1px solid #f59e0b;
+      padding: 0.3rem 0.7rem;
+      border-radius: 100px;
+      cursor: default;
+    }
+  </style>
+
   <div class="main-content">
     <div class="container">
 
@@ -72,28 +128,6 @@ const profilePageSchema = {
       <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 1.5rem;">
         <a href="/">Home</a> &rsaquo; <a href="/directory/">Directory</a> &rsaquo; {p.name}
       </p>
-
-      {p.unclaimed && (
-        <!-- Unclaimed banner -->
-        <div style="background: #fffbeb; border: 1.5px solid #f59e0b; border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-bottom: 2rem; display: flex; flex-wrap: wrap; gap: 0.75rem 2rem; align-items: center;">
-          <div style="flex: 1 1 280px;">
-            <strong style="color: #92400e; display: block; margin-bottom: 0.25rem; font-size: 1rem;">Unclaimed profile</strong>
-            <p style="margin: 0; font-size: 0.93rem; color: #78350f;">
-              This profile is sourced from the practitioner's own public website and the AHPRA public register.
-              It has not been reviewed or verified by the practitioner.
-              Is this you? Claiming takes two minutes and lets you update your details and control inbound enquiries.
-            </p>
-          </div>
-          <div style="display: flex; flex-direction: column; gap: 0.5rem; flex-shrink: 0;">
-            <a href="/for-psychologists/" class="btn btn--primary" style="font-size: 0.9rem; padding: 0.65rem 1.35rem; background: #d97706; color: #fff;">
-              Claim this profile free
-            </a>
-            <a href="/listing-removal/" style="font-size: 0.8rem; color: #92400e; text-align: center;">
-              Request removal
-            </a>
-          </div>
-        </div>
-      )}
 
       <!-- Two-column layout: profile left, enquiry form right -->
       <div style="display: grid; grid-template-columns: 1fr minmax(300px, 380px); gap: 2rem; align-items: start;">
@@ -125,7 +159,17 @@ const profilePageSchema = {
               }
 
               <div style="flex: 1 1 200px;">
-                <h1 style="font-size: clamp(1.4rem, 3.5vw, 1.9rem); margin-bottom: 0.2rem;">{p.name}</h1>
+                <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 0.65rem; margin-bottom: 0.2rem;">
+                  <h1 style="font-size: clamp(1.4rem, 3.5vw, 1.9rem); margin-bottom: 0;">{p.name}</h1>
+                  {p.unclaimed && (
+                    <span class="unclaimed-badge-wrap">
+                      <span class="unclaimed-badge" role="note" tabindex="0">Unclaimed</span>
+                      <span class="unclaimed-tooltip" role="tooltip">
+                        This profile was pre-built from the AHPRA public register. It has not been reviewed or verified by the practitioner. The practitioner can claim, update, or remove it at any time.
+                      </span>
+                    </span>
+                  )}
+                </div>
                 <p style="font-size: 1rem; color: var(--color-accent); font-weight: 600; margin-bottom: 0.3rem;">{registrationLabel}</p>
                 <p style="font-size: 0.9rem; color: var(--color-text-secondary); margin-bottom: 0; display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap;">
                   <span style="display: flex; align-items: center; gap: 0.3rem;">
@@ -142,12 +186,6 @@ const profilePageSchema = {
                   )}
                 </p>
               </div>
-
-              {p.unclaimed && (
-                <span style="display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: #92400e; background: #fef3c7; border: 1px solid #f59e0b; padding: 0.3rem 0.7rem; border-radius: 100px; align-self: flex-start;">
-                  Unclaimed
-                </span>
-              )}
             </div>
           </div>
 
@@ -233,6 +271,13 @@ const profilePageSchema = {
             </div>
           )}
 
+          {p.bookingUrl && (
+            <p style="font-size: 0.82rem; color: var(--color-text-secondary); margin-top: -0.75rem; margin-bottom: 1.75rem;">
+              <strong>Book directly</strong> goes to {p.name.split(' ')[p.name.split(' ').length - 1]}'s own booking page.
+              <strong>Request Appointment</strong> (form at right) sends your details via this directory — the practitioner will contact you to arrange a time.
+            </p>
+          )}
+
           <!-- Source / removal notice -->
           <div class="info-box" style="margin-bottom: 1.75rem;">
             <p style="font-size: 0.87rem;">
@@ -246,8 +291,8 @@ const profilePageSchema = {
             </p>
           </div>
 
+          <!-- Claim CTA (bottom of page, for practitioners) -->
           {p.unclaimed && (
-            <!-- Psych claim CTA -->
             <div class="cta-block" style="margin-bottom: 1.75rem;">
               <h3>Are you {p.name}?</h3>
               <p>
@@ -268,15 +313,10 @@ const profilePageSchema = {
 
           <div style="background: var(--color-surface); border: 1.5px solid var(--color-accent-light); border-radius: var(--radius-lg); padding: 1.75rem; box-shadow: 0 4px 24px rgba(0,0,0,0.08);">
 
-            <h2 style="font-size: 1.1rem; margin-top: 0; margin-bottom: 0.4rem;">Register your interest in {p.name.split(' ')[p.name.split(' ').length - 1]}</h2>
+            <h2 style="font-size: 1.1rem; margin-top: 0; margin-bottom: 0.4rem;">Request Appointment</h2>
             <p style="font-size: 0.87rem; color: var(--color-text-secondary); margin-bottom: 1.25rem;">
-              Leave your details and we will log your enquiry. We may pass it on to this practitioner where possible. You are not committed to anything.
+              Send your contact details to {p.name.split(' ')[p.name.split(' ').length - 1]} via this directory. They will contact you to arrange an appointment. You are not committed to anything.
             </p>
-
-            <!-- Collection notice (required — sensitive health-adjacent info) -->
-            <div style="background: var(--color-accent-soft); border: 1px solid var(--color-accent-light); border-radius: 6px; padding: 0.85rem; margin-bottom: 1.25rem; font-size: 0.8rem; color: var(--color-accent-hover);">
-              <strong>Collection notice:</strong> Your name, phone or email, and message will be logged securely by Sydney Anxiety Psychology. We may share it with this practitioner to help connect you, but cannot guarantee a response. We will not share your information with anyone else. See our <a href="/privacy/" style="color: var(--color-accent-hover);">Privacy Policy</a>.
-            </div>
 
             <form
               method="POST"
@@ -295,7 +335,7 @@ const profilePageSchema = {
               <input type="text" name="_gotcha" style="display: none;" tabindex="-1" autocomplete="off" />
 
               <div>
-                <label for={`name-${p.slug}`} style="display: block; font-weight: 600; font-size: 0.88rem; margin-bottom: 0.35rem;">Your name *</label>
+                <label for={`name-${p.slug}`} style="display: block; font-weight: 600; font-size: 0.88rem; margin-bottom: 0.35rem;">Your name <span aria-label="required">*</span></label>
                 <input
                   type="text"
                   id={`name-${p.slug}`}
@@ -307,7 +347,7 @@ const profilePageSchema = {
               </div>
 
               <div>
-                <label for={`phone-${p.slug}`} style="display: block; font-weight: 600; font-size: 0.88rem; margin-bottom: 0.35rem;">Phone number *</label>
+                <label for={`phone-${p.slug}`} style="display: block; font-weight: 600; font-size: 0.88rem; margin-bottom: 0.35rem;">Mobile number <span aria-label="required">*</span></label>
                 <input
                   type="tel"
                   id={`phone-${p.slug}`}
@@ -320,11 +360,12 @@ const profilePageSchema = {
               </div>
 
               <div>
-                <label for={`email-${p.slug}`} style="display: block; font-weight: 600; font-size: 0.88rem; margin-bottom: 0.35rem;">Email address (optional)</label>
+                <label for={`email-${p.slug}`} style="display: block; font-weight: 600; font-size: 0.88rem; margin-bottom: 0.35rem;">Email address <span aria-label="required">*</span></label>
                 <input
                   type="email"
                   id={`email-${p.slug}`}
                   name="email"
+                  required
                   autocomplete="email"
                   style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid var(--color-border); border-radius: 6px; font-size: 0.9rem; font-family: inherit; background: var(--color-bg); box-sizing: border-box;"
                 />
@@ -332,7 +373,7 @@ const profilePageSchema = {
 
               <div>
                 <label for={`message-${p.slug}`} style="display: block; font-weight: 600; font-size: 0.88rem; margin-bottom: 0.35rem;">Message (optional)</label>
-                <p style="font-size: 0.78rem; color: var(--color-text-secondary); margin-bottom: 0.4rem;">What are you hoping to get help with? Any preferences for times, approach, or anything else useful to share. Only share what you are comfortable with.</p>
+                <p style="font-size: 0.78rem; color: var(--color-text-secondary); margin-bottom: 0.4rem;">What are you hoping to get help with? Any preferences for times or approach. Only share what you are comfortable with.</p>
                 <textarea
                   id={`message-${p.slug}`}
                   name="message"
@@ -341,7 +382,7 @@ const profilePageSchema = {
                 ></textarea>
               </div>
 
-              <!-- Privacy consent checkbox — required -->
+              <!-- Single privacy consent checkbox -->
               <div style="display: flex; align-items: flex-start; gap: 0.65rem;">
                 <input
                   type="checkbox"
@@ -352,7 +393,7 @@ const profilePageSchema = {
                   style="width: 16px; height: 16px; flex-shrink: 0; margin-top: 0.15rem;"
                 />
                 <label for={`consent-${p.slug}`} style="font-size: 0.8rem; color: var(--color-text-secondary); cursor: pointer; line-height: 1.5;">
-                  I understand that my name, phone number, and message will be logged by Sydney Anxiety Psychology and may be passed on to {p.name} to help connect me. I have read the <a href="/privacy/">Privacy Policy</a>. *
+                  I understand that my name, mobile number, and email address will be passed to {p.name} to arrange an appointment, and stored by Sydney Anxiety Psychology. I have read the <a href="/privacy/">Privacy Policy</a>. <span aria-label="required">*</span>
                 </label>
               </div>
 
@@ -361,12 +402,9 @@ const profilePageSchema = {
                 class="btn btn--primary plausible-event-name=Profile+Enquiry+Submit"
                 style="width: 100%; font-size: 0.97rem; padding: 0.85rem;"
               >
-                Send enquiry to {p.name.split(' ')[p.name.split(' ').length - 1]}
+                Request Appointment with {p.name.split(' ')[p.name.split(' ').length - 1]}
               </button>
 
-              <p style="font-size: 0.77rem; color: var(--color-text-secondary); text-align: center; margin: 0;">
-                Your enquiry is logged securely. We do not guarantee a response from this practitioner. Contact the practitioner directly via the links above for a faster response.
-              </p>
             </form>
 
           </div>
