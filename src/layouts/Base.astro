@@ -53,7 +53,32 @@ const plausibleDomain = 'sydneyanxietypsychology.com.au'; // domain registered; 
     plausible.init()
   </script>
 
-  <!-- Schema.org JSON-LD -->
+  <!-- Organization schema (sitewide) -->
+  <script type="application/ld+json">{JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Sydney Anxiety Psychology",
+    "url": "https://sydneyanxietypsychology.com.au",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://sydneyanxietypsychology.com.au/og-image.png",
+      "width": 1200,
+      "height": 630
+    },
+    "description": "An independent directory helping people in Sydney find AHPRA-registered telehealth psychologists who specialise in anxiety. Not a clinical service.",
+    "areaServed": {
+      "@type": "City",
+      "name": "Sydney",
+      "sameAs": "https://www.wikidata.org/wiki/Q3130"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "url": "https://sydneyanxietypsychology.com.au/connect/"
+    }
+  })}</script>
+
+  <!-- Schema.org JSON-LD (page-level) -->
   {schema && (
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   )}
@@ -61,6 +86,7 @@ const plausibleDomain = 'sydneyanxietypsychology.com.au'; // domain registered; 
   <!-- Google Fonts: Lora (headings) + Inter (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
