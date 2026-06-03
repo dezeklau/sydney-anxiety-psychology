@@ -2,39 +2,44 @@
 import Base from '../../layouts/Base.astro';
 import { practitioners, allSpecialties } from '../../data/practitioners';
 
-// Group practitioners by primary specialty for the specialty-first layout
-const anxietyFirst = practitioners.filter(p => p.specialties.some(s => s.toLowerCase().includes('anxiety')));
+// Build a deduplicated, sorted list of all unique specialties across all practitioners
+const specialtySet = new Set<string>();
+for (const p of practitioners) {
+  for (const s of p.specialties) {
+    specialtySet.add(s);
+  }
+}
 
-// Build specialty groups (top specialties only, deduplicated)
-const topSpecialties = [
-  "Anxiety",
-  "Generalised anxiety",
-  "Social anxiety",
-  "Panic attacks",
-  "OCD",
-  "Health anxiety",
-  "Trauma",
-  "PTSD",
-  "Depression",
-  "Burnout",
-  "Women's mental health",
+// Curated filter categories — map display label to one or more terms to match in specialty strings
+const filterCategories = [
+  { label: "All", key: "all" },
+  { label: "Generalised anxiety", key: "generalised-anxiety" },
+  { label: "Social anxiety", key: "social-anxiety" },
+  { label: "Panic attacks", key: "panic" },
+  { label: "OCD", key: "ocd" },
+  { label: "Health anxiety", key: "health-anxiety" },
+  { label: "Trauma & PTSD", key: "trauma-ptsd" },
+  { label: "Depression", key: "depression" },
+  { label: "Burnout", key: "burnout" },
+  { label: "Women's health", key: "womens" },
+  { label: "ADHD", key: "adhd" },
+  { label: "LGBTQIA+", key: "lgbtqia" },
 ];
 
-const bySpecialty: Record<string, typeof practitioners> = {};
-for (const spec of topSpecialties) {
-  const matching = practitioners.filter(p =>
-    p.specialties.some(s => s.toLowerCase().includes(spec.toLowerCase()))
-  );
-  if (matching.length > 0) bySpecialty[spec] = matching;
-}
-
-// Suburb groups — kept for SEO; demoted to secondary section
-const bySuburb: Record<string, typeof practitioners> = {};
-for (const p of practitioners) {
-  if (!bySuburb[p.suburb]) bySuburb[p.suburb] = [];
-  bySuburb[p.suburb].push(p);
-}
-const sortedSuburbs = Object.keys(bySuburb).sort();
+// Match terms for each filter key (used in data-specialties attribute matching)
+const filterTerms: Record<string, string[]> = {
+  "generalised-anxiety": ["generalised anxiety", "generalized anxiety"],
+  "social-anxiety": ["social anxiety"],
+  "panic": ["panic"],
+  "ocd": ["ocd"],
+  "health-anxiety": ["health anxiety"],
+  "trauma-ptsd": ["trauma", "ptsd"],
+  "depression": ["depression"],
+  "burnout": ["burnout"],
+  "womens": ["women's", "womens", "woman"],
+  "adhd": ["adhd"],
+  "lgbtqia": ["lgbtq", "lgbtqia", "lgbtiq"],
+};
 
 const itemListSchema = {
   "@context": "https://schema.org",
@@ -74,17 +79,16 @@ const breadcrumbSchema = {
       </p>
 
       <!-- Page header -->
-      <div style="margin-bottom: 2.5rem;">
+      <div style="margin-bottom: 2rem;">
         <h1 style="margin-bottom: 0.75rem;">Telehealth Psychologist Directory — Anxiety Specialists in Sydney</h1>
         <p style="font-size: 1.05rem; max-width: 680px; color: var(--color-text-secondary);">
           {practitioners.length} AHPRA-registered psychologists in Sydney who work with anxiety and offer telehealth.
-          All sessions delivered online — suburb is less relevant than the type of anxiety you want help with.
-          Browse by specialty below, or scroll down for suburb-level pages.
+          All sessions delivered online — filter below by the type of anxiety you want help with, or sort by experience.
         </p>
       </div>
 
       <!-- Quick stats -->
-      <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 3rem;">
+      <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.5rem;">
         <div class="stat-card">
           <span class="stat-card__number">{practitioners.length}</span>
           <span class="stat-card__label">Practitioners listed</span>
@@ -103,47 +107,139 @@ const breadcrumbSchema = {
         </div>
       </div>
 
-      <!-- PRIMARY SECTION: Browse by specialty / concern -->
-      <div style="margin-bottom: 3.5rem;">
-        <h2 style="margin-bottom: 0.5rem;">Browse by presenting concern</h2>
-        <p style="color: var(--color-text-secondary); margin-bottom: 1.75rem; max-width: 640px; font-size: 0.95rem;">
-          Since all practitioners offer telehealth, the most useful way to find a match is by the type of anxiety you are experiencing. Each card below lists psychologists who have publicly named that specialty.
-        </p>
+      <!-- FILTER + SORT CONTROLS -->
+      <div id="filter-controls" style="margin-bottom: 2rem; padding: 1.25rem 1.5rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius);">
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5rem;">
-          {Object.entries(bySpecialty).map(([spec, psych]) => (
-            <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow-sm);">
-              <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 1rem; gap: 0.5rem;">
-                <h3 style="margin: 0; font-size: 1.05rem;">{spec}</h3>
-                <span style="flex-shrink: 0; font-size: 0.78rem; color: var(--color-text-secondary); background: var(--color-accent-soft); border: 1px solid var(--color-accent-light); padding: 0.15rem 0.6rem; border-radius: 100px;">
-                  {psych.length} {psych.length === 1 ? 'practitioner' : 'practitioners'}
-                </span>
-              </div>
-              <ul style="list-style: none; padding: 0; margin: 0;">
-                {psych.slice(0, 5).map(p => (
-                  <li style="display: flex; align-items: baseline; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.6rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--color-border);">
-                    <a href={`/directory/${p.slug}/`} style="font-weight: 600; font-size: 0.9rem; text-decoration: none; color: var(--color-accent);">
-                      {p.name}
-                    </a>
-                    <span style="flex-shrink: 0; font-size: 0.78rem; color: var(--color-text-secondary);">
-                      {p.pricing ? p.pricing.split('/')[0].trim() : 'Fees on enquiry'}
-                    </span>
-                  </li>
-                ))}
-                {psych.length > 5 && (
-                  <li style="font-size: 0.82rem; color: var(--color-text-secondary); padding-top: 0.3rem;">
-                    +{psych.length - 5} more — <a href={`/directory/`} style="color: var(--color-accent);">see all</a>
-                  </li>
-                )}
-              </ul>
-            </div>
-          ))}
+        <!-- Specialty filter chips -->
+        <div style="margin-bottom: 1rem;">
+          <p style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-text-secondary); margin-bottom: 0.65rem; margin-top: 0;">
+            Filter by presenting concern
+          </p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;" role="group" aria-label="Filter by specialty">
+            {filterCategories.map(cat => (
+              <button
+                class="filter-chip"
+                data-filter={cat.key}
+                aria-pressed={cat.key === "all" ? "true" : "false"}
+                aria-label={cat.key === "all" ? "Show all practitioners" : `Filter by ${cat.label}`}
+                style={cat.key === "all"
+                  ? "cursor: pointer; padding: 0.35rem 0.85rem; border-radius: 100px; border: 1.5px solid var(--color-accent); background: var(--color-accent); color: white; font-size: 0.85rem; font-weight: 600; transition: all 0.15s;"
+                  : "cursor: pointer; padding: 0.35rem 0.85rem; border-radius: 100px; border: 1.5px solid var(--color-border); background: transparent; color: var(--color-text); font-size: 0.85rem; font-weight: 500; transition: all 0.15s;"}
+              >
+                {cat.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <!-- Sort + count row -->
+        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem;">
+          <p id="results-count" style="margin: 0; font-size: 0.88rem; color: var(--color-text-secondary);" aria-live="polite" aria-atomic="true">
+            Showing {practitioners.length} of {practitioners.length} psychologists
+          </p>
+          <div style="display: flex; align-items: center; gap: 0.6rem;">
+            <label for="sort-select" style="font-size: 0.85rem; color: var(--color-text-secondary); white-space: nowrap;">Sort by:</label>
+            <select
+              id="sort-select"
+              aria-label="Sort practitioners"
+              style="font-size: 0.85rem; padding: 0.3rem 0.6rem; border: 1.5px solid var(--color-border); border-radius: var(--radius); background: var(--color-background); color: var(--color-text); cursor: pointer;"
+            >
+              <option value="default">Default order</option>
+              <option value="experience-desc">Most experience first</option>
+              <option value="name-asc">Name (A–Z)</option>
+              <option value="name-desc">Name (Z–A)</option>
+            </select>
+            <button
+              id="clear-filters"
+              aria-label="Clear all filters and reset sort"
+              style="font-size: 0.82rem; padding: 0.3rem 0.7rem; border: 1.5px solid var(--color-border); border-radius: var(--radius); background: transparent; color: var(--color-text-secondary); cursor: pointer; display: none;"
+            >
+              Clear
+            </button>
+          </div>
         </div>
       </div>
 
-      <!-- ALL PRACTITIONERS: at-a-glance comparison table -->
+      <!-- PRACTITIONER CARD GRID -->
+      <div
+        id="practitioner-grid"
+        style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.25rem; margin-bottom: 3.5rem;"
+        aria-label="Practitioner listings"
+      >
+        {practitioners.map((p) => {
+          // Build a normalised specialties string for JS data-attribute matching
+          const specialtiesStr = p.specialties.join("|").toLowerCase();
+          const expNum = p.yearsExperience ?? -1;
+          const nameSortable = p.name.toLowerCase();
+          return (
+            <div
+              class="prac-card"
+              data-specialties={specialtiesStr}
+              data-experience={expNum}
+              data-name={nameSortable}
+              style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.25rem 1.375rem; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: 0.75rem;"
+            >
+              <!-- Name + registration type -->
+              <div>
+                <a
+                  href={`/directory/${p.slug}/`}
+                  style="font-size: 1rem; font-weight: 700; color: var(--color-accent); text-decoration: none; display: block; margin-bottom: 0.2rem;"
+                >
+                  {p.name}
+                </a>
+                <span style="font-size: 0.78rem; color: var(--color-text-secondary);">
+                  {p.registrationType === "clinical_psychologist" ? "Clinical psychologist" : "Registered psychologist"}
+                  {p.suburb ? ` · ${p.suburb}` : ""}
+                </span>
+              </div>
+
+              <!-- Key data row -->
+              <div style="display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; font-size: 0.85rem; color: var(--color-text-secondary);">
+                {p.yearsExperience && (
+                  <span><strong style="color: var(--color-text);">{p.yearsExperience}+</strong> yrs exp</span>
+                )}
+                {p.pricing && (
+                  <span><strong style="color: var(--color-text);">{p.pricing.split('/')[0].trim()}</strong> / session</span>
+                )}
+                {!p.pricing && (
+                  <span>Fees on enquiry</span>
+                )}
+                {p.bookingUrl && (
+                  <span style="color: var(--color-accent); font-weight: 500;">Online booking</span>
+                )}
+              </div>
+
+              <!-- Specialty chips -->
+              <div style="display: flex; flex-wrap: wrap; gap: 0.3rem;">
+                {p.specialties.slice(0, 4).map(s => (
+                  <span style="display: inline-block; font-size: 0.73rem; background: var(--color-accent-soft); color: var(--color-accent-hover); border: 1px solid var(--color-accent-light); padding: 0.1rem 0.5rem; border-radius: 100px;">{s}</span>
+                ))}
+                {p.specialties.length > 4 && (
+                  <span style="font-size: 0.73rem; color: var(--color-text-secondary);">+{p.specialties.length - 4} more</span>
+                )}
+              </div>
+
+              <!-- View profile link -->
+              <a
+                href={`/directory/${p.slug}/`}
+                style="font-size: 0.85rem; font-weight: 600; color: var(--color-accent); text-decoration: none; margin-top: auto;"
+                aria-label={`View full profile for ${p.name}`}
+              >
+                View profile &rarr;
+              </a>
+            </div>
+          );
+        })}
+      </div>
+
+      <!-- No-results message (hidden by default; shown by JS when needed) -->
+      <p id="no-results" style="display: none; text-align: center; color: var(--color-text-secondary); padding: 2.5rem 0; font-size: 1rem;">
+        No practitioners match this filter. <button onclick="document.getElementById('clear-filters').click()" style="background: none; border: none; color: var(--color-accent); cursor: pointer; font-size: 1rem; font-weight: 600; padding: 0;">Clear the filter</button> to see all {practitioners.length} psychologists.
+      </p>
+
+      <!-- ALL PRACTITIONERS: at-a-glance comparison table (kept for SEO + reference) -->
       <div style="margin-bottom: 3.5rem;">
-        <h2 style="margin-bottom: 0.5rem;">All practitioners — at a glance</h2>
+        <h2 style="margin-bottom: 0.5rem;">At-a-glance comparison table</h2>
         <p style="color: var(--color-text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem; max-width: 640px;">
           Compare experience, pricing, and specialties side by side. Click any name for the full profile with bio and booking link.
         </p>
@@ -198,30 +294,12 @@ const breadcrumbSchema = {
         </p>
       </div>
 
-      <!-- SECONDARY: Browse by suburb (SEO value; demoted from primary) -->
+      <!-- SECONDARY: Browse by suburb (SEO value) -->
       <div style="margin-bottom: 3rem;">
         <h2 style="margin-bottom: 0.5rem;">Browse by suburb</h2>
         <p style="color: var(--color-text-secondary); margin-bottom: 1.25rem; font-size: 0.95rem; max-width: 600px;">
           Because all sessions are delivered via telehealth, suburb matters less than specialty — but suburb-level pages may help if you prefer a psychologist based near you.
         </p>
-        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.25rem; margin-bottom: 1.5rem;">
-          {sortedSuburbs.map(suburb => (
-            <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow-sm);">
-              <h3 style="margin-top: 0; font-size: 0.95rem; margin-bottom: 0.75rem; color: var(--color-accent-hover);">{suburb}</h3>
-              <ul style="list-style: none; padding: 0; margin: 0;">
-                {bySuburb[suburb].map(p => (
-                  <li style="margin-bottom: 0.55rem; padding-bottom: 0.55rem; border-bottom: 1px solid var(--color-border);">
-                    <a href={`/directory/${p.slug}/`} style="font-weight: 600; font-size: 0.88rem; text-decoration: none; color: var(--color-accent);">{p.name}</a>
-                    <span style="display: block; font-size: 0.78rem; color: var(--color-text-secondary); margin-top: 0.1rem;">
-                      {p.registrationType === "clinical_psychologist" ? "Clinical psychologist" : "Registered psychologist"}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-
         <div style="display: flex; flex-wrap: wrap; gap: 0.65rem;">
           <a href="/find/anxiety-psychologist-bondi-junction-sydney/" style="display: inline-block; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 0.5rem 1rem; font-size: 0.88rem; text-decoration: none; color: var(--color-text);">Bondi Junction</a>
           <a href="/find/anxiety-psychologist-north-sydney-sydney/" style="display: inline-block; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 0.5rem 1rem; font-size: 0.88rem; text-decoration: none; color: var(--color-text);">North Sydney</a>
@@ -266,3 +344,157 @@ const breadcrumbSchema = {
     </div>
   </div>
 </Base>
+
+<!-- Filter + sort JavaScript — progressive enhancement only -->
+<script>
+(function () {
+  'use strict';
+
+  // ── Data embedded from server-rendered data-attributes ──────────────────────
+  var TOTAL = document.querySelectorAll('.prac-card').length;
+
+  // Filter term map — mirrors the Astro filterTerms object above
+  var FILTER_TERMS = {
+    'generalised-anxiety': ['generalised anxiety', 'generalized anxiety'],
+    'social-anxiety': ['social anxiety'],
+    'panic': ['panic'],
+    'ocd': ['ocd'],
+    'health-anxiety': ['health anxiety'],
+    'trauma-ptsd': ['trauma', 'ptsd'],
+    'depression': ['depression'],
+    'burnout': ['burnout'],
+    'womens': ["women's", 'womens', 'woman'],
+    'adhd': ['adhd'],
+    'lgbtqia': ['lgbtq', 'lgbtqia', 'lgbtiq'],
+  };
+
+  var activeFilter = 'all';
+  var activeSort = 'default';
+
+  var grid = document.getElementById('practitioner-grid');
+  var countEl = document.getElementById('results-count');
+  var noResultsEl = document.getElementById('no-results');
+  var clearBtn = document.getElementById('clear-filters');
+  var sortSelect = document.getElementById('sort-select');
+  var chips = document.querySelectorAll('.filter-chip');
+
+  if (!grid || !countEl || !noResultsEl || !clearBtn || !sortSelect) return;
+
+  // ── Helpers ─────────────────────────────────────────────────────────────────
+
+  function cardMatchesFilter(card) {
+    if (activeFilter === 'all') return true;
+    var specs = card.getAttribute('data-specialties') || '';
+    var terms = FILTER_TERMS[activeFilter] || [];
+    return terms.some(function (t) { return specs.includes(t); });
+  }
+
+  function applyFilterSort() {
+    var cards = Array.from(grid.querySelectorAll('.prac-card'));
+
+    // 1. Filter
+    var visible = [];
+    var hidden = [];
+    cards.forEach(function (card) {
+      if (cardMatchesFilter(card)) {
+        visible.push(card);
+      } else {
+        hidden.push(card);
+      }
+    });
+
+    // 2. Sort visible cards
+    if (activeSort === 'experience-desc') {
+      visible.sort(function (a, b) {
+        var ea = parseInt(a.getAttribute('data-experience'), 10);
+        var eb = parseInt(b.getAttribute('data-experience'), 10);
+        // -1 means "no data" — push to end
+        if (ea === -1 && eb === -1) return 0;
+        if (ea === -1) return 1;
+        if (eb === -1) return -1;
+        return eb - ea;
+      });
+    } else if (activeSort === 'name-asc') {
+      visible.sort(function (a, b) {
+        return a.getAttribute('data-name').localeCompare(b.getAttribute('data-name'));
+      });
+    } else if (activeSort === 'name-desc') {
+      visible.sort(function (a, b) {
+        return b.getAttribute('data-name').localeCompare(a.getAttribute('data-name'));
+      });
+    }
+    // 'default' — keep original DOM order (visible are already in original order)
+
+    // 3. Re-attach in sorted order
+    visible.forEach(function (card) {
+      card.style.display = '';
+      grid.appendChild(card);
+    });
+    hidden.forEach(function (card) {
+      card.style.display = 'none';
+    });
+
+    // 4. Update count
+    var count = visible.length;
+    countEl.textContent = 'Showing ' + count + ' of ' + TOTAL + ' psychologist' + (TOTAL !== 1 ? 's' : '');
+
+    // 5. No-results message
+    noResultsEl.style.display = count === 0 ? 'block' : 'none';
+
+    // 6. Show/hide clear button
+    var isFiltered = activeFilter !== 'all' || activeSort !== 'default';
+    clearBtn.style.display = isFiltered ? '' : 'none';
+  }
+
+  // ── Chip interaction ─────────────────────────────────────────────────────────
+
+  chips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      var key = chip.getAttribute('data-filter');
+      activeFilter = key;
+
+      // Update aria-pressed + styles
+      chips.forEach(function (c) {
+        var isActive = c.getAttribute('data-filter') === key;
+        c.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        c.style.background = isActive ? 'var(--color-accent)' : 'transparent';
+        c.style.color = isActive ? 'white' : 'var(--color-text)';
+        c.style.borderColor = isActive ? 'var(--color-accent)' : 'var(--color-border)';
+        c.style.fontWeight = isActive ? '600' : '500';
+      });
+
+      applyFilterSort();
+    });
+
+    // Keyboard: Enter / Space already handled natively for <button>
+  });
+
+  // ── Sort interaction ──────────────────────────────────────────────────────────
+
+  sortSelect.addEventListener('change', function () {
+    activeSort = sortSelect.value;
+    applyFilterSort();
+  });
+
+  // ── Clear ─────────────────────────────────────────────────────────────────────
+
+  clearBtn.addEventListener('click', function () {
+    activeFilter = 'all';
+    activeSort = 'default';
+    sortSelect.value = 'default';
+
+    // Reset chip styles
+    chips.forEach(function (c) {
+      var isAll = c.getAttribute('data-filter') === 'all';
+      c.setAttribute('aria-pressed', isAll ? 'true' : 'false');
+      c.style.background = isAll ? 'var(--color-accent)' : 'transparent';
+      c.style.color = isAll ? 'white' : 'var(--color-text)';
+      c.style.borderColor = isAll ? 'var(--color-accent)' : 'var(--color-border)';
+      c.style.fontWeight = isAll ? '600' : '500';
+    });
+
+    applyFilterSort();
+  });
+
+})();
+</script>
