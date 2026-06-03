@@ -110,18 +110,18 @@ const breadcrumbSchema = {
       <!-- FILTER + SORT CONTROLS -->
       <div id="filter-controls" style="margin-bottom: 2rem; padding: 1.25rem 1.5rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius);">
 
-        <!-- Specialty filter chips -->
+        <!-- Specialty filter chips (multi-select) -->
         <div style="margin-bottom: 1rem;">
           <p style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-text-secondary); margin-bottom: 0.65rem; margin-top: 0;">
-            Filter by presenting concern
+            Filter by presenting concern <span style="font-weight: 400; text-transform: none; letter-spacing: 0; font-size: 0.78rem;">(select one or more)</span>
           </p>
-          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;" role="group" aria-label="Filter by specialty">
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;" role="group" aria-label="Filter by specialty — select one or more">
             {filterCategories.map(cat => (
               <button
                 class="filter-chip"
                 data-filter={cat.key}
                 aria-pressed={cat.key === "all" ? "true" : "false"}
-                aria-label={cat.key === "all" ? "Show all practitioners" : `Filter by ${cat.label}`}
+                aria-label={cat.key === "all" ? "Clear filter — show all practitioners" : `Toggle filter: ${cat.label}`}
                 style={cat.key === "all"
                   ? "cursor: pointer; padding: 0.35rem 0.85rem; border-radius: 100px; border: 1.5px solid var(--color-accent); background: var(--color-accent); color: white; font-size: 0.85rem; font-weight: 600; transition: all 0.15s;"
                   : "cursor: pointer; padding: 0.35rem 0.85rem; border-radius: 100px; border: 1.5px solid var(--color-border); background: transparent; color: var(--color-text); font-size: 0.85rem; font-weight: 500; transition: all 0.15s;"}
@@ -145,6 +145,7 @@ const breadcrumbSchema = {
               style="font-size: 0.85rem; padding: 0.3rem 0.6rem; border: 1.5px solid var(--color-border); border-radius: var(--radius); background: var(--color-background); color: var(--color-text); cursor: pointer;"
             >
               <option value="default">Default order</option>
+              <option value="price-asc">Price (low to high)</option>
               <option value="experience-desc">Most experience first</option>
               <option value="name-asc">Name (A–Z)</option>
               <option value="name-desc">Name (Z–A)</option>
@@ -171,12 +172,15 @@ const breadcrumbSchema = {
           const specialtiesStr = p.specialties.join("|").toLowerCase();
           const expNum = p.yearsExperience ?? -1;
           const nameSortable = p.name.toLowerCase();
+          // Extract numeric price for sorting (e.g. "$260 / 50-min" → 260); -1 means no price listed (sort last)
+          const priceNum = p.pricing ? (p.pricing.match(/\d+/) ? parseInt(p.pricing.match(/\d+/)![0], 10) : -1) : -1;
           return (
             <div
               class="prac-card"
               data-specialties={specialtiesStr}
               data-experience={expNum}
               data-name={nameSortable}
+              data-price={priceNum}
               style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.25rem 1.375rem; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: 0.75rem;"
             >
               <!-- Name + registration type -->
@@ -368,7 +372,8 @@ const breadcrumbSchema = {
     'lgbtqia': ['lgbtq', 'lgbtqia', 'lgbtiq'],
   };
 
-  var activeFilter = 'all';
+  // Multi-select: set of active filter keys (empty = show all)
+  var activeFilters = new Set();
   var activeSort = 'default';
 
   var grid = document.getElementById('practitioner-grid');
@@ -382,11 +387,38 @@ const breadcrumbSchema = {
 
   // ── Helpers ─────────────────────────────────────────────────────────────────
 
-  function cardMatchesFilter(card) {
-    if (activeFilter === 'all') return true;
+  function cardMatchesFilters(card) {
+    // If no filters active, show all
+    if (activeFilters.size === 0) return true;
     var specs = card.getAttribute('data-specialties') || '';
-    var terms = FILTER_TERMS[activeFilter] || [];
-    return terms.some(function (t) { return specs.includes(t); });
+    // Card matches if ANY active filter matches (OR logic)
+    var matched = false;
+    activeFilters.forEach(function (key) {
+      if (matched) return;
+      var terms = FILTER_TERMS[key] || [];
+      if (terms.some(function (t) { return specs.includes(t); })) {
+        matched = true;
+      }
+    });
+    return matched;
+  }
+
+  function updateChipStyles() {
+    chips.forEach(function (c) {
+      var key = c.getAttribute('data-filter');
+      var isAll = key === 'all';
+      var isActive;
+      if (isAll) {
+        isActive = activeFilters.size === 0;
+      } else {
+        isActive = activeFilters.has(key);
+      }
+      c.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      c.style.background = isActive ? 'var(--color-accent)' : 'transparent';
+      c.style.color = isActive ? 'white' : 'var(--color-text)';
+      c.style.borderColor = isActive ? 'var(--color-accent)' : 'var(--color-border)';
+      c.style.fontWeight = isActive ? '600' : '500';
+    });
   }
 
   function applyFilterSort() {
@@ -396,7 +428,7 @@ const breadcrumbSchema = {
     var visible = [];
     var hidden = [];
     cards.forEach(function (card) {
-      if (cardMatchesFilter(card)) {
+      if (cardMatchesFilters(card)) {
         visible.push(card);
       } else {
         hidden.push(card);
@@ -404,11 +436,20 @@ const breadcrumbSchema = {
     });
 
     // 2. Sort visible cards
-    if (activeSort === 'experience-desc') {
+    if (activeSort === 'price-asc') {
+      visible.sort(function (a, b) {
+        var pa = parseInt(a.getAttribute('data-price'), 10);
+        var pb = parseInt(b.getAttribute('data-price'), 10);
+        // -1 means no price listed — push to end
+        if (pa === -1 && pb === -1) return 0;
+        if (pa === -1) return 1;
+        if (pb === -1) return -1;
+        return pa - pb;
+      });
+    } else if (activeSort === 'experience-desc') {
       visible.sort(function (a, b) {
         var ea = parseInt(a.getAttribute('data-experience'), 10);
         var eb = parseInt(b.getAttribute('data-experience'), 10);
-        // -1 means "no data" — push to end
         if (ea === -1 && eb === -1) return 0;
         if (ea === -1) return 1;
         if (eb === -1) return -1;
@@ -423,7 +464,7 @@ const breadcrumbSchema = {
         return b.getAttribute('data-name').localeCompare(a.getAttribute('data-name'));
       });
     }
-    // 'default' — keep original DOM order (visible are already in original order)
+    // 'default' — keep original DOM order
 
     // 3. Re-attach in sorted order
     visible.forEach(function (card) {
@@ -442,31 +483,31 @@ const breadcrumbSchema = {
     noResultsEl.style.display = count === 0 ? 'block' : 'none';
 
     // 6. Show/hide clear button
-    var isFiltered = activeFilter !== 'all' || activeSort !== 'default';
+    var isFiltered = activeFilters.size > 0 || activeSort !== 'default';
     clearBtn.style.display = isFiltered ? '' : 'none';
   }
 
-  // ── Chip interaction ─────────────────────────────────────────────────────────
+  // ── Chip interaction (multi-select) ──────────────────────────────────────────
 
   chips.forEach(function (chip) {
     chip.addEventListener('click', function () {
       var key = chip.getAttribute('data-filter');
-      activeFilter = key;
 
-      // Update aria-pressed + styles
-      chips.forEach(function (c) {
-        var isActive = c.getAttribute('data-filter') === key;
-        c.setAttribute('aria-pressed', isActive ? 'true' : 'false');
-        c.style.background = isActive ? 'var(--color-accent)' : 'transparent';
-        c.style.color = isActive ? 'white' : 'var(--color-text)';
-        c.style.borderColor = isActive ? 'var(--color-accent)' : 'var(--color-border)';
-        c.style.fontWeight = isActive ? '600' : '500';
-      });
+      if (key === 'all') {
+        // "All" clears all active filters
+        activeFilters.clear();
+      } else {
+        // Toggle this filter on/off
+        if (activeFilters.has(key)) {
+          activeFilters.delete(key);
+        } else {
+          activeFilters.add(key);
+        }
+      }
 
+      updateChipStyles();
       applyFilterSort();
     });
-
-    // Keyboard: Enter / Space already handled natively for <button>
   });
 
   // ── Sort interaction ──────────────────────────────────────────────────────────
@@ -474,27 +515,23 @@ const breadcrumbSchema = {
   sortSelect.addEventListener('change', function () {
     activeSort = sortSelect.value;
     applyFilterSort();
+    // Update clear visibility (no chip style change needed for sort)
+    var isFiltered = activeFilters.size > 0 || activeSort !== 'default';
+    clearBtn.style.display = isFiltered ? '' : 'none';
   });
 
   // ── Clear ─────────────────────────────────────────────────────────────────────
 
   clearBtn.addEventListener('click', function () {
-    activeFilter = 'all';
+    activeFilters.clear();
     activeSort = 'default';
     sortSelect.value = 'default';
-
-    // Reset chip styles
-    chips.forEach(function (c) {
-      var isAll = c.getAttribute('data-filter') === 'all';
-      c.setAttribute('aria-pressed', isAll ? 'true' : 'false');
-      c.style.background = isAll ? 'var(--color-accent)' : 'transparent';
-      c.style.color = isAll ? 'white' : 'var(--color-text)';
-      c.style.borderColor = isAll ? 'var(--color-accent)' : 'var(--color-border)';
-      c.style.fontWeight = isAll ? '600' : '500';
-    });
-
+    updateChipStyles();
     applyFilterSort();
   });
+
+  // Initial chip style render
+  updateChipStyles();
 
 })();
 </script>
