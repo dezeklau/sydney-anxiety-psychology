@@ -14,36 +14,92 @@ import { practitioners } from '../../data/practitioners';
  * practitioners.ts data file.
  */
 
+interface NearbyLink {
+  label: string;
+  slug?: string; // if set, has its own /find/ page; if not set, no link
+}
+
 interface SuburbPageData {
   slug: string;
   suburb: string;
   suburbPractitioners: typeof practitioners;
-  nearbySuburbs: string[];
+  nearbyLinks: NearbyLink[];
 }
 
 export function getStaticPaths() {
   // Define which suburbs get a finder page (exclude generic telehealth-only label)
+  // nearbyLinks: label = display name; slug = /find/ page slug if one exists
   const ELIGIBLE_SUBURBS = [
-    { suburb: "Bondi Junction", slug: "bondi-junction", nearby: ["Randwick", "Woollahra", "Double Bay", "eastern suburbs Sydney"] },
-    { suburb: "North Sydney", slug: "north-sydney", nearby: ["Neutral Bay", "Kirribilli", "Waverton", "Milsons Point"] },
-    { suburb: "Surry Hills", slug: "surry-hills", nearby: ["Darlinghurst", "Paddington", "Redfern", "Waterloo", "Sydney CBD"] },
-    { suburb: "Edgecliff", slug: "edgecliff", nearby: ["Double Bay", "Woollahra", "Rose Bay", "Potts Point", "eastern suburbs"] },
-    { suburb: "Marrickville", slug: "marrickville", nearby: ["Newtown", "Stanmore", "Petersham", "Dulwich Hill", "inner west Sydney"] },
-    { suburb: "Strathfield", slug: "strathfield", nearby: ["Burwood", "Homebush", "Croydon", "inner west Sydney"] },
-    { suburb: "Beverly Hills", slug: "beverly-hills", nearby: ["Hurstville", "Penshurst", "Narwee", "south Sydney"] },
-    { suburb: "Chippendale", slug: "chippendale", nearby: ["Newtown", "Glebe", "Camperdown", "Sydney CBD"] },
-    { suburb: "Zetland", slug: "zetland", nearby: ["Waterloo", "Rosebery", "Alexandria", "Green Square"] },
+    { suburb: "Bondi Junction", slug: "bondi-junction", nearbyLinks: [
+      { label: "Edgecliff", slug: "edgecliff" },
+      { label: "Surry Hills", slug: "surry-hills" },
+      { label: "Randwick" },
+      { label: "Woollahra" },
+      { label: "Double Bay" },
+    ]},
+    { suburb: "North Sydney", slug: "north-sydney", nearbyLinks: [
+      { label: "Neutral Bay" },
+      { label: "Kirribilli" },
+      { label: "Waverton" },
+      { label: "Milsons Point" },
+    ]},
+    { suburb: "Surry Hills", slug: "surry-hills", nearbyLinks: [
+      { label: "Chippendale", slug: "chippendale" },
+      { label: "Marrickville", slug: "marrickville" },
+      { label: "Darlinghurst" },
+      { label: "Paddington" },
+      { label: "Redfern" },
+    ]},
+    { suburb: "Edgecliff", slug: "edgecliff", nearbyLinks: [
+      { label: "Bondi Junction", slug: "bondi-junction" },
+      { label: "Double Bay" },
+      { label: "Woollahra" },
+      { label: "Rose Bay" },
+      { label: "Potts Point" },
+    ]},
+    { suburb: "Marrickville", slug: "marrickville", nearbyLinks: [
+      { label: "Chippendale", slug: "chippendale" },
+      { label: "Surry Hills", slug: "surry-hills" },
+      { label: "Newtown" },
+      { label: "Stanmore" },
+      { label: "Petersham" },
+    ]},
+    { suburb: "Strathfield", slug: "strathfield", nearbyLinks: [
+      { label: "Burwood" },
+      { label: "Homebush" },
+      { label: "Croydon" },
+    ]},
+    { suburb: "Beverly Hills", slug: "beverly-hills", nearbyLinks: [
+      { label: "Zetland", slug: "zetland" },
+      { label: "Hurstville" },
+      { label: "Penshurst" },
+      { label: "Narwee" },
+    ]},
+    { suburb: "Chippendale", slug: "chippendale", nearbyLinks: [
+      { label: "Surry Hills", slug: "surry-hills" },
+      { label: "Marrickville", slug: "marrickville" },
+      { label: "Newtown" },
+      { label: "Glebe" },
+      { label: "Camperdown" },
+    ]},
+    { suburb: "Zetland", slug: "zetland", nearbyLinks: [
+      { label: "Surry Hills", slug: "surry-hills" },
+      { label: "Chippendale", slug: "chippendale" },
+      { label: "Waterloo" },
+      { label: "Rosebery" },
+      { label: "Alexandria" },
+    ]},
   ];
-  return ELIGIBLE_SUBURBS.map(({ suburb, slug, nearby }) => {
+  return ELIGIBLE_SUBURBS.map(({ suburb, slug, nearbyLinks }) => {
     const suburbPractitioners = practitioners.filter(p => p.suburb === suburb);
     return {
       params: { suburb: `anxiety-psychologist-${slug}-sydney` },
-      props: { suburb, slug, suburbPractitioners, nearbySuburbs: nearby },
+      props: { suburb, slug, suburbPractitioners, nearbyLinks },
     };
   });
 }
 
-const { suburb, suburbPractitioners, nearbySuburbs } = Astro.props as SuburbPageData;
+const { suburb, suburbPractitioners, nearbyLinks } = Astro.props as SuburbPageData;
 
 // Build schema
 const breadcrumbSchema = {
@@ -175,22 +231,35 @@ const telehealth = practitioners.filter(p => p.suburb === "Sydney (telehealth)")
       </div>
 
       <h2>About accessing a psychologist in {suburb} via telehealth</h2>
+      <div class="info-box" style="background: #f0f9ff; border-left-color: #0284c7; margin-bottom: 1.5rem;">
+        <strong>You are not limited to {suburb}:</strong> Via telehealth, you can see any psychologist
+        in this directory regardless of their suburb. Telehealth sessions attract the same Medicare rebate
+        as in-person sessions — $98.95 with a registered psychologist, $145.25 with a clinical psychologist
+        (MBS items 91170/91167 from 1 July 2025). The psychologists listed above are based in or near {suburb};
+        the telehealth practitioners listed below serve all of Sydney and NSW.
+      </div>
       <p>
-        Telehealth psychology has the same Medicare rebate as in-person sessions under the Better Access initiative.
-        This means if you have a GP Mental Health Treatment Plan, you can access up to 10 rebated sessions per calendar
-        year with a psychologist in {suburb} or anywhere in NSW, entirely via video call.
-      </p>
-      <p>
-        For people in {suburb} and the surrounding area ({nearbySuburbs.join(", ")}), telehealth removes the need
-        to travel to a practice, which is particularly useful during high-anxiety periods or when managing a heavy
-        work schedule. Many psychologists in Sydney now run entirely telehealth practices, expanding the pool of
-        practitioners you can see beyond your immediate suburb.
+        Telehealth removes the need to travel to a practice, which is particularly useful during high-anxiety
+        periods or when managing a heavy work schedule. Many psychologists in Sydney now run entirely telehealth
+        practices, expanding the pool of practitioners you can see well beyond your immediate area.
       </p>
       <p>
         The starting point is always a GP visit to get a Mental Health Treatment Plan and referral.
         From there, you can search for a psychologist who has availability, specialises in anxiety,
         and offers telehealth. This directory lists AHPRA-registered psychologists sourced from public records.
       </p>
+
+      <div style="margin-bottom: 1.5rem;">
+        <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Also browsing nearby areas?</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+          {nearbyLinks.map(link => (
+            link.slug
+              ? <a href={`/find/anxiety-psychologist-${link.slug}-sydney/`} style="display: inline-block; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 0.35rem 0.85rem; font-size: 0.875rem; text-decoration: none; color: var(--color-text);">{link.label}</a>
+              : <span style="display: inline-block; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 0.35rem 0.85rem; font-size: 0.875rem; color: var(--color-text-secondary);">{link.label}</span>
+          ))}
+          <a href="/directory/" style="display: inline-block; background: var(--color-accent-soft); border: 1px solid var(--color-accent-light); border-radius: var(--radius); padding: 0.35rem 0.85rem; font-size: 0.875rem; text-decoration: none; color: var(--color-accent);">All Sydney psychologists &rsaquo;</a>
+        </div>
+      </div>
 
       <h2>How to get started from {suburb}</h2>
       <ol class="steps">
