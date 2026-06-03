@@ -1,0 +1,328 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Mental Health Care Plan Sydney: How to Get One, What It Covers, and What Happens Next",
+  "description": "A step-by-step guide to getting a Mental Health Treatment Plan (MHTP) in Sydney. What to say at the GP appointment, how Medicare rebates work, how many sessions are covered, renewals, and how to access telehealth psychology with a plan.",
+  "datePublished": "2026-06-03",
+  "dateModified": "2026-06-03",
+  "author": {
+    "@type": "Organization",
+    "name": "Sydney Anxiety Psychology"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Sydney Anxiety Psychology",
+    "url": "https://sydneyanxietypsychology.com.au"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://sydneyanxietypsychology.com.au/guides/mental-health-care-plan-sydney/"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many psychology sessions does a Mental Health Treatment Plan cover?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Mental Health Treatment Plan (MHTP) gives you access to Medicare rebates on up to 10 individual psychology sessions per calendar year under the Better Access scheme. Your GP can initially refer you for up to 6 sessions. After your first 6 sessions, your psychologist provides a progress review and your GP can refer you for up to 4 more sessions, totalling 10 for the year. Sessions reset each calendar year (1 January), not from the date your plan was written."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do I say to my GP to get a Mental Health Treatment Plan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tell your GP you are experiencing anxiety (or other mental health concerns) and would like a Mental Health Treatment Plan so you can access Medicare rebates for psychology. You do not need to use clinical language. Simply describing what you are experiencing is enough. Your GP will conduct an assessment and, if appropriate, prepare the plan. Booking a longer appointment (30 minutes rather than 15) gives you adequate time for this process."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use a Mental Health Treatment Plan for telehealth psychology?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Medicare rebates under a Mental Health Treatment Plan apply equally to telehealth (video) and in-person psychology sessions. The rebate is the same: $98.95 per session for a registered psychologist (MBS item 91170) or $145.25 per session for an endorsed clinical psychologist (MBS item 91167), from 1 July 2025."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a new Mental Health Treatment Plan each year?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Sessions reset on 1 January each year and your GP needs to review and renew your Mental Health Treatment Plan if you want to continue accessing Medicare rebates in the new calendar year. This usually involves a brief appointment with your GP. Your psychologist may also write a brief update for your GP ahead of this appointment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the Medicare rebate for psychology with a Mental Health Treatment Plan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "With a Mental Health Treatment Plan, the Medicare rebate is $98.95 per session for a registered psychologist (MBS item 91170) or $145.25 per session for an endorsed clinical psychologist (MBS item 91167). These figures are from the Medicare Benefits Schedule effective 1 July 2025. Your out-of-pocket gap is the difference between your psychologist's full fee and the rebate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I get a Mental Health Treatment Plan online or via telehealth GP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. A Mental Health Treatment Plan can be prepared by a GP via telehealth (video or phone consultation). Medicare does not require this to be done in person. However, it must be conducted by your usual or treating GP; a single telehealth-only GP service for the purpose of getting a plan may not always be eligible, so check with the provider. The plan itself is the same regardless of how the GP appointment is conducted."
+      }
+    }
+  ]
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sydneyanxietypsychology.com.au/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://sydneyanxietypsychology.com.au/guides/" },
+    { "@type": "ListItem", "position": 3, "name": "Mental Health Care Plan Sydney", "item": "https://sydneyanxietypsychology.com.au/guides/mental-health-care-plan-sydney/" },
+  ]
+};
+---
+<Base
+  title="Mental Health Care Plan Sydney: How to Get One and What It Covers (2026)"
+  description="Step-by-step guide to getting a Mental Health Treatment Plan (MHTP) in Sydney. What to say at the GP, how many sessions Medicare covers, renewals, and using your plan for telehealth psychology. Rebates updated July 2025."
+  schema={[articleSchema, faqSchema, breadcrumbSchema]}
+>
+  <div class="main-content">
+    <div class="container">
+
+      <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 1.5rem;">
+        <a href="/">Home</a> &rsaquo; <a href="/guides/">Guides</a> &rsaquo; Mental Health Care Plan Sydney
+      </p>
+
+      <h1>Mental Health Care Plan Sydney: How to Get One, What It Covers, and What Happens Next</h1>
+      <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 2rem;">Last reviewed: June 2026 &bull; Sources: Medicare Benefits Schedule (effective 1 July 2025), Department of Health and Aged Care</p>
+
+      <p>A Mental Health Treatment Plan (MHTP) is the document your GP prepares that unlocks Medicare rebates for psychology sessions in Australia. For many people dealing with anxiety, it is the single most important step toward making psychology affordable&mdash;and many people are unsure how to ask for one, what to expect at the appointment, or how the system actually works once they have one.</p>
+
+      <p>This guide explains the process clearly: what a Mental Health Treatment Plan is, how to get one in Sydney, exactly what Medicare covers, how many sessions you get, how renewals work, and how to use one for telehealth psychology.</p>
+
+      <p>If you want to understand the cost breakdown in more detail, see our <a href="/guides/cost-telehealth-psychologist-australia/">cost of telehealth psychology guide</a>. If you are ready to find a psychologist, our <a href="/directory/">directory</a> lists practitioners who accept Mental Health Treatment Plan referrals and offer telehealth.</p>
+
+      <h2 id="what-is-an-mhtp">What is a Mental Health Treatment Plan?</h2>
+
+      <p>A Mental Health Treatment Plan (often abbreviated to MHTP or "mental health plan") is a structured document prepared by your GP (or another eligible medical practitioner) as part of Medicare's Better Access to Mental Health Care initiative. It does two things:</p>
+      <ol style="padding-left: 1.5rem; line-height: 1.9;">
+        <li>It formally assesses and documents your mental health needs.</li>
+        <li>It refers you to a registered psychologist or other eligible mental health professional, which allows you to claim Medicare rebates on those sessions.</li>
+      </ol>
+
+      <p>Without an MHTP, you can still see a psychologist&mdash;but you pay the full fee with no Medicare rebate. With an MHTP, Medicare covers a fixed portion of each session fee (the "rebate"), and you pay the remainder (the "gap").</p>
+
+      <div class="info-box" style="background: #f0f9ff; border-left-color: #0284c7;">
+        <p><strong>The practical difference:</strong> A 60-minute session with a registered psychologist might cost $200&ndash;$230. With an MHTP, you claim back $98.95 from Medicare, reducing your out-of-pocket to roughly $101&ndash;$131. Without an MHTP, you pay the full $200&ndash;$230. Over 10 sessions, an MHTP saves you approximately $989.</p>
+      </div>
+
+      <h2 id="how-to-get-an-mhtp">How to get a Mental Health Treatment Plan in Sydney</h2>
+
+      <h3>Step 1: Book a longer GP appointment</h3>
+      <p>A standard 10- or 15-minute appointment is not enough time for an MHTP. When booking, explicitly request a "mental health appointment" or "longer appointment for a mental health plan." A 30-minute appointment is typical. Some GP practices have a specific item for this on their booking system; if not, just mention it when booking. You may be charged slightly more for a longer appointment, but the Medicare rebate for the GP appointment itself is higher too.</p>
+
+      <h3>Step 2: Tell your GP what you are experiencing</h3>
+      <p>You do not need a diagnosis, clinical language, or a detailed history of your mental health to ask for an MHTP. Simply describing what you are experiencing is enough. For example:</p>
+      <ul>
+        <li>"I have been struggling with anxiety for several months and I would like help from a psychologist."</li>
+        <li>"I am finding it hard to manage worry and it is affecting my work and sleep."</li>
+        <li>"I have been dealing with social anxiety and I would like to speak to someone."</li>
+      </ul>
+      <p>Your GP will ask questions to understand your situation and conduct a brief mental health assessment. They are not judging you; they are gathering the clinical information they need to document the plan.</p>
+
+      <h3>Step 3: Your GP prepares the plan</h3>
+      <p>The MHTP itself is a structured document (sometimes called a GP Mental Health Treatment Plan or a Better Access plan). It typically includes:</p>
+      <ul>
+        <li>Your presenting mental health concerns and symptoms</li>
+        <li>Your GP's assessment of your mental health needs</li>
+        <li>The proposed treatment, including referral to a psychologist</li>
+        <li>Goals for the treatment</li>
+        <li>How your mental health will be reviewed</li>
+      </ul>
+      <p>You may be given a copy, or it may be sent directly to the psychologist you are referred to. Ask your GP if you would like a copy for your records.</p>
+
+      <h3>Step 4: Book with a psychologist</h3>
+      <p>With your MHTP in hand (or being sent to the psychologist), you book with a registered psychologist who accepts Mental Health Treatment Plan referrals. In most cases you can choose your own psychologist&mdash;your GP does not have to refer you to a specific person. You tell the psychologist's practice you have an MHTP when booking, so they can confirm their eligibility and billing arrangements.</p>
+
+      <h3>Step 5: Attend sessions and claim the rebate</h3>
+      <p>At each session, the psychologist bulk bills Medicare directly (if they bulk bill) or you pay the full fee and claim the Medicare rebate yourself via the Medicare app, myGov, or at a Medicare service centre. The rebate is typically processed within a day or two of claiming.</p>
+
+      <div class="info-box" style="background: #f0fdf4; border-left-color: #16a34a;">
+        <p><strong>Telehealth note:</strong> Your MHTP works for telehealth psychology sessions exactly as it does for in-person sessions. The Medicare rebate is identical. You do not need a separate plan or referral for telehealth. Simply mention to the psychologist that you prefer telehealth sessions when booking.</p>
+      </div>
+
+      <h2 id="how-many-sessions">How many sessions does a Mental Health Treatment Plan cover?</h2>
+
+      <p>Under Medicare's Better Access scheme, an MHTP gives you access to Medicare rebates on <strong>up to 10 individual psychology sessions per calendar year</strong>.</p>
+
+      <p>The 10 sessions are structured as follows:</p>
+
+      <div style="overflow-x: auto; margin: 1.5rem 0;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+          <thead>
+            <tr style="background: #f5f5f5;">
+              <th style="text-align: left; padding: 0.75rem 1rem; border-bottom: 2px solid var(--color-border);">Stage</th>
+              <th style="text-align: left; padding: 0.75rem 1rem; border-bottom: 2px solid var(--color-border);">Sessions</th>
+              <th style="text-align: left; padding: 0.75rem 1rem; border-bottom: 2px solid var(--color-border);">What happens</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--color-border);">Initial referral</td>
+              <td style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--color-border);">Up to 6</td>
+              <td style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--color-border);">Your GP prepares the MHTP and refers you for up to 6 sessions</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--color-border);">Review and continuation</td>
+              <td style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--color-border);">Up to 4 more</td>
+              <td style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--color-border);">After 6 sessions, your psychologist provides a progress review; your GP refers you for up to 4 additional sessions (10 total for the year)</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--color-border);">New calendar year</td>
+              <td style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--color-border);">Reset to 10</td>
+              <td style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--color-border);">Your GP reviews and renews the plan; a new calendar year's 10 sessions become available from 1 January</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p><strong>Important:</strong> The 10 sessions run on a calendar year (1 January to 31 December), not from the date your plan was written. If you get your plan in October and use 4 sessions before the end of the year, you can only access 6 more after 1 January&mdash;the clock resets, not the total. Starting earlier in the year gives you more flexibility.</p>
+
+      <p><strong>Also important:</strong> The 10-session cap is on Medicare-rebateable sessions. You can see a psychologist more than 10 times a year, but sessions beyond 10 are paid at the full fee with no Medicare rebate.</p>
+
+      <h2 id="medicare-rebates">What Medicare rebates apply?</h2>
+
+      <p>With a current MHTP, the Medicare rebates per psychology session (from 1 July 2025) are:</p>
+
+      <div style="overflow-x: auto; margin: 1.5rem 0;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+          <thead>
+            <tr style="background: #f5f5f5;">
+              <th style="text-align: left; padding: 0.75rem 1rem; border-bottom: 2px solid var(--color-border);">Psychologist type</th>
+              <th style="text-align: left; padding: 0.75rem 1rem; border-bottom: 2px solid var(--color-border);">MBS item</th>
+              <th style="text-align: right; padding: 0.75rem 1rem; border-bottom: 2px solid var(--color-border);">Medicare rebate per session</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--color-border);">Registered psychologist</td>
+              <td style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--color-border);">91170 (individual, telehealth) / 80010 (in person)</td>
+              <td style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--color-border); text-align: right;"><strong>$98.95</strong></td>
+            </tr>
+            <tr>
+              <td style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--color-border);">Endorsed clinical psychologist</td>
+              <td style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--color-border);">91167 (individual, telehealth) / 80000 (in person)</td>
+              <td style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--color-border); text-align: right;"><strong>$145.25</strong></td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3" style="padding: 0.5rem 1rem; font-size: 0.8rem; color: var(--color-text-secondary);">Source: Medicare Benefits Schedule, effective 1 July 2025. Verify current rates at <a href="https://www.mbsonline.gov.au" rel="noopener noreferrer" target="_blank">mbsonline.gov.au</a>.</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <p>The rebate does not change based on the length of the session or the specific approach your psychologist uses (CBT, ACT, etc.)&mdash;it is fixed by the MBS item number for your psychologist's registration type and delivery mode. The gap (your out-of-pocket) is simply the psychologist's fee minus the rebate.</p>
+
+      <p>For a detailed breakdown of what typical out-of-pocket costs look like in Sydney, see our <a href="/guides/cost-telehealth-psychologist-australia/">cost guide</a>.</p>
+
+      <h2 id="renewals">How do renewals work?</h2>
+
+      <p>Your MHTP is not a permanent document. To continue accessing Medicare-rebated psychology sessions, it needs to be reviewed and renewed. Here is how that works:</p>
+
+      <h3>The mid-year review (after 6 sessions)</h3>
+      <p>After your first 6 Medicare-rebated sessions, your psychologist will typically write a brief progress note and send it to your GP. Your GP then issues a new referral for up to 4 more sessions (sessions 7&ndash;10 for the year). This review appointment with your GP is usually brief&mdash;10 to 15 minutes&mdash;and may be done via telehealth.</p>
+
+      <h3>The annual plan review (1 January reset)</h3>
+      <p>On 1 January, your year's allocation of 10 sessions resets. To access sessions in the new calendar year, you need your GP to review and renew your MHTP. This is another brief GP appointment. Your psychologist may write a brief summary to assist with this. Some GPs will book an annual review proactively; others will wait for you to make the appointment.</p>
+
+      <p><strong>Practical tip:</strong> If you are mid-treatment and approaching the end of the calendar year, book a renewal appointment with your GP in November or early December so your new referral is ready for January. Gaps in referral paperwork are the most common cause of unexpected out-of-pocket costs in ongoing psychology.</p>
+
+      <h2 id="telehealth">Using your Mental Health Treatment Plan for telehealth psychology</h2>
+
+      <p>Your MHTP works for telehealth psychology sessions in exactly the same way as in-person sessions. The Medicare rebate is the same. You do not need a separate plan, referral, or additional step to access telehealth.</p>
+
+      <p>When booking, simply let the psychologist's practice know you:</p>
+      <ul>
+        <li>Have a Mental Health Treatment Plan from your GP</li>
+        <li>Prefer sessions via telehealth (video call)</li>
+      </ul>
+
+      <p>The practice will confirm their telehealth setup and billing arrangements. Most psychologists who offer telehealth use a secure video platform (such as Coviu, Zoom for Healthcare, or similar).</p>
+
+      <p>If you are looking for a telehealth psychologist in Sydney who specialises in anxiety, our <a href="/directory/">directory</a> lists practitioners who offer telehealth and accept Mental Health Treatment Plan referrals.</p>
+
+      <h2 id="november-2025-changes">The November 2025 changes: what changed?</h2>
+
+      <p>From 1 November 2025, some new requirements came into effect for telehealth GP consultations under Medicare tied to MyMedicare and "usual provider" relationships. These changes affect GP telehealth rebateable services (particularly for longer consultations) rather than psychology sessions themselves. The psychology rebate structure under Better Access&mdash;including the MHTP pathway and the 10-session limit&mdash;has not changed as a result of the November 2025 reforms.</p>
+
+      <p>If your GP uses telehealth for the MHTP preparation appointment, it is worth checking with their practice whether their telehealth service has been affected by the MyMedicare changes. For the psychology sessions themselves, nothing changed on 1 November 2025.</p>
+
+      <h2 id="common-questions">Common questions</h2>
+
+      <h3>Do I need to go to the same GP who wrote my plan?</h3>
+      <p>No, but it is helpful for continuity. Any eligible GP can review and renew your MHTP. If you do see a different GP for the review, bring your plan (or have the original GP send notes) so the reviewing GP has the context they need.</p>
+
+      <h3>What if I run out of sessions mid-year?</h3>
+      <p>Once you have used all 10 Medicare-rebated sessions for the calendar year, you can still continue seeing your psychologist, but you pay the full fee with no Medicare rebate until 1 January. Some people choose to take a short break or reduce frequency at this point. Discuss this with your psychologist well in advance so you can plan together.</p>
+
+      <h3>Can I see more than one psychologist on the same plan?</h3>
+      <p>No. Your MHTP is tied to referral to a specific psychologist (or practice). If you switch psychologists during the year, your new psychologist may need to contact your GP for an updated referral. The total 10-session limit still applies for the calendar year regardless of how many psychologists are seen.</p>
+
+      <h3>Does my MHTP cover other mental health professionals?</h3>
+      <p>Yes. The Better Access scheme covers sessions with other eligible providers including social workers, occupational therapists, and mental health nurses. This guide focuses on psychologists specifically, but your MHTP referral specifies which type of practitioner you are being referred to. If you want to see a psychologist, make sure the plan specifically refers you to a psychologist.</p>
+
+      <h3 id="faq">Frequently asked questions</h3>
+
+      <div style="margin-top: 1rem;">
+        <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How many psychology sessions does a Mental Health Treatment Plan cover?</h3>
+        <p style="margin-top: 0;">Up to 10 individual sessions per calendar year (1 January to 31 December): up to 6 initially, then up to 4 more after a mid-year review. Sessions reset on 1 January, not from the date your plan was written.</p>
+
+        <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What do I say to my GP to get a Mental Health Treatment Plan?</h3>
+        <p style="margin-top: 0;">You do not need clinical language. Tell your GP you are struggling with anxiety (or whatever you are experiencing) and would like to access psychology under a Mental Health Treatment Plan. Book a longer appointment (30 minutes) so there is enough time for the plan to be prepared.</p>
+
+        <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can I use a Mental Health Treatment Plan for telehealth psychology?</h3>
+        <p style="margin-top: 0;">Yes. The Medicare rebate is identical for telehealth and in-person sessions. You do not need a separate plan or referral for telehealth. When booking, tell the practice you have an MHTP and prefer telehealth.</p>
+
+        <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Do I need a new Mental Health Treatment Plan each year?</h3>
+        <p style="margin-top: 0;">Yes. You need your GP to review and renew the plan each calendar year. Book this appointment in November or December to avoid a gap at the start of the new year.</p>
+
+        <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What is the Medicare rebate for psychology with an MHTP?</h3>
+        <p style="margin-top: 0;">$98.95 per session for a registered psychologist (MBS item 91170) or $145.25 for an endorsed clinical psychologist (MBS item 91167), from 1 July 2025. The rebate is the same for telehealth and in-person sessions.</p>
+
+        <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can I get a Mental Health Treatment Plan online or via telehealth GP?</h3>
+        <p style="margin-top: 0;">In many cases yes&mdash;a GP can prepare an MHTP via a telehealth consultation. Check with the GP practice whether their telehealth service covers this, as some telehealth-only GP services have restrictions under Medicare. If in doubt, an in-person appointment with your usual GP is the most straightforward option.</p>
+      </div>
+
+      <div class="cta-block" style="margin-top: 2.5rem;">
+        <h3>Ready to find a telehealth psychologist for anxiety in Sydney?</h3>
+        <p>Browse our directory of registered psychologists who specialise in anxiety, offer telehealth, and accept Mental Health Treatment Plan referrals.</p>
+        <a href="/directory/" class="btn--cta plausible-event-name=MHTPGuide+CTA+Click">
+          Find a psychologist
+        </a>
+        <p class="cta-block__note">Free to use. We are a directory, not a clinical service.</p>
+      </div>
+
+      <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border);">
+        <h3 style="font-size: 0.95rem; margin-bottom: 0.75rem;">Related guides</h3>
+        <ul style="font-size: 0.9rem; line-height: 1.9; padding-left: 1.25rem;">
+          <li><a href="/guides/cost-telehealth-psychologist-australia/">What does a telehealth psychologist cost in Australia?</a></li>
+          <li><a href="/guides/bulk-billing-psychologist-sydney/">Bulk billing for psychologists in Sydney</a></li>
+          <li><a href="/guides/clinical-psychologist-vs-registered-psychologist/">Clinical psychologist vs registered psychologist: what is the difference?</a></li>
+          <li><a href="/guides/how-to-choose-anxiety-psychologist-telehealth/">How to choose a telehealth psychologist for anxiety</a></li>
+          <li><a href="/guides/how-telehealth-psychology-works/">How telehealth psychology works</a></li>
+          <li><a href="/guides/psychologist-waitlist-sydney/">Psychology waitlists in Sydney: what to know</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</Base>
