@@ -1,9 +1,32 @@
 ---
 import Base from '../../layouts/Base.astro';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sydneyanxietypsychology.com.au/" },
+    { "@type": "ListItem", "position": 2, "name": "About", "item": "https://sydneyanxietypsychology.com.au/about/" },
+  ]
+};
+
+const aboutPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About Sydney Anxiety Psychology",
+  "description": "About this directory: what it is, how practitioner listings are sourced and verified, editorial standards, and how to request removal or report inaccuracies.",
+  "url": "https://sydneyanxietypsychology.com.au/about/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Sydney Anxiety Psychology",
+    "url": "https://sydneyanxietypsychology.com.au"
+  }
+};
 ---
 <Base
-  title="About Sydney Anxiety Psychology | Telehealth Psychologist Directory"
-  description="What this directory is, how it works, and why we built it. An independent resource helping people in Sydney find telehealth psychologists for anxiety."
+  title="About Sydney Anxiety Psychology | Directory Curator & Editorial Standards"
+  description="What this directory is, how practitioner listings are sourced and verified, our editorial standards, and how to request removal or correct inaccurate information."
+  schema={[breadcrumbSchema, aboutPageSchema]}
 >
   <div class="main-content">
     <div class="container">
@@ -14,36 +37,73 @@ import Base from '../../layouts/Base.astro';
 
       <h1>About This Directory</h1>
 
+      <!-- Operator byline — placeholder until confirmed -->
+      <div style="display: flex; align-items: flex-start; gap: 1rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-bottom: 2rem;">
+        <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--color-accent-soft); border: 2px solid var(--color-accent-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0;" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <div>
+          <div style="font-weight: 600; font-size: 0.95rem; margin-bottom: 0.2rem;">[Operator name — directory curator &amp; health researcher; to be confirmed]</div>
+          <div style="font-size: 0.875rem; color: var(--color-text-secondary);">Curator of Sydney Anxiety Psychology</div>
+          <div style="font-size: 0.8rem; color: var(--color-text-secondary); margin-top: 0.25rem;">
+            This is an independent directory resource. The operator is not a registered psychologist or health practitioner.
+          </div>
+        </div>
+      </div>
+
       <h2>What is Sydney Anxiety Psychology?</h2>
       <p>Sydney Anxiety Psychology is an independent directory helping people in Sydney find AHPRA-registered telehealth psychologists who specialise in anxiety. It is not a clinic, a practice, or a therapy service. This directory helps people identify suitable practitioners; we do not provide clinical care.</p>
+      <p>All listed practitioners are AHPRA-registered psychologists. The directory makes no clinical recommendations and is not a substitute for professional advice. The role of this directory is to make information easier to find — not to make clinical decisions for you.</p>
 
       <h2>Why we built it</h2>
-      <p>Finding a telehealth psychologist for anxiety is harder than it should be. Most directories are generic, most practice websites obscure their fees, and the Medicare system is genuinely confusing. The combination of these barriers ("who do I contact?", "what will it cost?", "does telehealth even work?") is enough to stop many people from getting support they need and are already looking for.</p>
-      <p>This directory exists to remove those barriers: clear fees, accurate information about telehealth, and a straightforward way to connect with a suitable practitioner.</p>
+      <p>Finding a telehealth psychologist for anxiety is harder than it should be. Most directories are generic, most practice websites obscure their fees, and the Medicare system is genuinely confusing. The combination of these barriers — "who do I contact?", "what will it cost?", "does telehealth even work?" — stops many people from getting support they are already looking for.</p>
+      <p>This directory exists to remove those barriers: clear fees where available, accurate Medicare information, and a direct way to connect with a suitable practitioner.</p>
 
-      <h2>How practitioner profiles work</h2>
-      <p>This directory uses a public-register model. Here is how it works:</p>
+      <h2 id="editorial-standards">Editorial Standards &amp; How Listings Work</h2>
+      <p>This directory uses a public-register model with defined editorial standards for how listings are created, maintained, and removed. We apply these standards consistently to ensure information is accurate and fairly presented.</p>
+
+      <h3>How listings are sourced</h3>
+      <p>Practitioner profiles are built from two primary sources:</p>
+      <ol>
+        <li><strong>The AHPRA Registers of Practitioners</strong> — a publicly accessible government register at <a href="https://www.ahpra.gov.au/Registration/Registers-of-Practitioners.aspx" target="_blank" rel="noopener">ahpra.gov.au</a>. This confirms: registration status, registration type (registered psychologist vs endorsed clinical psychologist), and principal practice suburb.</li>
+        <li><strong>Practitioners' own public-facing websites</strong> — additional profile information (biography, fees, therapy approaches, booking links) is sourced only from the practitioner's own public practice website or a public professional directory (e.g. Halaxy, Psychology Today). The source URL is noted in each profile.</li>
+      </ol>
+      <p>We do not create practitioner profiles from secondary sources, patient reports, or inferred information. We do not add clinical claims, testimonials, or outcome statements that are not present in the practitioner's own public materials.</p>
+
+      <h3>How we verify information</h3>
       <ul>
-        <li><strong>Profiles are built from the AHPRA public register.</strong> The <a href="https://www.ahpra.gov.au/Registration/Registers-of-Practitioners.aspx" target="_blank" rel="noopener">AHPRA Registers of Practitioners</a> is freely and publicly accessible government data. Skeleton profiles contain only: the practitioner's full name, registration type (as confirmed by AHPRA), and principal practice suburb. No contact details, no clinical claims, no fabricated information.</li>
-        <li><strong>Profiles are marked unclaimed until the practitioner engages.</strong> Every pre-built profile is clearly labelled "Unclaimed" and includes a prominent link for the practitioner to claim their profile or request removal. Unclaimed profiles contain no booking links or contact information.</li>
-        <li><strong>Listing is free. There is no referral fee.</strong> We do not charge practitioners to list, and we do not take a commission or referral fee when a patient enquiry is passed to a practitioner. This may change in future; any change would be communicated to listed practitioners with clear notice and consent.</li>
-        <li><strong>Practitioners can request removal at any time.</strong> We process removal requests within 24 hours, no questions asked. See the <a href="/listing-removal/">listing removal page</a> for instructions.</li>
-        <li><strong>All listings are AHPRA-verified.</strong> All practitioners listed hold current AHPRA registration, which you can independently verify at <a href="https://www.ahpra.gov.au/Registration/Registers-of-Practitioners.aspx" target="_blank" rel="noopener">ahpra.gov.au</a>. We use the registration type confirmed by AHPRA (registered psychologist or endorsed clinical psychologist) and do not upgrade or downgrade titles.</li>
+        <li><strong>AHPRA registration:</strong> Each practitioner's AHPRA registration is confirmed at the AHPRA public register before listing. We do not list practitioners who do not appear on the register with current registration.</li>
+        <li><strong>Registration type:</strong> We use only the registration type confirmed by AHPRA. We do not upgrade a practitioner to "endorsed clinical psychologist" based on their own website or marketing materials alone — only what appears on the AHPRA register.</li>
+        <li><strong>SIRA/icare provider status:</strong> Not applicable to this site (see the Workers Comp Psychologist directory for SIRA-specific information).</li>
+        <li><strong>Fees and experience:</strong> Listed only where sourced directly from the practitioner's own public website. Where not available, the field is marked "On enquiry" or left blank.</li>
+        <li><strong>Unclaimed profiles:</strong> Pre-built profiles that have not been verified by the practitioner are marked "Unclaimed." These contain only AHPRA public-register data and information from the practitioner's own public website. No booking form or contact pathway is enabled for unclaimed profiles until the practitioner claims and reviews their listing.</li>
       </ul>
 
-      <h2>How to report inaccurate information</h2>
-      <p>If you notice information on this directory that appears to be inaccurate, including practitioner credentials, registration type, or suburb, please contact us. Accuracy is a core commitment of this directory. Practitioners can also request removal at any time via the <a href="/listing-removal/">listing removal page</a>.</p>
+      <h3>How listings are updated</h3>
+      <p>We periodically review listings to check for practitioner registration changes via the AHPRA register, and update fee or availability information where the practitioner's own public website has changed. Claimed profiles are updated when the practitioner submits updated information. Unclaimed profiles are reviewed against publicly available information when material discrepancies are identified or reported.</p>
+
+      <h3>How listings are removed</h3>
+      <p>Any practitioner may request removal of their profile at any time. We process removal requests within 24 hours, with no questions asked and no requirement to justify the request. See our <a href="/listing-removal/">listing removal page</a> for the process. We do not reinstate removed profiles without a specific request from the practitioner.</p>
+
+      <h3>Reporting inaccurate information</h3>
+      <p>If you notice inaccurate information on this directory — including incorrect registration type, outdated fees, or information you believe was not sourced from a practitioner's own public materials — please contact us via the listing removal page. We will review and correct within 48 hours. AHPRA registration type discrepancies are corrected by reference to the AHPRA register.</p>
 
       <h2>What this directory is not</h2>
       <ul>
-        <li>We are not a clinical service and cannot provide psychological advice</li>
-        <li>We are not a crisis service. For urgent mental health support, contact Lifeline on 13 11 14 or Beyond Blue on 1300 22 4636.</li>
-        <li>We do not guarantee specific outcomes from any practitioners listed</li>
+        <li>We are not a clinical service and do not provide psychological advice</li>
+        <li>We are not a crisis service. For urgent mental health support, contact Lifeline on <strong>13 11 14</strong>, Beyond Blue on <strong>1300 22 4636</strong>, or 13YARN on <strong>13 92 76</strong></li>
+        <li>We do not guarantee specific outcomes from any practitioner listed</li>
         <li>We are not affiliated with Medicare, AHPRA, or any government body</li>
+        <li>We are not a referral service in the Medicare sense — we do not have any role in the GP referral or Mental Health Treatment Plan process</li>
+        <li>Listing in this directory is not an endorsement of any practitioner by the directory</li>
       </ul>
 
       <h2>Privacy</h2>
-      <p>We collect minimal personal information and handle it in accordance with the Australian Privacy Act 1988. Skeleton profiles contain only AHPRA public register data. No personal data beyond what practitioners explicitly submit via the claim form is stored. See our <a href="/privacy/">Privacy Policy</a> for details.</p>
+      <p>We collect minimal personal information and handle it in accordance with the Australian Privacy Act 1988. Profile pages contain only publicly available information. Any information submitted through the contact or claim forms is handled in accordance with our <a href="/privacy/">Privacy Policy</a>.</p>
+
+      <div class="info-box" style="margin-top: 2rem;">
+        <strong>Browse the directory:</strong> <a href="/directory/">View all listed telehealth psychologists for anxiety in Sydney &rarr;</a>
+      </div>
 
     </div>
   </div>
