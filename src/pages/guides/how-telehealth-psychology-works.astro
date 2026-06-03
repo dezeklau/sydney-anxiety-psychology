@@ -23,6 +23,16 @@ const schema = {
   }
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sydneyanxietypsychology.com.au/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://sydneyanxietypsychology.com.au/guides/" },
+    { "@type": "ListItem", "position": 3, "name": "How telehealth psychology works", "item": "https://sydneyanxietypsychology.com.au/guides/how-telehealth-psychology-works/" },
+  ]
+};
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -73,7 +83,7 @@ const faqSchema = {
 <Base
   title="How Telehealth Psychology Works: Sessions, Privacy & AHPRA Registration"
   description="What happens in a telehealth psychology session, the technology, AHPRA credentials, confidentiality rules, and what to expect. No subscriptions or lock-in contracts."
-  schema={[schema, faqSchema]}
+  schema={[breadcrumbSchema, schema, faqSchema]}
 >
   <div class="main-content">
     <div class="container">
@@ -278,7 +288,7 @@ const faqSchema = {
         <a href="/connect/" class="btn--cta plausible-event-name=Guide+HowItWorks+CTA+Click">
           Find a psychologist
         </a>
-        <p class="cta-block__note">Free to use. We connect you. We do not provide clinical services.</p>
+        <p class="cta-block__note">Free to use. We connect you. We do not provide clinical services. Or <a href="/directory/">browse the full directory &rarr;</a></p>
       </div>
 
     </div>

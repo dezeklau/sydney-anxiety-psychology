@@ -53,11 +53,20 @@ const schema = {
     }
   ]
 };
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sydneyanxietypsychology.com.au/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://sydneyanxietypsychology.com.au/guides/" },
+  ]
+};
 ---
 <Base
   title="Telehealth Psychology Guides | Sydney Anxiety Psychology"
   description="Practical guides for finding a telehealth psychologist for anxiety in Sydney: costs, Medicare rebates, evidence, waitlists, and how it all works."
-  schema={schema}
+  schema={[breadcrumbSchema, schema]}
 >
   <div class="main-content">
     <div class="container">

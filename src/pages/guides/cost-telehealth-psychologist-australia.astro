@@ -23,6 +23,16 @@ const schema = {
   }
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sydneyanxietypsychology.com.au/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://sydneyanxietypsychology.com.au/guides/" },
+    { "@type": "ListItem", "position": 3, "name": "Telehealth psychology cost Australia", "item": "https://sydneyanxietypsychology.com.au/guides/cost-telehealth-psychologist-australia/" },
+  ]
+};
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -65,7 +75,7 @@ const faqSchema = {
 <Base
   title="Telehealth Psychology Cost Australia 2025 | Medicare Rebates Explained"
   description="Exactly what a telehealth psychologist costs in Australia, including Medicare rebates, out-of-pocket gaps, and how to get a Mental Health Treatment Plan. Updated July 2025."
-  schema={[schema, faqSchema]}
+  schema={[breadcrumbSchema, schema, faqSchema]}
 >
   <div class="main-content">
     <div class="container">
@@ -202,7 +212,7 @@ const faqSchema = {
         <a href="/connect/" class="btn--cta plausible-event-name=Guide+Cost+CTA+Click">
           Find a psychologist
         </a>
-        <p class="cta-block__note">We connect you. We do not provide clinical services. No obligation to proceed.</p>
+        <p class="cta-block__note">We connect you. We do not provide clinical services. No obligation to proceed. Or <a href="/directory/">browse the full directory &rarr;</a></p>
       </div>
 
     </div>

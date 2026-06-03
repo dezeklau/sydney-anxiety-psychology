@@ -19,6 +19,16 @@ const schema = {
   }
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sydneyanxietypsychology.com.au/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://sydneyanxietypsychology.com.au/guides/" },
+    { "@type": "ListItem", "position": 3, "name": "Does online therapy work for anxiety?", "item": "https://sydneyanxietypsychology.com.au/guides/does-online-therapy-work-for-anxiety/" },
+  ]
+};
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -45,7 +55,7 @@ const faqSchema = {
 <Base
   title="Does Online Therapy Work for Anxiety? Evidence & Realistic Expectations"
   description="What the research shows about telehealth psychology for anxiety, what works, and what to realistically expect. Covers CBT, therapeutic alliance, and session structure."
-  schema={[schema, faqSchema]}
+  schema={[breadcrumbSchema, schema, faqSchema]}
 >
   <div class="main-content">
     <div class="container">
@@ -132,7 +142,7 @@ const faqSchema = {
         <a href="/connect/" class="btn--cta plausible-event-name=Guide+Efficacy+CTA+Click">
           Find a psychologist
         </a>
-        <p class="cta-block__note">Free to use. We connect you. We do not provide clinical services.</p>
+        <p class="cta-block__note">Free to use. We connect you. We do not provide clinical services. Or <a href="/directory/">browse the full directory &rarr;</a></p>
       </div>
 
     </div>
