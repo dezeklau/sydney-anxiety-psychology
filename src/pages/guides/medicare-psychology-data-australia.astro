@@ -1,0 +1,483 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Medicare-Rebated Psychology in Australia: What the Data Shows (2024-25)",
+  "description": "A data-driven analysis of Medicare Better Access utilisation, psychology workforce supply, anxiety disorder prevalence, and access gaps in Australia. All figures sourced from AIHW, ABS, and the Medicare Benefits Schedule.",
+  "datePublished": "2026-06-03",
+  "dateModified": "2026-06-03",
+  "author": {
+    "@type": "Organization",
+    "name": "Sydney Anxiety Psychology"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Sydney Anxiety Psychology",
+    "url": "https://sydneyanxietypsychology.com.au"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://sydneyanxietypsychology.com.au/guides/medicare-psychology-data-australia/"
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sydneyanxietypsychology.com.au/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://sydneyanxietypsychology.com.au/guides/" },
+    { "@type": "ListItem", "position": 3, "name": "Medicare psychology data Australia", "item": "https://sydneyanxietypsychology.com.au/guides/medicare-psychology-data-australia/" }
+  ]
+};
+---
+<Base
+  title="Medicare-Rebated Psychology in Australia: What the Data Shows | Sydney Anxiety Psychology"
+  description="All the public data on Medicare Better Access utilisation, anxiety disorder prevalence, psychology workforce supply, and access gaps in Australia — sourced from AIHW, ABS, and Medicare Benefits Schedule."
+  schema={[articleSchema, breadcrumbSchema]}
+>
+  <div class="main-content">
+    <div class="container" style="max-width: 760px;">
+
+      <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 1.5rem;">
+        <a href="/">Home</a> &rsaquo; <a href="/guides/">Guides</a> &rsaquo; Medicare psychology data: what the numbers show
+      </p>
+
+      <h1>Medicare-Rebated Psychology in Australia: What the Data Shows (2024-25)</h1>
+
+      <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 0.25rem;">
+        Last updated: June 2026
+      </p>
+      <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 2rem;">
+        All figures in this page are drawn from publicly available government datasets: the Australian Institute of Health and Welfare (AIHW) Mental Health Services in Australia data collection, the Australian Bureau of Statistics (ABS) National Study of Mental Health and Wellbeing 2020-21, and the Medicare Benefits Schedule (MBS). Sources are linked inline and listed at the end of the page. No figures are estimated or extrapolated without disclosure.
+      </p>
+
+      <div class="info-box" style="margin-bottom: 2.5rem;">
+        <strong>What this page covers:</strong> How many Australians use Medicare-rebated psychology, how demand has changed since 2015, who is and is not accessing services, how many psychologists there are, what anxiety disorders affect Australians, and what the out-of-pocket costs look like after the rebate. This is a reference resource for people researching the psychology services landscape, not clinical advice.
+      </div>
+
+      <!-- ===================== SECTION 1: ANXIETY PREVALENCE ===================== -->
+      <h2>1. How common are anxiety disorders in Australia?</h2>
+
+      <p>
+        Anxiety disorders are the most prevalent mental health condition in Australia. According to the ABS
+        <a href="https://www.abs.gov.au/statistics/health/mental-and-behavioural-conditions/national-study-mental-health-and-wellbeing/2020-21" target="_blank" rel="noopener">National Study of Mental Health and Wellbeing 2020-21</a> (the most recent nationally representative survey of its kind, published 2023), <strong>3.3 million Australians aged 16-85</strong> met criteria for an anxiety disorder in the 12 months prior to the survey. That is approximately <strong>17% of the adult population</strong> aged 16-85.
+      </p>
+
+      <p>
+        By comparison, affective disorders (including depression) affected 1.5 million people (8%) and substance use disorders affected 650,000 people (3%) in the same period.
+      </p>
+
+      <h3>Anxiety disorders by type (12-month prevalence, 2020-21)</h3>
+
+      <p>The 2020-21 NSMHW used ICD-10 diagnostic criteria and reported the following 12-month prevalence estimates for specific anxiety disorder types:</p>
+
+      <div style="overflow-x: auto; margin-bottom: 1.5rem;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+          <thead>
+            <tr style="background: var(--color-accent); color: white;">
+              <th style="padding: 0.75rem 1rem; text-align: left; font-weight: 600;">Anxiety disorder type</th>
+              <th style="padding: 0.75rem 1rem; text-align: right; font-weight: 600;">Est. people affected (12 months)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #e0e0e0;">
+              <td style="padding: 0.75rem 1rem;">Social phobia (social anxiety disorder)</td>
+              <td style="padding: 0.75rem 1rem; text-align: right;">1,406,100</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e0e0e0; background: #fafafa;">
+              <td style="padding: 0.75rem 1rem;">Post-traumatic stress disorder (PTSD)</td>
+              <td style="padding: 0.75rem 1rem; text-align: right;">1,110,300</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e0e0e0;">
+              <td style="padding: 0.75rem 1rem;">Agoraphobia</td>
+              <td style="padding: 0.75rem 1rem; text-align: right;">951,100</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e0e0e0; background: #fafafa;">
+              <td style="padding: 0.75rem 1rem;">Generalised anxiety disorder (GAD)</td>
+              <td style="padding: 0.75rem 1rem; text-align: right;">757,300</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e0e0e0;">
+              <td style="padding: 0.75rem 1rem;">Panic disorder</td>
+              <td style="padding: 0.75rem 1rem; text-align: right;">720,300</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e0e0e0; background: #fafafa;">
+              <td style="padding: 0.75rem 1rem;">Obsessive-compulsive disorder (OCD)</td>
+              <td style="padding: 0.75rem 1rem; text-align: right;">624,500</td>
+            </tr>
+            <tr style="background: #f0f4ff;">
+              <td style="padding: 0.75rem 1rem; font-weight: 600;">All anxiety disorders (combined)</td>
+              <td style="padding: 0.75rem 1rem; text-align: right; font-weight: 600;">3,332,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="font-size: 0.82rem; color: var(--color-text-secondary);">
+        Source: ABS National Study of Mental Health and Wellbeing 2020-21 (ABS Cat 4329.0, published 2023). Methodology note: where a person met criteria for more than one anxiety disorder, a hierarchy rule was applied; estimates do not simply add up. The "All anxiety disorders" figure reflects unique individuals meeting criteria for at least one.
+      </p>
+
+      <p>
+        Across the full population aged 16-85, 43% (approximately 8.5 million people) are estimated to have experienced a mental disorder at some point in their lifetime, including anxiety.
+      </p>
+
+      <!-- ===================== SECTION 2: SERVICE USE & MEDICARE ===================== -->
+      <h2>2. Who is using Medicare mental health services?</h2>
+
+      <p>
+        The <a href="https://www.aihw.gov.au/mental-health/topic-areas/community-based-services/medicare-mental-health" target="_blank" rel="noopener">AIHW Medicare Mental Health Services data collection</a> (updated to 2024-25) tracks all claims made under the Medicare Better Access initiative and related mental health MBS items. The following figures are drawn from this source.
+      </p>
+
+      <h3>Overall utilisation (2024-25)</h3>
+
+      <ul>
+        <li><strong>13.0 million</strong> Medicare mental health services were provided in 2024-25.</li>
+        <li><strong>2.8 million Australians</strong> (approximately 10% of the population) received at least one service.</li>
+        <li>The average number of services per patient was <strong>5 sessions</strong> across all provider types.</li>
+        <li>Psychologists (clinical and registered combined) delivered <strong>50% of all services</strong> by volume.</li>
+        <li><strong>96% of services</strong> were delivered out-of-hospital (community settings, including telehealth).</li>
+      </ul>
+
+      <h3>Who uses services: age and sex</h3>
+
+      <p>
+        Use of Medicare mental health services is concentrated among young adults, particularly women. In 2024-25:
+      </p>
+
+      <ul>
+        <li>Women aged 18-24 accessed services at a rate of <strong>192 per 1,000 population</strong> in 2024-25 (compared with 154 per 1,000 in 2015-16, a 25% increase over the decade).</li>
+        <li>Female rates are "almost double that for males" across the 18-34 age group.</li>
+        <li>The 18-24 and 25-34 age groups have the highest patient rates of any age group.</li>
+      </ul>
+
+      <h3>Provider breakdown: who are patients seeing?</h3>
+
+      <div style="overflow-x: auto; margin-bottom: 1.5rem;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+          <thead>
+            <tr style="background: var(--color-accent); color: white;">
+              <th style="padding: 0.75rem 1rem; text-align: left; font-weight: 600;">Provider type</th>
+              <th style="padding: 0.75rem 1rem; text-align: right; font-weight: 600;">% of patients who saw this provider (2024-25)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #e0e0e0;">
+              <td style="padding: 0.75rem 1rem;">General Practitioners (GPs)</td>
+              <td style="padding: 0.75rem 1rem; text-align: right;">77%</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e0e0e0; background: #fafafa;">
+              <td style="padding: 0.75rem 1rem;">Other (registered) psychologists</td>
+              <td style="padding: 0.75rem 1rem; text-align: right;">27%</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e0e0e0;">
+              <td style="padding: 0.75rem 1rem;">Psychiatrists</td>
+              <td style="padding: 0.75rem 1rem; text-align: right;">23%</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e0e0e0; background: #fafafa;">
+              <td style="padding: 0.75rem 1rem;">Clinical psychologists</td>
+              <td style="padding: 0.75rem 1rem; text-align: right;">20%</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e0e0e0;">
+              <td style="padding: 0.75rem 1rem;">Other allied health professionals</td>
+              <td style="padding: 0.75rem 1rem; text-align: right;">4%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="font-size: 0.82rem; color: var(--color-text-secondary);">
+        Note: percentages exceed 100% because patients may see more than one provider type in a year. Source: AIHW Medicare Mental Health Services 2024-25.
+      </p>
+
+      <p>
+        Of those in the ABS 2020-21 survey who had experienced a mental health condition with symptoms in the prior 12 months, <strong>21% had consulted a psychologist</strong> and 36% had consulted a GP for mental health reasons. The remaining majority either saw other practitioners or sought no professional support.
+      </p>
+
+      <!-- ===================== SECTION 3: DECADE TREND ===================== -->
+      <h2>3. How has Better Access use changed since 2015?</h2>
+
+      <p>
+        The following table shows how the volume of Medicare mental health services and the rate per 1,000 population have changed over the past decade, based on
+        <a href="https://www.aihw.gov.au/mental-health/topic-areas/community-based-services/medicare-mental-health" target="_blank" rel="noopener">AIHW data</a>:
+      </p>
+
+      <div style="overflow-x: auto; margin-bottom: 1.5rem;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+          <thead>
+            <tr style="background: var(--color-accent); color: white;">
+              <th style="padding: 0.75rem 1rem; text-align: left; font-weight: 600;">Year</th>
+              <th style="padding: 0.75rem 1rem; text-align: right; font-weight: 600;">Total services (millions)</th>
+              <th style="padding: 0.75rem 1rem; text-align: right; font-weight: 600;">Rate per 1,000 population</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #e0e0e0;">
+              <td style="padding: 0.75rem 1rem;">2015-16</td>
+              <td style="padding: 0.75rem 1rem; text-align: right;">10.6</td>
+              <td style="padding: 0.75rem 1rem; text-align: right;">443</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e0e0e0; background: #fafafa;">
+              <td style="padding: 0.75rem 1rem;">2020-21 (pandemic peak)</td>
+              <td style="padding: 0.75rem 1rem; text-align: right;">~14.0</td>
+              <td style="padding: 0.75rem 1rem; text-align: right;">546</td>
+            </tr>
+            <tr style="background: #f0f4ff;">
+              <td style="padding: 0.75rem 1rem; font-weight: 600;">2024-25</td>
+              <td style="padding: 0.75rem 1rem; text-align: right; font-weight: 600;">13.0</td>
+              <td style="padding: 0.75rem 1rem; text-align: right; font-weight: 600;">473</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="font-size: 0.82rem; color: var(--color-text-secondary);">
+        Source: AIHW Medicare Mental Health Services data collection 2024-25. The 2020-21 figure reflects the pandemic period during which Better Access sessions were temporarily expanded from 10 to 20 per year (the additional sessions reverted on 31 December 2022).
+      </p>
+
+      <p>
+        The overall patient rate per 1,000 population increased from 94 patients per 1,000 in 2015-16 to 102 in 2024-25 -- a 9% increase over the decade. Demand peaked during 2020-21 with the temporary session limit expansion during the pandemic period.
+      </p>
+
+      <!-- ===================== SECTION 4: ACCESS GAPS ===================== -->
+      <h2>4. Who is not accessing Medicare psychology?</h2>
+
+      <p>
+        Despite 2.8 million Australians accessing Medicare mental health services in 2024-25, the AIHW data highlights significant gaps in who reaches services:
+      </p>
+
+      <h3>Geographic gap</h3>
+
+      <p>
+        Australians in remote and very remote areas access Medicare mental health services at a rate approximately <strong>70-80% lower</strong> than people in major cities. Inner regional areas access at about 10% lower rates; outer regional areas at about 40% lower. This gap has persisted across the full decade of AIHW data.
+      </p>
+
+      <p>
+        Telehealth psychology -- which allows anyone with internet access to see a Sydney-based psychologist from any location in Australia -- has partially addressed this gap, but AIHW does not yet publish a specific telehealth vs in-person utilisation split for psychology items.
+      </p>
+
+      <h3>Socioeconomic gap</h3>
+
+      <p>
+        Australians in the most disadvantaged socioeconomic quintile (SEIFA) access Medicare mental health services at patient rates approximately <strong>40% lower</strong> than those in the least disadvantaged quintile. In 2015-16, this gap was around 20% lower -- the gap has widened over the decade.
+      </p>
+
+      <p>
+        The rate differential for service volume is even larger: the most disadvantaged quintile receives approximately 60% fewer sessions per capita than the least disadvantaged quintile.
+      </p>
+
+      <h3>State variation</h3>
+
+      <p>
+        Victoria has recorded the highest patient rates per 1,000 population consistently since 2015-16; the Northern Territory the lowest. NSW sits in the middle of the distribution. The AIHW data does not publish a specific NSW patient rate figure in its summary tables, but does publish per capita MBS psychology spending by state: NSW records <strong>$295 per capita</strong> in specialised mental health spending (2023-24), the lowest of all states and territories (national average is higher; Northern Territory is highest at $423).
+      </p>
+
+      <!-- ===================== SECTION 5: WORKFORCE ===================== -->
+      <h2>5. How many psychologists are there in Australia and NSW?</h2>
+
+      <p>
+        The <a href="https://www.aihw.gov.au/mental-health/topic-areas/facilities-resources/workforce" target="_blank" rel="noopener">AIHW Mental Health Workforce data</a> (2024, from the National Health Workforce Dataset) reports:
+      </p>
+
+      <ul>
+        <li><strong>36,900 psychologists</strong> employed nationally in 2024.</li>
+        <li>The national rate is approximately <strong>136 FTE per 100,000 population</strong>.</li>
+        <li><strong>NSW rate: 116 FTE per 100,000 population</strong> (below the national average).</li>
+        <li>The ACT has the highest rate at 171 per 100,000; the Northern Territory the lowest at 70.</li>
+      </ul>
+
+      <p>
+        Psychologist workforce numbers have grown substantially since 2015:
+      </p>
+
+      <ul>
+        <li>Headcount rate increased by 32% between 2015 and 2024.</li>
+        <li>FTE rate increased by 28% over the same period.</li>
+        <li>This is the largest growth of any specialist mental health profession, exceeding psychiatry, mental health nursing, and social work in proportional terms.</li>
+      </ul>
+
+      <h3>Where psychologists work (2024)</h3>
+
+      <div style="overflow-x: auto; margin-bottom: 1.5rem;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+          <thead>
+            <tr style="background: var(--color-accent); color: white;">
+              <th style="padding: 0.75rem 1rem; text-align: left; font-weight: 600;">Work setting</th>
+              <th style="padding: 0.75rem 1rem; text-align: right; font-weight: 600;">Share of total FTE</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #e0e0e0;">
+              <td style="padding: 0.75rem 1rem;">Private practice</td>
+              <td style="padding: 0.75rem 1rem; text-align: right;">50.1%</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e0e0e0; background: #fafafa;">
+              <td style="padding: 0.75rem 1rem;">Educational settings</td>
+              <td style="padding: 0.75rem 1rem; text-align: right;">15.5%</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e0e0e0;">
+              <td style="padding: 0.75rem 1rem;">Community mental health services</td>
+              <td style="padding: 0.75rem 1rem; text-align: right;">7.2%</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e0e0e0; background: #fafafa;">
+              <td style="padding: 0.75rem 1rem;">Hospital settings</td>
+              <td style="padding: 0.75rem 1rem; text-align: right;">6.7%</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.75rem 1rem;">Other / multiple</td>
+              <td style="padding: 0.75rem 1rem; text-align: right;">20.5%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="font-size: 0.82rem; color: var(--color-text-secondary);">
+        Source: AIHW Mental Health Workforce 2024, National Health Workforce Dataset.
+      </p>
+
+      <p>
+        The majority of psychologists (50.1% of FTE) work in private practice. Most Medicare-rebated psychology sessions occur in private practice settings, including telehealth.
+      </p>
+
+      <p>
+        The proportion of psychologists concentrated in major cities is high: the rate in major cities (approximately 130 per 100,000) is roughly 4.6 times the rate in very remote areas (28 per 100,000), which helps explain the geographic access gap described above.
+      </p>
+
+      <!-- ===================== SECTION 6: EXPENDITURE ===================== -->
+      <h2>6. What does Australia spend on mental health?</h2>
+
+      <p>
+        Australia spent an estimated <strong>$14.5 billion</strong> on mental health-related services in 2023-24, representing <strong>$537 per capita</strong>. This has increased from $12.7 billion ($466 per capita) in 2019-20.
+        (<a href="https://www.aihw.gov.au/mental-health/topic-areas/facilities-resources/expenditure" target="_blank" rel="noopener">AIHW Mental Health Expenditure, 2023-24</a>)
+      </p>
+
+      <p>Funding breakdown:</p>
+      <ul>
+        <li><strong>62%</strong> from state and territory governments</li>
+        <li><strong>33%</strong> from the Australian Government (including MBS, PBS, and Department of Health programs)</li>
+        <li><strong>5%</strong> from private health insurance and other insurers</li>
+      </ul>
+
+      <h3>Medicare spending on psychology</h3>
+
+      <p>
+        In 2024-25, <strong>$1.6 billion in total benefits</strong> were paid for Medicare-subsidised mental health services. Psychologists (clinical and registered combined) accounted for approximately <strong>48% of this spending</strong>, meaning roughly <strong>$768 million</strong> in Medicare benefits were paid for psychological services in 2024-25.
+      </p>
+
+      <p>
+        The MBS psychology telehealth items -- the relevant items for people seeking a video appointment with a psychologist in Sydney -- are:
+      </p>
+
+      <div style="overflow-x: auto; margin-bottom: 1.5rem;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+          <thead>
+            <tr style="background: var(--color-accent); color: white;">
+              <th style="padding: 0.75rem 1rem; text-align: left; font-weight: 600;">MBS item</th>
+              <th style="padding: 0.75rem 1rem; text-align: left; font-weight: 600;">Provider type</th>
+              <th style="padding: 0.75rem 1rem; text-align: left; font-weight: 600;">Mode</th>
+              <th style="padding: 0.75rem 1rem; text-align: right; font-weight: 600;">Schedule fee</th>
+              <th style="padding: 0.75rem 1rem; text-align: right; font-weight: 600;">Medicare rebate (85%)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #e0e0e0;">
+              <td style="padding: 0.75rem 1rem;">91167</td>
+              <td style="padding: 0.75rem 1rem;">Clinical psychologist (endorsed)</td>
+              <td style="padding: 0.75rem 1rem;">Telehealth (video)</td>
+              <td style="padding: 0.75rem 1rem; text-align: right;">$170.85</td>
+              <td style="padding: 0.75rem 1rem; text-align: right;"><strong>$145.25</strong></td>
+            </tr>
+            <tr style="background: #fafafa;">
+              <td style="padding: 0.75rem 1rem;">91170</td>
+              <td style="padding: 0.75rem 1rem;">Registered psychologist</td>
+              <td style="padding: 0.75rem 1rem;">Telehealth (video)</td>
+              <td style="padding: 0.75rem 1rem; text-align: right;">$116.40</td>
+              <td style="padding: 0.75rem 1rem; text-align: right;"><strong>$98.95</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="font-size: 0.82rem; color: var(--color-text-secondary);">
+        Source: Medicare Benefits Schedule Online. Rebates effective from 1 July 2025. Verified via direct MBS item lookup at
+        <a href="https://www9.health.gov.au/mbs/fullDisplay.cfm?type=item&q=91170&qt=ItemID" target="_blank" rel="noopener">MBS item 91170</a> and
+        <a href="https://www9.health.gov.au/mbs/fullDisplay.cfm?type=item&q=91167&qt=ItemID" target="_blank" rel="noopener">MBS item 91167</a>.
+        To access these rebates, you need a valid Mental Health Treatment Plan (MHTP) from your GP. Up to 10 individual sessions per calendar year are rebatable under Better Access.
+      </p>
+
+      <!-- ===================== SECTION 7: SYNTHESIS ===================== -->
+      <h2>7. What the data tells us: supply, demand, and access</h2>
+
+      <p>
+        Taken together, the figures above point to a consistent pattern: demand for psychology services has grown substantially over the past decade, the workforce has also grown but remains unevenly distributed, and a meaningful proportion of Australians who experience anxiety disorders do not access professional support.
+      </p>
+
+      <h3>The demand-supply picture</h3>
+
+      <p>
+        In 2024-25, approximately 10% of Australians used Medicare mental health services. The 2020-21 NSMHW found that 17% of adults aged 16-85 met criteria for an anxiety disorder in the prior 12 months. These figures cannot be directly compared (the AIHW service data captures all conditions, not just anxiety; some people use private services without Medicare), but the gap between prevalence (17% for anxiety alone) and service use (10% of the population accessing any Medicare mental health service) indicates that a substantial share of people with anxiety disorders do not currently access rebated psychology.
+      </p>
+
+      <p>
+        The ABS 2020-21 NSMHW found that of those who had experienced mental disorder symptoms, only <strong>21% consulted a psychologist</strong> and 89% of those who did not access any services reported "no perceived need." This does not mean unmet need is absent; it reflects how people assess their own circumstances at the time of survey.
+      </p>
+
+      <h3>Where telehealth psychology fits</h3>
+
+      <p>
+        Telehealth psychology -- video sessions with a registered or clinical psychologist -- became fully rebatable under Medicare during 2020 (during the pandemic) and the rebates have remained permanent. Telehealth sessions attract the same Medicare rebate as in-person sessions (items 91167 and 91170 for video; see table above). For people in Sydney who have difficulty reaching a practice in person due to work commitments, distance, or anxiety itself, telehealth offers access to the same rebate and the same evidence-based treatment.
+      </p>
+
+      <p>
+        The AIHW notes that 96% of Medicare mental health services are delivered out-of-hospital. This includes both telehealth and in-person private practice settings. A specific telehealth breakdown by volume is not published in the current AIHW summary tables.
+      </p>
+
+      <!-- ===================== SECTION 8: WHAT THIS MEANS ===================== -->
+      <h2>8. What this means for people in Sydney seeking a psychologist</h2>
+
+      <p>
+        If you are in Sydney and considering a psychologist for anxiety, the data context is this:
+      </p>
+
+      <ul>
+        <li>Anxiety disorders are common (17% 12-month prevalence nationally), with social anxiety and PTSD being the most prevalent subtypes.</li>
+        <li>The Medicare rebate for a telehealth session is $98.95 (registered psychologist) or $145.25 (clinical psychologist), from 1 July 2025, with a GP Mental Health Treatment Plan.</li>
+        <li>The majority of private psychologists charge above the rebate rate, meaning there is typically an out-of-pocket gap. The average Sydney private practice fee is $180-$280 per session, making the gap approximately $35-$180 per session depending on practitioner type and fee level.</li>
+        <li>NSW records lower-than-average per capita specialised mental health spending ($295 vs the national range up to $423), which reflects how the system is structured in this state -- more reliance on Medicare-funded private practice and less on publicly-funded specialist services.</li>
+        <li>Telehealth removes the geographic constraint. A person in any Sydney suburb can access any Medicare-registered psychologist in Australia via video.</li>
+      </ul>
+
+      <p>
+        If you are looking for a telehealth psychologist in Sydney who specialises in anxiety, our <a href="/directory/">directory</a> lists verified practitioners with information on specialties, fees, and session format.
+      </p>
+
+      <!-- ===================== RELATED GUIDES ===================== -->
+      <h2>Related guides</h2>
+      <ul>
+        <li><a href="/guides/cost-telehealth-psychologist-australia/">What does a telehealth psychologist cost in Australia?</a> -- fee ranges, gap calculations, and what affects cost.</li>
+        <li><a href="/guides/bulk-billing-psychologist-sydney/">Bulk billing for psychologists in Sydney</a> -- when and where bulk billing exists, and lower-cost options.</li>
+        <li><a href="/guides/mental-health-care-plan-sydney/">Mental Health Care Plan Sydney</a> -- how to get a MHTP from your GP and what it covers.</li>
+        <li><a href="/guides/does-online-therapy-work-for-anxiety/">Does online therapy work for anxiety?</a> -- what the clinical evidence says about telehealth psychology effectiveness.</li>
+      </ul>
+
+      <!-- ===================== SOURCES ===================== -->
+      <h2>Sources</h2>
+      <ol style="font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.7;">
+        <li>Australian Bureau of Statistics (ABS). <em>National Study of Mental Health and Wellbeing 2020-21</em>. Published 2023. ABS Cat 4329.0. <a href="https://www.abs.gov.au/statistics/health/mental-and-behavioural-conditions/national-study-mental-health-and-wellbeing/2020-21" target="_blank" rel="noopener">abs.gov.au</a></li>
+        <li>Australian Institute of Health and Welfare (AIHW). <em>Medicare mental health services</em>. Mental Health Services in Australia data collection. Updated 2025. <a href="https://www.aihw.gov.au/mental-health/topic-areas/community-based-services/medicare-mental-health" target="_blank" rel="noopener">aihw.gov.au</a></li>
+        <li>Australian Institute of Health and Welfare (AIHW). <em>Expenditure on mental health services</em>. Updated 2025. <a href="https://www.aihw.gov.au/mental-health/topic-areas/facilities-resources/expenditure" target="_blank" rel="noopener">aihw.gov.au</a></li>
+        <li>Australian Institute of Health and Welfare (AIHW). <em>Mental health workforce</em>. National Health Workforce Dataset. Updated 2024. <a href="https://www.aihw.gov.au/mental-health/topic-areas/facilities-resources/workforce" target="_blank" rel="noopener">aihw.gov.au</a></li>
+        <li>Department of Health (Australia). <em>Medicare Benefits Schedule -- MBS item 91170</em>. Effective 1 July 2025. <a href="https://www9.health.gov.au/mbs/fullDisplay.cfm?type=item&q=91170&qt=ItemID" target="_blank" rel="noopener">mbsonline.gov.au</a></li>
+        <li>Department of Health (Australia). <em>Medicare Benefits Schedule -- MBS item 91167</em>. Effective 1 July 2025. <a href="https://www9.health.gov.au/mbs/fullDisplay.cfm?type=item&q=91167&qt=ItemID" target="_blank" rel="noopener">mbsonline.gov.au</a></li>
+        <li>Australian Institute of Health and Welfare (AIHW). <em>Australia's mental health system</em>. Overview. <a href="https://www.aihw.gov.au/mental-health/overview/australias-mental-health-system" target="_blank" rel="noopener">aihw.gov.au</a></li>
+        <li>Australian Institute of Health and Welfare (AIHW). <em>Community mental health care services</em>. Updated 2024. <a href="https://www.aihw.gov.au/mental-health/topic-areas/community-based-services/community-services" target="_blank" rel="noopener">aihw.gov.au</a></li>
+      </ol>
+
+      <p style="font-size: 0.82rem; color: var(--color-text-secondary); margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #e0e0e0;">
+        <strong>About this page:</strong> This is a data reference resource produced by Sydney Anxiety Psychology, a directory of telehealth psychologists for anxiety in Sydney. It is not clinical advice. If you are in distress, please contact Lifeline on <strong>13 11 14</strong> or Beyond Blue on <strong>1300 22 4636</strong>. This directory is not a crisis service. All figures in this page were sourced directly from the publicly available government datasets linked above and verified at the time of writing (June 2026). If you notice an error or an outdated figure, please <a href="/contact/">contact us</a>.
+      </p>
+
+    </div>
+  </div>
+</Base>
