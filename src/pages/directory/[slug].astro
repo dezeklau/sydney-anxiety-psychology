@@ -24,7 +24,9 @@ const medicareRebate =
     ? "$145.25/session (clinical psychologist, from 1 Jul 2025)"
     : "$98.95/session (registered psychologist, from 1 Jul 2025)";
 
-const pageTitle = `${p.name}, ${registrationLabel} — Telehealth for Anxiety in ${p.suburb} | Sydney Anxiety Psychology`;
+// Short title: target ~60 chars visible in SERPs. Format: "[Name] — Telehealth Anxiety Psychologist | Sydney"
+const titleType = p.registrationType === "clinical_psychologist" ? "Clinical Psychologist" : "Psychologist";
+const pageTitle = `${p.name} — Telehealth Anxiety ${titleType} | Sydney`;
 const pageDescription = p.bio
   ? `${p.name} is a ${registrationLabel.toLowerCase()} offering telehealth psychology for anxiety in Sydney. ${p.bio.slice(0, 120)}...`
   : `${p.name} is a ${registrationLabel.toLowerCase()} based in ${p.suburb}, listed on the Sydney Anxiety Psychology telehealth directory.`;
