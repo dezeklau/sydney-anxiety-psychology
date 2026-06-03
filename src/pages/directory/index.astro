@@ -1,8 +1,34 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { practitioners, allSuburbs, allSpecialties } from '../../data/practitioners';
+import { practitioners, allSpecialties } from '../../data/practitioners';
 
-// Group practitioners by suburb for the browsable layout
+// Group practitioners by primary specialty for the specialty-first layout
+const anxietyFirst = practitioners.filter(p => p.specialties.some(s => s.toLowerCase().includes('anxiety')));
+
+// Build specialty groups (top specialties only, deduplicated)
+const topSpecialties = [
+  "Anxiety",
+  "Generalised anxiety",
+  "Social anxiety",
+  "Panic attacks",
+  "OCD",
+  "Health anxiety",
+  "Trauma",
+  "PTSD",
+  "Depression",
+  "Burnout",
+  "Women's mental health",
+];
+
+const bySpecialty: Record<string, typeof practitioners> = {};
+for (const spec of topSpecialties) {
+  const matching = practitioners.filter(p =>
+    p.specialties.some(s => s.toLowerCase().includes(spec.toLowerCase()))
+  );
+  if (matching.length > 0) bySpecialty[spec] = matching;
+}
+
+// Suburb groups — kept for SEO; demoted to secondary section
 const bySuburb: Record<string, typeof practitioners> = {};
 for (const p of practitioners) {
   if (!bySuburb[p.suburb]) bySuburb[p.suburb] = [];
@@ -35,8 +61,8 @@ const breadcrumbSchema = {
 };
 ---
 <Base
-  title="Telehealth Psychologist Directory for Anxiety in Sydney | Browse by Suburb"
-  description="Browse AHPRA-registered psychologists in Sydney offering telehealth for anxiety. Organised by suburb. Profiles sourced from the AHPRA public register."
+  title="Telehealth Psychologist Directory for Anxiety in Sydney | Find by Specialty"
+  description="Browse AHPRA-registered psychologists in Sydney offering telehealth for anxiety. Filter by specialty: generalised anxiety, social anxiety, panic, OCD, health anxiety, and more."
   schema={[itemListSchema, breadcrumbSchema]}
 >
   <div class="main-content">
@@ -49,98 +75,164 @@ const breadcrumbSchema = {
 
       <!-- Page header -->
       <div style="margin-bottom: 2.5rem;">
-        <h1 style="margin-bottom: 0.75rem;">Telehealth Psychologist Directory for Anxiety in Sydney</h1>
-        <p style="font-size: 1.05rem; max-width: 680px;">
-          Browse AHPRA-registered psychologists in Sydney who work with anxiety and offer telehealth.
-          Profiles are sourced from the AHPRA public register and are browsable by suburb and specialty area.
+        <h1 style="margin-bottom: 0.75rem;">Telehealth Psychologist Directory — Anxiety Specialists in Sydney</h1>
+        <p style="font-size: 1.05rem; max-width: 680px; color: var(--color-text-secondary);">
+          {practitioners.length} AHPRA-registered psychologists in Sydney who work with anxiety and offer telehealth.
+          All sessions delivered online — suburb is less relevant than the type of anxiety you want help with.
+          Browse by specialty below, or scroll down for suburb-level pages.
         </p>
       </div>
 
       <!-- Quick stats -->
-      <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.5rem;">
+      <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 3rem;">
         <div class="stat-card">
           <span class="stat-card__number">{practitioners.length}</span>
           <span class="stat-card__label">Practitioners listed</span>
         </div>
         <div class="stat-card">
-          <span class="stat-card__number">{allSuburbs.length}</span>
-          <span class="stat-card__label">Sydney suburbs</span>
+          <span class="stat-card__number">{practitioners.filter(p => p.pricing).length}</span>
+          <span class="stat-card__label">With public pricing</span>
         </div>
         <div class="stat-card">
-          <span class="stat-card__number">{allSpecialties.length}</span>
-          <span class="stat-card__label">Specialty areas</span>
+          <span class="stat-card__number">{practitioners.filter(p => p.bookingUrl).length}</span>
+          <span class="stat-card__label">With direct booking</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card__number">{practitioners.filter(p => p.yearsExperience).length}</span>
+          <span class="stat-card__label">With stated experience</span>
         </div>
       </div>
 
-      <!-- Browse by suburb -->
-      <h2>Browse by suburb</h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
-        {sortedSuburbs.map(suburb => (
-          <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.35rem; box-shadow: var(--shadow-sm);">
-            <h3 style="margin-top: 0; font-size: 1.05rem; margin-bottom: 0.85rem;">{suburb}</h3>
-            <ul style="list-style: none; padding: 0; margin: 0;">
-              {bySuburb[suburb].map(p => (
-                <li style="margin-bottom: 0.7rem; padding-bottom: 0.7rem; border-bottom: 1px solid var(--color-border);">
-                  <a href={`/directory/${p.slug}/`} style="font-weight: 600; text-decoration: none; color: var(--color-accent);">{p.name}</a>
-                  <span style="display: block; font-size: 0.82rem; color: var(--color-text-secondary); margin-top: 0.15rem;">
-                    {p.registrationType === "clinical_psychologist" ? "Clinical psychologist" : "Registered psychologist"}
-                    {p.unclaimed && <span style="margin-left: 0.4rem; font-size: 0.74rem; background: #fef3c7; color: #92400e; border: 1px solid #f59e0b; padding: 0.1rem 0.45rem; border-radius: 100px;">Unclaimed</span>}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
+      <!-- PRIMARY SECTION: Browse by specialty / concern -->
+      <div style="margin-bottom: 3.5rem;">
+        <h2 style="margin-bottom: 0.5rem;">Browse by presenting concern</h2>
+        <p style="color: var(--color-text-secondary); margin-bottom: 1.75rem; max-width: 640px; font-size: 0.95rem;">
+          Since all practitioners offer telehealth, the most useful way to find a match is by the type of anxiety you are experiencing. Each card below lists psychologists who have publicly named that specialty.
+        </p>
 
-      <!-- Suburb finder links -->
-      <div style="margin: 2rem 0 2.5rem;">
-        <h2 style="margin-bottom: 0.75rem;">Find by suburb</h2>
-        <p style="color: var(--color-text-secondary); margin-bottom: 1.25rem; max-width: 600px;">Looking for a psychologist in a specific area of Sydney? Each suburb page lists practitioners based there plus telehealth options available across all of Sydney.</p>
-        <div style="display: flex; flex-wrap: wrap; gap: 0.65rem;">
-          <a href="/find/anxiety-psychologist-bondi-junction-sydney/" style="display: inline-block; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 0.5rem 1rem; font-size: 0.9rem; text-decoration: none; color: var(--color-text);">Bondi Junction</a>
-          <a href="/find/anxiety-psychologist-north-sydney-sydney/" style="display: inline-block; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 0.5rem 1rem; font-size: 0.9rem; text-decoration: none; color: var(--color-text);">North Sydney</a>
-          <a href="/find/anxiety-psychologist-surry-hills-sydney/" style="display: inline-block; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 0.5rem 1rem; font-size: 0.9rem; text-decoration: none; color: var(--color-text);">Surry Hills</a>
-          <a href="/find/anxiety-psychologist-edgecliff-sydney/" style="display: inline-block; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 0.5rem 1rem; font-size: 0.9rem; text-decoration: none; color: var(--color-text);">Edgecliff / Eastern Suburbs</a>
-          <a href="/find/anxiety-psychologist-marrickville-sydney/" style="display: inline-block; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 0.5rem 1rem; font-size: 0.9rem; text-decoration: none; color: var(--color-text);">Marrickville / Inner West</a>
-          <a href="/find/anxiety-psychologist-strathfield-sydney/" style="display: inline-block; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 0.5rem 1rem; font-size: 0.9rem; text-decoration: none; color: var(--color-text);">Strathfield</a>
-          <a href="/find/anxiety-psychologist-chippendale-sydney/" style="display: inline-block; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 0.5rem 1rem; font-size: 0.9rem; text-decoration: none; color: var(--color-text);">Chippendale / CBD</a>
-          <a href="/find/anxiety-psychologist-zetland-sydney/" style="display: inline-block; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 0.5rem 1rem; font-size: 0.9rem; text-decoration: none; color: var(--color-text);">Zetland / Green Square</a>
-          <a href="/find/anxiety-psychologist-beverly-hills-sydney/" style="display: inline-block; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 0.5rem 1rem; font-size: 0.9rem; text-decoration: none; color: var(--color-text);">Beverly Hills / South Sydney</a>
-        </div>
-      </div>
-
-      <!-- Browse by specialty -->
-      <h2>Browse by specialty area</h2>
-      <div style="display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2rem;">
-        {allSpecialties.map(spec => {
-          const count = practitioners.filter(p => p.specialties.includes(spec)).length;
-          return (
-            <span style="display: inline-flex; align-items: center; gap: 0.4rem; background: var(--color-accent-soft); border: 1px solid var(--color-accent-light); color: var(--color-accent-hover); padding: 0.35rem 0.85rem; border-radius: 100px; font-size: 0.88rem; font-weight: 500;">
-              {spec}
-              <span style="font-size: 0.78rem; opacity: 0.75;">({count})</span>
-            </span>
-          );
-        })}
-      </div>
-
-      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 3rem;">
-        {allSpecialties.map(spec => {
-          const matching = practitioners.filter(p => p.specialties.includes(spec));
-          return (
-            <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow-sm);">
-              <h3 style="margin-top: 0; font-size: 1rem; margin-bottom: 0.75rem; color: var(--color-accent-hover);">{spec}</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5rem;">
+          {Object.entries(bySpecialty).map(([spec, psych]) => (
+            <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow-sm);">
+              <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 1rem; gap: 0.5rem;">
+                <h3 style="margin: 0; font-size: 1.05rem;">{spec}</h3>
+                <span style="flex-shrink: 0; font-size: 0.78rem; color: var(--color-text-secondary); background: var(--color-accent-soft); border: 1px solid var(--color-accent-light); padding: 0.15rem 0.6rem; border-radius: 100px;">
+                  {psych.length} {psych.length === 1 ? 'practitioner' : 'practitioners'}
+                </span>
+              </div>
               <ul style="list-style: none; padding: 0; margin: 0;">
-                {matching.map(p => (
-                  <li style="margin-bottom: 0.45rem;">
-                    <a href={`/directory/${p.slug}/`} style="font-size: 0.93rem;">{p.name}</a>
-                    <span style="font-size: 0.8rem; color: var(--color-text-secondary);"> � {p.suburb}</span>
+                {psych.slice(0, 5).map(p => (
+                  <li style="display: flex; align-items: baseline; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.6rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--color-border);">
+                    <a href={`/directory/${p.slug}/`} style="font-weight: 600; font-size: 0.9rem; text-decoration: none; color: var(--color-accent);">
+                      {p.name}
+                    </a>
+                    <span style="flex-shrink: 0; font-size: 0.78rem; color: var(--color-text-secondary);">
+                      {p.pricing ? p.pricing.split('/')[0].trim() : 'Fees on enquiry'}
+                    </span>
+                  </li>
+                ))}
+                {psych.length > 5 && (
+                  <li style="font-size: 0.82rem; color: var(--color-text-secondary); padding-top: 0.3rem;">
+                    +{psych.length - 5} more — <a href={`/directory/`} style="color: var(--color-accent);">see all</a>
+                  </li>
+                )}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- ALL PRACTITIONERS: at-a-glance comparison table -->
+      <div style="margin-bottom: 3.5rem;">
+        <h2 style="margin-bottom: 0.5rem;">All practitioners — at a glance</h2>
+        <p style="color: var(--color-text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem; max-width: 640px;">
+          Compare experience, pricing, and specialties side by side. Click any name for the full profile with bio and booking link.
+        </p>
+
+        <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem; min-width: 600px;">
+            <thead>
+              <tr style="border-bottom: 2px solid var(--color-border); text-align: left;">
+                <th style="padding: 0.75rem 1rem; font-weight: 700; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-accent-hover); white-space: nowrap;">Practitioner</th>
+                <th style="padding: 0.75rem 1rem; font-weight: 700; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-accent-hover); white-space: nowrap;">Experience</th>
+                <th style="padding: 0.75rem 1rem; font-weight: 700; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-accent-hover); white-space: nowrap;">Session fee</th>
+                <th style="padding: 0.75rem 1rem; font-weight: 700; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-accent-hover);">Key specialties</th>
+              </tr>
+            </thead>
+            <tbody>
+              {practitioners.map((p, i) => (
+                <tr style={`border-bottom: 1px solid var(--color-border); background: ${i % 2 === 0 ? 'transparent' : 'var(--color-surface)'};`}>
+                  <td style="padding: 0.85rem 1rem; vertical-align: top;">
+                    <a href={`/directory/${p.slug}/`} style="font-weight: 600; color: var(--color-accent); text-decoration: none; display: block; margin-bottom: 0.2rem;">{p.name}</a>
+                    <span style="font-size: 0.78rem; color: var(--color-text-secondary);">
+                      {p.registrationType === "clinical_psychologist" ? "Clinical psychologist" : "Registered psychologist"}
+                    </span>
+                  </td>
+                  <td style="padding: 0.85rem 1rem; vertical-align: top; white-space: nowrap; color: var(--color-text-secondary);">
+                    {p.yearsExperience ? `${p.yearsExperience}+ yrs` : '—'}
+                  </td>
+                  <td style="padding: 0.85rem 1rem; vertical-align: top; white-space: nowrap;">
+                    {p.pricing
+                      ? <span style="color: var(--color-text); font-weight: 500;">{p.pricing.split('/')[0].trim()}</span>
+                      : <span style="color: var(--color-text-secondary); font-size: 0.85rem;">On enquiry</span>
+                    }
+                  </td>
+                  <td style="padding: 0.85rem 1rem; vertical-align: top;">
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.3rem;">
+                      {p.specialties.slice(0, 3).map(s => (
+                        <span style="display: inline-block; font-size: 0.75rem; background: var(--color-accent-soft); color: var(--color-accent-hover); border: 1px solid var(--color-accent-light); padding: 0.1rem 0.5rem; border-radius: 100px;">{s}</span>
+                      ))}
+                      {p.specialties.length > 3 && (
+                        <span style="font-size: 0.75rem; color: var(--color-text-secondary);">+{p.specialties.length - 3}</span>
+                      )}
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <p style="font-size: 0.78rem; color: var(--color-text-secondary); margin-top: 0.75rem;">
+          Profiles sourced from practitioners' own public websites. Unverified by the directory — see each profile for source attribution.
+          Medicare rebate: up to $98.95/session (registered psychologist) with a valid Mental Health Care Plan from your GP.
+        </p>
+      </div>
+
+      <!-- SECONDARY: Browse by suburb (SEO value; demoted from primary) -->
+      <div style="margin-bottom: 3rem;">
+        <h2 style="margin-bottom: 0.5rem;">Browse by suburb</h2>
+        <p style="color: var(--color-text-secondary); margin-bottom: 1.25rem; font-size: 0.95rem; max-width: 600px;">
+          Because all sessions are delivered via telehealth, suburb matters less than specialty — but suburb-level pages may help if you prefer a psychologist based near you.
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.25rem; margin-bottom: 1.5rem;">
+          {sortedSuburbs.map(suburb => (
+            <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow-sm);">
+              <h3 style="margin-top: 0; font-size: 0.95rem; margin-bottom: 0.75rem; color: var(--color-accent-hover);">{suburb}</h3>
+              <ul style="list-style: none; padding: 0; margin: 0;">
+                {bySuburb[suburb].map(p => (
+                  <li style="margin-bottom: 0.55rem; padding-bottom: 0.55rem; border-bottom: 1px solid var(--color-border);">
+                    <a href={`/directory/${p.slug}/`} style="font-weight: 600; font-size: 0.88rem; text-decoration: none; color: var(--color-accent);">{p.name}</a>
+                    <span style="display: block; font-size: 0.78rem; color: var(--color-text-secondary); margin-top: 0.1rem;">
+                      {p.registrationType === "clinical_psychologist" ? "Clinical psychologist" : "Registered psychologist"}
+                    </span>
                   </li>
                 ))}
               </ul>
             </div>
-          );
-        })}
+          ))}
+        </div>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 0.65rem;">
+          <a href="/find/anxiety-psychologist-bondi-junction-sydney/" style="display: inline-block; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 0.5rem 1rem; font-size: 0.88rem; text-decoration: none; color: var(--color-text);">Bondi Junction</a>
+          <a href="/find/anxiety-psychologist-north-sydney-sydney/" style="display: inline-block; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 0.5rem 1rem; font-size: 0.88rem; text-decoration: none; color: var(--color-text);">North Sydney</a>
+          <a href="/find/anxiety-psychologist-surry-hills-sydney/" style="display: inline-block; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 0.5rem 1rem; font-size: 0.88rem; text-decoration: none; color: var(--color-text);">Surry Hills</a>
+          <a href="/find/anxiety-psychologist-edgecliff-sydney/" style="display: inline-block; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 0.5rem 1rem; font-size: 0.88rem; text-decoration: none; color: var(--color-text);">Edgecliff / Eastern Suburbs</a>
+          <a href="/find/anxiety-psychologist-marrickville-sydney/" style="display: inline-block; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 0.5rem 1rem; font-size: 0.88rem; text-decoration: none; color: var(--color-text);">Marrickville / Inner West</a>
+          <a href="/find/anxiety-psychologist-strathfield-sydney/" style="display: inline-block; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 0.5rem 1rem; font-size: 0.88rem; text-decoration: none; color: var(--color-text);">Strathfield</a>
+          <a href="/find/anxiety-psychologist-chippendale-sydney/" style="display: inline-block; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 0.5rem 1rem; font-size: 0.88rem; text-decoration: none; color: var(--color-text);">Chippendale / CBD</a>
+          <a href="/find/anxiety-psychologist-zetland-sydney/" style="display: inline-block; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 0.5rem 1rem; font-size: 0.88rem; text-decoration: none; color: var(--color-text);">Zetland / Green Square</a>
+          <a href="/find/anxiety-psychologist-beverly-hills-sydney/" style="display: inline-block; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 0.5rem 1rem; font-size: 0.88rem; text-decoration: none; color: var(--color-text);">Beverly Hills / South Sydney</a>
+        </div>
       </div>
 
       <!-- CTA for practitioners -->
@@ -155,20 +247,19 @@ const breadcrumbSchema = {
 
       <!-- Patient CTA -->
       <div class="cta-block">
-        <h3>Need to connect with a psychologist now?</h3>
-        <p>Not all profiles have been claimed yet. Tell us what you are looking for and we will connect you with a suitable telehealth psychologist for anxiety in Sydney within 1 business day.</p>
+        <h3>Not sure who to choose?</h3>
+        <p>Tell us what you are looking for and we will help you find a suitable telehealth psychologist for anxiety in Sydney. Response within 1 business day.</p>
         <a href="/connect/" class="btn--cta plausible-event-name=Directory+Connect+CTA+Click">
           Find a psychologist for anxiety
         </a>
         <p class="cta-block__note">Free to use. No obligation.</p>
       </div>
 
-      <!-- Minimal source/removal disclosure -->
+      <!-- Source disclosure -->
       <p style="font-size: 0.8rem; color: var(--color-text-secondary); margin-top: 2.5rem; max-width: 680px;">
-        Profiles are built from the
-        <a href="https://www.ahpra.gov.au/Registration/Registers-of-Practitioners.aspx" target="_blank" rel="noopener">AHPRA public register</a>,
-        show registration type and suburb only (no contact details), and are marked unclaimed.
-        Practitioners can <a href="/for-psychologists/">claim their profile</a> or
+        Profiles are built from practitioners' own public websites and the
+        <a href="https://www.ahpra.gov.au/Registration/Registers-of-Practitioners.aspx" target="_blank" rel="noopener">AHPRA public register</a>.
+        Each profile is sourced and attributed. Practitioners can <a href="/for-psychologists/">claim their profile</a> or
         <a href="/listing-removal/">request removal</a> at any time.
       </p>
 
