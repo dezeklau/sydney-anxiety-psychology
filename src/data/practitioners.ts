@@ -80,9 +80,9 @@ export const practitioners: Practitioner[] = [
     unclaimed: true,
     source: "https://www.eileenseah.com.au/",
     yearsExperience: null,
-    bio: "Eileen Seah is a psychologist whose practice focuses on anxiety, stress, perfectionism, fear of failure, imposter syndrome, and grief. Her PhD research background is in perfectionism. She offers LGBTQIA+ affirming and poly-friendly therapy, and draws on CBT, compassion-focused therapy, schema therapy, ACT, and EMDR. She works with clients in a warm, confidential environment and describes her fees as below the APS recommended rate.",
+    bio: "Eileen Seah is a psychologist whose practice focuses on anxiety, stress, perfectionism, fear of failure, imposter syndrome, and grief. Her PhD research background is in perfectionism. She offers LGBTQIA+ affirming and poly-friendly therapy, and draws on CBT, compassion-focused therapy, schema therapy, ACT, and EMDR. She works with clients in a warm, confidential environment and offers concessional rates for eligible clients.",
     photoUrl: null,
-    pricing: null,
+    pricing: "$270 / 50-min session (concessional rates available)",
     publicEmail: "admin@eileenseah.com.au",
     website: "https://www.eileenseah.com.au",
     bookingUrl: "https://www.eileenseah.com.au/book-appointment"
@@ -179,7 +179,7 @@ export const practitioners: Practitioner[] = [
     bio: "Claire Loughran is a registered psychologist (Masters in Professional Psychology) at PsychHelp. She works with adolescents and adults using CBT, ACT, EMDR, and family-based therapy, with a focus on building strong therapeutic relationships. She has a particular interest in young people and adults experiencing anxiety, eating disorders, and body image concerns.",
     photoUrl: null,
     pricing: null,
-    publicEmail: null,
+    publicEmail: "admin@psychhelp.com.au",
     website: "https://psychhelp.com.au",
     bookingUrl: "https://psychhelp.com.au/book-an-appointment/"
   },
@@ -195,7 +195,7 @@ export const practitioners: Practitioner[] = [
     bio: "Dr Nicholas Caras is a psychologist with over 15 years of experience working with adult clients in private practice. He has a warm and empathic style and aims to provide a safe and supportive space during psychotherapy. His approach integrates CBT, mindfulness, Schema Therapy, and the Gottman Method for both individual and couples work.",
     photoUrl: null,
     pricing: null,
-    publicEmail: null,
+    publicEmail: "admin@psychhelp.com.au",
     website: "https://psychhelp.com.au",
     bookingUrl: "https://psychhelp.com.au/book-an-appointment/"
   },
@@ -211,7 +211,7 @@ export const practitioners: Practitioner[] = [
     bio: "Susan Aston is a psychologist (MA ClinPsych) at PsychHelp. She provides evidence-based therapy to adults with a calm, thoughtful approach, creating a safe therapeutic space. She specialises in anxiety, depression, trauma, stress, relationship difficulties, substance use, and life transitions, drawing on CBT, Schema Therapy, ACT, and trauma-informed practices.",
     photoUrl: null,
     pricing: null,
-    publicEmail: null,
+    publicEmail: "admin@psychhelp.com.au",
     website: "https://psychhelp.com.au",
     bookingUrl: "https://psychhelp.com.au/book-an-appointment/"
   },
@@ -274,7 +274,7 @@ export const practitioners: Practitioner[] = [
     yearsExperience: null,
     bio: "Tia Ven is a psychologist at Connect 2 Health Psychology providing online therapy in Sydney. She specialises in women's mental health, anxiety disorders, depression, chronic pain, grief, stress, and adjustment to chronic health conditions.",
     photoUrl: null,
-    pricing: null,
+    pricing: "$224 / 50-min session",
     publicEmail: "info@connect2healthpsychology.com.au",
     website: "https://connect2healthpsychology.com.au",
     bookingUrl: "https://www.halaxy.com/book/appointment/connect-2-health-psychology/location/816551"
@@ -336,9 +336,9 @@ export const practitioners: Practitioner[] = [
     unclaimed: true,
     source: "https://www.graciouslyyoupsychologicalservices.com.au/",
     yearsExperience: 10,
-    bio: "Natasha Kiemel-Incorvaia is a registered psychologist who founded Graciously You Psychological Services in 2020, with over 10 years of experience. She is passionate about increasing access to psychology via telehealth and specialises in anxiety, stress, depression, trauma/PTSD, EMDR, ADHD assessments, perinatal and postnatal support, and life transitions. Medicare rebate: $98.95/session with a valid Mental Health Care Plan (up to 10 sessions/year).",
+    bio: "Natasha Kiemel-Incorvaia is a registered psychologist who founded Graciously You Psychological Services in 2020, with over 10 years of experience. She is passionate about increasing access to psychology via telehealth and specialises in anxiety, stress, depression, trauma/PTSD, EMDR, ADHD assessments, perinatal and postnatal support, and life transitions.",
     photoUrl: null,
-    pricing: null,
+    pricing: "$215–$230 / session (initial $230, follow-up $215)",
     publicEmail: "admin@graciouslyyoupsychology.com.au",
     website: "https://www.graciouslyyoupsychologicalservices.com.au",
     bookingUrl: "https://www.halaxy.com/book/psychologist/ms-natasha-kiemel-incorvaia/602611/541391"

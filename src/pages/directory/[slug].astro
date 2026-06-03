@@ -266,14 +266,14 @@ const profilePageSchema = {
 
           <div style="background: var(--color-surface); border: 1.5px solid var(--color-accent-light); border-radius: var(--radius-lg); padding: 1.75rem; box-shadow: 0 4px 24px rgba(0,0,0,0.08);">
 
-            <h2 style="font-size: 1.1rem; margin-top: 0; margin-bottom: 0.4rem;">Send an enquiry to {p.name.split(' ')[p.name.split(' ').length - 1]}</h2>
+            <h2 style="font-size: 1.1rem; margin-top: 0; margin-bottom: 0.4rem;">Register your interest in {p.name.split(' ')[p.name.split(' ').length - 1]}</h2>
             <p style="font-size: 0.87rem; color: var(--color-text-secondary); margin-bottom: 1.25rem;">
-              Your message will be forwarded to this practitioner. You will not be committed to anything — they will contact you to discuss fit and availability.
+              Leave your details and we will log your enquiry. We may pass it on to this practitioner where possible. You are not committed to anything.
             </p>
 
             <!-- Collection notice (required — sensitive health-adjacent info) -->
             <div style="background: var(--color-accent-soft); border: 1px solid var(--color-accent-light); border-radius: 6px; padding: 0.85rem; margin-bottom: 1.25rem; font-size: 0.8rem; color: var(--color-accent-hover);">
-              <strong>Collection notice:</strong> Your name, phone or email, and message will be logged securely and forwarded once to this practitioner to respond to your enquiry. We will not share your information with anyone else. See our <a href="/privacy/" style="color: var(--color-accent-hover);">Privacy Policy</a>.
+              <strong>Collection notice:</strong> Your name, phone or email, and message will be logged securely by Sydney Anxiety Psychology. We may share it with this practitioner to help connect you, but cannot guarantee a response. We will not share your information with anyone else. See our <a href="/privacy/" style="color: var(--color-accent-hover);">Privacy Policy</a>.
             </div>
 
             <form
@@ -350,7 +350,7 @@ const profilePageSchema = {
                   style="width: 16px; height: 16px; flex-shrink: 0; margin-top: 0.15rem;"
                 />
                 <label for={`consent-${p.slug}`} style="font-size: 0.8rem; color: var(--color-text-secondary); cursor: pointer; line-height: 1.5;">
-                  I understand that my name, phone number, and message will be forwarded to {p.name} and logged by Sydney Anxiety Psychology. I have read the <a href="/privacy/">Privacy Policy</a>. *
+                  I understand that my name, phone number, and message will be logged by Sydney Anxiety Psychology and may be passed on to {p.name} to help connect me. I have read the <a href="/privacy/">Privacy Policy</a>. *
                 </label>
               </div>
 
@@ -363,7 +363,7 @@ const profilePageSchema = {
               </button>
 
               <p style="font-size: 0.77rem; color: var(--color-text-secondary); text-align: center; margin: 0;">
-                One message, forwarded once. No spam. You can opt out by contacting us at any time.
+                Your enquiry is logged securely. We do not guarantee a response from this practitioner. Contact the practitioner directly via the links above for a faster response.
               </p>
             </form>
 
