@@ -1,6 +1,6 @@
 # Metrics: anxiety-sydney
-# Last updated: 2026-06-01
-# Status: PRE-LAUNCH — no data yet
+# Last updated: 2026-06-03 (Session 9)
+# Status: LIVE — deployed to Vercel, not yet indexed by Google
 
 ---
 
@@ -13,16 +13,27 @@
 ---
 
 ## Current state
-- Domain: REGISTERED — sydneyanxietypsychology.com.au (registered Session 3)
-- Secondary domain: sydneyanxietypsychology.online (redirect-only, not deployed yet)
-- GitHub repo: https://github.com/dezeklau/sydney-anxiety-psychology (created Session 4, awaiting push)
-- Vercel: NOT YET CONNECTED (Derek to do — see skills/deployment-runbook.md)
-- DNS: NOT YET POINTED TO VERCEL
-- GSC: NOT CONNECTED
-- Plausible: NOT CONNECTED
-- Pages built: 10 (clean build, all committed)
-- Pages live: 0
-- Pages indexed: 0
+- Domain: LIVE — sydneyanxietypsychology.com.au
+- GitHub repo: https://github.com/dezeklau/sydney-anxiety-psychology (synced, latest push 2026-06-03)
+- Vercel: CONNECTED — auto-deploys from GitHub main
+- DNS: POINTING TO VERCEL
+- GSC: NOT CONNECTED — Derek must verify domain and submit sitemap (BLOCKING for indexation)
+- Plausible: CONNECTED — script live in Base.astro
+- Pages built: 46 (clean build 2026-06-03)
+- Pages live: 46
+- Pages indexed: 0 (site:sydneyanxietypsychology.com.au returns 0 results in Google)
+- Domain age: ~3 days
+
+### Pages by section (46 total)
+- Homepage: 1
+- Directory: 1 index + 22 practitioner profiles = 23
+- Guides: 1 index + 5 guides = 6
+- Find (suburb pages): 9
+- Connect: 2 (form + thank-you)
+- For Psychologists: 2 (form + thank-you)
+- About: 1
+- Listing Removal: 1
+- Privacy: 1
 
 ---
 
@@ -34,6 +45,8 @@
 | Top GSC queries | — | — | — |
 | GSC impressions/day | 0 | 0 | >50 |
 | GSC average position | — | — | <50 |
+
+NOTE: Cannot measure organic traffic until GSC is connected and site is indexed.
 
 ---
 
@@ -61,13 +74,21 @@
 | telehealth psychologist anxiety Sydney | — | — | — |
 | anxiety psychologist Sydney Medicare | — | — | — |
 | online psychologist anxiety Sydney | — | — | — |
-| telehealth clinical psychologist anxiety Sydney | — | — | — |
+| anxiety psychologist Bondi Junction Sydney | — | — | — |
+| anxiety psychologist North Sydney | — | — | — |
+| anxiety psychologist Surry Hills Sydney | — | — | — |
 
 ---
 
 ## Indexation
 | Pages submitted | Pages indexed | Coverage issues | Last checked |
 |----------------|---------------|-----------------|-------------|
-| 0 | 0 | — | — |
+| 0 (GSC not live) | 0 | GSC not verified | 2026-06-03 |
+
+### Indexation blockers (in priority order)
+1. Derek: Add sydneyanxietypsychology.com.au to GSC → verify via DNS TXT record → submit sitemap
+2. Derek: Use GSC URL Inspection to request indexing on homepage
+3. Derek: Post Reddit resources (see /knowledge/reddit-posts-ready-to-use.md) — creates first inbound links
+4. Derek: Consider Google Business Profile listing (directory, not clinical service)
 
 ---
