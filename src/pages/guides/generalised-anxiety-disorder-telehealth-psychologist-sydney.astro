@@ -1,0 +1,271 @@
+---
+import Base from '../../layouts/Base.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Generalised Anxiety Disorder (GAD) and Telehealth Psychology in Sydney",
+  "description": "A guide to generalised anxiety disorder (GAD) and psychological treatment via telehealth in Sydney. What GAD is, how CBT and other evidence-based approaches work, what to expect from treatment, and how telehealth compares to in-person therapy.",
+  "datePublished": "2026-06-04",
+  "dateModified": "2026-06-04",
+  "author": {
+    "@type": "Organization",
+    "name": "Sydney Anxiety Psychology"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Sydney Anxiety Psychology",
+    "url": "https://sydneyanxietypsychology.com.au"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://sydneyanxietypsychology.com.au/guides/generalised-anxiety-disorder-telehealth-psychologist-sydney/"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is generalised anxiety disorder (GAD)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Generalised anxiety disorder (GAD) is characterised by persistent, excessive worry about a range of everyday topics — work, health, finances, relationships, world events — that is difficult to control and significantly interferes with daily functioning. GAD is distinguished from normal worry by its intensity, persistence, breadth (spanning many domains), and the distress and impairment it causes. Physical symptoms such as muscle tension, fatigue, sleep difficulties, and restlessness commonly accompany the worry. GAD is diagnosed using DSM-5 or ICD-11 criteria and is one of the most common anxiety disorders, affecting approximately 5–7% of people at some point in their lifetime."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can GAD be treated via telehealth?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Telehealth-delivered psychological treatment for GAD has a strong evidence base. Multiple randomised controlled trials and meta-analyses have found internet-delivered and videoconference-delivered CBT to produce clinically meaningful reductions in GAD symptoms comparable to in-person delivery. A 2023 systematic review by Shaker et al. (JMIR Mental Health) confirmed that internet-delivered CBT produces significant improvements across anxiety presentations including GAD. The core components of CBT for GAD — identifying and challenging worry beliefs, behavioural experiments, relaxation and mindfulness practice, and developing a different relationship with uncertainty — all transfer effectively to a videoconference format."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What therapy approach works best for GAD?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cognitive Behavioural Therapy (CBT) has the strongest evidence base for GAD and is recommended in Australian and international clinical guidelines (including NICE). CBT for GAD typically involves: identifying and challenging beliefs about worry itself (metacognitive approaches); examining whether worry serves a useful function; developing tolerance for uncertainty; and behavioural experiments to test worry beliefs. Acceptance and Commitment Therapy (ACT) is another evidence-supported approach, focusing on changing your relationship with anxious thoughts rather than their content. Mindfulness-Based Cognitive Therapy (MBCT) and applied relaxation are also used. In practice, psychologists often draw on multiple approaches. Ask any psychologist you consider whether they have specific experience treating GAD."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many sessions does it take to treat GAD?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There is no fixed number. Research protocols for CBT for GAD typically involve 12 to 15 weekly sessions. Milder presentations, or those where anxiety is well-circumscribed, may respond in fewer. More longstanding or severe GAD, or GAD accompanied by other presentations (depression, other anxiety disorders, health concerns), may require more. Under Medicare's Better Access scheme, you can access up to 10 Medicare-rebated psychology sessions per calendar year with a Mental Health Treatment Plan from your GP. Your GP can review and extend the plan if further sessions are clinically indicated."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is GAD different from 'normal' anxiety or everyday worry?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The key distinctions are intensity, controllability, breadth, and functional impact. Almost everyone worries at times. GAD worry is more intense, harder to stop or redirect, covers a wider range of topics (not just one specific concern), and causes significant distress or interferes with daily activities — work performance, relationships, sleep, physical health. If your worry feels excessive, persistent, and difficult to control, and it is affecting your quality of life, it is worth discussing with your GP and considering a psychology referral. You do not need to meet every diagnostic criterion to benefit from psychological support."
+      }
+    }
+  ]
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sydneyanxietypsychology.com.au/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://sydneyanxietypsychology.com.au/guides/" },
+    { "@type": "ListItem", "position": 3, "name": "GAD Telehealth Psychology Sydney", "item": "https://sydneyanxietypsychology.com.au/guides/generalised-anxiety-disorder-telehealth-psychologist-sydney/" },
+  ]
+};
+---
+<Base
+  title="Generalised Anxiety Disorder (GAD) Telehealth Psychology Sydney | How Treatment Works"
+  description="Guide to generalised anxiety disorder (GAD) and telehealth psychology in Sydney. What GAD is, how CBT and other evidence-based treatments work, what to expect, and how to access a psychologist via Medicare."
+  schema={[articleSchema, faqSchema, breadcrumbSchema]}
+>
+  <div class="main-content">
+    <div class="container">
+
+      <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 1.5rem;">
+        <a href="/">Home</a> &rsaquo; <a href="/guides/">Guides</a> &rsaquo; GAD Telehealth Psychology Sydney
+      </p>
+
+      <h1>Generalised Anxiety Disorder (GAD) and Telehealth Psychology in Sydney</h1>
+      <AuthorByline dateModified="June 2026" />
+      <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 2rem;">Last reviewed: June 2026 &bull; Sources: NICE guidelines for GAD (2011, updated 2019); Shaker et al. (2023) JMIR Mental Health; APS Evidence-based psychological interventions; ABS National Survey of Mental Health and Wellbeing</p>
+
+      <p>Generalised anxiety disorder is one of the most common reasons people seek psychology support in Australia&mdash;and one of the most misunderstood. The worry that characterises GAD is not a personality trait or a sign of weakness. It is a well-defined clinical presentation with effective psychological treatments.</p>
+
+      <p>This guide explains what GAD is, how psychological treatment works, what to expect from telehealth psychology for GAD in Sydney, and how to access support.</p>
+
+      <div class="info-box" style="background: #f0f9ff; border-left-color: #0284c7;">
+        <p><strong>This is an information resource, not clinical advice.</strong> GAD varies in its severity and presentation, and often co-occurs with other conditions. If you are looking for a psychologist in Sydney who specialises in anxiety including GAD, our <a href="/directory/">directory</a> lists practitioners who offer telehealth. For an emergency or crisis, contact Lifeline (13 11 14) or Beyond Blue (1300 22 4636).</p>
+      </div>
+
+      <h2 id="what-is-gad">What is generalised anxiety disorder?</h2>
+
+      <p>Generalised anxiety disorder (GAD) is characterised by persistent, excessive, hard-to-control worry spanning multiple areas of life&mdash;typically health, work, relationships, finances, daily logistics, or world events. Unlike specific phobias (where anxiety is tied to a particular trigger) or panic disorder (which involves discrete panic attacks), GAD worry is broad, diffuse, and often feels like it moves from topic to topic without resolution.</p>
+
+      <p>The Australian Bureau of Statistics estimates that anxiety disorders collectively affect approximately 17% of Australians in a 12-month period, with GAD among the most prevalent. Many people live with GAD symptoms for years before seeking help, often normalising the experience as "just how I am" or "being a worrier."</p>
+
+      <h3>How GAD is different from everyday worry</h3>
+
+      <p>Almost everyone worries at times. The distinction between everyday worry and GAD lies in:</p>
+      <ul>
+        <li><strong>Frequency and persistence:</strong> GAD worry is present on more days than not, across an extended period (the DSM-5 criterion is six months)</li>
+        <li><strong>Difficulty controlling it:</strong> People with GAD often find it hard to stop worrying or redirect their attention, even when they want to</li>
+        <li><strong>Breadth:</strong> The worry spans multiple domains rather than focusing on one specific concern</li>
+        <li><strong>Functional impact:</strong> The worry causes significant distress or interferes with work, relationships, sleep, or daily activities</li>
+        <li><strong>Physical symptoms:</strong> Muscle tension, fatigue, sleep disturbance, restlessness, difficulty concentrating, and irritability commonly accompany GAD</li>
+      </ul>
+
+      <p>If any of this description resonates, it is worth a conversation with your GP. You do not need to be certain you have GAD to benefit from discussing it or from a psychology referral.</p>
+
+      <h3>What GAD commonly feels like</h3>
+
+      <p>People with GAD often describe a persistent background hum of anxiety that they cannot switch off. Worries tend to chain together: a small problem at work becomes worry about job performance, which becomes worry about financial security, which becomes worry about what would happen to the family if income dropped. Solving one worry does not produce relief&mdash;the mind moves immediately to the next concern.</p>
+
+      <p>Physical symptoms are significant and often underrecognised. Chronic muscle tension (particularly in the neck, shoulders, and jaw), fatigue that does not resolve with rest, and disrupted sleep&mdash;difficulty falling asleep, early waking, or restless sleep because of a "busy mind"&mdash;are common and affect quality of life substantially.</p>
+
+      <h2 id="how-treatment-works">How psychological treatment for GAD works</h2>
+
+      <h3>Cognitive Behavioural Therapy (CBT)</h3>
+
+      <p>CBT has the strongest evidence base for GAD and is the frontline psychological treatment recommended by Australian clinical guidelines and international bodies including NICE (UK National Institute for Health and Care Excellence). CBT for GAD differs somewhat from CBT for other anxiety presentations because the target is worry itself&mdash;a cognitive process&mdash;rather than a specific feared situation or object.</p>
+
+      <p>CBT for GAD typically involves several interconnected components:</p>
+
+      <h4>Understanding worry and its functions</h4>
+      <p>Many people with GAD hold beliefs that worry is useful or necessary&mdash;that it helps them prepare, prevents bad things from happening, or means they are a responsible person. A first step in treatment often involves examining these <strong>positive beliefs about worry</strong> (also called metacognitive beliefs) alongside beliefs that worry is uncontrollable or dangerous. Challenging the belief that "worrying is what keeps bad things from happening" can reduce the motivation to engage in worry.</p>
+
+      <h4>Cognitive restructuring</h4>
+      <p>CBT helps identify patterns in the content of worry&mdash;common cognitive distortions such as overestimating the probability of negative outcomes, catastrophising (assuming the worst-case scenario will happen and will be unbearable), and underestimating one's ability to cope with difficulty. Through structured examination of evidence and alternative interpretations, these patterns become more flexible over time.</p>
+
+      <h4>Behavioural experiments and stimulus control</h4>
+      <p>Behavioural experiments involve testing worry predictions against what actually happens&mdash;a form of evidence-gathering rather than avoidance. Some CBT protocols also involve scheduled "worry time": designating a specific short period each day for worry and practising redirecting worry thoughts at other times. While this sounds counterintuitive, it demonstrates that worry can be postponed and does not need to occupy all available attention.</p>
+
+      <h4>Intolerance of uncertainty</h4>
+      <p>Research by Michel Dugas and colleagues has identified intolerance of uncertainty as a central maintaining factor in GAD. Many people with GAD find it very difficult to sit with "not knowing" whether something bad will or will not happen&mdash;and worry functions as an attempt to resolve that uncertainty, even though it cannot. Treatment directly targets this intolerance through graduated exposure to uncertainty in low-stakes situations, building the capacity to tolerate not knowing.</p>
+
+      <h4>Relaxation and somatic approaches</h4>
+      <p>Applied relaxation (progressive muscle relaxation and controlled breathing) addresses the physical symptoms of GAD and provides a tool for reducing physiological arousal. This is typically used alongside the cognitive components, not instead of them.</p>
+
+      <h3>Acceptance and Commitment Therapy (ACT)</h3>
+
+      <p>ACT approaches GAD differently from CBT. Rather than directly challenging the content of worries, ACT focuses on:</p>
+      <ul>
+        <li><strong>Defusion:</strong> Learning to observe thoughts as mental events rather than facts&mdash;creating psychological distance from the content of worries so they have less influence over behaviour</li>
+        <li><strong>Acceptance:</strong> Allowing uncomfortable thoughts and sensations to exist without fighting them, which paradoxically often reduces their intensity and disruptiveness</li>
+        <li><strong>Values-based action:</strong> Identifying what matters to you and taking steps toward it, even when anxiety is present</li>
+      </ul>
+
+      <p>ACT has a well-supported evidence base for GAD and is often well-suited to people who have already tried CBT or who find the metacognitive focus of CBT less intuitive.</p>
+
+      <h3>Mindfulness-Based Cognitive Therapy (MBCT)</h3>
+
+      <p>MBCT combines mindfulness practices with cognitive therapy principles. For GAD, it is particularly relevant because mindfulness training cultivates the capacity to notice when worry has taken hold and to return attention to the present moment&mdash;directly countering the forward-focused rumination that characterises GAD. MBCT has an evidence base primarily from depression research but is increasingly used and studied for anxiety, including GAD.</p>
+
+      <h3>How long does treatment take?</h3>
+
+      <p>Research protocols for CBT for GAD typically involve 12 to 15 weekly sessions. In practice, the duration depends on severity, the presence of co-occurring conditions (GAD frequently co-occurs with depression and other anxiety disorders), and individual response. Many people notice meaningful improvement within 8 to 10 sessions. Under Medicare's Better Access scheme, you can access up to 10 Medicare-rebated psychology sessions per calendar year with a <a href="/guides/mental-health-care-plan-sydney/">Mental Health Treatment Plan from your GP</a>.</p>
+
+      <h2 id="telehealth-for-gad">Telehealth for GAD: how it works and what the evidence shows</h2>
+
+      <p>GAD is particularly well-suited to telehealth delivery, and this is supported by the research. A 2023 systematic review and meta-analysis by Shaker and colleagues (<em>JMIR Mental Health</em>) confirmed that internet-delivered CBT produces clinically significant improvements in anxiety presentations including GAD. An earlier meta-analysis by Andersson and colleagues found that self-guided and therapist-guided internet CBT for generalised anxiety consistently outperforms waitlist conditions and produces effects comparable to in-person treatment.</p>
+
+      <p>The clinical reasons are straightforward:</p>
+      <ul>
+        <li>The core interventions in CBT and ACT for GAD&mdash;examining worry beliefs, cognitive restructuring, defusion exercises, mindfulness practice, relaxation training&mdash;are all cognitive and conversational. They do not require physical presence.</li>
+        <li>GAD does not involve avoidance of a specific external situation (as social phobia or specific phobia does) that might require in-vivo exposure. The exposure work in GAD treatment is primarily to uncertainty and to the anxiety itself, which happens in the person's own life between sessions.</li>
+        <li>The quality of the therapeutic relationship&mdash;which is the strongest predictor of outcome in any psychological treatment&mdash;is well-maintained via videoconference for most people.</li>
+      </ul>
+
+      <h3>Practical advantages for people with GAD</h3>
+
+      <p>Many people with GAD find that the logistics of life, including attending appointments, are themselves sources of worry: "What if I'm late?", "What if I can't park?", "What if something comes up at work?". Telehealth reduces logistical anxiety around attendance itself, which can make starting treatment and maintaining consistency easier.</p>
+
+      <p>Attending from home also means you can integrate relaxation exercises, mindfulness practice, and homework directly into your actual daily environment&mdash;the context where worry actually occurs. This can make skill transfer more natural.</p>
+
+      <h2 id="what-to-look-for">What to look for in a psychologist for GAD</h2>
+
+      <h3>Experience with anxiety presentations and GAD specifically</h3>
+      <p>Ask whether the psychologist has experience treating generalised anxiety disorder. While many psychologists work broadly with anxiety, familiarity with GAD-specific protocols&mdash;particularly intolerance of uncertainty work, metacognitive approaches, and applied relaxation&mdash;is relevant. "I work with anxiety" is a starting point; "I have specific experience with GAD" is more informative.</p>
+
+      <h3>Familiarity with relevant therapy models</h3>
+      <p>Ask which approaches the psychologist uses for GAD. Good answers include CBT (including metacognitive therapy or intolerance of uncertainty models), ACT, or MBCT, or a combination. Be cautious of very broad or vague answers that do not name a specific evidence-based approach.</p>
+
+      <h3>Approach to the physical symptoms</h3>
+      <p>If muscle tension, fatigue, or sleep difficulties are significant for you, ask whether the psychologist incorporates somatic approaches (relaxation, breathing, mindfulness) alongside cognitive work. GAD is a whole-body experience, and effective treatment addresses the physical dimension.</p>
+
+      <h3>How they approach worry itself</h3>
+      <p>In an initial consultation, it can be useful to ask: "How do you typically approach the worry in GAD?" A psychologist with strong GAD experience will be able to explain their approach clearly&mdash;whether they focus on challenging worry content, on beliefs about worry, on building uncertainty tolerance, or on changing your relationship with worry through acceptance and defusion.</p>
+
+      <p>For more guidance on choosing a psychologist, see our <a href="/guides/how-to-choose-anxiety-psychologist-telehealth/">how-to-choose guide</a>.</p>
+
+      <h2 id="access-and-cost">Access and cost in Sydney</h2>
+
+      <p>A <a href="/guides/mental-health-care-plan-sydney/">Mental Health Treatment Plan from your GP</a> gives you access to Medicare rebates on up to 10 individual psychology sessions per calendar year. The rebate is $98.95 per session for a registered psychologist or $145.25 for an endorsed clinical psychologist (from 1 July 2025, Medicare Benefits Schedule). Your out-of-pocket gap depends on the psychologist's fee&mdash;typically $50 to $150 per session after the rebate for most practitioners in Sydney. Some offer reduced fees for health care card holders or those with financial hardship.</p>
+
+      <p>For a full breakdown of fees and the MHTP process, see our <a href="/guides/cost-telehealth-psychologist-australia/">cost guide</a>.</p>
+
+      <p>Our <a href="/directory/">directory</a> lists registered psychologists in Sydney who specialise in anxiety (including GAD), offer telehealth, and accept Mental Health Treatment Plan referrals. Many list their fees and experience directly on their profile.</p>
+
+      <h2 id="faq">Frequently asked questions</h2>
+
+      <div style="margin-top: 1rem;">
+        <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What is generalised anxiety disorder (GAD)?</h3>
+        <p style="margin-top: 0;">GAD is characterised by persistent, excessive worry about a range of everyday topics that is difficult to control and significantly interferes with daily functioning. Physical symptoms including muscle tension, fatigue, sleep difficulties, and restlessness commonly accompany the worry. GAD is one of the most common anxiety disorders, affecting an estimated 5&ndash;7% of people at some point in their lifetime.</p>
+
+        <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can GAD be treated via telehealth?</h3>
+        <p style="margin-top: 0;">Yes. Multiple RCTs and meta-analyses have found telehealth-delivered psychological treatment for GAD to be effective. The core components of CBT and ACT for GAD&mdash;cognitive work, uncertainty tolerance, relaxation training, mindfulness practice&mdash;all work well via videoconference. A 2023 systematic review by Shaker et al. (JMIR Mental Health) confirmed significant improvements in anxiety including GAD from internet-delivered CBT.</p>
+
+        <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What therapy approach works best for GAD?</h3>
+        <p style="margin-top: 0;">CBT has the strongest evidence base and is the frontline recommended treatment (NICE guidelines, APS evidence summary). CBT for GAD specifically addresses worry beliefs, intolerance of uncertainty, and cognitive distortions. ACT is another evidence-supported option. Many psychologists draw on both. Ask any psychologist you consider whether they have specific experience treating GAD and which approach they use.</p>
+
+        <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How many sessions does it take to treat GAD?</h3>
+        <p style="margin-top: 0;">Research protocols typically involve 12 to 15 sessions. Many people notice meaningful improvement within 8 to 10. Duration depends on severity and whether GAD co-occurs with other conditions. Medicare's Better Access scheme covers up to 10 sessions per calendar year with a Mental Health Treatment Plan from your GP.</p>
+
+        <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How is GAD different from everyday worry?</h3>
+        <p style="margin-top: 0;">The key distinctions are frequency (more days than not), difficulty controlling the worry, breadth (spanning multiple life domains), and functional impact (causing distress or interfering with daily life). Physical symptoms like muscle tension, fatigue, and sleep difficulties are also common. If worry feels persistent, excessive, and hard to switch off, it is worth discussing with your GP.</p>
+      </div>
+
+      <div class="info-box" style="margin-top: 2.5rem; background: #fff7ed; border-left-color: #ea580c;">
+        <h3 style="margin-top: 0; color: #92400e;">If you need support now</h3>
+        <p>This directory is not a crisis service. If you are in crisis or need immediate support:</p>
+        <ul style="margin-bottom: 0;">
+          <li><strong>Lifeline:</strong> 13 11 14 (24/7)</li>
+          <li><strong>Beyond Blue:</strong> 1300 22 4636 (24/7)</li>
+          <li><strong>13YARN:</strong> 13 92 76 (24/7, First Nations)</li>
+          <li><strong>Emergency:</strong> 000</li>
+        </ul>
+      </div>
+
+      <div class="cta-block" style="margin-top: 2.5rem;">
+        <h3>Find a telehealth psychologist for GAD in Sydney</h3>
+        <p>Browse our directory of registered psychologists who specialise in anxiety including generalised anxiety disorder, offer telehealth sessions, and accept Mental Health Treatment Plan referrals.</p>
+        <a href="/directory/" class="btn--cta plausible-event-name=GADGuide+CTA+Click">
+          Browse the directory
+        </a>
+        <p class="cta-block__note">Free to use. We are a directory, not a clinical service.</p>
+      </div>
+
+      <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border);">
+        <h3 style="font-size: 0.95rem; margin-bottom: 0.75rem;">Related guides</h3>
+        <ul style="font-size: 0.9rem; line-height: 1.9; padding-left: 1.25rem;">
+          <li><a href="/guides/does-online-therapy-work-for-anxiety/">Does online therapy work for anxiety? (the research)</a></li>
+          <li><a href="/guides/social-anxiety-telehealth-psychologist-sydney/">Social anxiety and telehealth psychology in Sydney</a></li>
+          <li><a href="/guides/panic-disorder-telehealth-psychologist-sydney/">Panic disorder and telehealth psychology</a></li>
+          <li><a href="/guides/health-anxiety-telehealth-psychologist-sydney/">Health anxiety (illness anxiety): what helps</a></li>
+          <li><a href="/guides/cost-telehealth-psychologist-australia/">How much does a telehealth psychologist cost?</a></li>
+          <li><a href="/guides/mental-health-care-plan-sydney/">How to get a Mental Health Care Plan from your GP</a></li>
+          <li><a href="/guides/how-to-choose-anxiety-psychologist-telehealth/">How to choose a telehealth psychologist for anxiety</a></li>
+          <li><a href="/guides/medicare-psychology-data-australia/">Medicare psychology data: who accesses rebates and how often</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</Base>
