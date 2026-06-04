@@ -1,0 +1,235 @@
+---
+import Base from '../../layouts/Base.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sydneyanxietypsychology.com.au/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://sydneyanxietypsychology.com.au/guides/" },
+    { "@type": "ListItem", "position": 3, "name": "PTSD Telehealth Psychologist Sydney", "item": "https://sydneyanxietypsychology.com.au/guides/ptsd-telehealth-psychologist-sydney/" },
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can PTSD be treated effectively via telehealth?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Research supports telehealth delivery of PTSD treatments including Prolonged Exposure (PE), Cognitive Processing Therapy (CPT), and EMDR. Multiple randomised trials have found outcomes comparable to in-person delivery. Telehealth also removes travel and waiting-room barriers, which can be particularly helpful for trauma presentations where leaving the house is difficult."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What type of psychologist should I see for PTSD?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PTSD treatment requires a psychologist with specific training in trauma-focused therapies. Look for AHPRA-registered psychologists who list trauma or PTSD as a stated specialty area and have experience with evidence-based approaches such as Prolonged Exposure (PE), Cognitive Processing Therapy (CPT), or EMDR. Both registered and endorsed clinical psychologists can provide trauma-focused therapy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Medicare cover telehealth psychology for PTSD?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Telehealth psychology sessions attract the same Medicare rebate as in-person sessions under the Better Access scheme, regardless of the presenting concern. You need a Mental Health Treatment Plan (MHTP) from your GP. The rebate is $98.95 per session (registered psychologist) or $145.25 (endorsed clinical psychologist), effective 1 July 2025. Up to 10 sessions per calendar year."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it safe to do trauma therapy via video call?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Telehealth PTSD therapy requires the same clinical safety considerations as in-person sessions. Your psychologist will assess your suitability for telehealth at the beginning of treatment, establish safety protocols, and ensure you have access to support between sessions. Being in a familiar environment (your home) can sometimes feel safer during trauma processing work. Your psychologist will also keep emergency contact details on file and will discuss what to do if a session becomes difficult before starting treatment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between PTSD and complex PTSD?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PTSD typically follows a discrete traumatic event or events. Complex PTSD (C-PTSD) is associated with prolonged, repeated, or early-life trauma — such as childhood abuse, domestic violence, or ongoing neglect. C-PTSD involves the core PTSD symptoms plus difficulties with emotional regulation, self-perception, and relationships. Both can be treated via telehealth psychology. C-PTSD treatment is often longer and may involve stabilisation work before trauma processing."
+      }
+    }
+  ]
+};
+---
+<Base
+  title="PTSD Telehealth Psychologist Sydney | Trauma-Focused Therapy via Video Call"
+  description="Find a telehealth psychologist in Sydney who specialises in PTSD and trauma. Evidence-based treatments including PE, CPT, and EMDR delivered via video call. Medicare rebates apply."
+  schema={[breadcrumbSchema, faqSchema]}
+>
+  <div class="main-content">
+    <div class="container">
+
+      <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 1.5rem;">
+        <a href="/">Home</a> &rsaquo; <a href="/guides/">Guides</a> &rsaquo; PTSD Telehealth Psychologist Sydney
+      </p>
+
+      <h1>PTSD and Trauma: Finding a Telehealth Psychologist in Sydney</h1>
+      <AuthorByline />
+
+      <div class="info-box">
+        <p><strong>Crisis support:</strong> If you are in crisis, contact Lifeline on <strong>13 11 14</strong>, Beyond Blue on <strong>1300 22 4636</strong>, or 13YARN on <strong>13 92 76</strong>. This directory is not a crisis service. If you are in immediate danger, call 000.</p>
+      </div>
+
+      <p>Post-traumatic stress disorder (PTSD) is one of the most research-supported presentations for psychological treatment. Well-established, evidence-based therapies exist, and many of them can be delivered effectively via video call. This guide covers what to look for in a PTSD-specialist psychologist in Sydney, what treatment approaches exist, whether telehealth is appropriate for trauma work, and how the Medicare pathway works.</p>
+
+      <h2>What is PTSD?</h2>
+      <p>PTSD develops in some people after experiencing or witnessing a traumatic event. Traumatic events are those that involve actual or threatened death, serious injury, or sexual violence — either directly, as a witness, or (in some circumstances) through learning that a close person has experienced such an event.</p>
+
+      <p>Not everyone who experiences a traumatic event develops PTSD. Many people have strong distress reactions in the days and weeks that follow (acute stress response), which is a normal response to an abnormal situation. PTSD is diagnosed when symptoms persist and cause significant distress or interference with daily functioning for more than one month after the event.</p>
+
+      <h3>PTSD symptoms</h3>
+      <p>The four main symptom clusters of PTSD are:</p>
+      <ul>
+        <li><strong>Intrusion:</strong> Unwanted memories, flashbacks, nightmares, or intense psychological distress when reminded of the trauma.</li>
+        <li><strong>Avoidance:</strong> Avoiding thoughts, feelings, or external reminders (people, places, situations) associated with the trauma.</li>
+        <li><strong>Negative changes in thinking and mood:</strong> Persistent negative beliefs about oneself or the world ("I am bad", "nowhere is safe"), difficulty experiencing positive emotions, feeling detached from others, persistent guilt or blame.</li>
+        <li><strong>Changes in arousal and reactivity:</strong> Hypervigilance, exaggerated startle response, sleep difficulties, irritability or aggression, reckless behaviour, difficulty concentrating.</li>
+      </ul>
+
+      <h3>Complex PTSD (C-PTSD)</h3>
+      <p>Complex PTSD is associated with prolonged, repeated trauma — particularly when it occurred in childhood or within relationships where escape was difficult (such as domestic violence, childhood abuse, or chronic neglect). Beyond the core PTSD symptoms, people with C-PTSD commonly experience:</p>
+      <ul>
+        <li>Difficulty regulating emotions (intense emotional reactions, or feeling emotionally numb)</li>
+        <li>Negative self-perception (deep shame, guilt, or a persistent sense of being damaged or different from others)</li>
+        <li>Relationship difficulties (difficulties trusting others, or forming and maintaining close relationships)</li>
+      </ul>
+      <p>C-PTSD treatment often involves a phased approach: building emotional safety and regulation skills before trauma-focused processing begins. This can mean treatment takes longer than standard PTSD, and the initial phase may feel like it is not directly addressing the trauma — but this groundwork is necessary for processing to be effective and tolerable.</p>
+
+      <h2>Evidence-Based Treatments for PTSD</h2>
+      <p>Several psychological treatments have strong evidence for PTSD. The following are the most commonly used approaches with established research bases:</p>
+
+      <h3>Prolonged Exposure (PE)</h3>
+      <p>Developed by Edna Foa and colleagues, PE is one of the most thoroughly researched PTSD treatments. It involves two main components: imaginal exposure (revisiting the traumatic memory in a structured, supported way) and in-vivo exposure (gradually approaching avoided situations in real life). PE works by helping the brain process the traumatic memory — taking it from a vivid, present-tense experience that triggers the threat response, to a memory of something that happened in the past. PE is typically delivered over 8 to 15 sessions.</p>
+
+      <h3>Cognitive Processing Therapy (CPT)</h3>
+      <p>CPT focuses on the way traumatic events affect a person's beliefs about themselves, others, and the world. Trauma can lead to "stuck points" — specific unhelpful thoughts that maintain distress, such as "It was my fault", "I can't trust anyone", or "I am permanently damaged". CPT works by examining these beliefs and developing more balanced and accurate perspectives. CPT is typically 12 sessions and can be delivered with or without a written trauma account.</p>
+
+      <h3>EMDR (Eye Movement Desensitisation and Reprocessing)</h3>
+      <p>EMDR is an extensively researched treatment in which the person recalls traumatic memories while simultaneously engaging in bilateral stimulation (typically following the therapist's moving finger with their eyes, though audio or tactile alternatives are used in telehealth). The mechanism is debated, but robust evidence shows EMDR reduces PTSD symptoms effectively. In telehealth EMDR, therapists use online bilateral stimulation tools or audio-based alternatives; research on telehealth EMDR delivery is supportive. EMDR is generally delivered over 8 to 12 sessions for single-incident trauma, but may take longer for complex presentations.</p>
+
+      <h3>Trauma-Focused Cognitive Behavioural Therapy (TF-CBT)</h3>
+      <p>TF-CBT integrates cognitive and behavioural techniques with trauma-specific components. It is used across the lifespan but has a particularly strong evidence base for children and adolescents. For adults, TF-CBT may incorporate elements of PE and CPT within a broader cognitive-behavioural framework.</p>
+
+      <h3>Skills-Based Stabilisation Approaches</h3>
+      <p>For C-PTSD or for people who are not yet ready for trauma-focused processing, skills-based approaches such as Dialectical Behaviour Therapy (DBT) skills training or Acceptance and Commitment Therapy (ACT) are often used in an initial stabilisation phase. These build distress tolerance, emotional regulation, and mindfulness skills that support later trauma-focused work.</p>
+
+      <h2>Is Telehealth Appropriate for PTSD?</h2>
+      <p>Telehealth delivery of PTSD treatment is supported by a growing body of research. Multiple randomised trials have compared in-person and telehealth delivery of PE and CPT specifically, with equivalent outcomes.</p>
+
+      <p>A 2021 systematic review in the <em>Journal of Affective Disorders</em> (Morland et al.) found that telehealth-delivered trauma-focused CBT produced outcomes not significantly different from in-person delivery across multiple studies. Telehealth EMDR has also been examined, with similar supportive findings.</p>
+
+      <p>Telehealth can be particularly well-suited to trauma presentations for several reasons:</p>
+      <ul>
+        <li>Many people with PTSD experience hypervigilance and avoidance of public spaces, crowded waiting rooms, or unfamiliar environments. Attending from home reduces these barriers.</li>
+        <li>Being in a familiar, controlled environment can help some people feel safer during trauma processing sessions.</li>
+        <li>Telehealth removes travel time, which can reduce the cognitive and emotional load of attending appointments.</li>
+      </ul>
+
+      <p>There are also some considerations your psychologist will assess before recommending telehealth for trauma work:</p>
+      <ul>
+        <li>Privacy at home — it is important to have a private space for sessions.</li>
+        <li>Access to support immediately after sessions — processing trauma can be emotionally activating, and your psychologist will want to know you have support available.</li>
+        <li>Technology stability — a reliable video connection matters for trauma-focused work.</li>
+        <li>Crisis risk — your psychologist will assess whether your current level of distress makes in-person support more appropriate at the outset.</li>
+      </ul>
+      <p>These are standard clinical considerations, not barriers. Your psychologist will discuss them with you and together you will determine whether telehealth is the right fit at this point in your treatment.</p>
+
+      <h2>Medicare and the Cost of PTSD Telehealth Psychology</h2>
+      <p>PTSD is a common presenting concern for psychology under the Medicare Better Access scheme. You do not need a specific PTSD referral — a Mental Health Treatment Plan (MHTP) from your GP, which refers to psychology for any mental health concern, is sufficient.</p>
+
+      <div class="fee-table-wrap">
+      <table class="fee-table">
+        <thead>
+          <tr>
+            <th>Situation</th>
+            <th>Medicare rebate (telehealth)</th>
+            <th>Typical out-of-pocket</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Registered psychologist, MHTP in place</td>
+            <td>$98.95/session</td>
+            <td>$50–$150 depending on practitioner fee</td>
+          </tr>
+          <tr>
+            <td>Endorsed clinical psychologist, MHTP in place</td>
+            <td>$145.25/session</td>
+            <td>$85–$165 depending on practitioner fee</td>
+          </tr>
+          <tr>
+            <td>No MHTP (self-referred)</td>
+            <td>No rebate</td>
+            <td>Full fee: typically $180–$310/session</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--color-text-secondary);">Medicare Better Access scheme. MBS items 91170 (registered psychologist, telehealth) and 91167 (endorsed clinical psychologist, telehealth), effective 1 July 2025. Up to 10 sessions per calendar year. <a href="/guides/cost-telehealth-psychologist-australia/">Full cost guide &rarr;</a></p>
+
+      <p>PTSD treatment often requires more than 10 sessions — particularly for C-PTSD or more chronic presentations. Some psychologists offer reduced fees for ongoing work, and it is worth asking about this upfront. Once you have used your 10 Medicare sessions, you can continue privately at full fee, access an EAP (Employee Assistance Programme) if your employer offers one, or return to your GP to discuss options.</p>
+
+      <h2>What to Look for in a Telehealth PTSD Psychologist</h2>
+      <p>Not all psychologists specialise in trauma. When looking for a PTSD-specific telehealth psychologist, the following factors matter:</p>
+
+      <ul>
+        <li><strong>Stated trauma specialty:</strong> Look for psychologists who explicitly list trauma, PTSD, or complex PTSD as a specialty area — not just "anxiety and depression" broadly.</li>
+        <li><strong>Specific treatment training:</strong> Ideally, look for training in PE, CPT, or EMDR specifically. These are not generic skills — they require dedicated training.</li>
+        <li><strong>AHPRA registration:</strong> All practitioners in this directory hold current AHPRA registration. You can verify any practitioner at the <a href="https://www.ahpra.gov.au/Registration/Registers-of-Practitioners.aspx" target="_blank" rel="noopener">AHPRA public register</a>.</li>
+        <li><strong>Telehealth experience:</strong> Some psychologists have adapted trauma protocols specifically for telehealth delivery; it is worth asking whether they have delivered PE, CPT, or EMDR via video call before.</li>
+        <li><strong>Fit and rapport:</strong> The therapeutic relationship is particularly important in trauma work. A good initial consultation — available from most telehealth practitioners — gives you a sense of fit before committing to a course of treatment.</li>
+      </ul>
+
+      <h2>Workers Compensation and PTSD</h2>
+      <p>If your PTSD relates to a workplace incident — including workplace accidents, assaults, or prolonged workplace stress — you may be eligible for psychology under NSW workers compensation rather than Medicare. Under an approved claim, sessions are funded by your insurer with no out-of-pocket cost. See the <a href="https://workerscomppsychologist.com.au/" target="_blank" rel="noopener">Workers Comp Psychologist Sydney directory</a> for SIRA-specific information and to find practitioners who accept workers compensation.</p>
+
+      <h2>Common Questions</h2>
+      <div class="faq">
+        <details class="faq__item">
+          <summary class="faq__q">Can PTSD be treated effectively via telehealth?</summary>
+          <p class="faq__a">Yes. Research supports telehealth delivery of PTSD treatments including Prolonged Exposure (PE), Cognitive Processing Therapy (CPT), and EMDR. Multiple randomised trials have found outcomes comparable to in-person delivery. Telehealth also removes travel and waiting-room barriers, which can be particularly helpful for trauma presentations where leaving the house is difficult.</p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">What type of psychologist should I see for PTSD?</summary>
+          <p class="faq__a">Look for AHPRA-registered psychologists who list trauma or PTSD as a stated specialty area and have experience with evidence-based approaches such as Prolonged Exposure (PE), Cognitive Processing Therapy (CPT), or EMDR. Both registered and endorsed clinical psychologists can provide trauma-focused therapy.</p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">Does Medicare cover telehealth psychology for PTSD?</summary>
+          <p class="faq__a">Yes. Telehealth psychology sessions attract the same Medicare rebate as in-person sessions under the Better Access scheme. You need a Mental Health Treatment Plan (MHTP) from your GP. The rebate is $98.95/session (registered psychologist) or $145.25 (endorsed clinical psychologist), effective 1 July 2025. Up to 10 sessions per calendar year.</p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">Is it safe to do trauma therapy via video call?</summary>
+          <p class="faq__a">Telehealth PTSD therapy requires the same clinical safety considerations as in-person sessions. Your psychologist will assess your suitability for telehealth, establish safety protocols, and ensure you have support available between sessions. Being in a familiar environment can sometimes feel safer during trauma processing. Your psychologist will establish a safety plan and keep emergency contacts before starting treatment.</p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">What is the difference between PTSD and complex PTSD?</summary>
+          <p class="faq__a">PTSD typically follows a discrete traumatic event. Complex PTSD (C-PTSD) is associated with prolonged, repeated, or early-life trauma. C-PTSD involves the core PTSD symptoms plus difficulties with emotional regulation, self-perception, and relationships. Both can be treated via telehealth psychology. C-PTSD treatment is often longer and may involve stabilisation work before trauma processing.</p>
+        </details>
+      </div>
+
+      <div class="cta-block">
+        <h3>Find a PTSD telehealth psychologist in Sydney</h3>
+        <p>Browse the directory to find AHPRA-registered psychologists in Sydney who specialise in trauma and PTSD, or tell us what you are looking for and we will connect you with a suitable practitioner.</p>
+        <a href="/directory/" class="btn--cta plausible-event-name=PTSD+Guide+Directory+CTA">
+          Browse the directory
+        </a>
+        <p class="cta-block__note">Or <a href="/connect/" style="color: rgba(255,255,255,0.85);">submit an enquiry</a> to be matched within 1 business day.</p>
+      </div>
+
+      <hr />
+      <p style="font-size: 0.8rem; color: var(--color-text-secondary);">
+        This guide provides general educational information about PTSD and psychological treatment options. It is not a substitute for professional advice. If you are experiencing significant distress, contact a registered health professional. For crisis support: Lifeline 13 11 14, Beyond Blue 1300 22 4636, 13YARN 13 92 76.
+      </p>
+      <p style="font-size: 0.8rem; color: var(--color-text-secondary);">Last reviewed June 2026. Medicare rebate figures current as at 1 July 2025 (MBS items 91170, 91167).</p>
+
+    </div>
+  </div>
+</Base>

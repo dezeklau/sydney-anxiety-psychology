@@ -13,10 +13,20 @@ import Base from '../../layouts/Base.astro';
       </p>
 
       <h1>Find a Telehealth Psychologist for Anxiety</h1>
-      <p>Tell us a little about what you are looking for and we will connect you with a suitable telehealth psychologist in Sydney within 1 business day. There is no obligation; submitting this form does not commit you to anything.</p>
+      <p>Tell us a little about what you are looking for and we will connect you with a suitable telehealth psychologist in Sydney. There is no obligation; submitting this form does not commit you to anything.</p>
+
+      <!-- Trust checklist — addresses "what is this, is it safe?" anxiety before the form -->
+      <div style="background: var(--color-accent-soft); border: 1.5px solid var(--color-accent-light); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-bottom: 1.5rem;">
+        <p style="font-weight: 700; color: var(--color-accent-hover); margin-bottom: 0.75rem; font-size: 0.95rem;">What happens after you submit:</p>
+        <ol style="margin: 0; padding-left: 1.3rem; color: var(--color-text);">
+          <li style="margin-bottom: 0.5rem; font-size: 0.92rem;">Your details are sent to our network of AHPRA-registered psychologists who specialise in anxiety and offer telehealth.</li>
+          <li style="margin-bottom: 0.5rem; font-size: 0.92rem;">A psychologist contacts you — typically within 1 business day — to introduce themselves and discuss availability.</li>
+          <li style="margin-bottom: 0; font-size: 0.92rem;">You decide whether to proceed. There is no pressure and no commitment.</li>
+        </ol>
+      </div>
 
       <div class="info-box" style="margin-bottom: 2rem;">
-        <p><strong>What happens next:</strong> When you submit this form, your details are sent to our network of AHPRA-registered psychologists in Sydney who specialise in anxiety and offer telehealth. A psychologist will be in touch within 1 business day to introduce themselves and discuss availability. You can decide whether to proceed from there.</p>
+        <p><strong>We only ask for the essentials.</strong> Name, email, and (optionally) your suburb and what you are hoping to get help with. We will not contact you for any other purpose. See our <a href="/privacy/">Privacy Policy</a>.</p>
       </div>
 
       <!-- Form: posts to Google Apps Script, which appends to the submissions Sheet -->

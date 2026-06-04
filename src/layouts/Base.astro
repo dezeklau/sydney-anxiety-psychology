@@ -98,17 +98,53 @@ const plausibleDomain = 'sydneyanxietypsychology.com.au'; // domain registered; 
         </span>
         <span class="site-header__name">Sydney Anxiety Psychology<span class="site-header__sub">Telehealth Psychologist Directory</span></span>
       </a>
-      <nav class="site-header__nav">
+      <nav class="site-header__nav" id="main-nav" aria-label="Main navigation">
         <a href="/directory/">Browse directory</a>
         <a href="/guides/cost-telehealth-psychologist-australia/">Costs &amp; rebates</a>
         <a href="/guides/">Guides</a>
-        <a href="/for-psychologists/">For psychologists</a>
+        <a href="/about/">About</a>
       </nav>
       <a href="/connect/" class="site-header__cta plausible-event-name=Header+CTA+Click">
         Find a Psychologist
       </a>
+      <!-- Mobile hamburger button (hidden on desktop) -->
+      <button
+        class="nav-toggle"
+        id="nav-toggle"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+      >
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+    </div>
+    <!-- Mobile nav drawer -->
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+      <nav aria-label="Mobile navigation">
+        <a href="/directory/">Browse directory</a>
+        <a href="/guides/cost-telehealth-psychologist-australia/">Costs &amp; rebates</a>
+        <a href="/guides/">Guides</a>
+        <a href="/about/">About</a>
+        <a href="/connect/" class="mobile-nav__cta plausible-event-name=Mobile+Nav+CTA+Click">Find a Psychologist</a>
+      </nav>
     </div>
   </header>
+  <script is:inline>
+    (function() {
+      var toggle = document.getElementById('nav-toggle');
+      var mobileNav = document.getElementById('mobile-nav');
+      if (!toggle || !mobileNav) return;
+      toggle.addEventListener('click', function() {
+        var expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        mobileNav.setAttribute('aria-hidden', String(expanded));
+        mobileNav.classList.toggle('mobile-nav--open', !expanded);
+        toggle.classList.toggle('nav-toggle--open', !expanded);
+      });
+    })();
+  </script>
 
   <main>
     <slot />
@@ -132,6 +168,7 @@ const plausibleDomain = 'sydneyanxietypsychology.com.au'; // domain registered; 
           <li style="margin-bottom: 0.4rem;"><a href="/connect/">Find a Psychologist</a></li>
           <li style="margin-bottom: 0.4rem;"><a href="/about/">About This Directory</a></li>
           <li style="margin-bottom: 0.4rem;"><a href="/privacy/">Privacy Policy</a></li>
+          <li style="margin-bottom: 0.4rem;"><a href="/site-index/">All pages</a></li>
         </ul>
       </div>
       <p class="site-footer__disclaimer">
