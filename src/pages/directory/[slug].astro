@@ -18,13 +18,13 @@ const registrationLabel =
     ? "Clinical psychologist (AHPRA endorsed)"
     : "Registered psychologist";
 
-// Medicare rebate copy — use registered psych rebate unless confirmed clinical
+// Medicare rebate copy -- use registered psych rebate unless confirmed clinical
 const medicareRebate =
   p.registrationType === "clinical_psychologist"
     ? "$145.25/session (clinical psychologist, from 1 Jul 2025)"
     : "$98.95/session (registered psychologist, from 1 Jul 2025)";
 
-// Short title: target ~60 chars visible in SERPs. Format: "[Name] — Telehealth Anxiety Psychologist | Sydney"
+// Short title: target ~60 chars visible in SERPs. Format: "[Name] - Telehealth Anxiety Psychologist | Sydney"
 const titleType = p.registrationType === "clinical_psychologist" ? "Clinical Psychologist" : "Psychologist";
 const pageTitle = `${p.name} — Telehealth Anxiety ${titleType} | Sydney`;
 const pageDescription = p.bio
@@ -129,294 +129,286 @@ const profilePageSchema = {
         <a href="/">Home</a> &rsaquo; <a href="/directory/">Directory</a> &rsaquo; {p.name}
       </p>
 
-      <!-- Two-column layout: profile left, enquiry form right -->
-      <div style="display: grid; grid-template-columns: 1fr minmax(300px, 380px); gap: 2rem; align-items: start;">
+      <!-- Single centered column layout -->
+      <div style="max-width: 780px; margin: 0 auto;">
 
-        <!-- LEFT: Profile content -->
-        <div>
+        <!-- (a) Profile header -->
+        <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 2rem; margin-bottom: 1.75rem; box-shadow: var(--shadow-sm);">
+          <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: flex-start;">
 
-          <!-- Profile header -->
-          <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 2rem; margin-bottom: 1.75rem; box-shadow: var(--shadow-sm);">
-            <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: flex-start;">
-
-              <!-- Photo or avatar -->
-              {p.photoUrl
-                ? (
-                  <img
-                    src={p.photoUrl}
-                    alt={`${p.name}, ${registrationLabel}`}
-                    width="88"
-                    height="88"
-                    loading="lazy"
-                    style="width: 88px; height: 88px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-accent-light); flex-shrink: 0;"
-                  />
-                )
-                : (
-                  <div style="width: 88px; height: 88px; border-radius: 50%; background: var(--color-accent-soft); border: 2px solid var(--color-accent-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0;" aria-hidden="true">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                  </div>
-                )
-              }
-
-              <div style="flex: 1 1 200px;">
-                <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 0.65rem; margin-bottom: 0.2rem;">
-                  <h1 style="font-size: clamp(1.4rem, 3.5vw, 1.9rem); margin-bottom: 0;">{p.name}</h1>
-                  {p.unclaimed && (
-                    <span class="unclaimed-badge-wrap">
-                      <span class="unclaimed-badge" role="note" tabindex="0">Unclaimed</span>
-                      <span class="unclaimed-tooltip" role="tooltip">
-                        This profile was pre-built from the AHPRA public register. It has not been reviewed or verified by the practitioner. The practitioner can claim, update, or remove it at any time.
-                      </span>
-                    </span>
-                  )}
+            <!-- Photo or avatar -->
+            {p.photoUrl
+              ? (
+                <img
+                  src={p.photoUrl}
+                  alt={`${p.name}, ${registrationLabel}`}
+                  width="88"
+                  height="88"
+                  loading="lazy"
+                  style="width: 88px; height: 88px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-accent-light); flex-shrink: 0;"
+                />
+              )
+              : (
+                <div style="width: 88px; height: 88px; border-radius: 50%; background: var(--color-accent-soft); border: 2px solid var(--color-accent-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0;" aria-hidden="true">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                 </div>
-                <p style="font-size: 1rem; color: var(--color-accent); font-weight: 600; margin-bottom: 0.3rem;">{registrationLabel}</p>
-                <p style="font-size: 0.9rem; color: var(--color-text-secondary); margin-bottom: 0; display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap;">
-                  <span style="display: flex; align-items: center; gap: 0.3rem;">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                    {p.suburb}, NSW
+              )
+            }
+
+            <div style="flex: 1 1 200px;">
+              <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 0.65rem; margin-bottom: 0.2rem;">
+                <h1 style="font-size: clamp(1.4rem, 3.5vw, 1.9rem); margin-bottom: 0;">{p.name}</h1>
+                {p.unclaimed && (
+                  <span class="unclaimed-badge-wrap">
+                    <span class="unclaimed-badge" role="note" tabindex="0">Unclaimed</span>
+                    <span class="unclaimed-tooltip" role="tooltip">
+                      This profile was pre-built from the AHPRA public register. It has not been reviewed or verified by the practitioner. The practitioner can claim, update, or remove it at any time.
+                    </span>
                   </span>
-                  <span style="color: var(--color-border);">|</span>
-                  <span>Telehealth</span>
-                  {p.yearsExperience && (
-                    <>
-                      <span style="color: var(--color-border);">|</span>
-                      <span>{p.yearsExperience}+ years experience</span>
-                    </>
-                  )}
-                </p>
+                )}
               </div>
-            </div>
-          </div>
-
-          <!-- Key info cards -->
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 1.75rem;">
-
-            <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow-sm);">
-              <p style="font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-accent-hover); margin-bottom: 0.4rem;">Registration</p>
-              <p style="font-size: 0.93rem; color: var(--color-text); font-weight: 600; margin-bottom: 0.3rem;">{registrationLabel}</p>
-              <p style="font-size: 0.78rem; color: var(--color-text-secondary); margin: 0;">
-                <a href="https://www.ahpra.gov.au/Registration/Registers-of-Practitioners.aspx" target="_blank" rel="noopener">Verify on AHPRA</a>
+              <p style="font-size: 1rem; color: var(--color-accent); font-weight: 600; margin-bottom: 0.3rem;">{registrationLabel}</p>
+              <p style="font-size: 0.9rem; color: var(--color-text-secondary); margin-bottom: 0; display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap;">
+                <span style="display: flex; align-items: center; gap: 0.3rem;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                  {p.suburb}, NSW
+                </span>
+                <span style="color: var(--color-border);">|</span>
+                <span>Telehealth</span>
+                {p.yearsExperience && (
+                  <>
+                    <span style="color: var(--color-border);">|</span>
+                    <span>{p.yearsExperience}+ years experience</span>
+                  </>
+                )}
               </p>
             </div>
-
-            <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow-sm);">
-              <p style="font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-accent-hover); margin-bottom: 0.4rem;">Session fee</p>
-              {p.pricing
-                ? <p style="font-size: 0.93rem; color: var(--color-text); font-weight: 600; margin-bottom: 0.3rem;">{p.pricing}</p>
-                : <p style="font-size: 0.9rem; color: var(--color-text-secondary); margin-bottom: 0.3rem;">Contact for fees</p>
-              }
-              <p style="font-size: 0.78rem; color: var(--color-text-secondary); margin: 0;">Medicare rebate: {medicareRebate}</p>
-            </div>
-
-            {p.yearsExperience && (
-              <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow-sm);">
-                <p style="font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-accent-hover); margin-bottom: 0.4rem;">Experience</p>
-                <p style="font-size: 0.93rem; color: var(--color-text); font-weight: 600; margin-bottom: 0.3rem;">{p.yearsExperience}+ years</p>
-                <p style="font-size: 0.78rem; color: var(--color-text-secondary); margin: 0;">In clinical practice</p>
-              </div>
-            )}
-
           </div>
+        </div>
 
-          <!-- Specialties -->
-          {p.specialties.length > 0 && (
-            <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.35rem; box-shadow: var(--shadow-sm); margin-bottom: 1.75rem;">
-              <p style="font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-accent-hover); margin-bottom: 0.75rem;">Publicly listed specialties</p>
-              <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-                {p.specialties.map(s => (
-                  <span style="display: inline-block; font-size: 0.85rem; background: var(--color-accent-soft); color: var(--color-accent-hover); border: 1px solid var(--color-accent-light); padding: 0.25rem 0.75rem; border-radius: 100px;">{s}</span>
-                ))}
-              </div>
-            </div>
-          )}
+        <!-- (b) Key info cards -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 1.75rem;">
 
-          <!-- Bio -->
-          {p.bio && (
-            <div style="margin-bottom: 1.75rem;">
-              <h2 style="font-size: 1.15rem; margin-bottom: 0.85rem;">About {p.name}</h2>
-              <p style="font-size: 0.97rem; line-height: 1.75; color: var(--color-text);">{p.bio}</p>
-              <p style="font-size: 0.78rem; color: var(--color-text-secondary); margin-top: 0.75rem;">
-                Sourced from: <a href={p.website || p.source} target="_blank" rel="noopener" style="color: var(--color-text-secondary);">{p.website || p.source}</a>.
-                Information is unverified by this directory — verify directly with the practitioner.
-              </p>
-            </div>
-          )}
-
-          <!-- Booking / website links -->
-          {(p.bookingUrl || p.website) && (
-            <div style="display: flex; flex-wrap: wrap; gap: 0.85rem; margin-bottom: 1.75rem;">
-              {p.bookingUrl && (
-                <a
-                  href={p.bookingUrl}
-                  target="_blank"
-                  rel="noopener"
-                  class="btn btn--primary plausible-event-name=Profile+Book+Direct+Click"
-                  style="font-size: 0.95rem;"
-                >
-                  Book directly with {p.name.split(' ')[p.name.split(' ').length - 1]}
-                </a>
-              )}
-              {p.website && (
-                <a
-                  href={p.website}
-                  target="_blank"
-                  rel="noopener"
-                  style="display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.9rem; color: var(--color-accent); border: 1px solid var(--color-accent-light); border-radius: var(--radius); padding: 0.6rem 1.1rem; background: var(--color-surface);"
-                >
-                  Visit practice website
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                </a>
-              )}
-            </div>
-          )}
-
-          {p.bookingUrl && (
-            <p style="font-size: 0.82rem; color: var(--color-text-secondary); margin-top: -0.75rem; margin-bottom: 1.75rem;">
-              <strong>Book directly</strong> goes to {p.name.split(' ')[p.name.split(' ').length - 1]}'s own booking page.
-              <strong>Request Appointment</strong> (form at right) sends your details via this directory — the practitioner will contact you to arrange a time.
-            </p>
-          )}
-
-          <!-- Source / removal notice -->
-          <div class="info-box" style="margin-bottom: 1.75rem;">
-            <p style="font-size: 0.87rem;">
-              <strong>About this listing:</strong> This profile was generated from
-              <a href={p.source} target="_blank" rel="noopener">the practitioner's public website</a>
-              and the <a href="https://www.ahpra.gov.au/Registration/Registers-of-Practitioners.aspx" target="_blank" rel="noopener">AHPRA public register</a>.
-              It is marked as unclaimed and has not been reviewed or verified by the practitioner.
-              Information may be incomplete or out of date — always verify directly.
-              If you are this practitioner, <a href="/for-psychologists/">claim your profile</a> or
-              <a href="/listing-removal/">request removal</a>.
+          <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow-sm);">
+            <p style="font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-accent-hover); margin-bottom: 0.4rem;">Registration</p>
+            <p style="font-size: 0.93rem; color: var(--color-text); font-weight: 600; margin-bottom: 0.3rem;">{registrationLabel}</p>
+            <p style="font-size: 0.78rem; color: var(--color-text-secondary); margin: 0;">
+              <a href="https://www.ahpra.gov.au/Registration/Registers-of-Practitioners.aspx" target="_blank" rel="noopener">Verify on AHPRA</a>
             </p>
           </div>
 
-          <!-- Claim CTA (bottom of page, for practitioners) -->
-          {p.unclaimed && (
-            <div class="cta-block" style="margin-bottom: 1.75rem;">
-              <h3>Are you {p.name}?</h3>
-              <p>
-                Claim this profile in two minutes. Add your specialties, booking link, and bio — and start
-                receiving inbound patient enquiries at no cost. No referral fee. Ever.
-              </p>
-              <a href="/for-psychologists/" class="btn--cta plausible-event-name=Profile+Claim+CTA+Click">
-                Claim this profile free
-              </a>
-              <p class="cta-block__note">Takes 2 minutes. Free to claim and free to stay.</p>
+          <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow-sm);">
+            <p style="font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-accent-hover); margin-bottom: 0.4rem;">Session fee</p>
+            {p.pricing
+              ? <p style="font-size: 0.93rem; color: var(--color-text); font-weight: 600; margin-bottom: 0.3rem;">{p.pricing}</p>
+              : <p style="font-size: 0.9rem; color: var(--color-text-secondary); margin-bottom: 0.3rem;">Contact for fees</p>
+            }
+            <p style="font-size: 0.78rem; color: var(--color-text-secondary); margin: 0;">Medicare rebate: {medicareRebate}</p>
+          </div>
+
+          {p.yearsExperience && (
+            <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow-sm);">
+              <p style="font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-accent-hover); margin-bottom: 0.4rem;">Experience</p>
+              <p style="font-size: 0.93rem; color: var(--color-text); font-weight: 600; margin-bottom: 0.3rem;">{p.yearsExperience}+ years</p>
+              <p style="font-size: 0.78rem; color: var(--color-text-secondary); margin: 0;">In clinical practice</p>
             </div>
           )}
 
         </div>
 
-        <!-- RIGHT: Sticky per-practitioner contact form -->
-        <div style="position: sticky; top: 2rem;">
+        <!-- (c) Specialties -->
+        {p.specialties.length > 0 && (
+          <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.35rem; box-shadow: var(--shadow-sm); margin-bottom: 1.75rem;">
+            <p style="font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-accent-hover); margin-bottom: 0.75rem;">Publicly listed specialties</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+              {p.specialties.map(s => (
+                <span style="display: inline-block; font-size: 0.85rem; background: var(--color-accent-soft); color: var(--color-accent-hover); border: 1px solid var(--color-accent-light); padding: 0.25rem 0.75rem; border-radius: 100px;">{s}</span>
+              ))}
+            </div>
+          </div>
+        )}
 
-          <div style="background: var(--color-surface); border: 1.5px solid var(--color-accent-light); border-radius: var(--radius-lg); padding: 1.75rem; box-shadow: 0 4px 24px rgba(0,0,0,0.08);">
-
-            <h2 style="font-size: 1.1rem; margin-top: 0; margin-bottom: 0.4rem;">Request Appointment</h2>
-            <p style="font-size: 0.87rem; color: var(--color-text-secondary); margin-bottom: 1.25rem;">
-              Send your contact details to {p.name.split(' ')[p.name.split(' ').length - 1]} via this directory. They will contact you to arrange an appointment. You are not committed to anything.
+        <!-- (d) Bio -->
+        {p.bio && (
+          <div style="margin-bottom: 1.75rem;">
+            <h2 style="font-size: 1.15rem; margin-bottom: 0.85rem;">About {p.name}</h2>
+            <p style="font-size: 0.97rem; line-height: 1.75; color: var(--color-text);">{p.bio}</p>
+            <p style="font-size: 0.78rem; color: var(--color-text-secondary); margin-top: 0.75rem;">
+              Sourced from: <a href={p.website || p.source} target="_blank" rel="noopener" style="color: var(--color-text-secondary);">{p.website || p.source}</a>.
+              Information is unverified by this directory — verify directly with the practitioner.
             </p>
+          </div>
+        )}
 
-            <form
-              method="POST"
-              action={APPS_SCRIPT_URL}
-              style="display: flex; flex-direction: column; gap: 1rem;"
-            >
-              <!-- Hidden metadata -->
-              <input type="hidden" name="_site" value="anxiety-sydney" />
-              <input type="hidden" name="_form" value="practitioner-enquiry" />
-              <input type="hidden" name="_next" value="https://sydneyanxietypsychology.com.au/connect/thank-you/" />
-              <input type="hidden" name="practitioner_slug" value={p.slug} />
-              <input type="hidden" name="practitioner_name" value={p.name} />
-              <!-- Practitioner public email for forwarding (already public — safe to expose) -->
-              <input type="hidden" name="practitioner_email" value={p.publicEmail || ""} />
-              <!-- Honeypot -->
-              <input type="text" name="_gotcha" style="display: none;" tabindex="-1" autocomplete="off" />
-
-              <div>
-                <label for={`name-${p.slug}`} style="display: block; font-weight: 600; font-size: 0.88rem; margin-bottom: 0.35rem;">Your name <span aria-label="required">*</span></label>
-                <input
-                  type="text"
-                  id={`name-${p.slug}`}
-                  name="name"
-                  required
-                  autocomplete="name"
-                  style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid var(--color-border); border-radius: 6px; font-size: 0.9rem; font-family: inherit; background: var(--color-bg); box-sizing: border-box;"
-                />
-              </div>
-
-              <div>
-                <label for={`phone-${p.slug}`} style="display: block; font-weight: 600; font-size: 0.88rem; margin-bottom: 0.35rem;">Mobile number <span aria-label="required">*</span></label>
-                <input
-                  type="tel"
-                  id={`phone-${p.slug}`}
-                  name="phone"
-                  required
-                  autocomplete="tel"
-                  placeholder="04xx xxx xxx"
-                  style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid var(--color-border); border-radius: 6px; font-size: 0.9rem; font-family: inherit; background: var(--color-bg); box-sizing: border-box;"
-                />
-              </div>
-
-              <div>
-                <label for={`email-${p.slug}`} style="display: block; font-weight: 600; font-size: 0.88rem; margin-bottom: 0.35rem;">Email address <span aria-label="required">*</span></label>
-                <input
-                  type="email"
-                  id={`email-${p.slug}`}
-                  name="email"
-                  required
-                  autocomplete="email"
-                  style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid var(--color-border); border-radius: 6px; font-size: 0.9rem; font-family: inherit; background: var(--color-bg); box-sizing: border-box;"
-                />
-              </div>
-
-              <div>
-                <label for={`message-${p.slug}`} style="display: block; font-weight: 600; font-size: 0.88rem; margin-bottom: 0.35rem;">Message (optional)</label>
-                <p style="font-size: 0.78rem; color: var(--color-text-secondary); margin-bottom: 0.4rem;">What are you hoping to get help with? Any preferences for times or approach. Only share what you are comfortable with.</p>
-                <textarea
-                  id={`message-${p.slug}`}
-                  name="message"
-                  rows="3"
-                  style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid var(--color-border); border-radius: 6px; font-size: 0.9rem; font-family: inherit; resize: vertical; background: var(--color-bg); box-sizing: border-box;"
-                ></textarea>
-              </div>
-
-              <!-- Single privacy consent checkbox -->
-              <div style="display: flex; align-items: flex-start; gap: 0.65rem;">
-                <input
-                  type="checkbox"
-                  id={`consent-${p.slug}`}
-                  name="privacy_consent"
-                  value="yes"
-                  required
-                  style="width: 16px; height: 16px; flex-shrink: 0; margin-top: 0.15rem;"
-                />
-                <label for={`consent-${p.slug}`} style="font-size: 0.8rem; color: var(--color-text-secondary); cursor: pointer; line-height: 1.5;">
-                  I understand that my name, mobile number, and email address will be passed to {p.name} to arrange an appointment, and stored by Sydney Anxiety Psychology. I have read the <a href="/privacy/">Privacy Policy</a>. <span aria-label="required">*</span>
-                </label>
-              </div>
-
-              <button
-                type="submit"
-                class="btn btn--primary plausible-event-name=Profile+Enquiry+Submit"
-                style="width: 100%; font-size: 0.97rem; padding: 0.85rem;"
+        <!-- (e) Booking / website links -->
+        {(p.bookingUrl || p.website) && (
+          <div style="display: flex; flex-wrap: wrap; gap: 0.85rem; margin-bottom: 1.75rem;">
+            {p.bookingUrl && (
+              <a
+                href={p.bookingUrl}
+                target="_blank"
+                rel="noopener"
+                class="btn btn--primary plausible-event-name=Profile+Book+Direct+Click"
+                style="font-size: 0.95rem;"
               >
-                Request Appointment with {p.name.split(' ')[p.name.split(' ').length - 1]}
-              </button>
-
-            </form>
-
+                Book directly with {p.name.split(' ')[p.name.split(' ').length - 1]}
+              </a>
+            )}
+            {p.website && (
+              <a
+                href={p.website}
+                target="_blank"
+                rel="noopener"
+                style="display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.9rem; color: var(--color-accent); border: 1px solid var(--color-accent-light); border-radius: var(--radius); padding: 0.6rem 1.1rem; background: var(--color-surface);"
+              >
+                Visit practice website
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            )}
           </div>
+        )}
 
-          <!-- Medicare note below form -->
-          <div style="margin-top: 1rem; padding: 1rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); font-size: 0.82rem; color: var(--color-text-secondary);">
-            <strong style="color: var(--color-text); display: block; margin-bottom: 0.35rem;">Medicare rebate</strong>
-            With a Mental Health Care Plan from your GP, you may be eligible for a Medicare rebate of {medicareRebate}.
-            <a href="/guides/cost-telehealth-psychologist-australia/" style="color: var(--color-accent); white-space: nowrap;">How costs and rebates work</a>
-          </div>
+        {p.bookingUrl && (
+          <p style="font-size: 0.82rem; color: var(--color-text-secondary); margin-top: -0.75rem; margin-bottom: 1.75rem;">
+            <strong>Book directly</strong> goes to {p.name.split(' ')[p.name.split(' ').length - 1]}'s own booking page.
+            <strong>Request Appointment</strong> (form below) sends your details via this directory — the practitioner will contact you to arrange a time.
+          </p>
+        )}
+
+        <!-- (f) Request Appointment form card — full width -->
+        <div style="background: var(--color-surface); border: 1.5px solid var(--color-accent-light); border-radius: var(--radius-lg); padding: 1.75rem; box-shadow: 0 4px 24px rgba(0,0,0,0.08); margin-bottom: 1rem;">
+
+          <h2 style="font-size: 1.1rem; margin-top: 0; margin-bottom: 0.4rem;">Request Appointment</h2>
+          <p style="font-size: 0.87rem; color: var(--color-text-secondary); margin-bottom: 1.25rem;">
+            Send your contact details to {p.name.split(' ')[p.name.split(' ').length - 1]} via this directory. They will contact you to arrange an appointment. You are not committed to anything.
+          </p>
+
+          <form
+            method="POST"
+            action={APPS_SCRIPT_URL}
+            style="display: flex; flex-direction: column; gap: 1rem;"
+          >
+            <!-- Hidden metadata -->
+            <input type="hidden" name="_site" value="anxiety-sydney" />
+            <input type="hidden" name="_form" value="practitioner-enquiry" />
+            <input type="hidden" name="_next" value="https://sydneyanxietypsychology.com.au/connect/thank-you/" />
+            <input type="hidden" name="practitioner_slug" value={p.slug} />
+            <input type="hidden" name="practitioner_name" value={p.name} />
+            <!-- Practitioner public email for forwarding (already public -- safe to expose) -->
+            <input type="hidden" name="practitioner_email" value={p.publicEmail || ""} />
+            <!-- Honeypot -->
+            <input type="text" name="_gotcha" style="display: none;" tabindex="-1" autocomplete="off" />
+
+            <div>
+              <label for={`name-${p.slug}`} style="display: block; font-weight: 600; font-size: 0.88rem; margin-bottom: 0.35rem;">Your name <span aria-label="required">*</span></label>
+              <input
+                type="text"
+                id={`name-${p.slug}`}
+                name="name"
+                required
+                autocomplete="name"
+                style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid var(--color-border); border-radius: 6px; font-size: 0.9rem; font-family: inherit; background: var(--color-bg); box-sizing: border-box;"
+              />
+            </div>
+
+            <div>
+              <label for={`phone-${p.slug}`} style="display: block; font-weight: 600; font-size: 0.88rem; margin-bottom: 0.35rem;">Mobile number <span aria-label="required">*</span></label>
+              <input
+                type="tel"
+                id={`phone-${p.slug}`}
+                name="phone"
+                required
+                autocomplete="tel"
+                placeholder="04xx xxx xxx"
+                style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid var(--color-border); border-radius: 6px; font-size: 0.9rem; font-family: inherit; background: var(--color-bg); box-sizing: border-box;"
+              />
+            </div>
+
+            <div>
+              <label for={`email-${p.slug}`} style="display: block; font-weight: 600; font-size: 0.88rem; margin-bottom: 0.35rem;">Email address <span aria-label="required">*</span></label>
+              <input
+                type="email"
+                id={`email-${p.slug}`}
+                name="email"
+                required
+                autocomplete="email"
+                style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid var(--color-border); border-radius: 6px; font-size: 0.9rem; font-family: inherit; background: var(--color-bg); box-sizing: border-box;"
+              />
+            </div>
+
+            <div>
+              <label for={`message-${p.slug}`} style="display: block; font-weight: 600; font-size: 0.88rem; margin-bottom: 0.35rem;">Message (optional)</label>
+              <p style="font-size: 0.78rem; color: var(--color-text-secondary); margin-bottom: 0.4rem;">What are you hoping to get help with? Any preferences for times or approach. Only share what you are comfortable with.</p>
+              <textarea
+                id={`message-${p.slug}`}
+                name="message"
+                rows="3"
+                style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid var(--color-border); border-radius: 6px; font-size: 0.9rem; font-family: inherit; resize: vertical; background: var(--color-bg); box-sizing: border-box;"
+              ></textarea>
+            </div>
+
+            <!-- Single privacy consent checkbox -->
+            <div style="display: flex; align-items: flex-start; gap: 0.65rem;">
+              <input
+                type="checkbox"
+                id={`consent-${p.slug}`}
+                name="privacy_consent"
+                value="yes"
+                required
+                style="width: 16px; height: 16px; flex-shrink: 0; margin-top: 0.15rem;"
+              />
+              <label for={`consent-${p.slug}`} style="font-size: 0.8rem; color: var(--color-text-secondary); cursor: pointer; line-height: 1.5;">
+                I understand that my name, mobile number, and email address will be passed to {p.name} to arrange an appointment, and stored by Sydney Anxiety Psychology. I have read the <a href="/privacy/">Privacy Policy</a>. <span aria-label="required">*</span>
+              </label>
+            </div>
+
+            <button
+              type="submit"
+              class="btn btn--primary plausible-event-name=Profile+Enquiry+Submit"
+              style="width: 100%; font-size: 0.97rem; padding: 0.85rem;"
+            >
+              Request Appointment with {p.name.split(' ')[p.name.split(' ').length - 1]}
+            </button>
+
+          </form>
 
         </div>
+
+        <!-- (g) Medicare rebate note -->
+        <div style="margin-bottom: 1.75rem; padding: 1rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); font-size: 0.82rem; color: var(--color-text-secondary);">
+          <strong style="color: var(--color-text); display: block; margin-bottom: 0.35rem;">Medicare rebate</strong>
+          With a Mental Health Care Plan from your GP, you may be eligible for a Medicare rebate of {medicareRebate}.
+          <a href="/guides/cost-telehealth-psychologist-australia/" style="color: var(--color-accent); white-space: nowrap;">How costs and rebates work</a>
+        </div>
+
+        <!-- (h) Source / removal notice -->
+        <div class="info-box" style="margin-bottom: 1.75rem;">
+          <p style="font-size: 0.87rem;">
+            <strong>About this listing:</strong> This profile was generated from
+            <a href={p.source} target="_blank" rel="noopener">the practitioner's public website</a>
+            and the <a href="https://www.ahpra.gov.au/Registration/Registers-of-Practitioners.aspx" target="_blank" rel="noopener">AHPRA public register</a>.
+            It is marked as unclaimed and has not been reviewed or verified by the practitioner.
+            Information may be incomplete or out of date — always verify directly.
+            If you are this practitioner, <a href="/for-psychologists/">claim your profile</a> or
+            <a href="/listing-removal/">request removal</a>.
+          </p>
+        </div>
+
+        <!-- (i) Claim CTA (bottom of page, for practitioners) -->
+        {p.unclaimed && (
+          <div class="cta-block" style="margin-bottom: 1.75rem;">
+            <h3>Are you {p.name}?</h3>
+            <p>
+              Claim this profile in two minutes. Add your specialties, booking link, and bio — and start
+              receiving inbound patient enquiries at no cost. No referral fee. Ever.
+            </p>
+            <a href="/for-psychologists/" class="btn--cta plausible-event-name=Profile+Claim+CTA+Click">
+              Claim this profile free
+            </a>
+            <p class="cta-block__note">Takes 2 minutes. Free to claim and free to stay.</p>
+          </div>
+        )}
+
       </div>
 
     </div>
