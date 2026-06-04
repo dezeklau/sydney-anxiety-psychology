@@ -535,6 +535,74 @@ export const practitioners: Practitioner[] = [
     publicEmail: "admin@psychhelp.com.au",
     website: "https://psychhelp.com.au",
     bookingUrl: "https://psychhelp.com.au/book-an-appointment/"
+  },
+  // --- Added 2026-06-04 (Halaxy-sourced, Derek-reviewed batch) ---
+  {
+    slug: "nick-batty-psychologist-north-sydney",
+    name: "Nick Batty",
+    registrationType: "registered_psychologist",
+    suburb: "North Sydney",
+    specialties: ["Anxiety", "Panic attacks", "Specific phobias", "OCD", "Depression", "Trauma"],
+    unclaimed: true,
+    source: "https://www.halaxy.com/profile/nick-batty/psychologist/637711",
+    yearsExperience: null,
+    bio: "Nick Batty is a registered psychologist at TaylorCare Telehealth in North Sydney. He works with adults experiencing anxiety, panic attacks, specific phobias, OCD, depression, trauma and stress-related concerns, grief and loss, and substance use issues. He uses CBT, ACT, motivational interviewing, and mindfulness-based approaches. Sessions are available via telehealth.",
+    photoUrl: null,
+    pricing: null,
+    publicEmail: null,
+    website: "https://www.taylorcare.com.au",
+    bookingUrl: null
+  },
+  {
+    slug: "karen-de-mar-psychologist-north-sydney",
+    name: "Karen de Mar",
+    registrationType: "registered_psychologist",
+    suburb: "North Sydney",
+    specialties: ["Anxiety", "Stress management", "Women's issues", "Parenting support", "General counselling"],
+    unclaimed: true,
+    source: "https://www.halaxy.com/profile/ms-karen-de-mar/psychologist/638441",
+    yearsExperience: 20,
+    bio: "Karen de Mar is a registered psychologist with over 20 years of experience, based at TaylorCare Telehealth in North Sydney. She works with adults and families on anxiety, stress management, women's issues, and parenting support, drawing on her background in general and counselling psychology. Sessions are available via telehealth.",
+    photoUrl: null,
+    pricing: null,
+    publicEmail: null,
+    website: "https://www.taylorcare.com.au",
+    bookingUrl: null
+  },
+  {
+    slug: "lauren-tober-psychologist-sydney-telehealth",
+    name: "Dr Lauren Tober",
+    registrationType: "registered_psychologist",
+    suburb: "Sydney (telehealth)",
+    specialties: ["Anxiety", "Phobias", "Depression", "Trauma and PTSD", "Stress management", "Women's issues", "Burnout"],
+    unclaimed: true,
+    source: "https://www.halaxy.com/profile/dr-lauren-tober/psychologist/139616",
+    // Note: "Dr" reflects the DPsych (clinical psychology doctorate) title shown on profile.
+    // DPsych is an academic/professional doctorate in psychology, not a medical degree.
+    // registrationType remains "registered_psychologist" — AHPRA clinical endorsement not independently verified this run.
+    yearsExperience: null,
+    bio: "Dr Lauren Tober is a registered psychologist (DPsych, BSc Hons) and APS member at Awake Psychology, offering telehealth-only sessions across NSW. She holds a doctorate in psychology (not a medical degree) and works with adults experiencing anxiety, phobias, depression, trauma and PTSD, stress, burnout, women's health concerns, and life transitions. Her approach is integrative and evidence-based.",
+    photoUrl: null,
+    pricing: null,
+    publicEmail: null,
+    website: "https://www.awakepsychology.com.au",
+    bookingUrl: null
+  },
+  {
+    slug: "marianne-restifo-psychologist-concord",
+    name: "Marianne Restifo",
+    registrationType: "registered_psychologist",
+    suburb: "Concord",
+    specialties: ["Anxiety disorders", "Depression", "Trauma and PTSD", "ADHD", "Relationships", "Occupational rehabilitation"],
+    unclaimed: true,
+    source: "https://www.halaxy.com/profile/marianne-restifo/psychologist/256392",
+    yearsExperience: null,
+    bio: "Marianne Restifo is a registered psychologist and SIRA-accredited provider at PSYCHmatters in Concord, Sydney. She works with adults and families on anxiety disorders, depression, trauma and PTSD, ADHD, relationships, and occupational rehabilitation. She has experience supporting Defence Force personnel and private practice clients, using CBT, ACT, DBT, Gottman Method, and solution-focused approaches. Languages: English, Italian.",
+    photoUrl: null,
+    pricing: null,
+    publicEmail: null,
+    website: "https://www.psychmatters.com.au",
+    bookingUrl: null
   }
 ];
 
