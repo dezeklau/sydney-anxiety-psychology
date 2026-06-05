@@ -87,8 +87,11 @@ const URLS = [
   '/guides/panic-disorder-telehealth-psychologist-sydney/',
   '/guides/psychologist-waitlist-sydney/',
   '/guides/social-anxiety-telehealth-psychologist-sydney/',
+  '/guides/ptsd-telehealth-psychologist-sydney/',
+  '/guides/anxiety-depression-telehealth-psychologist-sydney/',
   '/listing-removal/',
   '/privacy/',
+  '/site-index/',
 ].map(path => `${BASE_URL}${path}`);
 
 async function submitIndexNow() {
