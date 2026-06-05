@@ -21,7 +21,7 @@ const KEY = '75300e81a9ac479eac2cd8d9941b7e13';
 const HOST = 'sydneyanxietypsychology.com.au';
 const BASE_URL = `https://${HOST}`;
 
-// Updated 2026-06-04: full URL list from dist build (67 pages)
+// Updated 2026-06-05: full URL list from dist build (68 pages)
 // Excludes: thank-you pages (no indexable content)
 const URLS = [
   '/',
@@ -89,6 +89,7 @@ const URLS = [
   '/guides/social-anxiety-telehealth-psychologist-sydney/',
   '/guides/ptsd-telehealth-psychologist-sydney/',
   '/guides/anxiety-depression-telehealth-psychologist-sydney/',
+  '/guides/evening-weekend-psychologist-sydney/',
   '/listing-removal/',
   '/privacy/',
   '/site-index/',
