@@ -21,8 +21,9 @@ const KEY = '75300e81a9ac479eac2cd8d9941b7e13';
 const HOST = 'sydneyanxietypsychology.com.au';
 const BASE_URL = `https://${HOST}`;
 
-// Updated 2026-06-05 (iteration 4): full URL list from dist build (72 pages)
-// Excludes: thank-you pages (no indexable content)
+// Updated 2026-06-05 (iteration 5): full URL list from dist build (76 pages)
+// Excludes: thank-you pages (noindex), listing-removal (noindex)
+// Added: /tools/, /tools/medicare-rebate-calculator/, /tools/mental-health-care-plan-checker/
 const URLS = [
   '/',
   '/about/',
@@ -94,6 +95,9 @@ const URLS = [
   '/listing-removal/',
   '/privacy/',
   '/site-index/',
+  '/tools/',
+  '/tools/medicare-rebate-calculator/',
+  '/tools/mental-health-care-plan-checker/',
 ].map(path => `${BASE_URL}${path}`);
 
 async function submitIndexNow() {

@@ -155,6 +155,53 @@ const breadcrumbSchema = {
         Source: ABS National Study of Mental Health and Wellbeing 2020-21 (ABS Cat 4329.0, published 2023). Methodology note: where a person met criteria for more than one anxiety disorder, a hierarchy rule was applied; estimates do not simply add up. The "All anxiety disorders" figure reflects unique individuals meeting criteria for at least one.
       </p>
 
+      <!-- Static SVG infographic: anxiety disorders by 12-month prevalence -->
+      <figure style="margin: 2rem 0; padding: 1.5rem; background: white; border: 1px solid #e0e0e0; border-radius: var(--radius);" aria-label="Bar chart: estimated Australians affected by each anxiety disorder type, 12-month period, 2020-21">
+        <figcaption style="font-size: 0.88rem; font-weight: 600; color: var(--color-text); margin-bottom: 1.25rem; text-align: center;">Australians affected by anxiety disorder type (12 months, 2020-21) — Source: ABS NSMHW 2020-21</figcaption>
+        <svg viewBox="0 0 540 252" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Horizontal bar chart showing social phobia affects 1,406,100 Australians, the highest of all anxiety disorder types, followed by PTSD at 1,110,300" style="width:100%;max-width:540px;display:block;margin:0 auto;">
+          <title>Australians affected by anxiety disorder type, 12-month prevalence 2020-21 — ABS NSMHW</title>
+          <desc>Social phobia: 1,406,100. PTSD: 1,110,300. Agoraphobia: 951,100. GAD: 757,300. Panic disorder: 720,300. OCD: 624,500.</desc>
+          <!-- Bar area: x=175 to x=510 = 335px wide. Max value 1,406,100 → scale = 335/1406100 = 0.0002382 px per person -->
+          <!-- Row height = 36px; 6 rows = 216px; top pad 10px -->
+          <g font-family="Inter, system-ui, sans-serif" font-size="11.5">
+            <!-- Background bands -->
+            <rect x="175" y="6" width="335" height="34" fill="#f0f4ff" rx="3"/>
+            <rect x="175" y="42" width="335" height="34" fill="#fafafa" rx="3"/>
+            <rect x="175" y="78" width="335" height="34" fill="#f0f4ff" rx="3"/>
+            <rect x="175" y="114" width="335" height="34" fill="#fafafa" rx="3"/>
+            <rect x="175" y="150" width="335" height="34" fill="#f0f4ff" rx="3"/>
+            <rect x="175" y="186" width="335" height="34" fill="#fafafa" rx="3"/>
+            <!-- Bars -->
+            <!-- Social phobia 1,406,100 → 335px (full) -->
+            <rect x="175" y="12" width="335" height="22" fill="#3b5bdb" rx="3"/>
+            <text x="514" y="27" fill="#3b5bdb" font-weight="700" font-size="11">1.41M</text>
+            <!-- PTSD 1,110,300 → 265px -->
+            <rect x="175" y="48" width="265" height="22" fill="#5470c6" rx="3"/>
+            <text x="444" y="63" fill="#5470c6" font-weight="600" font-size="11">1.11M</text>
+            <!-- Agoraphobia 951,100 → 227px -->
+            <rect x="175" y="84" width="227" height="22" fill="#6c8bdf" rx="3"/>
+            <text x="406" y="99" fill="#6c8bdf" font-weight="600" font-size="11">951K</text>
+            <!-- GAD 757,300 → 180px -->
+            <rect x="175" y="120" width="180" height="22" fill="#7fa3e8" rx="3"/>
+            <text x="359" y="135" fill="#7fa3e8" font-weight="600" font-size="11">757K</text>
+            <!-- Panic 720,300 → 171px -->
+            <rect x="175" y="156" width="171" height="22" fill="#92bbf0" rx="3"/>
+            <text x="350" y="171" fill="#6b7280" font-weight="600" font-size="11">720K</text>
+            <!-- OCD 624,500 → 149px -->
+            <rect x="175" y="192" width="149" height="22" fill="#aacef8" rx="3"/>
+            <text x="328" y="207" fill="#6b7280" font-weight="600" font-size="11">625K</text>
+            <!-- Labels -->
+            <text x="170" y="27" text-anchor="end" fill="#1e293b" font-weight="700">Social phobia</text>
+            <text x="170" y="63" text-anchor="end" fill="#374151">PTSD</text>
+            <text x="170" y="99" text-anchor="end" fill="#374151">Agoraphobia</text>
+            <text x="170" y="135" text-anchor="end" fill="#374151">GAD</text>
+            <text x="170" y="171" text-anchor="end" fill="#374151">Panic disorder</text>
+            <text x="170" y="207" text-anchor="end" fill="#374151">OCD</text>
+          </g>
+        </svg>
+        <p style="font-size: 0.78rem; color: var(--color-text-secondary); text-align: center; margin: 0.75rem 0 0;">ABS National Study of Mental Health and Wellbeing 2020-21 (ABS Cat 4329.0). Estimates apply a diagnostic hierarchy; the All anxiety disorders total (3.33M) is not a simple sum. <a href="https://www.abs.gov.au/statistics/health/mental-and-behavioural-conditions/national-study-mental-health-and-wellbeing/2020-21" target="_blank" rel="noopener">abs.gov.au</a>.</p>
+      </figure>
+
       <p>
         Across the full population aged 16-85, 43% (approximately 8.5 million people) are estimated to have experienced a mental disorder at some point in their lifetime, including anxiety.
       </p>
