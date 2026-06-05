@@ -54,7 +54,7 @@ const plausibleDomain = 'sydneyanxietypsychology.com.au'; // domain registered; 
   </script>
 
   <!-- Organization schema (sitewide) -->
-  <script type="application/ld+json">{JSON.stringify({
+  <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Sydney Anxiety Psychology",
@@ -76,7 +76,7 @@ const plausibleDomain = 'sydneyanxietypsychology.com.au'; // domain registered; 
       "contactType": "customer support",
       "url": "https://sydneyanxietypsychology.com.au/connect/"
     }
-  })}</script>
+  })} />
 
   <!-- Schema.org JSON-LD (page-level) -->
   {schema && (
