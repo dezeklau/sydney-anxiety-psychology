@@ -1,0 +1,264 @@
+---
+import Base from '../../layouts/Base.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "headline": "Agoraphobia: Telehealth Psychology in Sydney",
+  "description": "What agoraphobia is, how CBT and graduated exposure treat it, why telehealth is often the most practical starting point, and how to find a psychologist in Sydney. Medicare rebates apply.",
+  "datePublished": "2026-06-05",
+  "dateModified": "2026-06-05",
+  "author": {
+    "@type": "Organization",
+    "name": "Sydney Anxiety Psychology"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Sydney Anxiety Psychology",
+    "url": "https://sydneyanxietypsychology.com.au"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://sydneyanxietypsychology.com.au/guides/agoraphobia-telehealth-psychologist-sydney/"
+  },
+  "audience": {
+    "@type": "Patient"
+  },
+  "about": {
+    "@type": "MedicalCondition",
+    "name": "Agoraphobia"
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sydneyanxietypsychology.com.au/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://sydneyanxietypsychology.com.au/guides/" },
+    { "@type": "ListItem", "position": 3, "name": "Agoraphobia telehealth psychologist Sydney", "item": "https://sydneyanxietypsychology.com.au/guides/agoraphobia-telehealth-psychologist-sydney/" },
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can agoraphobia be treated via telehealth?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Telehealth is often the most practical starting point for agoraphobia, precisely because the condition involves difficulty leaving home or being in unfamiliar places. Research supports CBT delivered via video call as effective for panic disorder and agoraphobia. A skilled psychologist can begin graduated exposure hierarchies in a telehealth format — real-world exposure tasks are assigned between sessions rather than conducted in a clinic, which is also the standard in-person model."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is agoraphobia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Agoraphobia is an anxiety disorder characterised by fear and avoidance of situations where escape might be difficult or help unavailable if panic or distress occurs. Common avoided situations include public transport, shopping centres, cinemas, queues, open spaces, or leaving home alone. Agoraphobia often (but not always) develops following panic attacks. Contrary to popular belief, agoraphobia is not simply 'fear of open spaces' — it is a fear of situations perceived as unsafe or inescapable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is agoraphobia treated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The primary evidence-based treatment for agoraphobia is cognitive behavioural therapy (CBT), specifically with a graduated exposure component. The psychologist helps you build a hierarchy of feared situations from least to most anxiety-provoking, then work through them systematically. Interoceptive exposure (deliberately producing mild physical sensations of anxiety to reduce fear of those sensations) is often included if panic is involved. Research supports this approach as producing durable improvement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Medicare cover telehealth psychology for agoraphobia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Telehealth psychology sessions attract the same Medicare rebate as in-person appointments under Better Access. With a Mental Health Treatment Plan from your GP, the rebate is $98.95 per session for a registered psychologist (item 91170) or $145.25 for an endorsed clinical psychologist (item 91167), effective 1 July 2025. Up to 10 sessions per calendar year are covered."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should I look for in a psychologist for agoraphobia in Sydney?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Look for a psychologist who publicly lists experience with anxiety disorders, panic disorder, or specifically agoraphobia. Ask whether they use CBT with graduated exposure — this is the evidence-based approach. AHPRA registration is the minimum requirement (either registered or clinical psychologist). A telehealth-first psychologist is often preferable for agoraphobia because you can begin treatment without needing to travel to a clinic, which is frequently the main barrier."
+      }
+    }
+  ]
+};
+---
+<Base
+  title="Agoraphobia: Telehealth Psychologist in Sydney | Medicare Rebates Explained"
+  description="Can agoraphobia be treated via telehealth? Yes — and for many people it is the most practical starting point. Find a psychologist in Sydney who treats agoraphobia via video. Medicare rebates apply."
+  schema={[breadcrumbSchema, schema, faqSchema]}
+>
+  <div class="main-content">
+    <div class="container">
+
+      <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 1.5rem;">
+        <a href="/">Home</a> &rsaquo; <a href="/guides/">Guides</a> &rsaquo; Agoraphobia — telehealth psychologist Sydney
+      </p>
+
+      <h1>Agoraphobia: Telehealth Psychology in Sydney</h1>
+      <AuthorByline dateModified="June 2025" />
+      <p style="font-size: 1.05rem; color: var(--color-text-secondary); margin-bottom: 1.5rem;">Agoraphobia can make the act of getting to a psychologist's office feel impossible. Telehealth — a video call from home — removes that barrier. Here is what to know about treatment and how to find a suitable psychologist in Sydney.</p>
+
+      <div class="info-box">
+        <p><strong>Quick summary:</strong> Agoraphobia is treatable. The primary evidence-based approach is CBT with graduated exposure. Telehealth is often the most practical starting point because you do not need to travel. Medicare rebates of $98.95 (registered psychologist) or $145.25 (clinical psychologist) per session apply with a GP referral, from 1 July 2025.</p>
+      </div>
+
+      <h2>What Is Agoraphobia?</h2>
+      <p>Agoraphobia is an anxiety disorder characterised by fear and avoidance of situations where escape might be difficult or help unavailable if panic or significant distress occurs. Commonly avoided situations include:</p>
+      <ul>
+        <li>Public transport (trains, buses, ferries)</li>
+        <li>Shopping centres, supermarkets, cinemas</li>
+        <li>Crowded places, queues, open spaces</li>
+        <li>Leaving home alone, or going certain distances from home</li>
+        <li>Bridges, tunnels, lifts</li>
+        <li>Being away from a "safe person" or "safe place"</li>
+      </ul>
+
+      <p>Agoraphobia is frequently misunderstood. It is not simply "fear of open spaces." The underlying fear is typically about what could happen — panic, collapse, embarrassment, being unable to get help — rather than the space itself. Many people with agoraphobia feel safe at home, with a trusted person, or in familiar, "predictable" environments.</p>
+
+      <h3>Agoraphobia and Panic Disorder</h3>
+      <p>Agoraphobia often (but not always) develops after a person experiences unexpected panic attacks. After one or more frightening panic episodes, a person may start avoiding situations associated with those attacks or situations where escape would be difficult. Over time, the avoidance can become more and more restrictive.</p>
+      <p>However, agoraphobia can occur without a history of panic disorder. Some people develop the pattern of avoidance after a different frightening experience — illness, a medical emergency, or a traumatic event in a public place. The underlying mechanism (anticipatory anxiety + avoidance) is similar regardless of the trigger.</p>
+
+      <h2>How Is Agoraphobia Treated?</h2>
+
+      <p>The primary evidence-based treatment for agoraphobia is <strong>cognitive behavioural therapy (CBT)</strong>, specifically with a graduated exposure component. There is strong research support for this approach across multiple clinical trials.</p>
+
+      <h3>Graduated Exposure</h3>
+      <p>The central component of agoraphobia treatment is graduated exposure — systematically approaching feared situations in a planned, incremental way. Together with your psychologist, you build a hierarchy: a list of situations ordered from least to most anxiety-provoking. You then work through them stepwise, starting with manageable steps that produce tolerable (not overwhelming) anxiety.</p>
+      <p>Exposure works because anxiety, when not escaped, naturally reduces over time. Each time you stay in a situation through the anxiety rather than leaving, the anxiety associated with it weakens. This is called habituation. It takes time and repeated practice, but it is durable.</p>
+
+      <h3>Interoceptive Exposure</h3>
+      <p>If fear of physical sensations (racing heart, dizziness, shortness of breath) is part of the picture — as it often is with panic-related agoraphobia — your psychologist may include interoceptive exposure. This involves deliberately producing mild physical sensations (spinning, breathing through a straw, running on the spot) in a controlled way to reduce fear of those sensations. It sounds counterintuitive but is a well-established technique with good evidence.</p>
+
+      <h3>Cognitive Work</h3>
+      <p>CBT also involves examining the thoughts that maintain avoidance — catastrophic predictions about what will happen ("I will faint," "no one will help me," "I will lose control"), overestimation of danger, and underestimation of coping ability. Working through these with a psychologist does not eliminate anxiety but changes the relationship with it.</p>
+
+      <h3>ACT as an Alternative or Complement</h3>
+      <p>Acceptance and Commitment Therapy (ACT) is sometimes used alongside or instead of traditional CBT for agoraphobia. ACT focuses on reducing the struggle with anxiety (acceptance) and clarifying what matters to you (values), helping you take action toward your life rather than away from feared situations. Evidence supports ACT for anxiety disorders; some people find it more accessible than classical exposure.</p>
+
+      <h2 id="telehealth">Why Telehealth Is Often the Most Practical Starting Point</h2>
+
+      <p>For many people with agoraphobia, the biggest barrier to treatment is getting to the psychologist's office. This is particularly true when:</p>
+      <ul>
+        <li>Driving or using public transport has become part of the avoidance pattern</li>
+        <li>The psychologist's location requires passing through avoided areas (e.g. the CBD, a shopping centre)</li>
+        <li>Home is the main safe place, and leaving it provokes significant anxiety</li>
+        <li>Symptoms have become severe enough that even brief outings are exhausting</li>
+      </ul>
+
+      <p>Telehealth sidesteps this barrier entirely. You connect with your psychologist via video call from home — the setting where you feel safest. This is not a compromise or a lesser version of treatment; it is a pragmatic advantage.</p>
+
+      <h3>Does Telehealth Work for Agoraphobia?</h3>
+      <p>Telehealth does not prevent graduated exposure work. Real-world exposure tasks (going to the local shops, taking one stop on a train, sitting in a cafe) are assigned as between-session exercises, not conducted inside the consulting room. This is actually how exposure is delivered in standard in-person CBT as well — the therapist designs the hierarchy and reviews progress; the patient does the exposures in their daily life.</p>
+      <p>Research on CBT via video call for panic disorder and agoraphobia shows results comparable to in-person delivery. A 2023 meta-analysis in JMIR Mental Health (Shaker et al.) found telehealth CBT for anxiety disorders produced outcomes equivalent to in-person across multiple anxiety presentations. Telehealth does require that a person is able to reliably connect and maintain a video session — internet quality and a quiet space matter.</p>
+
+      <h3>When In-Person May Be Preferable</h3>
+      <p>For some people, particularly those whose agoraphobia is mild to moderate or who have already begun travelling but want support during the process, seeing a psychologist in person can provide in-vivo (in the real world) exposure practice around the clinic trip itself. If you are at a stage where getting to an appointment is challenging but not impossible, that challenge can be incorporated into treatment. Discuss this with your psychologist.</p>
+
+      <h2>How to Get a Referral and Claim Medicare</h2>
+
+      <p>Psychology for agoraphobia is covered under the Better Access scheme if you have a Mental Health Treatment Plan (MHTP) from your GP.</p>
+
+      <ol class="steps">
+        <li>
+          <div>
+            <strong>Book a longer GP appointment (30 minutes or more) and mention agoraphobia</strong>
+            <p>Tell your GP about the anxiety and avoidance you have been experiencing. Be specific about what you have been avoiding and for how long. A longer appointment gives the GP time to do a proper mental health assessment.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>GP prepares a Mental Health Treatment Plan and referral</strong>
+            <p>If appropriate, your GP prepares an MHTP and refers you to psychology. From November 2025, Medicare rebates generally require the referral to come from your usual GP or a practice where you are enrolled via MyMedicare. Your regular GP (not a walk-in clinic) is preferable.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Contact a telehealth psychologist who works with anxiety or agoraphobia</strong>
+            <p>Look for a psychologist who mentions anxiety disorders, panic, or agoraphobia in their profile. Ask in your first contact whether they use CBT with exposure for agoraphobia — this is the treatment with the best evidence. Confirm they offer telehealth and accept new clients with an MHTP.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Bring your MHTP to the first appointment</strong>
+            <p>Your GP may send it electronically, or you can provide it as a document. Your psychologist claims the rebate from Medicare directly (or you claim it back if they are not set up to bulk bill). With a telehealth session and an MHTP, the rebate is $98.95 for a registered psychologist (item 91170) or $145.25 for a clinical psychologist (item 91167), from 1 July 2025.</p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="info-box">
+        <p><strong>How many sessions?</strong> Medicare covers up to 10 individual psychology sessions per calendar year under Better Access (6 initially, then up to 4 more after a GP review). Agoraphobia treatment typically requires 10 to 20 sessions for meaningful improvement. If 10 sessions are insufficient, further sessions can continue without the Medicare rebate — discuss with your psychologist before reaching the cap so you can plan.</p>
+      </div>
+
+      <h2>What to Look for in a Psychologist for Agoraphobia</h2>
+
+      <p>When reading profiles or contacting psychologists, consider:</p>
+      <ul>
+        <li><strong>Experience with anxiety disorders and/or panic:</strong> Most psychologists who work with anxiety also treat agoraphobia. Look for this listed in their specialties.</li>
+        <li><strong>CBT with exposure:</strong> Ask directly whether they use CBT with a graduated exposure approach for agoraphobia. This distinguishes evidence-based treatment from supportive counselling (which is helpful but less targeted for this condition).</li>
+        <li><strong>Telehealth experience:</strong> Confirm they are comfortable delivering all aspects of treatment — including exposure hierarchy design — via video.</li>
+        <li><strong>Patience and non-judgement:</strong> Agoraphobia can feel embarrassing to discuss, especially if it has progressed to the point of significantly restricting daily life. The right psychologist will treat this as a clinical presentation, not a character flaw.</li>
+      </ul>
+
+      <div class="faq">
+        <h2>Agoraphobia Questions</h2>
+
+        <div class="faq__item">
+          <p class="faq__q">Can agoraphobia be treated via telehealth?</p>
+          <p class="faq__a">Yes. Telehealth is often the most practical starting point for agoraphobia precisely because the condition involves difficulty leaving home or being in unfamiliar places. Research supports CBT delivered via video call as effective for panic disorder and agoraphobia. Graduated exposure tasks are completed in daily life between sessions — not inside a clinic — so the core treatment model works the same way via telehealth.</p>
+        </div>
+
+        <div class="faq__item">
+          <p class="faq__q">Is agoraphobia just fear of open spaces?</p>
+          <p class="faq__a">No. The common description of agoraphobia as "fear of open spaces" is a simplification that misleads many people. Agoraphobia is a fear of situations where escape might be difficult or help unavailable if panic or distress occurs. Crowds, queues, public transport, enclosed spaces, and leaving home can all be part of the pattern. Some people with agoraphobia are more anxious in open spaces; others are more anxious in enclosed spaces. The common thread is anticipatory anxiety and avoidance.</p>
+        </div>
+
+        <div class="faq__item">
+          <p class="faq__q">Does Medicare cover telehealth psychology for agoraphobia?</p>
+          <p class="faq__a">Yes. Telehealth psychology sessions attract the same Medicare rebate as in-person appointments under Better Access. With a Mental Health Treatment Plan from your GP, the rebate is $98.95 per session for a registered psychologist (item 91170) or $145.25 for a clinical psychologist (item 91167), from 1 July 2025. Up to 10 sessions per calendar year are covered.</p>
+        </div>
+
+        <div class="faq__item">
+          <p class="faq__q">How long does treatment for agoraphobia take?</p>
+          <p class="faq__a">Meaningful improvement typically requires 10 to 20 sessions of CBT with exposure for agoraphobia. This is longer than for some other anxiety presentations because progress depends on completing real-world exposure exercises between sessions, which takes time. Some people make substantial gains in 10 sessions; others need more. Your psychologist will review progress and discuss the timeline with you after the first few sessions.</p>
+        </div>
+
+        <div class="faq__item">
+          <p class="faq__q">What if I can't attend even a telehealth session because anxiety is too high?</p>
+          <p class="faq__a">This is uncommon but does occur. If the idea of a video session feels very difficult, you might start with a phone call for the initial session. Discuss this with your psychologist when you first contact them. A good psychologist will find a starting point that is manageable. The goal is not to eliminate anxiety before starting — it is to begin despite it, at a manageable level.</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 1.5rem;">
+        <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Related guides</h3>
+        <ul style="font-size: 0.93rem; line-height: 2;">
+          <li><a href="/guides/panic-disorder-telehealth-psychologist-sydney/">Panic disorder and panic attacks: telehealth psychology in Sydney</a></li>
+          <li><a href="/guides/cost-telehealth-psychologist-australia/">What does a telehealth psychologist cost?</a></li>
+          <li><a href="/guides/mental-health-care-plan-sydney/">Mental Health Care Plan: how to get one from your GP</a></li>
+          <li><a href="/guides/does-online-therapy-work-for-anxiety/">Does online therapy work for anxiety? What the research shows</a></li>
+          <li><a href="/guides/how-to-choose-anxiety-psychologist-telehealth/">How to choose a telehealth psychologist for anxiety</a></li>
+        </ul>
+      </div>
+
+      <div class="cta-block">
+        <h3>Find a telehealth psychologist for agoraphobia in Sydney</h3>
+        <p>Browse our directory of AHPRA-registered psychologists in Sydney who offer telehealth and work with anxiety and panic presentations. Free to use. Medicare rebates apply.</p>
+        <a href="/directory/" class="btn--cta plausible-event-name=GuideAgoraphobia+CTA+Click">
+          Browse the directory
+        </a>
+        <p class="cta-block__note">Or <a href="/connect/">send us a match request</a> and we will connect you with a suitable psychologist within 1 business day. No obligation.</p>
+      </div>
+
+      <div style="border-top: 1px solid var(--color-border); padding-top: 1.25rem; margin-top: 2rem; font-size: 0.82rem; color: var(--color-text-secondary);">
+        <p>If you are in crisis or your mental health needs immediate support, contact Lifeline on <a href="tel:131114">13 11 14</a>, Beyond Blue on <a href="tel:1300224636">1300 22 4636</a>, or 13YARN (First Nations support) on <a href="tel:139276">13 92 76</a>. This directory is not a crisis service.</p>
+      </div>
+
+    </div>
+  </div>
+</Base>
