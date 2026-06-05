@@ -1,0 +1,274 @@
+---
+import Base from '../../layouts/Base.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "headline": "Work-Related Anxiety: Finding a Telehealth Psychologist in Sydney",
+  "description": "A guide to work-related anxiety in Sydney: what it is, how psychological treatment works, why telehealth suits it, and how to find a psychologist who works with workplace stress and anxiety.",
+  "datePublished": "2026-06-06",
+  "dateModified": "2026-06-06",
+  "author": {
+    "@type": "Organization",
+    "name": "Sydney Anxiety Psychology"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Sydney Anxiety Psychology",
+    "url": "https://sydneyanxietypsychology.com.au"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://sydneyanxietypsychology.com.au/guides/work-related-anxiety-psychologist-sydney/"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can a psychologist help with work-related anxiety?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Psychologists commonly work with anxiety that is connected to workplace situations, including performance anxiety, interpersonal conflict at work, burnout, fear of being assessed or managed out, and difficulty setting boundaries. Cognitive Behavioural Therapy (CBT) and Acceptance and Commitment Therapy (ACT) are evidence-based approaches relevant to work-related anxiety presentations. You do not need a formal diagnosis to access psychology support -- a GP Mental Health Treatment Plan allows you to claim Medicare rebates for up to 10 sessions per calendar year."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is work-related anxiety covered by Medicare?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Medicare does not restrict rebates to specific diagnoses. If your GP issues a Mental Health Treatment Plan (MHTP), you can claim Medicare rebates on up to 10 psychology sessions per calendar year. The rebate is $98.95 per session for a registered psychologist, or $145.25 for an endorsed clinical psychologist (from 1 July 2025, Medicare Benefits Schedule). Your GP will assess whether a MHTP is appropriate based on your symptoms, not based on whether your anxiety is work-related."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between work-related anxiety and a workers compensation claim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most people experiencing work-related anxiety are not making a workers compensation claim. Workers compensation in NSW covers a psychological injury caused by work where the injury meets a threshold of significance and the employment was a substantial contributing factor. Many people with work-related anxiety prefer to access support through their GP and Medicare without involving their employer or a formal claim process. Both pathways are valid depending on your situation. If you think your situation may meet the workers compensation threshold, speak with your GP or a legal adviser."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is telehealth useful for work-related anxiety?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Telehealth allows you to attend psychology sessions from home, a private room at work, or anywhere with a reliable internet connection. For people whose anxiety is connected to their workplace, this flexibility means you can fit sessions into your schedule without additional travel stress, attend sessions on work-from-home days, and maintain privacy from colleagues. The therapeutic process -- cognitive work, discussion, and planning -- works as effectively via video as in person. A 2023 systematic review by Shaker and colleagues (JMIR Mental Health) confirmed telehealth CBT produces clinically meaningful outcomes comparable to in-person delivery for anxiety presentations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I find a psychologist in Sydney who works with work-related anxiety?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "When searching for a psychologist, look for practitioners who list anxiety as a specialty area and who have experience with work-related presentations, burnout, or occupational stress. You can ask directly: 'Do you have experience working with anxiety connected to work or workplace situations?' and 'What approach do you take?' Our directory lists registered psychologists who specialise in anxiety, offer telehealth, and accept Mental Health Treatment Plan referrals. Most list their areas of focus on their profile."
+      }
+    }
+  ]
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sydneyanxietypsychology.com.au/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://sydneyanxietypsychology.com.au/guides/" },
+    { "@type": "ListItem", "position": 3, "name": "Work-Related Anxiety: Telehealth Psychology Sydney", "item": "https://sydneyanxietypsychology.com.au/guides/work-related-anxiety-psychologist-sydney/" },
+  ]
+};
+---
+<Base
+  title="Work-Related Anxiety: Finding a Telehealth Psychologist in Sydney"
+  description="Guide to work-related anxiety and telehealth psychology in Sydney. What workplace anxiety is, how CBT and ACT help, Medicare coverage, and what to look for in a psychologist."
+  schema={[articleSchema, faqSchema, breadcrumbSchema]}
+>
+  <div class="main-content">
+    <div class="container">
+
+      <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 1.5rem;">
+        <a href="/">Home</a> &rsaquo; <a href="/guides/">Guides</a> &rsaquo; Work-Related Anxiety: Telehealth Psychology Sydney
+      </p>
+
+      <h1>Work-Related Anxiety: Finding a Telehealth Psychologist in Sydney</h1>
+      <AuthorByline dateModified="June 2026" />
+      <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 2rem;">Last reviewed: June 2026 &bull; Sources: Shaker et al. (2023) JMIR Mental Health; Australian Bureau of Statistics National Study of Mental Health and Wellbeing 2020&ndash;21; Medicare Benefits Schedule (effective 1 July 2025)</p>
+
+      <!-- GEO ANSWER BLOCK -->
+      <div style="background: #f0f4ff; border-left: 4px solid var(--color-accent); border-radius: 0 var(--radius) var(--radius) 0; padding: 1.25rem 1.5rem; margin-bottom: 2rem;">
+        <p style="margin: 0; font-size: 1rem; line-height: 1.7;"><strong>The one-sentence answer:</strong> Work-related anxiety is a common reason people seek psychology in Australia, and it is covered by Medicare with a GP Mental Health Treatment Plan (up to 10 sessions per calendar year); telehealth is equally effective to in-person delivery for anxiety presentations (Shaker et al., <em>JMIR Mental Health</em>, 2023) and suits workplace anxiety well because sessions can fit around your work schedule without additional travel.</p>
+      </div>
+
+      <p>Anxiety connected to work is one of the most common reasons people seek psychology support in Australia. It shows up in many forms: dread before meetings, difficulty sleeping because you are replaying a conversation with your manager, avoidance of tasks you associate with criticism or failure, physical symptoms on Sunday evenings, or a persistent sense that something is about to go wrong at work.</p>
+
+      <p>This guide covers what work-related anxiety looks like, how psychological treatment approaches it, why telehealth is a practical fit, how to find a psychologist in Sydney who has relevant experience, and what Medicare covers.</p>
+
+      <div class="info-box" style="background: #f0f9ff; border-left-color: #0284c7;">
+        <p><strong>This is an information resource, not clinical advice.</strong> If you are looking for a psychologist in Sydney who works with work-related anxiety, our <a href="/directory/">directory</a> lists practitioners who offer telehealth and accept Mental Health Treatment Plan referrals. If you are in crisis, contact Lifeline (13 11 14) or Beyond Blue (1300 22 4636).</p>
+      </div>
+
+      <h2 id="what-is-work-related-anxiety">What does work-related anxiety look like?</h2>
+
+      <p>Work-related anxiety is not a single diagnosis. It is a description of anxiety that is significantly connected to, triggered by, or centred on a person's work situation. It can present as any of the following:</p>
+
+      <ul>
+        <li><strong>Performance anxiety</strong>: Fear of being assessed, managed out, making mistakes in a high-stakes environment, or being seen to underperform</li>
+        <li><strong>Social anxiety at work</strong>: Particular difficulty with meetings, presentations, one-on-ones with managers, or speaking up in group settings</li>
+        <li><strong>Hypervigilance at work</strong>: Scanning emails and messages for signs of criticism, reading into tone, difficulty relaxing because you feel watched or evaluated</li>
+        <li><strong>Avoidance</strong>: Delaying tasks you associate with failure, putting off difficult conversations, calling in sick to avoid anticipated conflict</li>
+        <li><strong>Burnout-adjacent anxiety</strong>: Exhaustion combined with anxiety, difficulty switching off after hours, diminishing sense of competence despite continued effort</li>
+        <li><strong>Work-triggered physical symptoms</strong>: Insomnia linked to work thoughts, stomach upset before meetings, tension headaches during the work week</li>
+        <li><strong>Workplace conflict</strong>: Anxiety arising from a difficult relationship with a manager, colleague, or from a bullying or unfair treatment situation</li>
+      </ul>
+
+      <p>Many people with work-related anxiety do not think of themselves as having "anxiety disorder" in a clinical sense. They may describe it as stress, or as a reasonable response to a genuinely difficult workplace. Both things can be true simultaneously: the situation may be genuinely difficult, and your psychological response to it may also have become disproportionate in a way that is making your life harder.</p>
+
+      <p>Psychologists who work with anxiety are experienced in helping people untangle these threads -- what is a reasonable response to genuine circumstances and what has taken on a life of its own.</p>
+
+      <h2 id="how-psychology-helps">How psychological treatment approaches work-related anxiety</h2>
+
+      <h3>Cognitive Behavioural Therapy (CBT)</h3>
+
+      <p>CBT is the most widely used and evidence-supported psychological treatment for anxiety presentations, and it applies well to work-related anxiety. CBT examines the relationship between your thoughts, feelings, and behaviour in work situations.</p>
+
+      <p>In the context of work-related anxiety, CBT might involve:</p>
+      <ul>
+        <li><strong>Identifying unhelpful thought patterns</strong>: For example, catastrophising about the consequences of a mistake ("if I make an error, I will be fired and that will be the end of my career"), or mind-reading what a manager thinks of you based on ambiguous signals</li>
+        <li><strong>Examining evidence</strong>: Testing anxious predictions against what actually happens, and developing more accurate, realistic appraisals of work situations</li>
+        <li><strong>Behavioural experiments</strong>: Approaching avoided situations (a difficult conversation, a task you have been putting off) in a structured, supported way to test the feared outcome</li>
+        <li><strong>Reducing safety behaviours</strong>: Identifying things you do to manage anxiety at work (over-preparing, checking work excessively, avoiding your manager) that actually maintain the anxiety by preventing you from learning that situations are manageable</li>
+      </ul>
+
+      <h3>Acceptance and Commitment Therapy (ACT)</h3>
+
+      <p>ACT takes a complementary approach. Rather than directly challenging anxious thoughts, it focuses on changing your relationship with those thoughts so they have less behavioural influence, accepting discomfort as part of a meaningful work life, and clarifying what matters to you professionally so you can act consistently with those values even when anxiety is present.</p>
+
+      <p>ACT is particularly relevant for work situations where the anxiety involves questions of identity, meaning, or belonging at work -- "do I belong here?", "am I good enough for this role?", "is this the right path for me?" -- as well as for people who have already tried to change their anxious thinking and found it did not help enough.</p>
+
+      <h3>Other approaches</h3>
+
+      <p>Depending on your situation and the psychologist's approach, other elements may be relevant:</p>
+      <ul>
+        <li>Mindfulness-based techniques for managing anxiety in the moment (before a meeting, during a presentation)</li>
+        <li>Assertiveness and communication skills work, where anxiety is partly driven by difficulty setting limits at work</li>
+        <li>Values clarification work where burnout or career-direction uncertainty is a significant part of the picture</li>
+        <li>Trauma-informed approaches if the work anxiety connects to past experiences (a previous hostile workplace, being managed out, discrimination)</li>
+      </ul>
+
+      <h2 id="work-anxiety-vs-workers-comp">Work-related anxiety and workers compensation: what is the difference?</h2>
+
+      <p>Most people experiencing work-related anxiety are not making a workers compensation claim, and this is worth being clear about because it can be confusing.</p>
+
+      <p>Workers compensation in NSW provides for psychological injuries caused by work where the injury meets a threshold of significance and employment was a substantial contributing factor. The pathway involves making a claim through your employer, engaging with the insurer (icare or a self-insurer), and working with a SIRA-approved psychologist under a funded recovery plan.</p>
+
+      <p>Many people with work-related anxiety -- even significant, chronic, or severe anxiety -- prefer to access support privately through Medicare without involving their employer or a formal claim process. This is entirely valid. It is simpler, it keeps the employer out of the picture, and the Medicare pathway is accessible to most people in work with a Mental Health Treatment Plan from their GP.</p>
+
+      <p>If you are unsure which pathway applies to you, your GP can help you think through the options. If you believe you may have a compensable psychological injury (for example, if it arose from a formal bullying, harassment, or unfair treatment process at work), a conversation with a lawyer who handles workers compensation may also be worthwhile before you decide.</p>
+
+      <h2 id="why-telehealth">Why telehealth suits work-related anxiety</h2>
+
+      <p>Telehealth is particularly practical for people whose anxiety is connected to work, for several reasons:</p>
+
+      <ul>
+        <li><strong>Scheduling flexibility</strong>: You can attend a session from home on a work-from-home day, or from a private room at the office, without the additional time pressure of travel to and from a practice. This makes it easier to fit sessions into a work schedule that is already stretched.</li>
+        <li><strong>Immediate access after triggering events</strong>: If you have a difficult day at work, you can have a session that afternoon or evening from home without needing to plan around geography.</li>
+        <li><strong>Privacy from colleagues</strong>: Attending telehealth sessions means no risk of being recognised in a waiting room by a colleague or arriving back from an appointment in a state that requires explanation.</li>
+        <li><strong>Wider practitioner choice</strong>: Telehealth opens the full pool of practitioners across NSW rather than restricting you to practitioners near your office or home. For specialised presentations (e.g. anxiety connected to a specific professional environment), this wider choice can be meaningful.</li>
+      </ul>
+
+      <p>The therapeutic process itself -- cognitive work, discussion, planning -- works as effectively via video as in person. A 2023 systematic review and meta-analysis by Shaker and colleagues (<em>JMIR Mental Health</em>) confirmed that telehealth CBT produces clinically meaningful outcomes for anxiety presentations comparable to in-person delivery.</p>
+
+      <h2 id="what-to-look-for">What to look for in a psychologist for work-related anxiety</h2>
+
+      <h3>Specialisation in anxiety</h3>
+      <p>Look for psychologists who list anxiety as a primary specialty, not just a general "I work with a range of presentations" description. Anxiety has specific evidence-based treatments (primarily CBT and ACT) and some psychologists are more experienced with these than others.</p>
+
+      <h3>Experience with work or occupational presentations</h3>
+      <p>Some psychologists specifically mention workplace anxiety, burnout, or occupational stress as areas of focus. This is worth asking about directly: "Do you have experience working with anxiety connected to work situations?" The answer will tell you whether they have relevant experience and will give you a sense of how they approach it.</p>
+
+      <h3>Approach to the cognitive and behavioural components</h3>
+      <p>Ask what their approach is. If a psychologist describes working with CBT or ACT, and can explain briefly how that applies to work situations, that is a good sign. If the description is very vague or focuses mainly on "talking through your feelings" without any mention of skills-building or behavioural work, it is worth asking more.</p>
+
+      <h3>A good practical fit</h3>
+      <p>Does the psychologist have availability at times that work with your schedule? Can they offer telehealth reliably? For people with work-related anxiety, the practical aspects of access matter -- a psychologist you can actually attend consistently will produce better outcomes than a theoretically excellent psychologist you can only see sporadically.</p>
+
+      <p>For more on choosing a psychologist, see our <a href="/guides/how-to-choose-anxiety-psychologist-telehealth/">how-to-choose guide</a>.</p>
+
+      <h2 id="access-and-cost">Accessing support: the Medicare pathway</h2>
+
+      <p>The most common pathway is:</p>
+
+      <ol>
+        <li><strong>See your GP</strong> and discuss your symptoms. Your GP can assess whether a <a href="/guides/mental-health-care-plan-sydney/">Mental Health Treatment Plan (MHTP)</a> is appropriate. You do not need a specific diagnosis for this -- ongoing anxiety affecting your functioning and wellbeing is a typical basis for an MHTP.</li>
+        <li><strong>Get a referral</strong>. Your GP will refer you to a psychologist under the MHTP. You can bring a name if you already have someone in mind, or ask for a referral and then search for a practitioner.</li>
+        <li><strong>Book with a psychologist</strong>. With an MHTP, you can claim Medicare rebates on up to 10 individual psychology sessions per calendar year.</li>
+      </ol>
+
+      <p>Medicare rebates from 1 July 2025:</p>
+      <ul>
+        <li>Registered psychologist: $98.95 per session</li>
+        <li>Endorsed clinical psychologist: $145.25 per session</li>
+      </ul>
+
+      <p>Private psychology fees in Sydney typically range from $180 to $300 per session. Your out-of-pocket gap after Medicare is usually $80 to $150. For the full picture, see our <a href="/guides/cost-telehealth-psychologist-australia/">cost guide</a>.</p>
+
+      <p>Our <a href="/directory/">directory</a> lists registered psychologists in Sydney who specialise in anxiety, offer telehealth sessions, and accept Mental Health Treatment Plan referrals.</p>
+
+      <h2 id="faq">Frequently asked questions</h2>
+
+      <div style="margin-top: 1rem;">
+        <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can a psychologist help with work-related anxiety?</h3>
+        <p style="margin-top: 0;">Yes. Psychologists commonly work with anxiety that is connected to work situations -- performance anxiety, interpersonal conflict, burnout, hypervigilance, or fear of losing a job. CBT and ACT are evidence-based approaches that apply well to these presentations. You do not need a formal diagnosis to access support.</p>
+
+        <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Is work-related anxiety covered by Medicare?</h3>
+        <p style="margin-top: 0;">Yes. A GP Mental Health Treatment Plan (MHTP) allows you to claim Medicare rebates on up to 10 psychology sessions per calendar year. The rebate is $98.95 (registered psychologist) or $145.25 (endorsed clinical psychologist) per session from 1 July 2025. Your GP assesses suitability based on your symptoms, not on whether your anxiety is work-related specifically.</p>
+
+        <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What is the difference between work-related anxiety and a workers compensation claim?</h3>
+        <p style="margin-top: 0;">Workers compensation is a formal claim process involving your employer and the NSW insurer (icare). Most people with work-related anxiety prefer to access support through Medicare privately, without involving their employer. Both pathways are valid. If you think your situation may involve a compensable psychological injury, your GP or a workers compensation lawyer can advise.</p>
+
+        <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Why is telehealth useful for work-related anxiety?</h3>
+        <p style="margin-top: 0;">Telehealth allows you to attend sessions from home or a private room, fits more easily into a work schedule, and maintains privacy from colleagues. The therapeutic process works as effectively via video as in person for anxiety presentations (Shaker et al., JMIR Mental Health, 2023).</p>
+
+        <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How do I find a psychologist in Sydney who works with work-related anxiety?</h3>
+        <p style="margin-top: 0;">Look for psychologists who list anxiety as a specialty and ask directly whether they have experience with work-related presentations. Our directory lists registered psychologists who specialise in anxiety, offer telehealth, and accept Mental Health Treatment Plan referrals.</p>
+      </div>
+
+      <div class="info-box" style="margin-top: 2.5rem; background: #fff7ed; border-left-color: #ea580c;">
+        <h3 style="margin-top: 0; color: #92400e;">If you need support now</h3>
+        <p>This directory is not a crisis service. If you are in crisis or need immediate support:</p>
+        <ul style="margin-bottom: 0;">
+          <li><strong>Lifeline:</strong> 13 11 14 (24/7)</li>
+          <li><strong>Beyond Blue:</strong> 1300 22 4636 (24/7)</li>
+          <li><strong>13YARN:</strong> 13 92 76 (24/7, First Nations)</li>
+          <li><strong>Emergency:</strong> 000</li>
+        </ul>
+      </div>
+
+      <div class="cta-block" style="margin-top: 2.5rem;">
+        <h3>Find a telehealth psychologist for anxiety in Sydney</h3>
+        <p>Browse our directory of registered psychologists who specialise in anxiety, offer telehealth sessions, and accept Mental Health Treatment Plan referrals.</p>
+        <a href="/directory/" class="btn--cta plausible-event-name=WorkAnxietyGuide+CTA+Click">
+          Browse the directory
+        </a>
+        <p class="cta-block__note">Free to use. We are a directory, not a clinical service.</p>
+      </div>
+
+      <!-- CLUSTER NAV -->
+      <div style="background: #f8fafc; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1.5rem; margin-top: 2.5rem; margin-bottom: 2rem;">
+        <p style="font-weight: 600; margin: 0 0 0.75rem; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-secondary);">Part of the guide cluster: <a href="/guides/telehealth-anxiety-psychology-sydney/">Telehealth anxiety psychology Sydney &uarr;</a></p>
+        <p style="font-weight: 600; margin: 0 0 0.5rem; font-size: 0.9rem;">Related guides</p>
+        <ul style="margin: 0; font-size: 0.92rem; line-height: 2;">
+          <li><a href="/guides/generalised-anxiety-disorder-telehealth-psychologist-sydney/">Generalised anxiety disorder (GAD): telehealth psychology in Sydney</a></li>
+          <li><a href="/guides/social-anxiety-telehealth-psychologist-sydney/">Social anxiety: telehealth psychology in Sydney</a></li>
+          <li><a href="/guides/cost-telehealth-psychologist-australia/">What does a telehealth psychologist cost?</a></li>
+          <li><a href="/guides/mental-health-care-plan-sydney/">Mental Health Care Plan Sydney: how to get one</a></li>
+          <li><a href="/guides/how-to-choose-anxiety-psychologist-telehealth/">How to choose a telehealth psychologist for anxiety</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</Base>
