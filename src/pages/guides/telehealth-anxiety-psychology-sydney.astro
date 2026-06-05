@@ -1,0 +1,332 @@
+---
+import Base from '../../layouts/Base.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+
+// PILLAR PAGE: Telehealth Anxiety Psychology in Sydney
+// This is the topical-authority hub for the entire guide cluster.
+// Every spoke guide links UP to this page.
+// This page links DOWN to all spoke guides.
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Telehealth Anxiety Psychology in Sydney: The Complete Guide",
+  "description": "Everything you need to know about finding a telehealth psychologist for anxiety in Sydney: how it works, what it costs, Medicare rebates, how to choose a psychologist, and what the evidence says.",
+  "datePublished": "2026-06-05",
+  "dateModified": "2026-06-05",
+  "author": {
+    "@type": "Organization",
+    "name": "Sydney Anxiety Psychology"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Sydney Anxiety Psychology",
+    "url": "https://sydneyanxietypsychology.com.au"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://sydneyanxietypsychology.com.au/guides/telehealth-anxiety-psychology-sydney/"
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sydneyanxietypsychology.com.au/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://sydneyanxietypsychology.com.au/guides/" },
+    { "@type": "ListItem", "position": 3, "name": "Telehealth anxiety psychology Sydney", "item": "https://sydneyanxietypsychology.com.au/guides/telehealth-anxiety-psychology-sydney/" },
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is telehealth psychology for anxiety in Sydney?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Telehealth psychology for anxiety in Sydney means receiving professional psychological treatment — such as Cognitive Behavioural Therapy (CBT), ACT, or other evidence-based therapies — via secure video call from your home, rather than attending a clinic in person. Sessions are delivered by AHPRA-registered psychologists, attract the same Medicare rebates as in-person care ($98.95 for a registered psychologist or $145.25 for a clinical psychologist with a Mental Health Treatment Plan, effective 1 July 2025), and are available to anyone in NSW regardless of suburb."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is telehealth psychology as effective as in-person for anxiety?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. A 2023 systematic review and meta-analysis in JMIR Mental Health (Shaker et al., 17 RCTs, 1,814 participants) found telehealth-delivered psychological therapy equivalent to in-person care for anxiety disorders in outcomes, therapeutic alliance, and patient satisfaction (SMD 0.01, moderate certainty evidence). CBT for anxiety in particular has been extensively validated in telehealth formats."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does a telehealth psychologist cost in Sydney?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "With a Mental Health Treatment Plan from your GP, Medicare rebates $98.95 per session (registered psychologist, MBS item 91170) or $145.25 (endorsed clinical psychologist, item 91167), effective 1 July 2025. Most Sydney telehealth psychologists charge $150–$310 per session, leaving a gap of roughly $50–$165 after the rebate. Some bulk bill, meaning $0 out-of-pocket, but availability is limited."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I find a telehealth psychologist for anxiety in Sydney?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use a directory (such as sydneyanxietypsychology.com.au) that lists AHPRA-registered psychologists in Sydney who specialise in anxiety and offer telehealth. Look for practitioners who list anxiety as a specialty area, confirm their AHPRA registration, and check their fees. You can also request a match via our finder — we connect you with a suitable psychologist within 1 business day."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What types of anxiety can be treated via telehealth?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Telehealth is effective for most anxiety presentations: generalised anxiety disorder (GAD), panic disorder, social anxiety disorder, health anxiety (illness anxiety disorder), OCD, PTSD, agoraphobia, and anxiety co-occurring with depression. Complex presentations involving significant safety concerns may warrant in-person assessment first — discuss your situation with your psychologist."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a referral or GP letter to see a telehealth psychologist for anxiety?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No referral is needed to book with a psychologist. However, a Mental Health Treatment Plan (MHTP) from your GP is required to claim Medicare rebates. Without one, you pay the full session fee. Getting an MHTP before your first session is strongly advisable if you want the Medicare rebate — book with your GP at the same time you search for a psychologist."
+      }
+    }
+  ]
+};
+
+const spokeGuides = [
+  { href: "/guides/cost-telehealth-psychologist-australia/", label: "What does a telehealth psychologist cost in Australia?", desc: "Medicare rebates, out-of-pocket gaps, bulk billing, and the MHTP process." },
+  { href: "/guides/mental-health-care-plan-sydney/", label: "Mental Health Care Plan Sydney: how to get one", desc: "Step-by-step guide to the GP appointment, what to say, and how sessions are structured." },
+  { href: "/guides/does-online-therapy-work-for-anxiety/", label: "Does online therapy work for anxiety?", desc: "What the research says: systematic reviews, meta-analyses, and what to realistically expect." },
+  { href: "/guides/how-to-choose-anxiety-psychologist-telehealth/", label: "How to choose a telehealth psychologist for anxiety", desc: "Registration types, therapy approaches (CBT, ACT, EMDR), and questions to ask." },
+  { href: "/guides/how-telehealth-psychology-works/", label: "How telehealth psychology sessions work", desc: "Technology, privacy, AHPRA standards, and what to expect session-to-session." },
+  { href: "/guides/bulk-billing-psychologist-sydney/", label: "Bulk billing for psychologists in Sydney", desc: "When $0 out-of-pocket is possible and what alternatives exist." },
+  { href: "/guides/psychologist-waitlist-sydney/", label: "Waitlists and how to be seen sooner", desc: "Practical steps when you are hitting delays in the current system." },
+  { href: "/guides/clinical-psychologist-vs-registered-psychologist/", label: "Clinical psychologist vs registered psychologist", desc: "What the difference means for your treatment and Medicare rebate." },
+  { href: "/guides/medicare-psychology-data-australia/", label: "Medicare psychology data: what the numbers show", desc: "Utilisation data, workforce gaps, and access patterns across Australia." },
+];
+
+const conditionGuides = [
+  { href: "/guides/generalised-anxiety-disorder-telehealth-psychologist-sydney/", label: "Generalised anxiety disorder (GAD)", desc: "CBT and ACT for chronic worry via telehealth in Sydney." },
+  { href: "/guides/social-anxiety-telehealth-psychologist-sydney/", label: "Social anxiety disorder", desc: "Telehealth psychology for social phobia — including why telehealth suits social anxiety well." },
+  { href: "/guides/panic-disorder-telehealth-psychologist-sydney/", label: "Panic disorder and panic attacks", desc: "Evidence-based treatment via telehealth: interoceptive exposure and CBT." },
+  { href: "/guides/health-anxiety-telehealth-psychologist-sydney/", label: "Health anxiety (illness anxiety)", desc: "Breaking reassurance-seeking cycles and reducing health preoccupation via video therapy." },
+  { href: "/guides/ocd-telehealth-psychologist-sydney/", label: "OCD: ERP via telehealth", desc: "Exposure and Response Prevention delivered effectively via video call in Sydney." },
+  { href: "/guides/ptsd-telehealth-psychologist-sydney/", label: "PTSD and trauma", desc: "EMDR, Prolonged Exposure, and CPT via telehealth — safety considerations and Medicare." },
+  { href: "/guides/anxiety-depression-telehealth-psychologist-sydney/", label: "Anxiety and depression together", desc: "How CBT addresses both presentations; what to look for in a psychologist." },
+  { href: "/guides/agoraphobia-telehealth-psychologist-sydney/", label: "Agoraphobia", desc: "Graduated exposure therapy via telehealth for agoraphobia in Sydney." },
+];
+---
+<Base
+  title="Telehealth Anxiety Psychology Sydney: Complete Guide 2025 | Find a Psychologist"
+  description="The definitive guide to telehealth psychology for anxiety in Sydney. Covers how it works, costs, Medicare rebates, evidence, choosing a psychologist, and condition-specific guides. Updated June 2026."
+  schema={[breadcrumbSchema, articleSchema, faqSchema]}
+>
+  <div class="main-content">
+    <div class="container" style="max-width: 800px;">
+
+      <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 1.5rem;">
+        <a href="/">Home</a> &rsaquo; <a href="/guides/">Guides</a> &rsaquo; Telehealth anxiety psychology Sydney
+      </p>
+
+      <h1>Telehealth Anxiety Psychology in Sydney: The Complete Guide</h1>
+      <AuthorByline dateModified="June 2026" />
+      <p style="font-size: 1.05rem; color: var(--color-text-secondary); margin-bottom: 2rem;">Everything in one place: how telehealth psychology works, what it costs, how to access Medicare rebates, how to choose the right psychologist, and guides for specific anxiety presentations.</p>
+
+      <!-- GEO ANSWER BLOCK -->
+      <div style="background: #f0f4ff; border-left: 4px solid var(--color-accent); border-radius: 0 var(--radius) var(--radius) 0; padding: 1.25rem 1.5rem; margin-bottom: 2rem;">
+        <p style="margin: 0; font-size: 1rem; line-height: 1.7;"><strong>The short answer:</strong> Telehealth anxiety psychology in Sydney means receiving evidence-based therapy (typically CBT) via secure video call from your home, from an AHPRA-registered psychologist. Medicare rebates apply: $98.95/session (registered psychologist) or $145.25/session (clinical psychologist) with a Mental Health Treatment Plan from your GP, up to 10 sessions per year. Research consistently shows telehealth is as effective as in-person care for anxiety. <em>(Medicare Benefits Schedule, effective 1 July 2025.)</em></p>
+      </div>
+
+      <nav aria-label="Page contents" style="background: #f8fafc; border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-bottom: 2rem;">
+        <p style="font-weight: 600; margin: 0 0 0.6rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-secondary);">Contents</p>
+        <ol style="margin: 0; padding-left: 1.25rem; font-size: 0.92rem; line-height: 2;">
+          <li><a href="#how-it-works">How telehealth anxiety psychology works</a></li>
+          <li><a href="#evidence">What the evidence shows</a></li>
+          <li><a href="#cost">Cost and Medicare rebates</a></li>
+          <li><a href="#types-of-anxiety">Types of anxiety treated via telehealth</a></li>
+          <li><a href="#choosing">How to choose a psychologist</a></li>
+          <li><a href="#how-to-access">How to access: the four steps</a></li>
+          <li><a href="#guides">Complete guide library</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="how-it-works">How Telehealth Anxiety Psychology Works</h2>
+      <p>Telehealth psychology is the delivery of professional psychological care via secure video call. For anxiety, this means:</p>
+      <ul>
+        <li>A qualified, AHPRA-registered psychologist conducts sessions via a secure video platform (Coviu, Zoom for Healthcare, or similar)</li>
+        <li>Sessions are 50 to 60 minutes, structured in the same way as in-person appointments</li>
+        <li>Evidence-based therapies (CBT, ACT, ERP, EMDR) are delivered and adapted for the video format</li>
+        <li>The same AHPRA Code of Conduct and professional obligations apply as for in-person care</li>
+        <li>The same Medicare rebates apply as for in-person sessions under the Better Access scheme</li>
+      </ul>
+      <p>Telehealth is not a lesser version of in-person care. It is a well-researched modality with a substantial evidence base, increasingly mainstream in Australian clinical practice since 2020.</p>
+      <p><a href="/guides/how-telehealth-psychology-works/">Full guide: how telehealth psychology sessions work (technology, privacy, what to expect) &rarr;</a></p>
+
+      <h2 id="evidence">What the Evidence Shows</h2>
+      <p>Multiple systematic reviews and clinical trials support telehealth as effective for anxiety:</p>
+      <ul>
+        <li><strong>Equivalent outcomes to in-person:</strong> A 2023 meta-analysis in <em>JMIR Mental Health</em> (Shaker et al., 17 RCTs, 1,814 participants) found no statistically significant difference in outcomes between telehealth and in-person therapy for anxiety (SMD 0.01). Therapeutic alliance and patient satisfaction were also comparable.</li>
+        <li><strong>CBT via telehealth specifically:</strong> A 2022 non-inferiority RCT (Bouchard et al., <em>Journal of Clinical Medicine</em>, 148 adults with GAD) found videoconference CBT statistically non-inferior to in-person CBT across all outcomes at post-treatment and follow-up.</li>
+        <li><strong>Medicare and regulatory endorsement:</strong> The Australian Government extended telehealth psychology to attract the same Medicare rebate as in-person care under Better Access — a regulatory recognition of clinical equivalence.</li>
+      </ul>
+      <p><a href="/guides/does-online-therapy-work-for-anxiety/">Full evidence review: does online therapy work for anxiety? &rarr;</a></p>
+
+      <h2 id="cost">Cost and Medicare Rebates</h2>
+
+      <div style="background: #f0fdf4; border-left: 4px solid #16a34a; border-radius: 0 var(--radius) var(--radius) 0; padding: 1.25rem 1.5rem; margin-bottom: 1.5rem;">
+        <p style="margin: 0;"><strong>Key fact:</strong> With a Mental Health Treatment Plan from your GP, Medicare rebates <strong>$98.95 per session</strong> (registered psychologist, MBS item 91170) or <strong>$145.25 per session</strong> (endorsed clinical psychologist, MBS item 91167) for telehealth sessions. Same rebate as in-person. Effective 1 July 2025.</p>
+      </div>
+
+      <div class="fee-table-wrap">
+        <table class="fee-table">
+          <thead>
+            <tr>
+              <th>Scenario</th>
+              <th>Medicare rebate</th>
+              <th>Typical out-of-pocket</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Registered psychologist + MHTP (item 91170)</td>
+              <td>$98.95/session</td>
+              <td>$50–$131 depending on fee</td>
+            </tr>
+            <tr>
+              <td>Endorsed clinical psychologist + MHTP (item 91167)</td>
+              <td>$145.25/session</td>
+              <td>$85–$165 depending on fee</td>
+            </tr>
+            <tr>
+              <td>Bulk billing</td>
+              <td>Rebate covers full fee</td>
+              <td>$0 (limited availability)</td>
+            </tr>
+            <tr>
+              <td>No MHTP (self-referred)</td>
+              <td>No rebate</td>
+              <td>Full fee: $150–$310</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--color-text-secondary);">Source: Medicare Benefits Schedule, effective 1 July 2025. Up to 10 sessions per calendar year under Better Access.</p>
+      <ul style="font-size: 0.95rem; margin-top: 1rem;">
+        <li><a href="/guides/cost-telehealth-psychologist-australia/">Full cost breakdown: fees, rebates, and how to get an MHTP &rarr;</a></li>
+        <li><a href="/tools/medicare-rebate-calculator/">Calculate your exact rebate and gap (free tool) &rarr;</a></li>
+        <li><a href="/guides/bulk-billing-psychologist-sydney/">Bulk billing psychology in Sydney &rarr;</a></li>
+      </ul>
+
+      <h2 id="types-of-anxiety">Types of Anxiety Treated via Telehealth in Sydney</h2>
+      <p>Telehealth is clinically appropriate for most anxiety presentations. The psychologists in this directory work with:</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; margin: 1rem 0 1.5rem;">
+        {conditionGuides.map(g => (
+          <a href={g.href} style="display: block; border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1rem; text-decoration: none; color: inherit; background: #fff; transition: border-color 0.15s;">
+            <strong style="display: block; color: var(--color-accent); font-size: 0.95rem; margin-bottom: 0.3rem;">{g.label}</strong>
+            <span style="font-size: 0.85rem; color: var(--color-text-secondary);">{g.desc}</span>
+          </a>
+        ))}
+      </div>
+
+      <h2 id="choosing">How to Choose a Telehealth Psychologist for Anxiety</h2>
+      <p>When evaluating potential psychologists, prioritise:</p>
+      <ul>
+        <li><strong>AHPRA registration:</strong> Verify at <a href="https://www.ahpra.gov.au/Registration/Registers-of-Practitioners.aspx" target="_blank" rel="noopener">ahpra.gov.au</a>. The "psychologist" title is a protected term — only AHPRA-registered practitioners can use it.</li>
+        <li><strong>Anxiety specialisation:</strong> Look for psychologists who list anxiety, CBT, or your specific presentation in their specialties. General practitioners exist, but anxiety specialists usually have higher familiarity with the evidence base.</li>
+        <li><strong>Therapy approach:</strong> CBT has the strongest evidence for most anxiety presentations. ACT is well-supported for GAD and worry. EMDR is appropriate for anxiety with a trauma component. Ask the psychologist what approach they use for your presentation.</li>
+        <li><strong>Fee transparency:</strong> Ask the session fee and gap upfront. AHPRA advertising guidelines prohibit psychologists from misrepresenting costs. If a psychologist is evasive about fees, that is worth noting.</li>
+        <li><strong>Registration type:</strong> Registered psychologists and endorsed clinical psychologists are both qualified for most anxiety presentations. The main practical difference is the Medicare rebate tier.</li>
+      </ul>
+      <p><a href="/guides/how-to-choose-anxiety-psychologist-telehealth/">Full guide: how to choose a telehealth psychologist for anxiety &rarr;</a></p>
+      <p><a href="/guides/clinical-psychologist-vs-registered-psychologist/">Clinical vs registered psychologist — what the difference actually means &rarr;</a></p>
+
+      <h2 id="how-to-access">How to Access a Telehealth Psychologist for Anxiety in Sydney</h2>
+
+      <ol class="steps">
+        <li>
+          <div>
+            <strong>Get a Mental Health Treatment Plan from your GP</strong>
+            <p>Book a 30-minute GP appointment. Tell your GP you are experiencing anxiety and would like psychology support. Your GP prepares the plan — this unlocks Medicare rebates on up to 10 sessions per calendar year. <a href="/tools/mental-health-care-plan-checker/">Check your eligibility (free tool) &rarr;</a></p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Find an AHPRA-registered psychologist who offers telehealth</strong>
+            <p>Our <a href="/directory/">directory</a> lists registered psychologists in Sydney who work with anxiety and offer telehealth. You can also request a match and we will connect you within 1 business day.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Book and attend your first telehealth session</strong>
+            <p>Mention your MHTP when booking. For your first session, find a quiet, private space with a stable internet connection. The first appointment is typically an assessment of your situation and goals.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Claim your Medicare rebate</strong>
+            <p>Your psychologist may bulk bill Medicare directly. If not, you claim via the Medicare app, myGov, or at a Medicare service centre after each session. Rebate is typically processed within 1-2 days.</p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="cta-block">
+        <h3>Ready to find a telehealth psychologist for anxiety?</h3>
+        <p>Browse the directory of AHPRA-registered psychologists in Sydney who specialise in anxiety and offer telehealth. Or request a personal match — we will connect you within 1 business day.</p>
+        <a href="/directory/" class="btn--cta plausible-event-name=Pillar+CTA+Directory+Click">
+          Browse the directory
+        </a>
+        <p class="cta-block__note">Or <a href="/connect/">request a personal match &rarr;</a></p>
+      </div>
+
+      <h2 id="guides">Complete Guide Library</h2>
+      <p>These guides cover every aspect of accessing telehealth psychology for anxiety in Sydney. Each is written for someone who is new to the system and wants accurate, plain-English information.</p>
+
+      <h3>Understanding the system: cost, Medicare, and access</h3>
+      <ul>
+        {spokeGuides.map(g => (
+          <li style="margin-bottom: 0.6rem;"><a href={g.href}>{g.label}</a> — {g.desc}</li>
+        ))}
+      </ul>
+
+      <h3>By anxiety presentation</h3>
+      <ul>
+        {conditionGuides.map(g => (
+          <li style="margin-bottom: 0.6rem;"><a href={g.href}>{g.label}</a> — {g.desc}</li>
+        ))}
+      </ul>
+
+      <h3>Tools</h3>
+      <ul>
+        <li style="margin-bottom: 0.6rem;"><a href="/tools/medicare-rebate-calculator/">Medicare rebate and gap calculator</a> — enter your psychologist's fee, see your exact out-of-pocket cost.</li>
+        <li style="margin-bottom: 0.6rem;"><a href="/tools/mental-health-care-plan-checker/">Mental Health Care Plan eligibility checker</a> — 5 questions, instant result, personalised next steps.</li>
+      </ul>
+
+      <div class="faq">
+        <h2>Common Questions</h2>
+        <details class="faq__item">
+          <summary class="faq__q">What is telehealth anxiety psychology in Sydney?</summary>
+          <p class="faq__a">Telehealth psychology for anxiety means receiving evidence-based therapy (typically CBT or ACT) via secure video call from your home, from an AHPRA-registered psychologist. It is clinically equivalent to in-person care for most anxiety presentations, attracts the same Medicare rebates, and is available to anyone in NSW regardless of suburb.</p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">Is telehealth as effective as in-person for anxiety?</summary>
+          <p class="faq__a">Yes. A 2023 meta-analysis (Shaker et al., JMIR Mental Health, 17 RCTs, 1,814 participants) found no significant difference in outcomes, therapeutic alliance, or patient satisfaction between telehealth and in-person treatment for anxiety. CBT in particular has been extensively validated in telehealth formats. <a href="/guides/does-online-therapy-work-for-anxiety/">Full evidence review &rarr;</a></p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">How much does a telehealth psychologist cost in Sydney?</summary>
+          <p class="faq__a">With a Mental Health Treatment Plan, Medicare rebates $98.95/session (registered psychologist) or $145.25/session (clinical psychologist). Most Sydney telehealth psychologists charge $150–$310/session, leaving a gap of roughly $50–$165. <a href="/tools/medicare-rebate-calculator/">Calculate your exact gap &rarr;</a></p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">Do I need a referral to see a telehealth psychologist?</summary>
+          <p class="faq__a">No referral is needed to book directly. But a Mental Health Treatment Plan from your GP is needed to claim Medicare rebates. Book your GP appointment in parallel with your psychologist search — not after.</p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">What types of anxiety can be treated via telehealth?</summary>
+          <p class="faq__a">GAD, social anxiety disorder, panic disorder, health anxiety, OCD, PTSD, agoraphobia, and anxiety co-occurring with depression. Complex presentations with significant safety concerns may warrant in-person assessment first.</p>
+        </details>
+      </div>
+
+    </div>
+  </div>
+</Base>

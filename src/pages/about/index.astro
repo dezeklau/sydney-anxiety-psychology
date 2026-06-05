@@ -19,7 +19,25 @@ const aboutPageSchema = {
   "publisher": {
     "@type": "Organization",
     "name": "Sydney Anxiety Psychology",
-    "url": "https://sydneyanxietypsychology.com.au"
+    "alternateName": "Sydney Anxiety Psychology Directory",
+    "url": "https://sydneyanxietypsychology.com.au",
+    "description": "An independent directory helping people in Sydney find AHPRA-registered telehealth psychologists who specialise in anxiety. Operated by Play Forge Labs Pty Ltd. Not a clinical service.",
+    "areaServed": {
+      "@type": "State",
+      "name": "New South Wales",
+      "sameAs": "https://www.wikidata.org/wiki/Q3224"
+    },
+    "knowsAbout": [
+      "Telehealth psychology",
+      "Anxiety disorders",
+      "Medicare Better Access",
+      "Mental Health Treatment Plan",
+      "AHPRA registered psychologists",
+      "Sydney psychologists"
+    ],
+    "sameAs": [
+      "https://sydneyanxietypsychology.com.au/about/"
+    ]
   }
 };
 ---
@@ -91,12 +109,28 @@ const aboutPageSchema = {
       <h2>Privacy</h2>
       <p>We collect minimal personal information and handle it in accordance with the Australian Privacy Act 1988. Profile pages contain only publicly available information. Any information submitted through the contact or claim forms is handled in accordance with our <a href="/privacy/">Privacy Policy</a>.</p>
 
+      <h2 id="entity">About the directory operator</h2>
+      <p>Sydney Anxiety Psychology is operated by Play Forge Labs Pty Ltd, an Australian company. The directory was created to address a specific information gap: the combination of "which psychologist specialises in anxiety", "do they offer telehealth", "what will it cost after Medicare" and "is their AHPRA registration current" was difficult for most people to answer quickly and reliably. This directory consolidates that information in one place, using only public sources, with clear editorial standards.</p>
+      <p>The operator is not a clinical practice, does not provide clinical services, and has no commercial relationship with any listed practitioner. Revenue model: directory listing fees from verified and claimed practitioner profiles (claimed profiles only).</p>
+      <p><strong>Niche focus:</strong> Telehealth anxiety psychology — Sydney and NSW. We do not attempt to cover every mental health presentation or every geography. Doing one thing well for a specific population is our editorial commitment.</p>
+
       <div class="info-box" style="margin-top: 2rem;">
         <strong>Browse the directory:</strong> <a href="/directory/">View all listed telehealth psychologists for anxiety in Sydney &rarr;</a>
       </div>
 
+      <div style="background: #f8fafc; border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-top: 2rem;">
+        <p style="font-weight: 600; margin: 0 0 0.5rem; font-size: 0.9rem;">Resource guides</p>
+        <ul style="margin: 0; font-size: 0.9rem; line-height: 1.9;">
+          <li><a href="/guides/telehealth-anxiety-psychology-sydney/">Telehealth anxiety psychology Sydney: complete guide</a></li>
+          <li><a href="/guides/cost-telehealth-psychologist-australia/">What does a telehealth psychologist cost in Australia?</a></li>
+          <li><a href="/guides/mental-health-care-plan-sydney/">Mental Health Care Plan: how to get one in Sydney</a></li>
+          <li><a href="/guides/does-online-therapy-work-for-anxiety/">Does online therapy work for anxiety?</a></li>
+          <li><a href="/tools/">Free tools: Medicare rebate calculator and MHTP checker</a></li>
+        </ul>
+      </div>
+
       <p style="font-size: 0.75rem; color: var(--color-text-secondary); margin-top: 2.5rem; border-top: 1px solid var(--color-border); padding-top: 1rem;">
-        This directory is operated by Play Forge Labs Pty Ltd. ABN available on request. See our <a href="/privacy/">Privacy Policy</a> for how information is handled.
+        This directory is operated by Play Forge Labs Pty Ltd. ABN available on request. See our <a href="/privacy/">Privacy Policy</a> for how information is handled. Directory information is current as at June 2026; Medicare rebate figures effective 1 July 2025.
       </p>
 
     </div>

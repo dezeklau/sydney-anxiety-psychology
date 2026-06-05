@@ -58,6 +58,7 @@ const plausibleDomain = 'sydneyanxietypsychology.com.au'; // domain registered; 
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Sydney Anxiety Psychology",
+    "alternateName": "Sydney Anxiety Psychology Directory",
     "url": "https://sydneyanxietypsychology.com.au",
     "logo": {
       "@type": "ImageObject",
@@ -65,7 +66,7 @@ const plausibleDomain = 'sydneyanxietypsychology.com.au'; // domain registered; 
       "width": 1200,
       "height": 630
     },
-    "description": "An independent directory helping people in Sydney find AHPRA-registered telehealth psychologists who specialise in anxiety. Not a clinical service.",
+    "description": "An independent directory helping people in Sydney find AHPRA-registered telehealth psychologists who specialise in anxiety. Not a clinical service. Operated by Play Forge Labs Pty Ltd.",
     "areaServed": {
       "@type": "City",
       "name": "Sydney",
@@ -75,7 +76,18 @@ const plausibleDomain = 'sydneyanxietypsychology.com.au'; // domain registered; 
       "@type": "ContactPoint",
       "contactType": "customer support",
       "url": "https://sydneyanxietypsychology.com.au/connect/"
-    }
+    },
+    "sameAs": [
+      "https://sydneyanxietypsychology.com.au/about/"
+    ],
+    "knowsAbout": [
+      "Telehealth psychology",
+      "Anxiety disorders",
+      "Medicare Better Access",
+      "Mental Health Treatment Plan",
+      "AHPRA registered psychologists",
+      "Sydney psychologists"
+    ]
   })} />
 
   <!-- Schema.org JSON-LD (page-level) -->
@@ -100,9 +112,10 @@ const plausibleDomain = 'sydneyanxietypsychology.com.au'; // domain registered; 
         <span class="site-header__name">Sydney Anxiety Psychology<span class="site-header__sub">Telehealth Psychologist Directory</span></span>
       </a>
       <nav class="site-header__nav" id="main-nav" aria-label="Main navigation">
-        <a href="/directory/">Browse directory</a>
+        <a href="/directory/">Directory</a>
         <a href="/guides/cost-telehealth-psychologist-australia/">Costs &amp; rebates</a>
         <a href="/guides/">Guides</a>
+        <a href="/tools/">Tools</a>
         <a href="/about/">About</a>
       </nav>
       <a href="/connect/" class="site-header__cta plausible-event-name=Header+CTA+Click">
@@ -124,9 +137,10 @@ const plausibleDomain = 'sydneyanxietypsychology.com.au'; // domain registered; 
     <!-- Mobile nav drawer -->
     <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
       <nav aria-label="Mobile navigation">
-        <a href="/directory/">Browse directory</a>
+        <a href="/directory/">Directory</a>
         <a href="/guides/cost-telehealth-psychologist-australia/">Costs &amp; rebates</a>
         <a href="/guides/">Guides</a>
+        <a href="/tools/">Tools</a>
         <a href="/about/">About</a>
         <a href="/connect/" class="mobile-nav__cta plausible-event-name=Mobile+Nav+CTA+Click">Find a Psychologist</a>
       </nav>
@@ -159,12 +173,18 @@ const plausibleDomain = 'sydneyanxietypsychology.com.au'; // domain registered; 
       </div>
       <div>
         <ul style="list-style: none; padding: 0;">
+          <li style="margin-bottom: 0.4rem;"><a href="/directory/">Psychologist directory</a></li>
+          <li style="margin-bottom: 0.4rem;"><a href="/guides/">All guides</a></li>
           <li style="margin-bottom: 0.4rem;"><a href="/guides/cost-telehealth-psychologist-australia/">What does it cost?</a></li>
+          <li style="margin-bottom: 0.4rem;"><a href="/guides/mental-health-care-plan-sydney/">Mental Health Care Plan guide</a></li>
           <li style="margin-bottom: 0.4rem;"><a href="/guides/bulk-billing-psychologist-sydney/">Bulk billing for psychologists</a></li>
           <li style="margin-bottom: 0.4rem;"><a href="/guides/does-online-therapy-work-for-anxiety/">Does online therapy work?</a></li>
           <li style="margin-bottom: 0.4rem;"><a href="/guides/how-telehealth-psychology-works/">How does it work?</a></li>
           <li style="margin-bottom: 0.4rem;"><a href="/guides/psychologist-waitlist-sydney/">Waitlists &amp; availability</a></li>
           <li style="margin-bottom: 0.4rem;"><a href="/guides/clinical-psychologist-vs-registered-psychologist/">Clinical vs registered psychologist</a></li>
+          <li style="margin-bottom: 0.4rem;"><a href="/tools/">Free tools</a></li>
+          <li style="margin-bottom: 0.4rem;"><a href="/tools/medicare-rebate-calculator/">Medicare rebate calculator</a></li>
+          <li style="margin-bottom: 0.4rem;"><a href="/tools/mental-health-care-plan-checker/">Mental Health Care Plan checker</a></li>
           <li style="margin-bottom: 0.4rem;"><a href="/for-psychologists/">For psychologists</a></li>
           <li style="margin-bottom: 0.4rem;"><a href="/connect/">Find a Psychologist</a></li>
           <li style="margin-bottom: 0.4rem;"><a href="/about/">About This Directory</a></li>

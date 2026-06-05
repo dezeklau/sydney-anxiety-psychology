@@ -1,0 +1,95 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sydneyanxietypsychology.com.au/" },
+    { "@type": "ListItem", "position": 2, "name": "Free Tools", "item": "https://sydneyanxietypsychology.com.au/tools/" },
+  ]
+};
+
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Free psychology tools for Australians",
+  "description": "Free client-side tools to help people in Australia understand Medicare rebates and Mental Health Care Plan eligibility for psychology sessions.",
+  "url": "https://sydneyanxietypsychology.com.au/tools/",
+  "numberOfItems": 2,
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Medicare Rebate & Gap Calculator",
+      "url": "https://sydneyanxietypsychology.com.au/tools/medicare-rebate-calculator/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Mental Health Care Plan Eligibility Checker",
+      "url": "https://sydneyanxietypsychology.com.au/tools/mental-health-care-plan-checker/"
+    }
+  ]
+};
+---
+<Base
+  title="Free Psychology Tools | Medicare Calculator & MHTP Checker | Sydney"
+  description="Free tools to help you understand the cost of seeing a psychologist in Australia: a Medicare rebate and gap calculator, and a Mental Health Care Plan eligibility checker."
+  schema={[breadcrumbSchema, itemListSchema]}
+>
+  <div class="main-content">
+    <div class="container">
+
+      <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 1.5rem;">
+        <a href="/">Home</a> &rsaquo; Free Tools
+      </p>
+
+      <h1>Free Tools for Finding a Psychologist in Australia</h1>
+      <p style="font-size: 1.05rem; color: var(--color-text-secondary); margin-bottom: 2rem;">Two quick, private, client-side tools to answer the most common cost and eligibility questions before you book.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+
+        <div style="border: 1.5px solid var(--color-border); border-radius: var(--radius-lg); padding: 1.75rem; background: #fff;">
+          <div style="font-size: 2rem; margin-bottom: 0.75rem;">$</div>
+          <h2 style="font-size: 1.15rem; margin-bottom: 0.5rem;"><a href="/tools/medicare-rebate-calculator/">Medicare Rebate &amp; Gap Calculator</a></h2>
+          <p style="color: var(--color-text-secondary); font-size: 0.92rem; margin-bottom: 1.25rem;">Enter your psychologist's fee and see exactly how much Medicare rebates, how much you pay out-of-pocket, and how much you save across a course of sessions.</p>
+          <a href="/tools/medicare-rebate-calculator/" class="btn btn--primary" style="font-size: 0.92rem;">Open calculator &rarr;</a>
+        </div>
+
+        <div style="border: 1.5px solid var(--color-border); border-radius: var(--radius-lg); padding: 1.75rem; background: #fff;">
+          <div style="font-size: 2rem; margin-bottom: 0.75rem;">&#x2713;</div>
+          <h2 style="font-size: 1.15rem; margin-bottom: 0.5rem;"><a href="/tools/mental-health-care-plan-checker/">Mental Health Care Plan Checker</a></h2>
+          <p style="color: var(--color-text-secondary); font-size: 0.92rem; margin-bottom: 1.25rem;">Answer 5 quick questions to find out whether you are likely eligible for a Mental Health Treatment Plan and what steps to take next.</p>
+          <a href="/tools/mental-health-care-plan-checker/" class="btn btn--primary" style="font-size: 0.92rem;">Open checker &rarr;</a>
+        </div>
+
+      </div>
+
+      <div class="info-box">
+        <p><strong>These tools are informational only.</strong> They do not provide medical or clinical advice. Results are based on publicly available Medicare Benefits Schedule information. Verify current rebate rates at <a href="https://www.mbsonline.gov.au" target="_blank" rel="noopener">mbsonline.gov.au</a>. No information you enter is stored or transmitted.</p>
+      </div>
+
+      <h2>Why These Tools Exist</h2>
+      <p>The two most common questions people have before booking a psychologist are: "how much will this actually cost me?" and "do I qualify for Medicare rebates?" The answers depend on individual circumstances, and the official guidance can be difficult to parse. These tools give clear, personalised answers in under a minute, with no email required.</p>
+
+      <h2>Related Guides</h2>
+      <ul>
+        <li><a href="/guides/cost-telehealth-psychologist-australia/">What does a telehealth psychologist cost in Australia?</a> (full cost breakdown)</li>
+        <li><a href="/guides/mental-health-care-plan-sydney/">Mental Health Care Plan Sydney: how to get one</a> (step-by-step GP appointment guide)</li>
+        <li><a href="/guides/bulk-billing-psychologist-sydney/">Bulk billing for psychologists in Sydney</a> (when $0 out-of-pocket is possible)</li>
+        <li><a href="/guides/clinical-psychologist-vs-registered-psychologist/">Clinical vs registered psychologist</a> (which rebate tier applies to you)</li>
+      </ul>
+
+      <div class="cta-block">
+        <h3>Ready to find a telehealth psychologist?</h3>
+        <p>Once you have a sense of cost, we can connect you with an AHPRA-registered psychologist in Sydney who specialises in anxiety and offers telehealth. You will hear back within 1 business day.</p>
+        <a href="/directory/" class="btn--cta plausible-event-name=Tools+Hub+CTA+Click">
+          Browse the directory
+        </a>
+        <p class="cta-block__note">Or <a href="/connect/">request a personal match &rarr;</a></p>
+      </div>
+
+    </div>
+  </div>
+</Base>

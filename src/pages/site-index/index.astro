@@ -15,6 +15,7 @@ const startHere = [
 
 const guides = [
   { href: '/guides/', label: 'Guides index' },
+  { href: '/guides/telehealth-anxiety-psychology-sydney/', label: 'PILLAR: Telehealth anxiety psychology Sydney — complete guide' },
   { href: '/guides/cost-telehealth-psychologist-australia/', label: 'What does a telehealth psychologist cost in Australia?' },
   { href: '/guides/mental-health-care-plan-sydney/', label: 'Mental Health Care Plan Sydney: how to get one' },
   { href: '/guides/bulk-billing-psychologist-sydney/', label: 'Bulk billing for psychologists in Sydney' },
@@ -24,6 +25,12 @@ const guides = [
   { href: '/guides/does-online-therapy-work-for-anxiety/', label: 'Does online therapy work for anxiety?' },
   { href: '/guides/psychologist-waitlist-sydney/', label: 'Psychology waitlists in Sydney: what to know' },
   { href: '/guides/medicare-psychology-data-australia/', label: 'Medicare-rebated psychology in Australia: what the data shows' },
+];
+
+const tools = [
+  { href: '/tools/', label: 'Free tools hub' },
+  { href: '/tools/medicare-rebate-calculator/', label: 'Medicare rebate and gap calculator' },
+  { href: '/tools/mental-health-care-plan-checker/', label: 'Mental Health Care Plan eligibility checker' },
 ];
 
 const conditionGuides = [
@@ -101,6 +108,13 @@ const breadcrumbSchema = {
         <h2 style="font-size: 1.2rem;">Anxiety conditions</h2>
         <ul style="line-height: 1.9;">
           {conditionGuides.map((p) => <li><a href={p.href}>{p.label}</a></li>)}
+        </ul>
+      </section>
+
+      <section style="margin-bottom: 2.5rem;">
+        <h2 style="font-size: 1.2rem;">Free tools</h2>
+        <ul style="line-height: 1.9;">
+          {tools.map((p) => <li><a href={p.href}>{p.label}</a></li>)}
         </ul>
       </section>
 
