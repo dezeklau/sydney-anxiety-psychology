@@ -1,0 +1,233 @@
+---
+import Base from '../../layouts/Base.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "headline": "Anxiety and Depression Together: Telehealth Psychology in Sydney",
+  "description": "A guide to the common overlap between anxiety and depression, how psychological treatment works when both are present, and how to find a telehealth psychologist in Sydney who works with this combination.",
+  "datePublished": "2026-06-05",
+  "dateModified": "2026-06-05",
+  "author": {
+    "@type": "Organization",
+    "name": "Sydney Anxiety Psychology"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Sydney Anxiety Psychology",
+    "url": "https://sydneyanxietypsychology.com.au"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://sydneyanxietypsychology.com.au/guides/anxiety-depression-telehealth-psychologist-sydney/"
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sydneyanxietypsychology.com.au/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://sydneyanxietypsychology.com.au/guides/" },
+    { "@type": "ListItem", "position": 3, "name": "Anxiety and Depression Telehealth Psychologist Sydney", "item": "https://sydneyanxietypsychology.com.au/guides/anxiety-depression-telehealth-psychologist-sydney/" },
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can a psychologist treat both anxiety and depression at the same time?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Treating anxiety and depression together is standard practice. Evidence-based therapies such as CBT and ACT are effective for both and are commonly applied when both are present. Your psychologist will assess which presentation is more primary and sequence treatment accordingly — but treating them as separate, sequential problems is rarely necessary or recommended."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is telehealth effective for anxiety and depression together?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Research consistently supports telehealth delivery of CBT and related therapies for both anxiety disorders and depression. Meta-analyses have found that outcomes for telehealth CBT are comparable to in-person delivery for both conditions. Telehealth may be especially practical when fatigue or low motivation (common in depression) makes travel to in-person sessions difficult."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many sessions does treating anxiety and depression together require?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Treating comorbid presentations typically takes longer than treating a single diagnosis in isolation. A realistic expectation is 12 to 20 sessions, though this varies considerably based on severity, chronicity, and goals. Medicare covers up to 10 sessions per calendar year under Better Access; practitioners often plan treatment in the context of this limit and discuss what is achievable within it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I see a psychologist or a psychiatrist for anxiety and depression?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For psychological treatment (talking therapy), a psychologist is the right referral. Psychiatrists are medical doctors who specialise in mental health — they can prescribe medication and manage complex or treatment-resistant cases. If you are experiencing moderate to severe symptoms, have not improved with psychological treatment alone, or are managing a complex presentation, a GP referral to both a psychologist and a psychiatrist may be appropriate. A psychologist and a psychiatrist can work in parallel."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the Medicare rebate for treating anxiety and depression via telehealth?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The rebate is the same regardless of the presenting concern — $98.95 per session for a registered psychologist, or $145.25 for an endorsed clinical psychologist (Medicare Better Access, effective 1 July 2025). You need a Mental Health Treatment Plan from your GP. Up to 10 sessions per calendar year are covered."
+      }
+    }
+  ]
+};
+---
+<Base
+  title="Anxiety and Depression Telehealth Psychologist Sydney | Both Together"
+  description="Find a telehealth psychologist in Sydney for anxiety and depression together. Guide to how CBT works for comorbid presentations, what to look for, and Medicare costs."
+  schema={[breadcrumbSchema, articleSchema, faqSchema]}
+>
+  <div class="main-content">
+    <div class="container">
+
+      <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 1.5rem;">
+        <a href="/">Home</a> &rsaquo; <a href="/guides/">Guides</a> &rsaquo; Anxiety and Depression Together
+      </p>
+
+      <h1>Anxiety and Depression Together: Finding a Telehealth Psychologist in Sydney</h1>
+      <AuthorByline />
+
+      <p>Anxiety and depression frequently co-occur. Research consistently shows that more than half of people who meet diagnostic criteria for an anxiety disorder also meet criteria for a depressive disorder at some point — and vice versa. If you are experiencing both, this guide explains how treatment works, what to look for in a psychologist, and how to access telehealth psychology in Sydney for this combination.</p>
+
+      <h2>Why Anxiety and Depression Often Appear Together</h2>
+      <p>Anxiety and depression can feel like opposites — one is about overactivation and worry; the other is often characterised by low energy, withdrawal, and loss of interest. But they share common underlying processes that explain why they so frequently occur together.</p>
+
+      <h3>Shared mechanisms</h3>
+      <p>Both conditions involve difficulties with emotional regulation — the capacity to respond flexibly to distressing experiences rather than getting stuck in them. Both are also associated with specific patterns of thinking:</p>
+      <ul>
+        <li><strong>Anxiety</strong> is typically driven by threat-focused thinking — overestimating the probability or severity of future danger, and underestimating one's capacity to cope.</li>
+        <li><strong>Depression</strong> is typically driven by loss-focused thinking — negative views of oneself, the world, and the future (what Aaron Beck originally called the "cognitive triad").</li>
+      </ul>
+      <p>These patterns often reinforce each other. Chronic anxiety is exhausting; prolonged exhaustion and repeated avoidance can lead to depression. Conversely, depression reduces the energy and confidence needed to confront anxious thoughts, deepening both conditions over time.</p>
+
+      <h3>The behavioural cycle</h3>
+      <p>Avoidance is the common behavioural thread. Anxiety drives avoidance of feared situations. Depression drives withdrawal from activities that previously brought satisfaction. The result — doing less, engaging less, and accumulating more evidence that the world is threatening or unrewarding — maintains and deepens both conditions simultaneously.</p>
+
+      <h2>How Psychological Treatment Works for Both</h2>
+      <p>Evidence-based psychological therapies are effective for both anxiety and depression, and several of the same approaches are used for both. When both are present, a well-trained psychologist will assess which is more primary (which came first, which is more severe, which maintains the other) and structure treatment accordingly — but treating them as separate, sequential problems is rarely necessary or recommended.</p>
+
+      <h3>Cognitive Behavioural Therapy (CBT)</h3>
+      <p>CBT is the most extensively researched psychological treatment for both anxiety and depression. For anxiety, CBT targets threat-focused thinking and avoidance through cognitive restructuring and behavioural experiments. For depression, CBT uses behavioural activation (gradually re-engaging with activities) and challenges negative automatic thoughts. When treating both together, CBT integrates these elements — addressing the thinking patterns and the avoidance cycles that maintain both conditions simultaneously.</p>
+      <p>A randomised trial by Shaker et al. (2023, JMIR Mental Health) confirmed that telehealth CBT for mixed anxiety-depression presentations produced outcomes comparable to in-person delivery.</p>
+
+      <h3>Acceptance and Commitment Therapy (ACT)</h3>
+      <p>ACT addresses both anxiety and depression through a shared framework: developing psychological flexibility — the capacity to experience difficult thoughts and feelings without being controlled by them, while continuing to move toward personally valued activities. ACT is well-suited to comorbid presentations because it does not treat anxiety and depression as separate disorders requiring separate protocols; instead, it addresses the underlying inflexibility that maintains both.</p>
+      <p>For people who have found CBT too focused on changing thoughts (sometimes experienced as invalidating), ACT's acceptance-based approach can feel more accessible.</p>
+
+      <h3>Behavioural Activation (BA)</h3>
+      <p>Behavioural activation targets the withdrawal and avoidance cycle directly. Rather than working on thoughts first, BA systematically reintroduces engaging activities — especially those involving mastery (accomplishment) and pleasure — to interrupt the low-mood, low-activity cycle. BA is particularly useful when depression is primary and fatigue makes more cognitively demanding work feel overwhelming. It can also reduce anxiety by rebuilding evidence that valued activities are accessible and manageable.</p>
+
+      <h3>When medication is part of the picture</h3>
+      <p>For moderate to severe presentations, psychological treatment and medication are often used together. SSRIs and SNRIs are commonly prescribed for both anxiety and depression. Your GP can discuss whether a medication review is appropriate alongside psychological treatment. A psychologist and a prescribing doctor can work in parallel without conflict.</p>
+
+      <h2>Why Telehealth Is Practical for This Combination</h2>
+      <p>Depression often brings fatigue, reduced motivation, and difficulty leaving the house — all of which make the practical threshold for attending in-person appointments higher. Telehealth removes the travel barrier, reduces the energy cost of attending, and allows sessions to take place in a familiar environment. For people managing both anxiety and depression, this practical accessibility can be a significant factor in whether they start and continue treatment.</p>
+      <p>Research supports this. Telehealth delivery of CBT produces outcomes comparable to in-person delivery for both anxiety and depressive disorders, including when both are present.</p>
+
+      <h2>What to Look For in a Psychologist</h2>
+      <p>When seeking a telehealth psychologist for anxiety and depression together, consider the following:</p>
+      <ul>
+        <li><strong>Experience with comorbid presentations:</strong> Ask whether the psychologist has experience treating anxiety and depression together, not just separately. Most experienced practitioners do, but it is worth confirming.</li>
+        <li><strong>Familiarity with CBT and/or ACT:</strong> These are the most evidence-supported approaches for this combination. Ask which approaches the psychologist uses.</li>
+        <li><strong>Telehealth experience:</strong> Confirm they offer telehealth and have experience delivering sessions via video call.</li>
+        <li><strong>AHPRA registration:</strong> All practitioners in this directory hold current AHPRA registration. You can verify any practitioner at the <a href="https://www.ahpra.gov.au/Registration/Registers-of-Practitioners.aspx" target="_blank" rel="noopener">AHPRA public register</a>.</li>
+        <li><strong>Willingness to liaise with your GP:</strong> For complex or medication-involved presentations, a psychologist who communicates with your treating GP makes coordinated care easier.</li>
+      </ul>
+
+      <h2>The Medicare Pathway</h2>
+      <p>Telehealth psychology sessions for anxiety and depression attract the same Medicare rebate as in-person sessions under the Better Access scheme. You will need a Mental Health Treatment Plan (MHTP) from your GP before your first session to claim the rebate.</p>
+
+      <div class="fee-table-wrap">
+      <table class="fee-table">
+        <thead>
+          <tr>
+            <th>Psychologist type</th>
+            <th>Medicare rebate (from 1 July 2025)</th>
+            <th>Typical session fee</th>
+            <th>Typical out-of-pocket</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Registered psychologist (item 91170)</td>
+            <td>$98.95</td>
+            <td>$170–$250</td>
+            <td>$71–$151</td>
+          </tr>
+          <tr>
+            <td>Endorsed clinical psychologist (item 91167)</td>
+            <td>$145.25</td>
+            <td>$230–$310</td>
+            <td>$85–$165</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--color-text-secondary);">Rebates: MBS items 91170 and 91167, effective 1 July 2025. Up to 10 sessions per calendar year under Better Access. <a href="/guides/cost-telehealth-psychologist-australia/">Full cost guide &rarr;</a></p>
+
+      <p>Medicare covers up to 10 sessions per calendar year. There is a GP review after the first 6 sessions, at which point your GP renews the MHTP for a further 4 sessions if treatment is ongoing. For complex presentations, many people continue treatment beyond 10 sessions and pay the full fee (no rebate) for additional sessions.</p>
+
+      <h2>Common Questions</h2>
+      <div class="faq">
+        <details class="faq__item">
+          <summary class="faq__q">Can a psychologist treat both anxiety and depression at the same time?</summary>
+          <p class="faq__a">Yes. Treating anxiety and depression together is standard practice. CBT and ACT are effective for both and are commonly applied when both are present. Your psychologist will assess which presentation is more primary and sequence treatment accordingly.</p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">Is telehealth effective for anxiety and depression together?</summary>
+          <p class="faq__a">Yes. Research consistently supports telehealth CBT for both anxiety and depression, including when both are present. Telehealth may be especially practical when fatigue or low motivation makes travel to in-person sessions difficult.</p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">How many sessions does treating anxiety and depression together require?</summary>
+          <p class="faq__a">Treating comorbid presentations typically takes longer than treating a single diagnosis. A realistic expectation is 12 to 20 sessions, though this varies considerably. Medicare covers up to 10 sessions per calendar year under Better Access.</p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">Should I see a psychologist or a psychiatrist?</summary>
+          <p class="faq__a">For psychological treatment (talking therapy), a psychologist is the right referral. Psychiatrists specialise in medication management and complex cases. For moderate to severe presentations, both can work in parallel — a GP can refer to both simultaneously.</p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">What is the Medicare rebate for anxiety and depression via telehealth?</summary>
+          <p class="faq__a">The rebate is the same regardless of the presenting concern: $98.95 per session for a registered psychologist, or $145.25 for an endorsed clinical psychologist (from 1 July 2025). You need a Mental Health Treatment Plan from your GP. Up to 10 sessions per year.</p>
+        </details>
+      </div>
+
+      <div class="cta-block">
+        <h3>Find a telehealth psychologist for anxiety and depression in Sydney</h3>
+        <p>Browse the directory to find AHPRA-registered psychologists in Sydney who work with anxiety and depression, or tell us what you are looking for and we will connect you with a suitable practitioner.</p>
+        <a href="/directory/" class="btn--cta plausible-event-name=AnxDepGuide+Directory+CTA">
+          Browse the directory
+        </a>
+        <p class="cta-block__note">Or <a href="/connect/" style="color: rgba(255,255,255,0.85);">submit an enquiry</a> to be matched within 1 business day.</p>
+      </div>
+
+      <hr />
+
+      <div style="margin: 2rem 0;">
+        <h2 style="font-size: 1.15rem; margin-top: 0;">Related guides</h2>
+        <ul style="list-style: none; padding: 0; display: grid; gap: 0.6rem;">
+          <li><a href="/guides/generalised-anxiety-disorder-telehealth-psychologist-sydney/">Generalised anxiety disorder (GAD): telehealth psychology in Sydney</a></li>
+          <li><a href="/guides/does-online-therapy-work-for-anxiety/">Does online therapy work for anxiety? What the research shows</a></li>
+          <li><a href="/guides/how-to-choose-anxiety-psychologist-telehealth/">How to choose a telehealth psychologist for anxiety</a></li>
+          <li><a href="/guides/cost-telehealth-psychologist-australia/">What does a telehealth psychologist cost?</a></li>
+          <li><a href="/guides/mental-health-care-plan-sydney/">How to get a Mental Health Treatment Plan from your GP</a></li>
+          <li><a href="/guides/psychologist-waitlist-sydney/">Psychology waitlists in Sydney: what to do</a></li>
+        </ul>
+      </div>
+
+      <p style="font-size: 0.8rem; color: var(--color-text-secondary);">
+        This guide provides general educational information about anxiety and depression and psychological treatment options. It is not a substitute for professional advice. If you are experiencing significant distress, contact a registered health professional. For crisis support: Lifeline 13 11 14, Beyond Blue 1300 22 4636, 13YARN 13 92 76.
+      </p>
+      <p style="font-size: 0.8rem; color: var(--color-text-secondary);">Last reviewed June 2026. Medicare rebate figures current as at 1 July 2025 (MBS items 91170, 91167). Source: ABS National Survey of Mental Health and Wellbeing 2020–21; Shaker et al. (2023) JMIR Mental Health; Beck (1979) CBT cognitive triad.</p>
+
+    </div>
+  </div>
+</Base>
