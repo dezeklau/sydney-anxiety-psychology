@@ -67,7 +67,7 @@ const breadcrumbSchema = {
 ---
 <Base
   title="Telehealth Psychologist Directory for Anxiety in Sydney | Find by Specialty"
-  description="Browse AHPRA-registered psychologists in Sydney offering telehealth for anxiety. Filter by specialty: generalised anxiety, social anxiety, panic, OCD, health anxiety, and more."
+  description="Browse AHPRA-registered psychologists in Sydney for telehealth anxiety appointments. Filter by specialty: GAD, social anxiety, panic, OCD, health anxiety, and more."
   schema={[itemListSchema, breadcrumbSchema]}
 >
   <div class="main-content">
@@ -163,6 +163,11 @@ const breadcrumbSchema = {
           </div>
         </div>
       </div>
+
+      <!-- Filter result count -->
+      <p id="filter-count" style="font-size: 0.88rem; color: var(--color-text-secondary); margin-bottom: 1rem;" aria-live="polite" aria-atomic="true">
+        Showing all {practitioners.length} practitioners
+      </p>
 
       <!-- PRACTITIONER CARD GRID -->
       <div
@@ -402,13 +407,13 @@ const breadcrumbSchema = {
   var activeSort = 'default';
 
   var grid = document.getElementById('practitioner-grid');
-  var countEl = document.getElementById('results-count');
+  var countEl = document.getElementById('filter-count');
   var noResultsEl = document.getElementById('no-results');
   var clearBtn = document.getElementById('clear-filters');
   var sortSelect = document.getElementById('sort-select');
   var chips = document.querySelectorAll('.filter-chip');
 
-  if (!grid || !countEl || !noResultsEl || !clearBtn || !sortSelect) return;
+  if (!grid || !noResultsEl || !clearBtn || !sortSelect) return;
 
   // ── Helpers ─────────────────────────────────────────────────────────────────
 
@@ -502,7 +507,13 @@ const breadcrumbSchema = {
 
     // 4. Update count
     var count = visible.length;
-    countEl.textContent = 'Showing ' + count + ' of ' + TOTAL + ' psychologist' + (TOTAL !== 1 ? 's' : '');
+    if (countEl) {
+      if (activeFilters.size === 0 && activeSort === 'default') {
+        countEl.textContent = 'Showing all ' + TOTAL + ' practitioners';
+      } else {
+        countEl.textContent = 'Showing ' + count + ' of ' + TOTAL + ' practitioners';
+      }
+    }
 
     // 5. No-results message
     noResultsEl.style.display = count === 0 ? 'block' : 'none';

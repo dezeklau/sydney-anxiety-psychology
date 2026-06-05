@@ -14,6 +14,53 @@ const schema = {
   }
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I need a referral to see a psychologist online?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No referral is needed to book directly. However, a Mental Health Treatment Plan (MHTP) from your GP is required to claim Medicare rebates. Without one, the full fee applies. From November 2025, rebates generally require the referral to come from your usual GP or a practice where you are enrolled via MyMedicare."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is telehealth as effective as seeing a psychologist in person?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Research consistently supports telehealth psychology as effective for anxiety disorders. CBT delivered via video call produces outcomes comparable to in-person delivery for most presentations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many sessions will I need?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This varies by presentation and goals. Evidence-based anxiety treatments typically involve 8 to 12 sessions. Medicare covers up to 10 per calendar year under Better Access, with a GP review after the first 6. Your psychologist will discuss expectations in the first appointment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What kind of anxiety do listed psychologists treat?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The directory focuses on psychologists working with anxiety broadly: generalised anxiety disorder (GAD), panic disorder, social anxiety, health anxiety, agoraphobia, and OCD."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "I keep hitting waitlists. What can I do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Telehealth expands your options beyond your suburb to the full pool of NSW practitioners. Book your GP Mental Health Treatment Plan in parallel with your psychologist search rather than after."
+      }
+    }
+  ]
+};
+
 const itemListSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
@@ -45,7 +92,7 @@ const itemListSchema = {
 <Base
   title="Telehealth Psychologist for Anxiety Sydney | Medicare Rebates | Finder"
   description="Find an AHPRA-registered telehealth psychologist specialising in anxiety in Sydney. Clear fees, Medicare rebate information, and no waitlist surprises."
-  schema={[schema, itemListSchema]}
+  schema={[schema, itemListSchema, faqSchema]}
 >
   <section class="hero">
     <div class="container">
