@@ -1,0 +1,192 @@
+---
+import Base from '../../../layouts/Base.astro';
+import AuthorByline from '../../../components/AuthorByline.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does Medicare cover telehealth psychology sessions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Telehealth psychology sessions attract the same Medicare rebate as in-person sessions under the Better Access to Mental Health Care initiative. As of 1 July 2025, the rebate is $145.25 per session with a clinical psychologist (MBS item 91167) or $98.95 per session with a registered psychologist (MBS item 91170). You need a GP referral and a Mental Health Treatment Plan to access the rebate. Up to 10 individual psychology sessions are covered per calendar year."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I get a Medicare rebate for telehealth psychology?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The process has four steps: (1) see your GP and ask for a Mental Health Treatment Plan (MHTP); (2) get a referral to a psychologist — the referral can be to a telehealth-based psychologist; (3) book and attend your telehealth session; (4) the psychologist claims Medicare on your behalf (bulk billing) or you pay upfront and receive the rebate into your bank account. To be eligible for bulk billing, the psychologist must choose to offer it — not all do. Always confirm before your first session whether the practice bulk bills or charges a gap."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the Medicare rebate for telehealth psychology in 2025?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "From 1 July 2025, the Medicare rebate for a standard telehealth psychology session is: $145.25 per session with a clinical psychologist (MBS item 91167); $98.95 per session with a registered psychologist (MBS item 91170). Typical Sydney psychologist fees are $230 to $300 per session, so there is usually an out-of-pocket gap of $85 to $200 per session unless the psychologist bulk bills. Bulk billing for psychology is uncommon in private practice in Sydney."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many telehealth psychology sessions does Medicare cover per year?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Medicare covers up to 10 individual psychology sessions per calendar year under a Mental Health Treatment Plan. The first 6 sessions can be accessed on a single GP referral; after 6 sessions, you return to your GP for a review and, if appropriate, a further referral for up to 4 more sessions (total 10 per year). The count resets on 1 January each year."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use Medicare for telehealth psychology if I live outside Sydney?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The Medicare telehealth psychology rebate is available Australia-wide. You do not need to see a psychologist who is geographically near you — any Medicare-registered psychologist providing telehealth can see you regardless of where you live in Australia. This means people in rural and regional areas can access specialist psychologists in Sydney or elsewhere via telehealth with the same Medicare rebate."
+      }
+    }
+  ]
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sydneyanxietypsychology.com.au/" },
+    { "@type": "ListItem", "position": 2, "name": "FAQs", "item": "https://sydneyanxietypsychology.com.au/faq/" },
+    { "@type": "ListItem", "position": 3, "name": "Does Medicare cover telehealth psychology?", "item": "https://sydneyanxietypsychology.com.au/faq/does-medicare-cover-telehealth-psychology/" },
+  ]
+};
+---
+<Base
+  title="Does Medicare Cover Telehealth Psychology? | 2025 Rebate Amounts"
+  description="Yes, Medicare covers telehealth psychology sessions with the same rebate as in-person. 2025 rebate: $145.25 clinical psychologist, $98.95 registered psychologist. How to access it."
+  schema={[breadcrumbSchema, faqSchema]}
+>
+  <div class="main-content">
+    <div class="container">
+
+      <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 1.5rem;">
+        <a href="/">Home</a> &rsaquo; <a href="/faq/">Common Questions</a> &rsaquo; Does Medicare cover telehealth psychology?
+      </p>
+
+      <h1>Does Medicare Cover Telehealth Psychology Sessions?</h1>
+      <AuthorByline />
+
+      <!-- GEO answer block -->
+      <div style="background: #f0f4ff; border-left: 4px solid #3b5bdb; border-radius: 0 var(--radius) var(--radius) 0; padding: 1.1rem 1.4rem; margin: 0 0 1.5rem;">
+        <p style="margin: 0; font-size: 1.02rem; line-height: 1.6;"><strong>Yes.</strong> Telehealth psychology sessions attract the same Medicare rebate as in-person sessions. From 1 July 2025: $145.25 per session with a clinical psychologist; $98.95 per session with a registered psychologist. You need a GP referral and Mental Health Treatment Plan. Up to 10 sessions per calendar year are covered.</p>
+      </div>
+
+      <div class="info-box">
+        <p><strong>Rebate amounts are current as at 1 July 2025.</strong> MBS item 91167 (clinical psychologist, telehealth) and item 91170 (registered psychologist, telehealth). Rebate amounts are indexed periodically — check <a href="https://www.servicesaustralia.gov.au/medicare" target="_blank" rel="noopener">Services Australia</a> or the MBS Online schedule for current figures.</p>
+      </div>
+
+      <h2>How the Medicare Telehealth Psychology Rebate Works</h2>
+
+      <p>Telehealth psychology has been covered by Medicare under the Better Access to Mental Health Care initiative since early 2020, when the government made it permanent following the COVID-19 expansion. The rebate for telehealth is the same as for in-person sessions — there is no reduction for seeing your psychologist via video.</p>
+
+      <h3>Step-by-Step: Accessing the Rebate</h3>
+      <ol>
+        <li><strong>See your GP</strong> and ask for a Mental Health Treatment Plan (MHTP). Your GP assesses your mental health needs and creates a plan that allows you to access psychology under Better Access. Tell your GP you want to see a psychologist via telehealth — the referral can specify this, and many practices now default to it.</li>
+        <li><strong>Get a referral</strong> to a psychologist. Your GP will write a referral letter. This can be to a named psychologist or a general referral to any Medicare-registered psychologist.</li>
+        <li><strong>Book a telehealth session</strong> with a Medicare-registered psychologist. They must have a current Medicare provider number to bill Medicare. All psychologists listed in the directory are Medicare-registered.</li>
+        <li><strong>Attend your session</strong> via video call. Telehealth sessions typically use a secure video platform — your psychologist will send you a link or use a practice software tool (e.g. Coviu, Zoom for Healthcare, or similar).</li>
+        <li><strong>Rebate is processed.</strong> If the psychologist bulk bills, they claim Medicare on your behalf and you pay nothing. If they charge a gap, you pay the full fee and receive the Medicare rebate back (typically into your bank account within a few days if your Medicare details are registered with myGov).</li>
+      </ol>
+
+      <h2>2025 Medicare Rebate Amounts</h2>
+
+      <div class="fee-table-wrap">
+      <table class="fee-table">
+        <thead>
+          <tr>
+            <th>Provider type</th>
+            <th>Telehealth MBS item</th>
+            <th>Medicare rebate (from 1 Jul 2025)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Clinical psychologist</td>
+            <td>91167</td>
+            <td>$145.25 per session</td>
+          </tr>
+          <tr>
+            <td>Registered psychologist</td>
+            <td>91170</td>
+            <td>$98.95 per session</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--color-text-secondary);">Source: Medicare Benefits Schedule, effective 1 July 2025. Amounts are indicative and subject to indexation.</p>
+
+      <p>Typical Sydney psychologist fees are $230 to $300 per session. The out-of-pocket cost (gap) is approximately:</p>
+      <ul>
+        <li>With a clinical psychologist: $85 to $155 per session (after the $145.25 rebate)</li>
+        <li>With a registered psychologist: $131 to $201 per session (after the $98.95 rebate)</li>
+      </ul>
+      <p>Bulk billing (no out-of-pocket cost) is uncommon for psychology in private practice in Sydney. Some community mental health services and headspace centres offer fully bulk-billed sessions. See the <a href="/guides/bulk-billing-psychologist-sydney/">bulk billing guide</a> for more detail.</p>
+
+      <h2>How Many Sessions Does Medicare Cover?</h2>
+
+      <p>Medicare covers up to 10 individual psychology sessions per calendar year under a Mental Health Treatment Plan. The allocation works as follows:</p>
+      <ul>
+        <li>Initial referral: up to 6 sessions</li>
+        <li>After 6 sessions, return to your GP for a review; if appropriate, a further referral for up to 4 sessions (to reach the 10-session maximum)</li>
+        <li>The 10-session count resets on 1 January each year</li>
+      </ul>
+      <p>See the <a href="/faq/how-many-sessions-do-i-need-for-anxiety/">sessions guide</a> for more on what to do if you need more than 10 sessions.</p>
+
+      <h2>What Is the Difference Between a Clinical Psychologist and a Registered Psychologist?</h2>
+
+      <p>The Medicare rebate differs because clinical psychologists complete additional training beyond the standard psychology degree and provisional registration. In brief:</p>
+      <ul>
+        <li><strong>Clinical psychologist:</strong> 6+ years of training; endorsement in clinical psychology from AHPRA; higher Medicare rebate ($145.25); tends to work with more complex or severe presentations</li>
+        <li><strong>Registered psychologist:</strong> 5+ years of training; general registration; lower Medicare rebate ($98.95); provides effective treatment across a wide range of conditions including anxiety disorders</li>
+      </ul>
+      <p>For most anxiety presentations (including GAD, social anxiety, panic disorder), both clinical and registered psychologists provide effective treatment. See the <a href="/faq/psychologist-vs-psychiatrist-sydney/">psychologist vs psychiatrist comparison</a> for more.</p>
+
+      <div class="faq">
+        <h2>Common Questions</h2>
+        <details class="faq__item">
+          <summary class="faq__q">Does Medicare cover telehealth psychology sessions?</summary>
+          <p class="faq__a">Yes. The Medicare rebate for telehealth psychology is the same as for in-person sessions: $145.25 per session with a clinical psychologist (MBS 91167) or $98.95 per session with a registered psychologist (MBS 91170) from 1 July 2025. Up to 10 sessions per year with a GP referral and Mental Health Treatment Plan.</p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">How do I get a Medicare rebate for telehealth psychology?</summary>
+          <p class="faq__a">See your GP, request a Mental Health Treatment Plan and a referral to a psychologist. Book a telehealth session with a Medicare-registered psychologist. If they bulk bill, you pay nothing; if they charge a gap, you pay the fee and claim the Medicare rebate back (typically via myGov or at the practice).</p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">What is the Medicare rebate for telehealth psychology in 2025?</summary>
+          <p class="faq__a">From 1 July 2025: $145.25 per session with a clinical psychologist (MBS item 91167); $98.95 per session with a registered psychologist (MBS item 91170). Sydney typical fees are $230 to $300, so the gap is usually $85 to $200 per session.</p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">How many telehealth psychology sessions does Medicare cover per year?</summary>
+          <p class="faq__a">Up to 10 individual sessions per calendar year: first 6 on the initial referral, then up to 4 more after a GP review. The count resets each 1 January.</p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">Can I use Medicare for telehealth psychology if I live outside Sydney?</summary>
+          <p class="faq__a">Yes. The Medicare telehealth psychology rebate applies Australia-wide. You can see a psychologist based anywhere in Australia via telehealth — they do not need to be near you geographically.</p>
+        </details>
+      </div>
+
+      <div class="cta-block">
+        <h3>Find a Medicare-registered telehealth psychologist in Sydney</h3>
+        <p>Browse psychologists in Sydney who specialise in anxiety and offer telehealth sessions with Medicare rebates. Filter by specialty, language, and fee type.</p>
+        <a href="/directory/" class="btn--cta plausible-event-name=FAQ+Medicare+Directory+CTA">
+          Browse the directory
+        </a>
+        <p class="cta-block__note">Or <a href="/connect/" style="color: rgba(255,255,255,0.85);">send an enquiry</a> and we'll help match you.</p>
+      </div>
+
+      <hr />
+      <p style="font-size: 0.8rem; color: var(--color-text-secondary);">
+        Medicare rebate amounts are current as at 1 July 2025 (MBS items 91167 and 91170). Better Access to Mental Health Care initiative. This page provides general educational information and is not a substitute for advice from your GP or psychologist. Rebate amounts are subject to periodic indexation — verify current amounts at <a href="https://www.servicesaustralia.gov.au" target="_blank" rel="noopener">Services Australia</a> or the MBS Online schedule.
+      </p>
+
+    </div>
+  </div>
+</Base>

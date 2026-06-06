@@ -58,6 +58,14 @@ const suburbs = [
   { href: '/find/anxiety-psychologist-zetland-sydney/', label: 'Zetland' },
 ];
 
+const faqPages = [
+  { href: '/faq/', label: 'Common questions index' },
+  { href: '/faq/how-many-sessions-do-i-need-for-anxiety/', label: 'How many sessions do I need for anxiety?' },
+  { href: '/faq/does-medicare-cover-telehealth-psychology/', label: 'Does Medicare cover telehealth psychology sessions?' },
+  { href: '/faq/psychologist-wait-times-sydney/', label: 'How long is the wait to see a psychologist in Sydney?' },
+  { href: '/faq/psychologist-vs-psychiatrist-sydney/', label: 'Psychologist vs psychiatrist for anxiety in Sydney' },
+];
+
 const aboutInfo = [
   { href: '/about/', label: 'About this directory' },
   { href: '/for-psychologists/', label: 'For psychologists (list your practice)' },
@@ -131,6 +139,13 @@ const breadcrumbSchema = {
         <h2 style="font-size: 1.2rem;">The directory</h2>
         <ul style="line-height: 1.9;">
           <li><a href="/directory/">Browse all {practitionerCount} listed psychologists</a></li>
+        </ul>
+      </section>
+
+      <section style="margin-bottom: 2.5rem;">
+        <h2 style="font-size: 1.2rem;">Common questions</h2>
+        <ul style="line-height: 1.9;">
+          {faqPages.map((p) => <li><a href={p.href}>{p.label}</a></li>)}
         </ul>
       </section>
 

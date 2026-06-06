@@ -1,0 +1,159 @@
+---
+import Base from '../../../layouts/Base.astro';
+import AuthorByline from '../../../components/AuthorByline.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many psychology sessions do I need for anxiety?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There is no single answer — it depends on the type of anxiety, its severity, and how you respond to treatment. Evidence-based treatments for anxiety disorders (particularly cognitive behavioural therapy, or CBT) typically show meaningful improvement within 8 to 20 sessions for most presentations. Many people notice significant changes within the first 6 to 8 sessions; others with more complex or long-standing presentations benefit from longer-term work. Medicare allows up to 10 individual psychology sessions per calendar year under a Mental Health Treatment Plan, which covers a standard course of CBT for many anxiety presentations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is 10 sessions enough for anxiety?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For many people with anxiety disorders, 10 sessions of CBT is enough to make substantial progress. Clinical guidelines (including those from the National Institute for Health and Care Excellence) suggest that a standard course of CBT for generalised anxiety disorder, social anxiety, or panic disorder is typically 12 to 20 sessions. However, evidence shows that many people achieve their treatment goals within 10 sessions, particularly for less complex presentations. If more sessions are needed beyond the Medicare-covered 10, your psychologist can discuss options including self-funded sessions, whether private health insurance covers additional sessions, or whether your GP can review the plan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens after I use my 10 Medicare sessions for anxiety?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Once you have used your 10 Medicare-subsidised sessions in a calendar year, further sessions are available but are not subsidised by Medicare unless you start a new calendar year. Options include: continuing with self-funded sessions at the psychologist's standard fee; checking whether your private health insurance covers additional psychology sessions; or speaking with your GP about whether other Medicare pathways (such as a chronic disease plan) may apply to your situation. Your psychologist can also discuss whether a break and review approach is appropriate for your presentation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does telehealth psychology work as well as in-person for anxiety?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The evidence for telehealth CBT for anxiety disorders is strong. A 2023 meta-analysis published in JMIR Mental Health (Shaker et al.) found that internet-delivered and video-based CBT produced outcomes equivalent to in-person CBT for anxiety disorders. The same Medicare rebate applies to telehealth sessions as in-person sessions under Better Access. Telehealth also offers practical advantages: shorter wait times, no travel time, and the ability to access specialists regardless of your suburb."
+      }
+    }
+  ]
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sydneyanxietypsychology.com.au/" },
+    { "@type": "ListItem", "position": 2, "name": "FAQs", "item": "https://sydneyanxietypsychology.com.au/faq/" },
+    { "@type": "ListItem", "position": 3, "name": "How many sessions for anxiety?", "item": "https://sydneyanxietypsychology.com.au/faq/how-many-sessions-do-i-need-for-anxiety/" },
+  ]
+};
+---
+<Base
+  title="How Many Sessions Do I Need for Anxiety? | Medicare Psychology Sydney"
+  description="How many psychology sessions do you need for anxiety? What the evidence says about CBT for anxiety, Medicare's 10-session limit, and what happens after."
+  schema={[breadcrumbSchema, faqSchema]}
+>
+  <div class="main-content">
+    <div class="container">
+
+      <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 1.5rem;">
+        <a href="/">Home</a> &rsaquo; <a href="/faq/">Common Questions</a> &rsaquo; How many sessions for anxiety?
+      </p>
+
+      <h1>How Many Psychology Sessions Do I Need for Anxiety?</h1>
+      <AuthorByline />
+
+      <!-- GEO answer block -->
+      <div style="background: #f0f4ff; border-left: 4px solid #3b5bdb; border-radius: 0 var(--radius) var(--radius) 0; padding: 1.1rem 1.4rem; margin: 0 0 1.5rem;">
+        <p style="margin: 0; font-size: 1.02rem; line-height: 1.6;"><strong>Short answer:</strong> For most anxiety disorders, evidence-based CBT typically produces meaningful improvement within 8 to 20 sessions. Medicare covers up to 10 individual psychology sessions per calendar year with a Mental Health Treatment Plan. Many people with anxiety make significant progress within that 10-session limit; others benefit from longer-term work. There is no single right answer — it depends on your presentation and how you respond to treatment.</p>
+      </div>
+
+      <div class="info-box">
+        <p><strong>Note:</strong> This page provides general information about psychological treatment for anxiety. It is not clinical advice. Session numbers that are right for you depend on your specific presentation, history, and goals. Your psychologist is the right person to discuss this with directly.</p>
+      </div>
+
+      <p>One of the first questions many people have when looking for a psychologist for anxiety is: how long will this take? It is a reasonable question — both practically (Medicare limits and out-of-pocket costs) and emotionally (wanting to know what to expect).</p>
+
+      <h2>What the Evidence Says About Session Numbers</h2>
+
+      <p>The evidence base for psychological treatment of anxiety disorders is strong and well-studied. The most common treatment approach for anxiety is cognitive behavioural therapy (CBT), which has been studied across thousands of clinical trials.</p>
+
+      <p>For common anxiety presentations:</p>
+      <ul>
+        <li><strong>Generalised anxiety disorder (GAD):</strong> Clinical guidelines typically recommend 12 to 20 sessions of CBT as a standard course. Many people notice meaningful change within the first 8 sessions.</li>
+        <li><strong>Social anxiety disorder:</strong> Guidelines suggest 12 to 20 sessions; some research indicates that intensive short-term formats (8 to 10 sessions) can be highly effective.</li>
+        <li><strong>Panic disorder:</strong> CBT for panic disorder often produces significant improvement within 8 to 12 sessions, making it one of the more time-limited anxiety presentations.</li>
+        <li><strong>PTSD:</strong> Trauma-focused CBT, EMDR, and similar approaches typically run 8 to 20+ sessions depending on the complexity of trauma history.</li>
+        <li><strong>Health anxiety, OCD, and agoraphobia:</strong> These presentations often require longer courses, particularly when avoidance patterns are entrenched. 20 or more sessions may be appropriate.</li>
+      </ul>
+
+      <p>A 2023 meta-analysis of telehealth-delivered CBT (Shaker et al., <em>JMIR Mental Health</em>) found outcomes equivalent to in-person CBT across anxiety disorder presentations, including panic disorder, social anxiety, and GAD. Session numbers in the telehealth evidence base were broadly similar to in-person treatment.</p>
+
+      <h2>Medicare's 10-Session Limit: What It Means in Practice</h2>
+
+      <p>Under the Better Access initiative, Medicare covers up to 10 individual psychology sessions per calendar year with a GP referral and Mental Health Treatment Plan. The rebate from 1 July 2025 is:</p>
+      <ul>
+        <li>$145.25 per session with a clinical psychologist (MBS item 91167 via telehealth)</li>
+        <li>$98.95 per session with a registered psychologist (MBS item 91170 via telehealth)</li>
+      </ul>
+
+      <p>Typical Sydney fees are $230 to $300 per session, so there is usually an out-of-pocket gap even with Medicare. See the <a href="/guides/cost-telehealth-psychologist-australia/">cost guide</a> for a detailed breakdown.</p>
+
+      <p>For many people with anxiety, 10 sessions is enough to complete a standard course of CBT and reach their treatment goals. This is particularly true for panic disorder and some presentations of social anxiety. For GAD, OCD, and PTSD, 10 sessions may represent a first phase of treatment rather than a complete course.</p>
+
+      <h2>What Happens After Your 10 Medicare Sessions?</h2>
+
+      <p>If you need more sessions after exhausting your Medicare entitlement for the year:</p>
+      <ul>
+        <li><strong>New calendar year:</strong> Medicare resets on 1 January each year. If your treatment naturally spans two calendar years, you may have access to a further 10 sessions.</li>
+        <li><strong>Self-funded sessions:</strong> You can continue with sessions at the psychologist's standard fee without a Medicare rebate. Some people choose to space sessions more widely (fortnightly or monthly) to manage cost during a self-funded phase.</li>
+        <li><strong>Private health insurance:</strong> Some hospital or extras policies cover psychology sessions beyond Medicare. Check your specific policy.</li>
+        <li><strong>Structured spacing:</strong> Many psychologists move clients to longer intervals (monthly or as-needed) after the initial course, which naturally extends treatment over a longer period using fewer sessions per year.</li>
+      </ul>
+
+      <p>Your psychologist will discuss what makes sense for your situation as you approach the end of your initial Medicare sessions.</p>
+
+      <h2>Does the Number of Sessions Change for Telehealth?</h2>
+
+      <p>No. The evidence for telehealth CBT shows equivalent outcomes to in-person CBT for anxiety disorders — including comparable session numbers. The Medicare rebate is the same for telehealth as for in-person sessions. The practical advantage of telehealth is that it removes geographic and waitlist barriers: you may be able to access a specialist sooner, particularly in Sydney where in-person wait times can be several weeks.</p>
+
+      <div class="faq">
+        <h2>Common Questions</h2>
+        <details class="faq__item">
+          <summary class="faq__q">How many psychology sessions do I need for anxiety?</summary>
+          <p class="faq__a">For most anxiety disorders, evidence-based CBT typically produces meaningful improvement within 8 to 20 sessions. Medicare covers up to 10 sessions per year. Many people with anxiety make significant progress within that limit; others with more complex presentations benefit from longer work. The right number depends on your specific situation.</p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">Is 10 sessions enough for anxiety?</summary>
+          <p class="faq__a">For many people, yes — particularly for panic disorder and some presentations of social anxiety. For GAD, OCD, PTSD, and more complex presentations, 10 sessions may represent a first phase of treatment. Your psychologist will discuss what makes sense for your situation as you progress.</p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">What happens after I use my 10 Medicare sessions for anxiety?</summary>
+          <p class="faq__a">Options include: continuing with self-funded sessions at the psychologist's standard fee; restarting Medicare-subsidised sessions in the new calendar year (Medicare resets 1 January); checking private health insurance; or moving to longer intervals (monthly or as-needed) as maintenance. Your psychologist can advise based on your progress and goals.</p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">Does telehealth psychology work as well as in-person for anxiety?</summary>
+          <p class="faq__a">Yes. Evidence shows telehealth CBT produces outcomes equivalent to in-person CBT for anxiety disorders (Shaker et al., JMIR Mental Health, 2023). The same Medicare rebate applies. Telehealth also typically means shorter wait times and no travel time.</p>
+        </details>
+      </div>
+
+      <div class="cta-block">
+        <h3>Find a telehealth psychologist for anxiety in Sydney</h3>
+        <p>Browse the directory to find clinical and registered psychologists who specialise in anxiety and offer telehealth sessions — with up to 10 sessions per year covered by Medicare with a GP referral.</p>
+        <a href="/directory/" class="btn--cta plausible-event-name=FAQ+Sessions+Directory+CTA">
+          Browse the directory
+        </a>
+        <p class="cta-block__note">Or <a href="/connect/" style="color: rgba(255,255,255,0.85);">send an enquiry</a> and we'll help you find the right match.</p>
+      </div>
+
+      <hr />
+      <p style="font-size: 0.8rem; color: var(--color-text-secondary);">
+        Medicare rebate amounts are current as at 1 July 2025. MBS items 91167 (clinical psychologist, telehealth) and 91170 (registered psychologist, telehealth). Better Access to Mental Health Care initiative. Telehealth CBT evidence: Shaker et al. (2023), <em>JMIR Mental Health</em>. This page provides general educational information, not clinical advice.
+      </p>
+
+    </div>
+  </div>
+</Base>

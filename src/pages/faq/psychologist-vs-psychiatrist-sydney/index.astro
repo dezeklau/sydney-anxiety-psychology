@@ -1,0 +1,230 @@
+---
+import Base from '../../../layouts/Base.astro';
+import AuthorByline from '../../../components/AuthorByline.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the difference between a psychologist and a psychiatrist?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The main differences are training, approach, and what they can prescribe. Psychologists complete a 5 to 6+ year psychology degree and postgraduate training in psychological assessment and therapy. They provide psychological treatment such as CBT, ACT, and other evidence-based therapies. They cannot prescribe medication. Psychiatrists are medical doctors (MBBS) who completed specialist training in psychiatry — they can prescribe medication and provide medical management of mental health conditions. They may also offer therapy. For anxiety, psychologists are typically the first treatment option; psychiatrists become relevant when medication assessment is needed or when the presentation is complex or severe."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I see a psychologist or psychiatrist for anxiety?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For most anxiety disorders, a psychologist is the right starting point. Cognitive behavioural therapy (CBT) delivered by a psychologist is the first-line evidence-based treatment for anxiety disorders including GAD, social anxiety, panic disorder, and health anxiety. You may benefit from seeing a psychiatrist if: medication is being considered; your anxiety is very severe or significantly impairing your daily functioning; there is a possibility of another condition that requires medical assessment (such as a mood disorder or OCD that may benefit from medication); or previous treatment with a psychologist has not been effective. A GP referral is required to access both under Medicare."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a clinical psychologist and a registered psychologist?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both are registered with AHPRA (the Australian Health Practitioner Regulation Agency) and are qualified to provide psychological treatment. Clinical psychologists have completed additional specialist training — typically a two-year Master's or doctoral program endorsed in clinical psychology — on top of their base psychology degree. AHPRA endorses clinical psychologists separately. The Medicare rebate for a clinical psychologist is higher ($145.25 per session from 1 July 2025) than for a registered psychologist ($98.95 per session). For most anxiety disorder presentations, both clinical and registered psychologists provide equally effective treatment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does a psychiatrist cost compared to a psychologist in Sydney?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Psychiatry is generally significantly more expensive than psychology. A psychiatrist consultation in Sydney typically costs $400 to $700 or more for an initial consultation. The Medicare rebate for a standard psychiatrist consultation is substantially less than the fee, resulting in a gap of $200 to $500 or more in most private psychiatry practices. Some hospital-based psychiatry outpatient clinics offer lower-gap or fully bulk-billed consultations, but have long wait times. Psychology, by comparison, costs $230 to $300 per session in Sydney with a Medicare rebate of $98.95 to $145.25, resulting in a gap of $85 to $200."
+      }
+    }
+  ]
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sydneyanxietypsychology.com.au/" },
+    { "@type": "ListItem", "position": 2, "name": "FAQs", "item": "https://sydneyanxietypsychology.com.au/faq/" },
+    { "@type": "ListItem", "position": 3, "name": "Psychologist vs psychiatrist Sydney", "item": "https://sydneyanxietypsychology.com.au/faq/psychologist-vs-psychiatrist-sydney/" },
+  ]
+};
+---
+<Base
+  title="Psychologist vs Psychiatrist Sydney | Which Is Right for Anxiety?"
+  description="Psychologist vs psychiatrist for anxiety in Sydney: training, what they treat, cost differences, and how to know which is right for your situation."
+  schema={[breadcrumbSchema, faqSchema]}
+>
+  <div class="main-content">
+    <div class="container">
+
+      <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 1.5rem;">
+        <a href="/">Home</a> &rsaquo; <a href="/faq/">Common Questions</a> &rsaquo; Psychologist vs psychiatrist Sydney
+      </p>
+
+      <h1>Psychologist vs Psychiatrist for Anxiety in Sydney: What Is the Difference?</h1>
+      <AuthorByline />
+
+      <!-- GEO answer block -->
+      <div style="background: #f0f4ff; border-left: 4px solid #3b5bdb; border-radius: 0 var(--radius) var(--radius) 0; padding: 1.1rem 1.4rem; margin: 0 0 1.5rem;">
+        <p style="margin: 0; font-size: 1.02rem; line-height: 1.6;"><strong>Short answer:</strong> For most anxiety disorders, a psychologist is the right starting point. Psychologists provide evidence-based therapy (CBT and similar). Psychiatrists are medical doctors who can prescribe medication — they become relevant when medication is being considered, when presentations are severe or complex, or when previous psychology has not been sufficient. Both require a GP referral to access Medicare rebates.</p>
+      </div>
+
+      <div class="info-box">
+        <p><strong>Note:</strong> The right professional for you depends on your specific presentation, history, and goals. Your GP is the best starting point — they can assess your situation and recommend whether to see a psychologist, psychiatrist, or both.</p>
+      </div>
+
+      <h2>Side-by-Side Comparison</h2>
+
+      <div class="fee-table-wrap">
+      <table class="fee-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Psychologist</th>
+            <th>Psychiatrist</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Core qualification</td>
+            <td>Psychology degree + postgraduate training (typically 5-6+ years)</td>
+            <td>Medical degree (MBBS) + specialist psychiatry training (5-6 additional years)</td>
+          </tr>
+          <tr>
+            <td>Can prescribe medication?</td>
+            <td>No</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Primary treatment approach</td>
+            <td>Psychological therapy (CBT, ACT, DBT, etc.)</td>
+            <td>Medical assessment, medication management; may also offer therapy</td>
+          </tr>
+          <tr>
+            <td>Regulated by</td>
+            <td>AHPRA (Psychology Board of Australia)</td>
+            <td>AHPRA (Medical Board of Australia)</td>
+          </tr>
+          <tr>
+            <td>Medicare rebate per session (2025)</td>
+            <td>$98.95 (registered) or $145.25 (clinical) per session</td>
+            <td>Varies by item number; typical initial consultation rebate $200-300</td>
+          </tr>
+          <tr>
+            <td>Typical Sydney fee</td>
+            <td>$230 to $300 per session</td>
+            <td>$400 to $700+ for initial consultation</td>
+          </tr>
+          <tr>
+            <td>Typical out-of-pocket gap (Sydney)</td>
+            <td>$85 to $200 per session</td>
+            <td>$200 to $500+ per consultation</td>
+          </tr>
+          <tr>
+            <td>GP referral needed for Medicare?</td>
+            <td>Yes (Mental Health Treatment Plan)</td>
+            <td>Yes (referral for psychiatric assessment)</td>
+          </tr>
+          <tr>
+            <td>Typical wait for new clients (Sydney)</td>
+            <td>1 to 12 weeks (telehealth faster)</td>
+            <td>4 to 16+ weeks in private; longer in public</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2>When to See a Psychologist for Anxiety</h2>
+
+      <p>A psychologist is typically the right choice when:</p>
+      <ul>
+        <li>You have anxiety that is affecting your daily life but is not severely impairing your functioning</li>
+        <li>You want to learn skills and strategies for managing anxiety (CBT, ACT, exposure therapy)</li>
+        <li>You have not tried psychological treatment for anxiety before</li>
+        <li>You want to understand the thoughts and patterns driving your anxiety</li>
+        <li>Medication is not a priority for you (or your GP has not recommended it)</li>
+      </ul>
+
+      <p>Cognitive behavioural therapy (CBT) is the most evidence-supported treatment for anxiety disorders including GAD, social anxiety, panic disorder, health anxiety, and agoraphobia. Psychologists deliver CBT.</p>
+
+      <h2>When a Psychiatrist May Be More Appropriate</h2>
+
+      <p>A psychiatrist may be the better starting point when:</p>
+      <ul>
+        <li>Medication is being considered or you want a medication assessment alongside psychological support</li>
+        <li>Your anxiety is severe and significantly impairing your daily functioning, work, or relationships</li>
+        <li>There are concerns about other conditions that may need medical assessment — for example, if OCD is severe, if there are mood symptoms alongside anxiety, or if there is a possibility of a neurodevelopmental condition</li>
+        <li>You have tried psychological treatment previously and it has not been effective</li>
+        <li>Your GP has specifically recommended a psychiatric assessment</li>
+      </ul>
+
+      <p>Many people with anxiety disorders see both — a psychiatrist for medication management and a psychologist for therapy. There is no barrier to seeing both.</p>
+
+      <h2>What Is a Clinical Psychologist vs a Registered Psychologist?</h2>
+
+      <p>Both clinical and registered psychologists are registered with AHPRA and can provide psychological treatment for anxiety. The distinction matters for the Medicare rebate:</p>
+      <ul>
+        <li><strong>Clinical psychologist:</strong> Completed additional specialist training in clinical psychology (typically a two-year Master's or doctoral program endorsed by AHPRA). Medicare rebate from 1 July 2025: $145.25 per session.</li>
+        <li><strong>Registered psychologist:</strong> Completed base psychology training with postgraduate supervised practice. Medicare rebate from 1 July 2025: $98.95 per session.</li>
+      </ul>
+
+      <p>For most anxiety presentations, both are equally effective. The higher-level training of clinical psychologists makes them more relevant for complex or severe presentations. For standard anxiety disorders (GAD, social anxiety, panic, health anxiety) seen in general private practice, registered psychologists provide effective treatment.</p>
+
+      <p>See the <a href="/guides/clinical-psychologist-vs-registered-psychologist/">clinical vs registered psychologist guide</a> for a detailed comparison.</p>
+
+      <h2>How to Access Each Under Medicare</h2>
+
+      <h3>Psychologist (Better Access initiative)</h3>
+      <ol>
+        <li>See your GP and ask for a Mental Health Treatment Plan (MHTP)</li>
+        <li>Get a referral to a psychologist</li>
+        <li>Up to 10 individual sessions per calendar year with a Medicare rebate</li>
+        <li>Telehealth sessions attract the same rebate as in-person</li>
+      </ol>
+
+      <h3>Psychiatrist</h3>
+      <ol>
+        <li>See your GP and request a referral to a psychiatrist</li>
+        <li>Book with a private psychiatrist or join the public psychiatry outpatient waiting list at a hospital</li>
+        <li>Private: significant out-of-pocket gap even with Medicare; public: free but very long wait</li>
+      </ol>
+
+      <div class="faq">
+        <h2>Common Questions</h2>
+        <details class="faq__item">
+          <summary class="faq__q">What is the difference between a psychologist and a psychiatrist?</summary>
+          <p class="faq__a">Psychologists provide psychological therapy (CBT and similar) and cannot prescribe medication. Psychiatrists are medical doctors who can prescribe medication and provide medical management of mental health conditions. For anxiety disorders, psychologists are typically the first-line option. Psychiatrists become relevant when medication is being considered or when the presentation is severe or complex.</p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">Should I see a psychologist or psychiatrist for anxiety?</summary>
+          <p class="faq__a">For most anxiety disorders, a psychologist is the right starting point. CBT delivered by a psychologist is first-line evidence-based treatment for anxiety. See a psychiatrist if medication is being considered, if your anxiety is severe or significantly impairing functioning, if previous psychology has not been effective, or if your GP specifically recommends it.</p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">What is the difference between a clinical psychologist and a registered psychologist?</summary>
+          <p class="faq__a">Both are AHPRA-registered and treat anxiety. Clinical psychologists completed additional AHPRA-endorsed specialist training in clinical psychology and attract a higher Medicare rebate ($145.25 from 1 July 2025). Registered psychologists completed base training with supervised practice and attract a lower rebate ($98.95). For most standard anxiety presentations, both provide equally effective treatment.</p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">How much does a psychiatrist cost compared to a psychologist in Sydney?</summary>
+          <p class="faq__a">Psychiatry is typically 2 to 3 times more expensive than psychology per session in Sydney. Psychologist: $230 to $300 per session with a $98.95 to $145.25 rebate (gap $85 to $200). Psychiatrist: $400 to $700+ initial consultation with a rebate of $200 to $300, leaving a gap of $200 to $500+. Public psychiatry is free but wait times are very long.</p>
+        </details>
+      </div>
+
+      <div class="cta-block">
+        <h3>Find a telehealth anxiety psychologist in Sydney</h3>
+        <p>Browse psychologists who specialise in anxiety disorders and offer telehealth appointments with Medicare rebates. Filter by registration type, specialty, and more.</p>
+        <a href="/directory/" class="btn--cta plausible-event-name=FAQ+PsychVPsychiatrist+Directory+CTA">
+          Browse the directory
+        </a>
+        <p class="cta-block__note">Or <a href="/connect/" style="color: rgba(255,255,255,0.85);">send an enquiry</a> and we'll help find the right match for you.</p>
+      </div>
+
+      <hr />
+      <p style="font-size: 0.8rem; color: var(--color-text-secondary);">
+        Medicare rebate amounts current as at 1 July 2025 (MBS items 91167 and 91170). AHPRA Psychology Board of Australia (ahpra.gov.au). Better Access to Mental Health Care initiative. This page provides general educational information and is not a substitute for advice from your GP. Fee ranges are indicative based on typical Sydney private practice fees.
+      </p>
+
+    </div>
+  </div>
+</Base>
