@@ -93,6 +93,7 @@ const URLS = [
   '/guides/evening-weekend-psychologist-sydney/',
   '/guides/agoraphobia-telehealth-psychologist-sydney/',
   '/guides/work-related-anxiety-psychologist-sydney/',
+  '/guides/first-psychology-session-what-to-expect/',
   '/faq/',
   '/faq/how-many-sessions-do-i-need-for-anxiety/',
   '/faq/does-medicare-cover-telehealth-psychology/',
