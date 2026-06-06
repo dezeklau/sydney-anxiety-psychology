@@ -1,0 +1,265 @@
+---
+import Base from '../../layouts/Base.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What to Expect from Your First Psychology Session for Anxiety",
+  "description": "A plain-language guide to what happens in a first psychology session: what you'll be asked, how long it takes, what the psychologist is trying to understand, and what comes next.",
+  "datePublished": "2026-06-07",
+  "dateModified": "2026-06-07",
+  "author": {
+    "@type": "Organization",
+    "name": "Sydney Anxiety Psychology"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Sydney Anxiety Psychology",
+    "url": "https://sydneyanxietypsychology.com.au"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://sydneyanxietypsychology.com.au/guides/first-psychology-session-what-to-expect/"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What happens in the first psychology session?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The first session is primarily an assessment conversation. Your psychologist will ask about what brought you to seek help, your current symptoms, when they started, and how they affect your daily life. They will also ask about your background, health history, and what you would like to get from therapy. You will not be expected to have everything figured out before you arrive. The goal of the first session is for you and the psychologist to understand the situation well enough to decide on a direction together."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I have to talk about everything in the first session?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. You share what you feel comfortable sharing. A good psychologist will not pressure you to disclose more than you are ready to. The first session is the beginning of building trust, not a comprehensive disclosure requirement. If something feels too difficult to bring up, you can say so — 'I'd rather come back to that' is a completely reasonable response."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long is the first psychology session?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most first psychology sessions run 50 to 60 minutes. Some practices book slightly longer initial assessment sessions (up to 80 minutes) to allow more time for the background conversation. Check with your psychologist when you book. Telehealth sessions run the same length as in-person sessions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will the psychologist diagnose me in the first session?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not always, and not necessarily in formal terms. A psychologist may form an initial clinical impression of what is happening (for example, that your presentation is consistent with generalised anxiety disorder or social anxiety), but a formal diagnosis is not always needed for treatment to begin. If a diagnosis matters for your situation — for example, for insurance or NDIS purposes — your psychologist will discuss this with you over the first couple of sessions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I don't click with the psychologist after the first session?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The therapeutic relationship matters. If after one or two sessions you feel the psychologist is not the right fit for you — their style, communication, or approach — it is completely appropriate to say so and look for someone else. Changing psychologists is normal and does not reflect badly on you. You can ask to be referred on, or contact another practice directly. Telehealth makes this easier because you are not limited by geographic proximity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a referral for my first psychology appointment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can see a psychologist without a referral, but you will need a Mental Health Treatment Plan (MHTP) from your GP to access Medicare rebates. Without an MHTP, you pay the full fee (typically $230–$300 per session in Sydney) with no rebate. Getting the MHTP from your GP first is usually the most cost-effective path — it involves a GP appointment where your GP assesses your mental health needs and writes the plan. The rebate for 2025-26 is approximately $98.95 per session with a registered psychologist, or $145.25 with a clinical psychologist."
+      }
+    }
+  ]
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sydneyanxietypsychology.com.au/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://sydneyanxietypsychology.com.au/guides/" },
+    { "@type": "ListItem", "position": 3, "name": "First psychology session: what to expect", "item": "https://sydneyanxietypsychology.com.au/guides/first-psychology-session-what-to-expect/" },
+  ]
+};
+
+const geoAnswers = [
+  {
+    q: "What happens in your first psychology session for anxiety?",
+    a: "The first session is an assessment conversation. Your psychologist asks about your current symptoms, when they started, how they affect your life, and what you want from therapy. You do not need to have everything figured out. The goal is for you and the psychologist to build a shared understanding and agree on a direction."
+  },
+  {
+    q: "Do I need a Mental Health Treatment Plan before my first psychology appointment?",
+    a: "You do not need one to book, but you need a Mental Health Treatment Plan (MHTP) from your GP to access Medicare rebates. Without it, you pay the full session fee. Most people get the MHTP first — it involves a GP appointment and allows up to 10 rebated sessions per calendar year."
+  },
+  {
+    q: "Is telehealth the same as in-person for a first psychology session?",
+    a: "Yes — the content of the first session is the same. The assessment conversation, the questions asked, and the length are all the same. The Medicare rebate also applies to telehealth. Some people find telehealth easier for a first session because they can be in a familiar, comfortable space."
+  }
+];
+---
+<Base
+  title="First Psychology Session: What to Expect | Anxiety Sydney"
+  description="What actually happens in a first psychology session for anxiety: what you will be asked, how long it takes, whether a referral is needed, and what comes next."
+  schema={[breadcrumbSchema, articleSchema, faqSchema]}
+>
+  <div class="main-content">
+    <div class="container">
+
+      <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 1.5rem;">
+        <a href="/">Home</a> &rsaquo; <a href="/guides/">Guides</a> &rsaquo; First psychology session: what to expect
+      </p>
+
+      <h1>What to Expect from Your First Psychology Session</h1>
+      <p style="font-size: 1.05rem; color: var(--color-text-secondary); margin-bottom: 1.5rem;">If you have not been to a psychologist before, not knowing what to expect can make the step harder to take. This guide explains, plainly, what happens in a first psychology session — what you will be asked, how it works via telehealth, and what comes after.</p>
+
+      <div class="info-box" style="background: #e8f5e9; border-left: 4px solid #4caf50; padding: 1.25rem 1.5rem; margin-bottom: 2rem;">
+        <p style="margin: 0;"><strong>The short version:</strong> The first session is mostly a conversation where the psychologist gets to understand what brought you here and what you are hoping to get from therapy. You do not need to arrive with everything figured out. You will not be expected to disclose more than you are comfortable with. It typically runs about 50 minutes.</p>
+      </div>
+
+      <h2>What the First Session Is For</h2>
+      <p>Psychologists call the first session an "intake" or "assessment" session. Its purpose is different from subsequent sessions: instead of working on a specific issue, the first session is about building a shared picture of what is going on and what direction therapy should take.</p>
+      <p>Your psychologist is trying to understand:</p>
+      <ul>
+        <li>What brought you to seek help right now — the presenting concern</li>
+        <li>What your anxiety (or other difficulty) looks and feels like for you specifically</li>
+        <li>When it started or got worse, and whether anything triggered it</li>
+        <li>How it is affecting your daily life, work, relationships, and sleep</li>
+        <li>Whether there are any other relevant health or life factors (medication, physical health, major life changes)</li>
+        <li>What you have already tried — or what help you have received before</li>
+        <li>What you are hoping therapy will do for you</li>
+      </ul>
+      <p>You will also typically be asked some background questions about your life: family situation, work or study, living situation, and general health. This is not interrogation — it helps the psychologist understand the context around the difficulty, not just the difficulty itself.</p>
+
+      <h2>What You Will Not Be Expected to Do</h2>
+      <p>A good first session does not require you to:</p>
+      <ul>
+        <li>Have a clear or definitive description of what is wrong</li>
+        <li>Know what kind of therapy you want or what approach might help</li>
+        <li>Disclose everything at once — pacing is normal and expected</li>
+        <li>Have a formal diagnosis or letter from a GP (though a Mental Health Treatment Plan helps with Medicare rebates)</li>
+        <li>Commit to a long-term engagement — after the first session, you can decide whether to continue</li>
+      </ul>
+      <p>It is also normal to feel nervous or uncertain before or during the first session. Most people do. Saying "I'm not sure where to start" is a completely reasonable opening.</p>
+
+      <h2>How Long Does It Take?</h2>
+      <p>Most initial psychology sessions run 50 to 60 minutes. Some practices book a longer first appointment (up to 80 minutes) to allow more time for background questions. When you book, it is worth asking how long they allocate for the first session so you know what to plan for.</p>
+      <p>Telehealth sessions run the same length as in-person sessions. The Medicare rebate also applies to telehealth at the same rate — there is no rebate penalty for choosing video over in-person.</p>
+
+      <h2>How a Telehealth First Session Works</h2>
+      <p>If you are booking a telehealth session, the logistics are simple:</p>
+      <ol>
+        <li><strong>You receive a secure link</strong> before the session — usually via email or SMS. No special software is typically needed; most practices use Zoom, Coviu, or a similar secure video platform that runs in a browser.</li>
+        <li><strong>You need a device with a camera and microphone</strong> — a smartphone, tablet, or laptop all work. A stable internet connection is sufficient.</li>
+        <li><strong>Find a private space</strong> — somewhere you can speak freely for 50 minutes without being overheard. Headphones help if you are at home with others nearby.</li>
+        <li><strong>The session itself</strong> runs exactly as it would in person. The psychologist leads the conversation. If the connection drops, they will usually call or message to reconnect.</li>
+      </ol>
+      <p>Many people find that a telehealth first session is easier than in-person — you are in a familiar space, there is no travel, and you can be somewhere you feel safe.</p>
+
+      <h2>What Happens After the First Session</h2>
+      <p>At the end of the first session, your psychologist will typically:</p>
+      <ul>
+        <li>Summarise what they understood from the conversation</li>
+        <li>Outline an initial direction or approach — for example, that they are thinking about working with a CBT framework, or that they want to start with some psychoeducation about anxiety</li>
+        <li>Ask whether you want to continue and, if so, discuss booking frequency (weekly is common at the start)</li>
+      </ul>
+      <p>Sometimes the psychologist will say they want a second session before settling on a direction — this is normal for more complex presentations or where there are multiple concerns. They are not stalling; they are being thorough.</p>
+      <p>You are under no obligation to book further sessions after the first one. If you decide this psychologist is not the right fit, it is entirely appropriate to say so and seek someone else. A good psychologist will support you in doing this.</p>
+
+      <h2>Medicare, Referrals, and Fees</h2>
+      <p>You can book a psychology appointment without a referral. However, to access Medicare rebates, you need a <strong>Mental Health Treatment Plan (MHTP)</strong> from your GP. This involves a dedicated GP appointment where your GP assesses your mental health needs and writes the plan. An MHTP allows up to 10 rebated psychology sessions per calendar year.</p>
+      <p>Current Medicare rebates (effective 1 July 2025):</p>
+      <ul>
+        <li><strong>Registered psychologist:</strong> approximately $98.95 per session (MBS item 91170)</li>
+        <li><strong>Clinical psychologist:</strong> approximately $145.25 per session (MBS item 91167)</li>
+      </ul>
+      <p>Typical private fees in Sydney run $230 to $300 per session. The gap (what you pay after the rebate) is usually $80 to $160 per session depending on the psychologist and their fee.</p>
+      <p>If the cost is a concern, it is worth asking whether the practice offers a reduced fee or bulk-billing for certain circumstances. Some psychologists provide reduced fees for people with genuine financial hardship. There is no guarantee, but it is reasonable to ask.</p>
+
+      <h2>Questions Worth Asking Before You Book</h2>
+      <p>Before committing to a first session, it is reasonable to ask a practice:</p>
+      <ul>
+        <li>Do you have experience with anxiety presentations?</li>
+        <li>What approach or framework does the psychologist typically use?</li>
+        <li>What is your fee, and what is the Medicare gap?</li>
+        <li>Is telehealth available?</li>
+        <li>How quickly can I get a first appointment?</li>
+      </ul>
+      <p>Most psychology practices are used to these questions. You are not being difficult by asking them.</p>
+
+      <h2>GEO Quick Answers</h2>
+      {geoAnswers.map(item => (
+        <div style="margin-bottom: 1.25rem; padding: 1rem 1.25rem; background: #f9f9f9; border-left: 3px solid var(--color-accent);">
+          <p style="font-weight: 600; margin: 0 0 0.4rem;">{item.q}</p>
+          <p style="margin: 0; color: var(--color-text-secondary);">{item.a}</p>
+        </div>
+      ))}
+
+      <h2>Frequently Asked Questions</h2>
+
+      <details style="margin-bottom: 1rem; border: 1px solid #e0e0e0; border-radius: 4px; padding: 1rem;">
+        <summary style="font-weight: 600; cursor: pointer; list-style: none;">What happens in the first psychology session?</summary>
+        <p style="margin-top: 0.75rem; margin-bottom: 0;">The first session is primarily an assessment conversation. Your psychologist will ask about what brought you to seek help, your current symptoms, when they started, and how they affect your daily life. They will also ask about your background, health history, and what you would like to get from therapy. You will not be expected to have everything figured out before you arrive.</p>
+      </details>
+
+      <details style="margin-bottom: 1rem; border: 1px solid #e0e0e0; border-radius: 4px; padding: 1rem;">
+        <summary style="font-weight: 600; cursor: pointer; list-style: none;">Do I have to talk about everything in the first session?</summary>
+        <p style="margin-top: 0.75rem; margin-bottom: 0;">No. You share what you feel comfortable sharing. A good psychologist will not pressure you to disclose more than you are ready to. The first session is the beginning of building trust, not a comprehensive disclosure requirement. "I'd rather come back to that" is a completely reasonable response.</p>
+      </details>
+
+      <details style="margin-bottom: 1rem; border: 1px solid #e0e0e0; border-radius: 4px; padding: 1rem;">
+        <summary style="font-weight: 600; cursor: pointer; list-style: none;">How long is the first psychology session?</summary>
+        <p style="margin-top: 0.75rem; margin-bottom: 0;">Most first sessions run 50 to 60 minutes. Some practices book slightly longer initial assessment sessions (up to 80 minutes). Telehealth sessions run the same length as in-person sessions.</p>
+      </details>
+
+      <details style="margin-bottom: 1rem; border: 1px solid #e0e0e0; border-radius: 4px; padding: 1rem;">
+        <summary style="font-weight: 600; cursor: pointer; list-style: none;">Will the psychologist diagnose me in the first session?</summary>
+        <p style="margin-top: 0.75rem; margin-bottom: 0;">Not always. A psychologist may form an initial clinical impression, but a formal diagnosis is not always needed for treatment to begin. If a diagnosis matters for your situation (for insurance or other purposes), your psychologist will discuss this with you over the first couple of sessions.</p>
+      </details>
+
+      <details style="margin-bottom: 1rem; border: 1px solid #e0e0e0; border-radius: 4px; padding: 1rem;">
+        <summary style="font-weight: 600; cursor: pointer; list-style: none;">What if I don't click with the psychologist after the first session?</summary>
+        <p style="margin-top: 0.75rem; margin-bottom: 0;">The therapeutic relationship matters. If after one or two sessions you feel the psychologist is not the right fit, it is completely appropriate to say so and look for someone else. Changing psychologists is normal and does not reflect badly on you. Telehealth makes this easier because you are not limited by geographic proximity.</p>
+      </details>
+
+      <details style="margin-bottom: 1.5rem; border: 1px solid #e0e0e0; border-radius: 4px; padding: 1rem;">
+        <summary style="font-weight: 600; cursor: pointer; list-style: none;">Do I need a referral for my first psychology appointment?</summary>
+        <p style="margin-top: 0.75rem; margin-bottom: 0;">You can see a psychologist without a referral, but you need a Mental Health Treatment Plan from your GP to access Medicare rebates. Without it, you pay the full fee with no rebate. Getting the MHTP first is usually the most cost-effective path. The Medicare rebate for 2025-26 is approximately $98.95 (registered psychologist) or $145.25 (clinical psychologist).</p>
+      </details>
+
+      <div class="info-box" style="background: #fff8e1; border-left: 4px solid #ff9800; padding: 1.25rem 1.5rem; margin: 2rem 0;">
+        <p style="margin: 0 0 0.5rem;"><strong>Not a crisis service:</strong> If you are in crisis or need immediate support, please contact:</p>
+        <ul style="margin: 0.5rem 0 0;">
+          <li>Lifeline: 13 11 14 (24/7)</li>
+          <li>Beyond Blue: 1300 22 4636</li>
+          <li>13YARN (for Aboriginal and Torres Strait Islander people): 13 92 76</li>
+        </ul>
+      </div>
+
+      <div style="margin-top: 2.5rem; padding: 1.5rem; background: var(--color-accent); color: white; border-radius: 8px; text-align: center;">
+        <p style="font-size: 1.1rem; font-weight: 600; margin: 0 0 0.75rem;">Looking for a telehealth psychologist in Sydney?</p>
+        <p style="margin: 0 0 1rem; opacity: 0.92;">The directory on this site lists psychologists with anxiety experience who offer telehealth sessions across Sydney, with information on fees and Medicare gaps.</p>
+        <a href="/directory/" style="display: inline-block; background: white; color: var(--color-accent); font-weight: 600; padding: 0.65rem 1.75rem; border-radius: 4px; text-decoration: none;">Browse the directory</a>
+      </div>
+
+      <h2>Related Guides</h2>
+      <ul>
+        <li><a href="/guides/how-telehealth-psychology-works/">How telehealth psychology works: sessions, privacy and AHPRA registration</a></li>
+        <li><a href="/guides/mental-health-care-plan-sydney/">Mental Health Treatment Plan: how to get one in Sydney</a></li>
+        <li><a href="/guides/cost-telehealth-psychologist-australia/">How much does a telehealth psychologist cost?</a></li>
+        <li><a href="/guides/how-to-choose-anxiety-psychologist-telehealth/">How to choose a telehealth psychologist for anxiety</a></li>
+        <li><a href="/faq/how-many-sessions-do-i-need-for-anxiety/">How many sessions do I need for anxiety? (FAQ)</a></li>
+        <li><a href="/directory/">Find a telehealth psychologist in Sydney</a></li>
+      </ul>
+
+      <AuthorByline />
+
+    </div>
+  </div>
+</Base>
