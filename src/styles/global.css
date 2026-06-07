@@ -665,18 +665,15 @@ details.faq__item[open] summary.faq__q {
 .pathway-stepper {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
-  gap: 0;
+  align-items: stretch;
+  gap: 1.5rem;
   margin: 2.25rem 0 1rem;
   list-style: none;
   padding: 0;
 }
 .pathway-stepper__step {
-  display: flex;
-  align-items: flex-start;
-  gap: 0;
-  flex: 1 1 140px;
-  min-width: 115px;
+  flex: 1 1 0;
+  min-width: 0;
   position: relative;
 }
 .pathway-stepper__card {
@@ -686,7 +683,8 @@ details.faq__item[open] summary.faq__q {
   border-radius: var(--radius);
   padding: 1rem 1.1rem 0.95rem;
   box-shadow: var(--shadow-sm);
-  flex: 1 1 0;
+  width: 100%;
+  height: 100%;
   min-width: 0;
   transition: box-shadow 0.15s;
 }
@@ -721,12 +719,13 @@ details.faq__item[open] summary.faq__q {
   line-height: 1.5;
 }
 .pathway-stepper__arrow {
+  position: absolute;
+  top: 50%;
+  right: calc(-0.75rem - 9px);
+  transform: translateY(-50%);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 0.3rem;
-  flex-shrink: 0;
-  align-self: center;
   color: var(--color-accent);
   opacity: 0.7;
 }
@@ -887,12 +886,18 @@ details.faq__item[open] summary.faq__q {
     gap: 0;
   }
   .pathway-stepper__step {
+    display: flex;
     flex-direction: column;
     align-items: stretch;
     flex: none;
     width: 100%;
   }
+  .pathway-stepper__card {
+    height: auto;
+  }
   .pathway-stepper__arrow {
+    position: static;
+    align-self: flex-start;
     transform: rotate(90deg);
     justify-content: flex-start;
     padding: 0.1rem 0 0.1rem 0.9rem;
