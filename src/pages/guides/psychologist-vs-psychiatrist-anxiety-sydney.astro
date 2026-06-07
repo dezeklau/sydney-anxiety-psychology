@@ -1,0 +1,295 @@
+---
+import Base from '../../layouts/Base.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Psychologist vs Psychiatrist for Anxiety in Sydney: How to Decide",
+  "description": "Trying to decide whether to see a psychologist or psychiatrist for anxiety in Sydney? Plain-English comparison of training, treatment approach, costs, referral pathways, and Medicare rebates.",
+  "datePublished": "2026-06-08",
+  "dateModified": "2026-06-08",
+  "author": {
+    "@type": "Organization",
+    "name": "Sydney Anxiety Psychology"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Sydney Anxiety Psychology",
+    "url": "https://sydneyanxietypsychology.com.au"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://sydneyanxietypsychology.com.au/guides/psychologist-vs-psychiatrist-anxiety-sydney/"
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sydneyanxietypsychology.com.au/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://sydneyanxietypsychology.com.au/guides/" },
+    { "@type": "ListItem", "position": 3, "name": "Psychologist vs psychiatrist for anxiety Sydney", "item": "https://sydneyanxietypsychology.com.au/guides/psychologist-vs-psychiatrist-anxiety-sydney/" },
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Should I see a psychologist or psychiatrist for anxiety?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For most anxiety presentations, a psychologist is the first-line specialist. Psychologists provide evidence-based talking therapies (CBT, ACT, EMDR) under a GP Mental Health Treatment Plan with a Medicare rebate of $98.95 to $145.25 per session. A psychiatrist is a medical specialist who can both prescribe medication and provide therapy; they are typically recommended when medication is being considered, when anxiety is severe or treatment-resistant, or when there is diagnostic complexity (e.g., anxiety alongside bipolar disorder, psychosis, or ADHD). Your GP is the right starting point to determine which pathway suits you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a psychologist and a psychiatrist?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A psychologist has typically completed a four to six-year postgraduate psychology pathway and is registered with AHPRA under the Psychology Board. They specialise in assessment and evidence-based talking therapies. They cannot prescribe medication. A psychiatrist is a medical doctor who completed a medical degree (MBBS), then specialised in psychiatry (another 5+ years of training). They can diagnose mental health conditions, prescribe medication, and also provide therapy. In Australia, psychiatrists are regulated by AHPRA under the Medical Board."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does a psychiatrist cost in Sydney compared to a psychologist?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Psychologist sessions in Sydney typically cost $200 to $300 per session. With a Medicare rebate under a Mental Health Treatment Plan, you receive $98.95 (registered psychologist) or $145.25 (endorsed clinical psychologist) back, leaving an out-of-pocket gap of roughly $60 to $200 depending on the practice. Some bulk-billing psychologists exist but are rare in Sydney. Psychiatrist fees in Sydney are higher: a first consultation can cost $500 to $800 or more, with Medicare rebates significantly lower as a proportion. Some public psychiatry services are available via your GP, but waitlists are long."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a referral to see a psychiatrist or psychologist in Sydney?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For Medicare rebates on psychology sessions, you need a GP Mental Health Treatment Plan (MHTP) and a referral. For a psychiatrist, you need a GP referral. Without a referral, you can still see either privately, but you will not be eligible for Medicare rebates. Your GP will usually recommend which specialist is appropriate for your situation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a psychologist refer me to a psychiatrist?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A psychologist can recommend that you see a psychiatrist and can liaise with your GP to facilitate a referral. However, referrals to psychiatrists in Australia go through your GP, not directly from a psychologist. If your psychologist identifies that medication or psychiatric assessment may be appropriate, they will typically write a letter to your GP recommending a referral."
+      }
+    }
+  ]
+};
+---
+<Base
+  title="Psychologist vs Psychiatrist for Anxiety Sydney | How to Decide | 2026"
+  description="Should you see a psychologist or psychiatrist for anxiety in Sydney? Plain-English comparison: training, treatment, costs, Medicare rebates, referral pathways, and when each is the right choice."
+  schema={[articleSchema, breadcrumbSchema, faqSchema]}
+>
+  <div class="main-content">
+    <div class="container">
+
+      <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 1.5rem;">
+        <a href="/">Home</a> &rsaquo; <a href="/guides/">Guides</a> &rsaquo; Psychologist vs psychiatrist for anxiety Sydney
+      </p>
+
+      <h1>Psychologist vs Psychiatrist for Anxiety in Sydney: How to Decide</h1>
+      <AuthorByline />
+
+      <!-- GEO answer block -->
+      <div style="background: #f0f7ff; border-left: 4px solid #3b82f6; border-radius: 0 var(--radius) var(--radius) 0; padding: 1.1rem 1.4rem; margin: 0 0 1.5rem;">
+        <p style="margin: 0; font-size: 1.02rem; line-height: 1.6;"><strong>Short answer:</strong> For most anxiety presentations in Sydney, a psychologist is the starting point. They provide evidence-based talking therapies (CBT, ACT) with a Medicare rebate under a GP Mental Health Treatment Plan. A psychiatrist is appropriate when medication is being considered, when anxiety is severe or has not responded to therapy, or when there is diagnostic complexity. Your GP can help determine which pathway is right for your situation.</p>
+      </div>
+
+      <!-- Cluster nav -->
+      <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 1.75rem; font-size: 0.88rem;">
+        <strong style="display: block; margin-bottom: 0.5rem; color: var(--color-text-secondary);">Telehealth anxiety psychology Sydney &mdash; related guides</strong>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+          <a href="/guides/telehealth-anxiety-psychology-sydney/" style="background: var(--color-accent-soft); border: 1px solid var(--color-accent-light); border-radius: 4px; padding: 0.3rem 0.75rem; text-decoration: none; color: var(--color-accent-hover); font-weight: 500;">Telehealth anxiety guide (pillar) &uarr;</a>
+          <a href="/guides/clinical-psychologist-vs-registered-psychologist/" style="background: white; border: 1px solid var(--color-border); border-radius: 4px; padding: 0.3rem 0.75rem; text-decoration: none; color: var(--color-text);">Clinical vs registered psychologist</a>
+          <a href="/guides/mental-health-care-plan-sydney/" style="background: white; border: 1px solid var(--color-border); border-radius: 4px; padding: 0.3rem 0.75rem; text-decoration: none; color: var(--color-text);">Getting a Mental Health Care Plan</a>
+          <a href="/guides/how-to-choose-anxiety-psychologist-telehealth/" style="background: white; border: 1px solid var(--color-border); border-radius: 4px; padding: 0.3rem 0.75rem; text-decoration: none; color: var(--color-text);">How to choose a psychologist</a>
+        </div>
+      </div>
+
+      <p>One of the most common questions people have when they start looking for mental health support is: should I see a psychologist or a psychiatrist? The short answer depends mostly on whether you are considering medication and whether your anxiety has been difficult to treat. This guide explains the differences in plain language so you can have an informed conversation with your GP.</p>
+
+      <h2>At a Glance: Psychologist vs Psychiatrist</h2>
+
+      <table style="width:100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.93rem;">
+        <thead>
+          <tr style="background: var(--color-surface); text-align: left;">
+            <th style="padding: 0.6rem 0.8rem; border-bottom: 2px solid var(--color-border);"></th>
+            <th style="padding: 0.6rem 0.8rem; border-bottom: 2px solid var(--color-border);">Psychologist</th>
+            <th style="padding: 0.6rem 0.8rem; border-bottom: 2px solid var(--color-border);">Psychiatrist</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--color-border); font-weight: 500;">Training</td>
+            <td style="padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--color-border);">4&ndash;6 year postgraduate psychology pathway</td>
+            <td style="padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--color-border);">Medical degree (MBBS) + 5+ years psychiatry specialisation</td>
+          </tr>
+          <tr style="background: #f9f9f9;">
+            <td style="padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--color-border); font-weight: 500;">Can prescribe medication?</td>
+            <td style="padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--color-border);">No</td>
+            <td style="padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--color-border);">Yes</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--color-border); font-weight: 500;">Primary treatment</td>
+            <td style="padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--color-border);">Evidence-based talking therapies (CBT, ACT, EMDR)</td>
+            <td style="padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--color-border);">Medication management; may also provide therapy</td>
+          </tr>
+          <tr style="background: #f9f9f9;">
+            <td style="padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--color-border); font-weight: 500;">Typical session cost (Sydney)</td>
+            <td style="padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--color-border);">$200&ndash;$300; Medicare rebate $98.95&ndash;$145.25</td>
+            <td style="padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--color-border);">$400&ndash;$800+ (first consult); Medicare rebate is proportionally smaller</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--color-border); font-weight: 500;">Referral required?</td>
+            <td style="padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--color-border);">GP Mental Health Treatment Plan for Medicare rebate</td>
+            <td style="padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--color-border);">GP referral for Medicare rebate</td>
+          </tr>
+          <tr style="background: #f9f9f9;">
+            <td style="padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--color-border); font-weight: 500;">Telehealth available?</td>
+            <td style="padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--color-border);">Yes, widely available in Sydney; Medicare rebate same as in-person</td>
+            <td style="padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--color-border);">Some offer telehealth; less common for ongoing therapy</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--color-border); font-weight: 500;">Waitlist (Sydney)</td>
+            <td style="padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--color-border);">2&ndash;6 weeks (telehealth); longer in-person in some suburbs</td>
+            <td style="padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--color-border);">Often 4&ndash;12+ weeks in private; longer in public</td>
+          </tr>
+          <tr style="background: #f9f9f9;">
+            <td style="padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--color-border); font-weight: 500;">AHPRA registration</td>
+            <td style="padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--color-border);">Psychology Board of Australia</td>
+            <td style="padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--color-border);">Medical Board of Australia (with psychiatry fellowship, FRANZCP)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="font-size: 0.85rem; color: var(--color-text-secondary);">Fee estimates are indicative only and vary by practice. Medicare rebates from 1 July 2025 per MBS items 91170 (registered psychologist) and 91167 (endorsed clinical psychologist). Source: <a href="https://www.mbsonline.gov.au/" target="_blank" rel="noopener noreferrer">MBS Online</a> (accessed June 2026).</p>
+
+      <h2>When to See a Psychologist for Anxiety</h2>
+
+      <p>A psychologist is typically the right first-line specialist if:</p>
+      <ul>
+        <li>Your anxiety is affecting daily life but you are functioning and do not require emergency care.</li>
+        <li>You want to work on the thoughts and behaviours that drive your anxiety (CBT, ACT, or related approaches).</li>
+        <li>You are not currently considering medication, or you want to try therapy first before considering medication.</li>
+        <li>You prefer telehealth sessions, which are widely available from psychologists in Sydney.</li>
+        <li>You want to use your Medicare Mental Health Treatment Plan (10 sessions per calendar year under Better Access).</li>
+      </ul>
+
+      <p>Psychologists cannot prescribe medication. If medication becomes relevant later, a psychologist will typically liaise with your GP or recommend a referral to a psychiatrist.</p>
+
+      <h2>When to See a Psychiatrist for Anxiety</h2>
+
+      <p>A psychiatrist may be the more appropriate starting point (or an important addition to your care) if:</p>
+      <ul>
+        <li>You are considering or need medication for your anxiety (only a psychiatrist or GP can prescribe).</li>
+        <li>Your anxiety is severe, longstanding, or has not responded to talking therapy.</li>
+        <li>There is diagnostic complexity: for example, anxiety alongside possible ADHD, bipolar disorder, psychosis, or personality disorder.</li>
+        <li>You have had previous episodes of psychiatric illness that require medical management.</li>
+        <li>Your GP recommends a psychiatric assessment to clarify your diagnosis before starting treatment.</li>
+      </ul>
+
+      <p>Many people with anxiety work with <em>both</em> a psychologist and a psychiatrist: the psychiatrist manages medication, and the psychologist provides therapy. This collaborative model is common for moderate-to-severe anxiety.</p>
+
+      <h2>What Does a Psychologist Do for Anxiety?</h2>
+
+      <p>Psychologists for anxiety in Sydney typically use:</p>
+      <ul>
+        <li><strong>Cognitive Behavioural Therapy (CBT)</strong> &mdash; addresses the thinking patterns and avoidance behaviours that maintain anxiety. Has the strongest evidence base for generalised anxiety, panic disorder, social anxiety, OCD, and phobias. Source: NICE Clinical Guidelines CG113 (Generalised anxiety disorder; 2011, updated 2019).</li>
+        <li><strong>Acceptance and Commitment Therapy (ACT)</strong> &mdash; focuses on psychological flexibility and values-based living rather than directly challenging anxious thoughts. Well-supported for chronic worry and anxiety-related avoidance. Source: <a href="https://www.apa.org/" target="_blank" rel="noopener noreferrer">American Psychological Association</a> evidence reviews.</li>
+        <li><strong>EMDR (Eye Movement Desensitisation and Reprocessing)</strong> &mdash; used for anxiety presentations with a trauma or PTSD component.</li>
+        <li><strong>Exposure therapy</strong> &mdash; graduated exposure to feared situations, core component of CBT for phobias, panic, and social anxiety.</li>
+      </ul>
+
+      <p>The first session is usually an assessment: your psychologist will ask about your history, current symptoms, and goals. Treatment planning happens across the first few sessions.</p>
+
+      <h2>Costs and Medicare Rebates in Sydney</h2>
+
+      <h3>Psychologist fees</h3>
+      <p>Most Sydney psychologists charge between $200 and $300 per session (50&ndash;60 minutes). With a GP Mental Health Treatment Plan, you receive a Medicare rebate:</p>
+      <ul>
+        <li><strong>Registered psychologist:</strong> $98.95 rebate (MBS item 91170) &mdash; out-of-pocket gap approximately $100&ndash;$200</li>
+        <li><strong>Endorsed clinical psychologist:</strong> $145.25 rebate (MBS item 91167) &mdash; out-of-pocket gap approximately $60&ndash;$160</li>
+      </ul>
+      <p>Some practices bulk-bill (zero out-of-pocket), but these are rare in Sydney. Telehealth sessions attract the same rebate as in-person. Source: <a href="https://www.mbsonline.gov.au/" target="_blank" rel="noopener noreferrer">MBS Online</a>, effective 1 July 2025.</p>
+
+      <h3>Psychiatrist fees</h3>
+      <p>Psychiatrist fees in Sydney vary widely. A first consultation in private practice often costs $500&ndash;$800 or more; follow-up sessions are typically $300&ndash;$500. Medicare rebates for psychiatry are set at MBS items 296 (standard consultation) and others, but the gap is proportionally larger than for psychology. Some psychiatrists bulk-bill, but this is uncommon in private Sydney practice. Public hospital psychiatry services are available via your GP with a referral, but waitlists can be long.</p>
+
+      <h2>The Referral Pathway: How It Works</h2>
+
+      <ol>
+        <li><strong>Start with your GP.</strong> Your GP will assess your symptoms, discuss your history, and recommend whether to refer you to a psychologist, a psychiatrist, or both. They can also write a Mental Health Treatment Plan for psychology sessions.</li>
+        <li><strong>For psychology:</strong> Your GP prepares a Mental Health Treatment Plan (MHTP) and a referral to a psychologist. You can choose which psychologist to see.</li>
+        <li><strong>For psychiatry:</strong> Your GP writes a referral letter to a psychiatrist. You can choose a private psychiatrist or be referred to a public outpatient service.</li>
+        <li><strong>Combined care:</strong> If you are seeing both, your GP, psychologist, and psychiatrist will typically share information (with your consent) to coordinate your care plan.</li>
+      </ol>
+
+      <h2>Can I See a Telehealth Psychologist in Sydney for Anxiety?</h2>
+
+      <p>Yes. Telehealth psychology sessions attract the same Medicare rebate as in-person sessions under a Mental Health Treatment Plan. Telehealth is widely available from Sydney-based psychologists &mdash; you can often start within 1&ndash;3 weeks rather than the longer waitlists common for in-person appointments.</p>
+
+      <div style="background: var(--color-accent-soft); border: 1px solid var(--color-accent-light); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin: 1.5rem 0; text-align: center;">
+        <p style="margin: 0 0 0.75rem; font-size: 1.05rem; font-weight: 600;">Find a telehealth psychologist specialising in anxiety in Sydney</p>
+        <p style="margin: 0 0 1rem; font-size: 0.95rem; color: var(--color-text-secondary);">Browse psychologists who work via telehealth and accept Medicare Mental Health Treatment Plans.</p>
+        <a href="/directory/" class="btn-primary">Browse the directory</a>
+      </div>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <details style="margin-bottom: 1rem; border: 1px solid var(--color-border); border-radius: var(--radius); padding: 0.75rem 1rem;">
+        <summary style="cursor: pointer; font-weight: 600;">Should I see a psychologist or psychiatrist for anxiety?</summary>
+        <div style="margin-top: 0.75rem; font-size: 0.95rem; line-height: 1.65;">
+          <p>For most anxiety presentations, a psychologist is the first-line specialist for talking therapy. A psychiatrist is appropriate if you are considering medication, if your anxiety is severe or treatment-resistant, or if there is diagnostic complexity. Your GP is the right starting point.</p>
+        </div>
+      </details>
+
+      <details style="margin-bottom: 1rem; border: 1px solid var(--color-border); border-radius: var(--radius); padding: 0.75rem 1rem;">
+        <summary style="cursor: pointer; font-weight: 600;">What is the difference between a psychologist and a psychiatrist?</summary>
+        <div style="margin-top: 0.75rem; font-size: 0.95rem; line-height: 1.65;">
+          <p>A psychologist is trained in psychological assessment and evidence-based talking therapies but cannot prescribe medication. A psychiatrist is a medical doctor who specialised in psychiatry and can both prescribe medication and provide therapy.</p>
+        </div>
+      </details>
+
+      <details style="margin-bottom: 1rem; border: 1px solid var(--color-border); border-radius: var(--radius); padding: 0.75rem 1rem;">
+        <summary style="cursor: pointer; font-weight: 600;">How much does a psychiatrist cost in Sydney compared to a psychologist?</summary>
+        <div style="margin-top: 0.75rem; font-size: 0.95rem; line-height: 1.65;">
+          <p>Psychologists in Sydney charge $200&ndash;$300 per session; with Medicare, your out-of-pocket gap is roughly $60&ndash;$200. Psychiatrist first consultations in private practice are typically $500&ndash;$800+. Medicare rebates exist for both but are proportionally smaller for psychiatry.</p>
+        </div>
+      </details>
+
+      <details style="margin-bottom: 1rem; border: 1px solid var(--color-border); border-radius: var(--radius); padding: 0.75rem 1rem;">
+        <summary style="cursor: pointer; font-weight: 600;">Do I need a referral to see a psychiatrist or psychologist in Sydney?</summary>
+        <div style="margin-top: 0.75rem; font-size: 0.95rem; line-height: 1.65;">
+          <p>For Medicare rebates, yes: a Mental Health Treatment Plan + referral for a psychologist; a GP referral for a psychiatrist. Without a referral you can access either privately, but without Medicare benefits.</p>
+        </div>
+      </details>
+
+      <details style="margin-bottom: 1rem; border: 1px solid var(--color-border); border-radius: var(--radius); padding: 0.75rem 1rem;">
+        <summary style="cursor: pointer; font-weight: 600;">Can a psychologist refer me to a psychiatrist?</summary>
+        <div style="margin-top: 0.75rem; font-size: 0.95rem; line-height: 1.65;">
+          <p>A psychologist can recommend a psychiatrist referral, but the referral itself comes through your GP. If your psychologist thinks psychiatric assessment or medication is appropriate, they will typically write to your GP recommending a referral.</p>
+        </div>
+      </details>
+
+      <h2>Next Steps</h2>
+
+      <ul>
+        <li>If you want to start with psychology: <a href="/guides/how-to-choose-anxiety-psychologist-telehealth/">How to choose a telehealth psychologist for anxiety</a></li>
+        <li>If you want to understand costs first: <a href="/guides/cost-telehealth-psychologist-australia/">How much does a telehealth psychologist cost?</a></li>
+        <li>If you are unsure which type of psychologist you need: <a href="/guides/clinical-psychologist-vs-registered-psychologist/">Clinical vs registered psychologist: what is the difference?</a></li>
+        <li>To browse psychologists available via telehealth in Sydney: <a href="/directory/">Directory</a></li>
+      </ul>
+
+      <div style="background: #fff3cd; border: 1px solid #ffc107; border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.9rem;">
+        <strong>Crisis support:</strong> If you are in distress right now, please contact Lifeline on <strong>13 11 14</strong> (24/7), Beyond Blue on <strong>1300 22 4636</strong>, or 13YARN on <strong>13 92 76</strong> (Aboriginal and Torres Strait Islander peoples). This directory is not a crisis service.
+      </div>
+
+    </div>
+  </div>
+</Base>
