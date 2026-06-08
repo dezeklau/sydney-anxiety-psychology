@@ -94,6 +94,8 @@ const URLS = [
   '/guides/agoraphobia-telehealth-psychologist-sydney/',
   '/guides/work-related-anxiety-psychologist-sydney/',
   '/guides/first-psychology-session-what-to-expect/',
+  '/guides/psychologist-vs-psychiatrist-anxiety-sydney/',
+  '/guides/anxiety-sleep-psychologist-sydney/',
   '/faq/',
   '/faq/how-many-sessions-do-i-need-for-anxiety/',
   '/faq/does-medicare-cover-telehealth-psychology/',
