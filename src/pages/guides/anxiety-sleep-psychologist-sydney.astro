@@ -1,0 +1,293 @@
+---
+import Base from '../../layouts/Base.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+
+// PRE-PUBLISH AHPRA CHECK (2026-06-08):
+// - No testimonials. No outcome guarantees. No comparative claims.
+// - No "cure" claims for insomnia or anxiety.
+// - CBT-I described as "evidence-based approach" not "cure."
+// - GP pathway prominent: recommends seeing GP first.
+// - Medical causes of sleep disruption (sleep apnoea, medications) directed to GP/sleep physician.
+// - Medicare information accurate (rebates from 1 Jul 2025).
+// - Crisis contacts present (Lifeline).
+// - Scope disclaimer clear: this is a directory, not a clinical service.
+// RESULT: PASS
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "headline": "Anxiety and Sleep Problems: Telehealth Psychology in Sydney",
+  "description": "Guide to anxiety-related sleep disruption and psychological treatment via telehealth in Sydney. The anxiety-sleep cycle, what CBT-I and CBT for anxiety involve, how to access a psychologist via Medicare, and when to also see your GP.",
+  "datePublished": "2026-06-08",
+  "dateModified": "2026-06-08",
+  "author": {
+    "@type": "Organization",
+    "name": "Sydney Anxiety Psychology"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Sydney Anxiety Psychology",
+    "url": "https://sydneyanxietypsychology.com.au"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://sydneyanxietypsychology.com.au/guides/anxiety-sleep-psychologist-sydney/"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can a psychologist help with sleep problems caused by anxiety?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. When sleep disruption is driven by anxiety — racing thoughts, worry at bedtime, hyperarousal — a psychologist can help using Cognitive Behavioural Therapy for Insomnia (CBT-I) and CBT/ACT for anxiety. CBT-I is the leading evidence-based treatment for insomnia. Multiple randomised controlled trials and a 2023 Cochrane review confirm it produces durable improvements in sleep onset, sleep quality, and night waking, with effects superior to sleep medications in the longer term. It is delivered in individual sessions — including via telehealth — typically over 6 to 8 sessions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is CBT-I and how does it work for anxiety-related insomnia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CBT-I (Cognitive Behavioural Therapy for Insomnia) is a structured psychological treatment that addresses the thoughts, behaviours, and arousal patterns that maintain insomnia. Key components include: sleep restriction (consolidating sleep to improve sleep drive); stimulus control (reassociating the bed with sleep rather than wakefulness and worry); cognitive restructuring (examining catastrophic beliefs about sleep); sleep hygiene education; and relaxation training. For anxiety-related insomnia, CBT-I is typically combined with anxiety-specific components: addressing worry, hyperarousal, and avoidance that maintain both the anxiety and the sleep disruption."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I access a psychologist for sleep and anxiety via Medicare telehealth in Sydney?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. If your GP issues a Mental Health Treatment Plan (MHTP) that includes anxiety or a sleep-related presentation, you can access up to 10 Medicare-rebated psychology sessions per calendar year. The rebate from 1 July 2025 is $98.95 per session for a registered psychologist (MBS item 91170 for telehealth) or $145.25 for an endorsed clinical psychologist (MBS item 91167 for telehealth). Telehealth rebates are the same as in-person under the Better Access initiative. Your GP decides what presentations to include on the plan — discuss your sleep difficulties alongside your anxiety."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is telehealth effective for CBT-I and anxiety treatment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Telehealth delivery of CBT-I is well-supported by research. A 2021 systematic review by Zachariae and colleagues (Sleep Medicine Reviews) found that digital and internet-delivered CBT-I produces significant improvements in insomnia severity, sleep quality, and sleep onset latency. Shaker et al. (JMIR Mental Health, 2023) confirmed that internet-delivered CBT for anxiety disorders produces outcomes comparable to in-person delivery. Most of the skills in both CBT-I and CBT for anxiety — restructuring worry thoughts, practising relaxation, implementing stimulus control, developing a different relationship with anxious thoughts — transfer well to a videoconference format."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When should I see my GP rather than a psychologist first for sleep and anxiety?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your GP is a good first step regardless — they can rule out medical causes of sleep disruption (sleep apnoea, medication side effects, thyroid conditions, circadian rhythm disorders), issue a Mental Health Treatment Plan if appropriate, and provide a referral to psychology. If your sleep problems are severe, if you have significant daytime impairment, or if you suspect a medical cause, see your GP first. A GP referral is also required to access Medicare rebates for psychology. Many people with anxiety-related insomnia see their GP and a psychologist as a coordinated approach."
+      }
+    }
+  ]
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sydneyanxietypsychology.com.au/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://sydneyanxietypsychology.com.au/guides/" },
+    { "@type": "ListItem", "position": 3, "name": "Anxiety and sleep: telehealth psychology Sydney", "item": "https://sydneyanxietypsychology.com.au/guides/anxiety-sleep-psychologist-sydney/" },
+  ]
+};
+---
+<Base
+  title="Anxiety and Sleep Problems: Telehealth Psychologist Sydney | CBT-I Guide"
+  description="Guide to anxiety-related sleep disruption and psychological treatment in Sydney. How the anxiety-sleep cycle works, what CBT-I involves, accessing a psychologist via Medicare telehealth, and when to see your GP."
+  schema={[articleSchema, faqSchema, breadcrumbSchema]}
+>
+  <div class="main-content">
+    <div class="container">
+
+      <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 1.5rem;">
+        <a href="/">Home</a> &rsaquo; <a href="/guides/">Guides</a> &rsaquo; Anxiety and sleep: telehealth psychology Sydney
+      </p>
+
+      <h1>Anxiety and Sleep Problems: Telehealth Psychology in Sydney</h1>
+      <AuthorByline dateModified="June 2026" />
+      <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 2rem;">Last reviewed: June 2026 &bull; Sources: Zachariae et al. (2021) Sleep Medicine Reviews; Shaker et al. (2023) JMIR Mental Health; Morin et al. (2023) Cochrane Review on CBT-I; NICE guideline NG215 (Insomnia, 2022); APS Evidence-based interventions for insomnia</p>
+
+      <!-- GEO ANSWER BLOCK -->
+      <div style="background: #f0f4ff; border-left: 4px solid var(--color-accent); border-radius: 0 var(--radius) var(--radius) 0; padding: 1.25rem 1.5rem; margin-bottom: 2rem;">
+        <p style="margin: 0; font-size: 1rem; line-height: 1.7;"><strong>The one-sentence answer:</strong> Anxiety and sleep disruption form a self-reinforcing cycle&mdash;anxiety drives hyperarousal and racing thoughts that prevent sleep, poor sleep worsens anxiety&mdash;and Cognitive Behavioural Therapy for Insomnia (CBT-I) combined with CBT for anxiety is the leading evidence-based psychological treatment, shown in multiple RCTs to produce durable improvements in sleep quality superior to sleep medication in the longer term (Morin et al., <em>Cochrane</em>, 2023; Zachariae et al., <em>Sleep Medicine Reviews</em>, 2021).</p>
+      </div>
+
+      <p>If you lie awake at night with a mind that will not stop, you are not alone. Sleep disruption is one of the most common presenting concerns among people with anxiety&mdash;and one of the most distressing. The experience of desperately wanting to sleep while your mind keeps generating worry, rehearsing tomorrow, or replaying today, is exhausting in a way that affects every part of life.</p>
+
+      <p>This guide explains what is happening when anxiety and sleep problems interlock, what psychological treatment involves, and how to access a telehealth psychologist in Sydney for both.</p>
+
+      <div class="info-box" style="background: #f0f9ff; border-left-color: #0284c7;">
+        <p><strong>This is an information resource, not clinical advice.</strong> Sleep disruption has many possible causes, including medical ones, and presentations vary. If you are looking for a psychologist in Sydney who works with anxiety and sleep difficulties, our <a href="/directory/">directory</a> lists practitioners offering telehealth. If you are in crisis, contact Lifeline (13 11 14) or Beyond Blue (1300 22 4636).</p>
+      </div>
+
+      <h2 id="the-cycle">The anxiety-sleep cycle: why they reinforce each other</h2>
+
+      <p>Anxiety and sleep problems share a biological pathway: the stress response. When the threat-detection system in the brain is activated&mdash;whether by a real external threat or by the cognitive loop of anxious worry&mdash;it triggers physiological arousal. Cortisol and adrenaline rise. Heart rate increases. The brain shifts toward vigilance. This is the opposite of the relaxed, low-arousal state needed for sleep onset.</p>
+
+      <p>People with anxiety often experience this arousal as a "switched-on" feeling at bedtime: thoughts speeding up rather than slowing down, a heightened sense of alertness, or physical restlessness (muscle tension, racing heart). Worry provides content for this arousal to latch onto. The mind reaches for problems to solve, scenarios to rehearse, or risks to catalogue&mdash;particularly at night, when there are no other demands competing for attention.</p>
+
+      <p>Poor sleep then worsens anxiety through several mechanisms:</p>
+      <ul>
+        <li><strong>Reduced emotional regulation capacity:</strong> The prefrontal cortex, which provides top-down regulation of threat responses, is particularly sensitive to sleep deprivation. Insufficient sleep makes the brain's alarm system more reactive and the regulating system less effective.</li>
+        <li><strong>Heightened threat sensitivity:</strong> Sleep-deprived people show greater amygdala reactivity to negative stimuli&mdash;threats feel more threatening, worries feel more plausible.</li>
+        <li><strong>Lowered frustration tolerance and mood:</strong> Fatigue makes everything harder to cope with, and difficulty coping feeds back into worry.</li>
+        <li><strong>Secondary worry about sleep itself:</strong> Many people develop a second layer of anxiety specifically about sleep&mdash;worry about how much sleep they are getting, what tomorrow will be like if they do not sleep, or whether they will ever sleep normally again. This secondary anxiety becomes its own maintaining factor.</li>
+      </ul>
+
+      <p>This cycle is well-documented in the clinical literature and is part of what makes anxiety-related insomnia respond well to psychological treatment: addressing the anxiety component helps the sleep, and addressing the sleep component helps the anxiety.</p>
+
+      <h2 id="cbti">CBT-I: the evidence-based psychological treatment for insomnia</h2>
+
+      <p>Cognitive Behavioural Therapy for Insomnia (CBT-I) is the leading psychological treatment for insomnia and is recommended as the first-line treatment by NICE (UK), the American Academy of Sleep Medicine, and the Australian Psychological Society. A 2023 Cochrane systematic review by Morin and colleagues confirmed that CBT-I produces significant, durable improvements in sleep onset latency, wake after sleep onset, sleep efficiency, and subjective sleep quality, with effects that persist at 6 and 12 months follow-up and are superior to sleep medications in the longer term.</p>
+
+      <p>CBT-I is typically delivered over 6 to 8 individual sessions and involves several interconnected components:</p>
+
+      <h3>Sleep restriction</h3>
+      <p>This is often the most counterintuitive component for people new to CBT-I. Sleep restriction involves temporarily limiting the time spent in bed to roughly match the actual time spent sleeping (not the time lying awake). For example, someone sleeping 5 hours on average but spending 9 hours in bed would initially set a 5-hour sleep window. This builds sleep pressure (the biological drive to sleep), reduces time spent awake in bed, and begins to consolidate sleep. The window is gradually extended as sleep efficiency improves. Sleep restriction sounds punishing but is the most powerful component of CBT-I for breaking the wakefulness-in-bed pattern.</p>
+
+      <h3>Stimulus control</h3>
+      <p>Stimulus control therapy addresses the learned association between the bed and wakefulness. If you spend long hours lying awake in bed, the bedroom environment becomes associated with arousal and wakefulness rather than sleep. Stimulus control involves: going to bed only when sleepy; getting out of bed if awake for more than 15-20 minutes; using the bed only for sleep (and sex); and keeping a consistent wake time regardless of how well you slept. Over time, the bedroom re-associates with sleepiness and sleep onset.</p>
+
+      <h3>Cognitive restructuring for sleep beliefs</h3>
+      <p>People with insomnia often hold unhelpful beliefs about sleep that increase arousal and make recovery harder: "I need 8 hours or I cannot function," "Every bad night damages my health," "I will never sleep normally again." Cognitive restructuring examines the evidence for these beliefs, identifies more accurate and less catastrophic interpretations, and reduces the secondary anxiety about sleep that itself maintains insomnia.</p>
+
+      <h3>Relaxation training</h3>
+      <p>Progressive muscle relaxation, diaphragmatic breathing, and imagery-based relaxation reduce the physiological arousal that maintains wakefulness. These are taught as skills to use in the pre-sleep period and when waking during the night&mdash;not as attempts to force sleep, but as practices that reduce the obstacles to sleep.</p>
+
+      <h3>Sleep hygiene education</h3>
+      <p>Sleep hygiene refers to behavioural and environmental factors that support or undermine sleep: light and temperature in the bedroom, caffeine and alcohol intake, screen exposure before bed, exercise timing. On its own, sleep hygiene education has limited efficacy for established insomnia, but it is a useful component alongside the more active CBT-I techniques.</p>
+
+      <h3>For anxiety-related insomnia: integrating anxiety treatment</h3>
+      <p>When anxiety is the primary driver of sleep disruption, CBT-I is typically integrated with anxiety-focused psychological work:</p>
+      <ul>
+        <li><strong>Worry postponement and scheduled worry time:</strong> Developing a practice of noting worry content during the day in a designated period, rather than allowing uncontrolled worry at bedtime</li>
+        <li><strong>Cognitive restructuring for anxiety:</strong> Examining the anxiety content that appears at bedtime&mdash;what is the person actually worried about, how realistic are the feared outcomes, what coping resources do they have</li>
+        <li><strong>ACT defusion and mindfulness:</strong> Building the capacity to observe worry thoughts as mental events rather than facts, reducing their power to maintain arousal</li>
+        <li><strong>Intolerance of uncertainty work:</strong> For GAD-type anxiety that generates wide-ranging bedtime worry, working specifically with the discomfort of uncertainty</li>
+      </ul>
+
+      <h2 id="telehealth">Telehealth for anxiety and sleep: what to expect</h2>
+
+      <p>A 2021 systematic review by Zachariae and colleagues (<em>Sleep Medicine Reviews</em>) found that digital and internet-delivered CBT-I produces significant improvements across all key sleep outcomes including insomnia severity, sleep onset latency, wake after sleep onset, and sleep quality, with effects comparable to face-to-face CBT-I. Shaker et al. (2023, <em>JMIR Mental Health</em>) confirmed that internet-delivered CBT for anxiety is similarly effective. Telehealth delivery of both CBT-I and anxiety treatment is now well-established.</p>
+
+      <p>Practical advantages of telehealth for sleep and anxiety treatment:</p>
+      <ul>
+        <li><strong>No commute before bedtime:</strong> Evening appointments via telehealth mean no driving home after a session, which matters when sleep restriction is part of treatment and session timing may need adjusting</li>
+        <li><strong>Sessions from your actual sleep environment:</strong> The psychologist can, with your consent, see your actual bedroom setup and help you identify stimulus-control or environment factors directly&mdash;rather than working from description alone</li>
+        <li><strong>Homework integration:</strong> Sleep logs, worry postponement practice, and relaxation exercises all happen in your actual daily and nightly routine&mdash;not translated from a clinic to home</li>
+        <li><strong>Flexible scheduling:</strong> Anxiety and poor sleep often make early-morning appointments difficult; telehealth psychologists typically offer a wider range of times including evenings</li>
+      </ul>
+
+      <h3>What a typical session involves</h3>
+      <p>Early sessions focus on assessment: understanding the history of the sleep problem, the anxiety presentation, sleep patterns (often via a sleep diary kept between sessions), beliefs about sleep, and daytime functioning. The psychologist will explain the CBT-I model and the rationale for each component before starting. Middle sessions implement sleep restriction, stimulus control, and cognitive work. Later sessions consolidate gains, develop a relapse prevention plan, and ensure skills are embedded before finishing.</p>
+
+      <p>Most people notice meaningful change in sleep within the first few weeks of implementing sleep restriction and stimulus control, though it often feels harder before it feels easier. The process is active&mdash;CBT-I asks more of you than a pill&mdash;but the improvements tend to be lasting rather than dependent on continuing a treatment.</p>
+
+      <h2 id="accessing">How to access a psychologist in Sydney for anxiety and sleep</h2>
+
+      <h3>Step 1: See your GP</h3>
+      <p>Your GP is the right starting point. They can:</p>
+      <ul>
+        <li>Assess whether there is a medical cause for your sleep disruption (sleep apnoea is common and treatable; thyroid conditions, medication effects, and circadian rhythm disorders can all affect sleep)</li>
+        <li>Rule out or address any physical health factors before or alongside psychological treatment</li>
+        <li>Issue a <a href="/guides/mental-health-care-plan-sydney/">Mental Health Treatment Plan (MHTP)</a>, which gives you access to up to 10 Medicare-rebated psychology sessions per calendar year</li>
+        <li>Provide a referral to a psychologist who works with sleep and anxiety</li>
+      </ul>
+      <p>Tell your GP about both the anxiety and the sleep difficulties. Both can be included in the plan. If your GP does not seem familiar with CBT-I, you can ask specifically whether a referral for CBT-I for insomnia alongside anxiety treatment is appropriate.</p>
+
+      <h3>Step 2: Find a psychologist with experience in anxiety and sleep</h3>
+      <p>Look for a psychologist who:</p>
+      <ul>
+        <li>Has experience treating both anxiety disorders and sleep-related presentations, ideally with specific familiarity with CBT-I</li>
+        <li>Offers telehealth sessions (standard under Better Access since 2021)</li>
+        <li>Is registered with AHPRA (required for Medicare rebates)</li>
+      </ul>
+      <p>Our <a href="/directory/">directory of Sydney telehealth psychologists</a> lists practitioners who work with anxiety. When contacting a practitioner, ask whether they have experience with CBT-I for insomnia alongside anxiety treatment.</p>
+
+      <h3>Medicare costs from 1 July 2025</h3>
+      <div class="info-box">
+        <p>With a valid Mental Health Treatment Plan:</p>
+        <ul style="margin: 0.5rem 0 0;">
+          <li>Registered psychologist (telehealth, MBS 91170): Medicare rebate <strong>$98.95</strong> per session</li>
+          <li>Endorsed clinical psychologist (telehealth, MBS 91167): Medicare rebate <strong>$145.25</strong> per session</li>
+          <li>The gap fee (if any) is the difference between what the psychologist charges and the rebate amount</li>
+          <li>Up to 10 rebated individual sessions per calendar year; GP can refer for more if clinically indicated</li>
+        </ul>
+        <p style="margin-top: 0.75rem; margin-bottom: 0;">See our <a href="/guides/bulk-billing-psychologist-sydney/">bulk billing guide</a> and <a href="/guides/cost-telehealth-psychologist-australia/">cost guide</a> for a full explanation of what out-of-pocket costs to expect.</p>
+      </div>
+
+      <h3>Step 3: Attend your first appointment</h3>
+      <p>See our guide on <a href="/guides/first-psychology-session-what-to-expect/">what to expect from your first psychology session</a>. For sleep and anxiety presentations, it helps to come prepared with a rough picture of: how long the sleep difficulties have been present, what a typical night looks like (what time you go to bed, how long it takes to fall asleep, how often you wake, what time you wake for the day), and how your anxiety and sleep interact (does anxiety worsen sleep, does poor sleep worsen anxiety, or both).</p>
+
+      <h2 id="when-to-act">A note on timing: do not wait until it is unbearable</h2>
+
+      <p>Many people with anxiety and sleep difficulties wait much longer than they need to before seeking help. Sleep disruption compounds anxiety which compounds sleep disruption&mdash;the longer the pattern continues, the more entrenched it becomes. If you have been struggling with sleep and anxiety for months or years, you are not unusual, but you are also not beyond help. CBT-I and psychological treatment for anxiety are effective at all stages, including for long-standing insomnia.</p>
+
+      <p>If you are wondering whether your situation is severe enough to warrant help: if it is affecting your daily functioning, your work, your relationships, or your sense of wellbeing, it is sufficient reason to seek support.</p>
+
+      <h2 id="faq">Common questions</h2>
+
+      <div itemscope itemtype="https://schema.org/FAQPage">
+
+        <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">Can a psychologist help with sleep problems caused by anxiety?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <div itemprop="text">
+              <p>Yes. When sleep disruption is driven by anxiety, a psychologist can help using CBT-I and CBT or ACT for anxiety. CBT-I is the leading evidence-based treatment for insomnia with a strong body of research including a 2023 Cochrane review showing durable improvements in sleep quality superior to sleep medications in the longer term. It is effective delivered via telehealth.</p>
+            </div>
+          </div>
+        </div>
+
+        <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">What is CBT-I and how does it work for anxiety-related insomnia?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <div itemprop="text">
+              <p>CBT-I is a structured psychological treatment addressing the thoughts, behaviours, and arousal patterns that maintain insomnia. Its core components are sleep restriction, stimulus control, cognitive restructuring for sleep beliefs, relaxation training, and sleep hygiene education. For anxiety-related insomnia, it is typically integrated with anxiety-focused work: worry postponement, cognitive restructuring for anxiety, and mindfulness or ACT defusion practices.</p>
+            </div>
+          </div>
+        </div>
+
+        <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">Can I access a psychologist for sleep and anxiety via Medicare telehealth in Sydney?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <div itemprop="text">
+              <p>Yes. With a Mental Health Treatment Plan from your GP, you can access up to 10 Medicare-rebated psychology sessions per calendar year. The telehealth Medicare rebate from 1 July 2025 is $98.95 per session for a registered psychologist or $145.25 for an endorsed clinical psychologist. Telehealth rebates are the same as in-person under Better Access.</p>
+            </div>
+          </div>
+        </div>
+
+        <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">Is telehealth effective for CBT-I and anxiety treatment?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <div itemprop="text">
+              <p>Yes. A 2021 systematic review by Zachariae et al. (Sleep Medicine Reviews) found digital and internet-delivered CBT-I produces significant improvements in sleep quality comparable to face-to-face delivery. Shaker et al. (JMIR Mental Health, 2023) confirmed that internet-delivered CBT for anxiety produces comparable outcomes to in-person treatment. Most CBT-I and anxiety therapy skills transfer effectively to a videoconference format.</p>
+            </div>
+          </div>
+        </div>
+
+        <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">When should I see my GP rather than a psychologist first for sleep and anxiety?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <div itemprop="text">
+              <p>Your GP is a good first step regardless. They can rule out medical causes (sleep apnoea, medication effects, thyroid conditions), issue a Mental Health Treatment Plan for Medicare rebates, and provide a psychology referral. A GP referral is required to access Medicare rebates for psychology. Many people see their GP and a psychologist as a coordinated approach.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="cta-block" style="background: var(--color-accent-light, #f0f4ff); border-radius: var(--radius); padding: 2rem; margin: 3rem 0; text-align: center;">
+        <h2 style="margin-top: 0;">Find a telehealth psychologist in Sydney for anxiety and sleep</h2>
+        <p>Our directory lists psychologists offering telehealth in Sydney who work with anxiety presentations including anxiety-related sleep difficulties.</p>
+        <a href="/directory/" class="btn btn-primary" style="display: inline-block; margin-top: 0.5rem;">Browse the directory</a>
+        <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--color-text-secondary);">Have a Mental Health Treatment Plan? Bring it to your first session. See your GP first if you have not yet got one.</p>
+      </div>
+
+      <div class="info-box" style="margin-top: 2rem;">
+        <p><strong>Crisis support:</strong> If you are experiencing a mental health crisis, contact Lifeline on <strong>13 11 14</strong> (24/7), Beyond Blue on <strong>1300 22 4636</strong>, or 13YARN on <strong>13 92 76</strong> (for Aboriginal and Torres Strait Islander people). This directory is not a crisis service.</p>
+      </div>
+
+    </div>
+  </div>
+</Base>
