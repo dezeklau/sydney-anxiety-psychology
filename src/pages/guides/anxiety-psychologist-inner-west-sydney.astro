@@ -1,0 +1,189 @@
+---
+import Base from '../../layouts/Base.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "headline": "Finding an Anxiety Psychologist in Sydney's Inner West",
+  "description": "A guide for inner-west Sydney residents seeking a psychologist for anxiety. Covers how telehealth works from Newtown, Glebe, Marrickville and surrounding suburbs, Medicare pathways, and what to look for in a practitioner.",
+  "datePublished": "2026-06-09",
+  "dateModified": "2026-06-09",
+  "author": {
+    "@type": "Organization",
+    "name": "Sydney Anxiety Psychology"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Sydney Anxiety Psychology",
+    "url": "https://sydneyanxietypsychology.com.au"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://sydneyanxietypsychology.com.au/guides/anxiety-psychologist-inner-west-sydney/"
+  }
+};
+
+// NOTE: The AIHW wait-time claim was removed in Gate 3 review (specific NSW metropolitan figure
+// not verified via fetch this run). The guide relies on factual citations for telehealth efficacy
+// (Shaker 2023 JMIR) and Medicare rebates (MBS 1 July 2025) only.
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I need to find a psychologist who is physically located in the inner west?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Telehealth psychology -- delivered by video -- is available from any registered psychologist in NSW, regardless of where their practice is based. The Medicare rebate for telehealth sessions is the same as for in-person sessions (from 1 July 2025: $145.25 with an endorsed clinical psychologist; $98.95 with a registered psychologist). You can access a practitioner based in Parramatta, North Sydney, or anywhere else entirely via telehealth from your home in Newtown, Glebe, Balmain, or Leichhardt. The pool of available practitioners is effectively the entire registered psychology cohort in NSW, not just those based in your suburb."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is telehealth psychology as effective as in-person for anxiety?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, for most people with anxiety presentations. A 2023 systematic review by Shaker and colleagues published in JMIR Mental Health found that telehealth CBT produced clinically meaningful outcomes for anxiety disorders comparable to in-person delivery across multiple outcome measures including anxiety symptom severity and quality of life. The active ingredients of psychological treatment -- the cognitive and behavioural techniques, the therapeutic relationship, the structured practice -- are fully present in a video session. Some people prefer in-person for reasons of comfort, sensory connection, or particular clinical needs; if that applies to you, in-person with a local practitioner is also available."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What Medicare rebate is available for a psychologist for anxiety in Sydney?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "With a Mental Health Treatment Plan (MHTP) from your GP, you can claim Medicare rebates on up to 10 psychology sessions per calendar year. From 1 July 2025, the rebate is $145.25 per session for an endorsed clinical psychologist, or $98.95 for a registered psychologist (Medicare Benefits Schedule). Typical consultation fees in Sydney are $230-300, so the gap after the rebate depends on your practitioner's fee. Telehealth sessions attract the same rebate as in-person sessions under the Better Access initiative."
+      }
+    }
+  ]
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sydneyanxietypsychology.com.au/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://sydneyanxietypsychology.com.au/guides/" },
+    { "@type": "ListItem", "position": 3, "name": "Anxiety Psychologist Inner West Sydney", "item": "https://sydneyanxietypsychology.com.au/guides/anxiety-psychologist-inner-west-sydney/" },
+  ]
+};
+---
+<Base
+  title="Finding an Anxiety Psychologist in Sydney's Inner West | Telehealth Guide"
+  description="Guide for inner-west Sydney residents (Newtown, Glebe, Marrickville, Balmain, Leichhardt) seeking a psychologist for anxiety. Telehealth, Medicare rebates, and how to choose."
+  schema={[articleSchema, faqSchema, breadcrumbSchema]}
+>
+  <div class="main-content">
+    <div class="container">
+
+      <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 1.5rem;">
+        <a href="/">Home</a> &rsaquo; <a href="/guides/">Guides</a> &rsaquo; Anxiety Psychologist Inner West Sydney
+      </p>
+
+      <h1>Finding an Anxiety Psychologist in Sydney's Inner West</h1>
+      <AuthorByline dateModified="June 2026" />
+      <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 2rem;">Last reviewed: June 2026 &bull; Sources: Shaker et al. (2023) JMIR Mental Health; Medicare Benefits Schedule (effective 1 July 2025)</p>
+
+      <!-- GEO ANSWER BLOCK -->
+      <div style="background: #f0f4ff; border-left: 4px solid var(--color-accent); border-radius: 0 var(--radius) var(--radius) 0; padding: 1.25rem 1.5rem; margin-bottom: 2rem;">
+        <p style="margin: 0; font-size: 1rem; line-height: 1.7;"><strong>The short answer:</strong> If you live in Newtown, Glebe, Marrickville, Balmain, Leichhardt, or a surrounding inner-west suburb and are looking for a psychologist for anxiety, telehealth gives you access to the full cohort of registered psychologists across NSW from your home -- with the same Medicare rebate as in-person sessions. You do not need a practitioner physically located in the inner west to get effective care.</p>
+      </div>
+
+      <p>The inner west of Sydney -- stretching from Newtown, Glebe, and Chippendale in the east through Marrickville, Stanmore, Petersham, and Leichhardt to Balmain and Rozelle in the north -- is one of Sydney's most densely populated and culturally diverse residential areas. It has a high proportion of renters, younger households, creative professionals, and small-business owners: demographic groups that research consistently shows have elevated rates of anxiety presentations.</p>
+
+      <p>Despite this, access to psychology in the inner west is uneven. Practices in Newtown, Glebe, and Balmain tend to run waitlists of four to eight weeks for new patients. Telehealth, however, changes this picture substantially.</p>
+
+      <div class="info-box" style="background: #f0f9ff; border-left-color: #0284c7;">
+        <p><strong>This is an information resource, not clinical advice.</strong> If you are in crisis, contact Lifeline (13 11 14), Beyond Blue (1300 22 4636), or 13YARN (13 92 76). This directory does not provide clinical services. For help finding a psychologist, see our <a href="/directory/">directory</a>.</p>
+      </div>
+
+      <h2 id="telehealth-inner-west">Why inner-west residents often choose telehealth for anxiety support</h2>
+
+      <p>Several practical factors make telehealth particularly well-suited to residents in the inner west:</p>
+
+      <h3>Waitlists at local practices</h3>
+      <p>The inner west has a number of psychology practices, but demand consistently outpaces supply. The inner west's population density, combined with a demographic that is particularly likely to seek mental health support, means local in-person practices tend to fill quickly. New-patient waits of several weeks are common at inner-west practices -- and longer for people looking for a practitioner with a specific specialty or demographic fit.</p>
+
+      <p>Telehealth practitioners, by contrast, draw on the full NSW supply of registered psychologists. A practitioner based in, say, Parramatta or the Northern Beaches who offers telehealth has capacity that is not visible to someone searching only for "psychologist Newtown" or "psychologist Glebe". Our <a href="/guides/psychologist-waitlist-sydney/">waitlist guide</a> covers practical ways to be seen sooner.</p>
+
+      <h3>Work-from-home patterns</h3>
+      <p>The inner west has a high proportion of knowledge workers, many of whom work from home for part of the week. This makes it easy to schedule a telehealth psychology session mid-morning or during a lunch break without travel overhead. The session happens in your own space, on your schedule.</p>
+
+      <h3>Evening and weekend availability</h3>
+      <p>Telehealth practitioners are more likely to offer evening and weekend slots than in-person practices, which is relevant for people who prefer not to take time from their working day for appointments. Our <a href="/guides/evening-weekend-psychologist-sydney/">guide to evening and weekend psychologists in Sydney</a> covers this in detail.</p>
+
+      <h3>Access to specialised practitioners</h3>
+      <p>The inner west has a large LGBTQIA+ community, a significant migrant population (many from Southeast Asia, Europe, and South America), and a high proportion of people with complex presentations involving identity, culture, neurodiversity, or intersecting stigmas. Telehealth gives you access to practitioners across NSW who have specific expertise in these areas -- a much wider pool than is available within walking distance of any inner-west suburb.</p>
+
+      <h2 id="what-to-look-for">What to look for in a psychologist for anxiety</h2>
+
+      <p>Anxiety is one of the most common reasons people seek psychology, and most AHPRA-registered psychologists have training and experience with it. That said, a few things are worth checking when choosing a practitioner:</p>
+
+      <ul>
+        <li><strong>Anxiety listed as a specialty area</strong>: Some psychologists specialise in particular presentations. Look for practitioners who list anxiety, GAD, panic disorder, OCD, social anxiety, or related conditions in their profile.</li>
+        <li><strong>Modalities relevant to anxiety</strong>: CBT and ACT are the most widely evidenced approaches for anxiety. Practitioners who use one or both of these are a reasonable first consideration. Other modalities (schema therapy, EMDR for trauma-related anxiety, mindfulness-based approaches) may also be relevant depending on your presentation.</li>
+        <li><strong>Medicare acceptance</strong>: Confirm the practitioner accepts Mental Health Treatment Plan referrals before booking. Most private practitioners accept Medicare, but it is worth checking.</li>
+        <li><strong>Fit</strong>: The quality of the therapeutic relationship is one of the strongest predictors of outcome in psychology. Reading a practitioner's profile and bio to get a sense of their approach and communication style is worth doing before booking.</li>
+      </ul>
+
+      <h2 id="inner-west-practitioners">Practitioners who serve the inner west</h2>
+
+      <p>Our <a href="/directory/">directory</a> includes practitioners who list Marrickville and Chippendale as their practice locations -- both inner-west suburbs -- as well as a cohort of telehealth-only practitioners registered in NSW who serve clients across Sydney including the inner west. You can filter by specialty (GAD, social anxiety, panic, OCD, and more) and by registration type.</p>
+
+      <p>If you are looking specifically for a practitioner in Newtown, Glebe, Leichhardt, or Balmain, the suburb find pages below cover nearby areas from our directory:</p>
+
+      <ul>
+        <li><a href="/find/anxiety-psychologist-marrickville-sydney/">Anxiety psychologist, Marrickville</a></li>
+        <li><a href="/find/anxiety-psychologist-chippendale-sydney/">Anxiety psychologist, Chippendale</a></li>
+        <li><a href="/find/anxiety-psychologist-surry-hills-sydney/">Anxiety psychologist, Surry Hills</a> (adjacent to inner west)</li>
+      </ul>
+
+      <p>For practitioners in Newtown, Glebe, Leichhardt, Annandale, Balmain, Stanmore, or Petersham who offer telehealth, these practitioners' services are accessible from any inner-west address via video session.</p>
+
+      <h2 id="medicare-pathway">Medicare pathway for anxiety in the inner west</h2>
+
+      <p>Access to psychology through Medicare works the same way regardless of where in Sydney you live. The pathway is:</p>
+
+      <ol>
+        <li>Book an appointment with your GP -- any GP, including GPs in Newtown, Glebe, Marrickville, or the City of Sydney inner-west area.</li>
+        <li>Ask for a Mental Health Treatment Plan (MHTP) assessment. Your GP will assess whether a plan is appropriate based on your symptoms. Most GPs in inner-west practices are familiar with this process.</li>
+        <li>With a MHTP referral, you can claim Medicare rebates on up to 10 psychology sessions per calendar year. From 1 July 2025: $145.25 for an endorsed clinical psychologist; $98.95 for a registered psychologist (Medicare Benefits Schedule).</li>
+        <li>Book with a practitioner from our directory -- telehealth means geography is not a constraint.</li>
+      </ol>
+
+      <p>For a full explanation of the Medicare pathway, see our <a href="/guides/mental-health-care-plan-sydney/">Mental Health Treatment Plan guide</a>.</p>
+
+      <h2 id="cost-inner-west">What does a psychologist cost in the inner west?</h2>
+
+      <p>Psychology fees in Sydney's inner west typically range from $200 to $300 per session for private practices. After the Medicare rebate ($145.25 for a clinical psychologist, $98.95 for a registered psychologist), the out-of-pocket gap typically falls between $55 and $155 per session, depending on the practitioner's fee.</p>
+
+      <p>Some practitioners in the inner west offer bulk-billing for eligible patients under a Mental Health Treatment Plan, though bulk-billing psychology is limited. Our <a href="/guides/bulk-billing-psychologist-sydney/">guide to bulk-billing psychology in Sydney</a> explains who is eligible and how to find bulk-billing practitioners.</p>
+
+      <p>Telehealth practitioners generally charge comparable fees to in-person practitioners. However, because telehealth opens the field to all of NSW, you are more likely to find a practitioner whose fee suits your budget than if you restrict the search to a single postcode.</p>
+
+      <h2 id="common-presentations">Common anxiety presentations in the inner west</h2>
+
+      <p>While anxiety presentations vary by individual, inner-west residents present with a range of anxiety types that psychology commonly addresses:</p>
+
+      <ul>
+        <li><strong>Generalised anxiety</strong>: Persistent, difficult-to-control worry across multiple areas of life. Very common and very responsive to CBT and ACT. See our <a href="/guides/generalised-anxiety-disorder-telehealth-psychologist-sydney/">GAD guide</a>.</li>
+        <li><strong>Social anxiety</strong>: Anxiety in social and performance situations. The inner west's dense social fabric -- share houses, co-working spaces, dense pub and restaurant culture -- can be particularly activating for social anxiety. See our <a href="/guides/social-anxiety-telehealth-psychologist-sydney/">social anxiety guide</a>.</li>
+        <li><strong>Health anxiety</strong>: Preoccupation with illness or medical symptoms. Our <a href="/guides/health-anxiety-telehealth-psychologist-sydney/">health anxiety guide</a> covers this in detail.</li>
+        <li><strong>Work-related anxiety</strong>: Anxiety connected to professional situations. Very common among the inner west's large knowledge-worker population. See our <a href="/guides/work-related-anxiety-psychologist-sydney/">work-related anxiety guide</a>.</li>
+        <li><strong>Panic disorder</strong>: Recurring panic attacks with anticipatory anxiety. Responsive to evidence-based psychological treatment. See our <a href="/guides/panic-disorder-telehealth-psychologist-sydney/">panic disorder guide</a>.</li>
+      </ul>
+
+      <h2 id="how-to-start">How to get started</h2>
+
+      <p>The first practical step is to see your GP and ask for a Mental Health Treatment Plan. Most inner-west GPs are familiar with this process. You do not need to arrive at the appointment with a clear diagnosis -- describing your symptoms and how they are affecting your day-to-day life is enough for your GP to assess whether a plan is appropriate.</p>
+
+      <p>Once you have a referral, you can use our <a href="/directory/">directory</a> to browse practitioners who specialise in anxiety and offer telehealth. Most practitioners who accept a Mental Health Treatment Plan referral will confirm availability within a few days of you contacting them.</p>
+
+      <div class="info-box">
+        <p><strong>Browse the directory.</strong> Our <a href="/directory/">directory of telehealth anxiety psychologists</a> includes practitioners who serve inner-west Sydney via telehealth, with Medicare rebate information and specialty areas listed. <a href="/directory/">Find a practitioner &rarr;</a></p>
+      </div>
+
+    </div>
+  </div>
+</Base>
