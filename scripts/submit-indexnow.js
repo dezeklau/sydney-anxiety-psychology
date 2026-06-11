@@ -115,6 +115,7 @@ const URLS = [
   '/guides/telehealth-anxiety-psychology-sydney/',
   '/guides/anxiety-psychologist-inner-west-sydney/',
   '/guides/anxiety-psychologist-eastern-suburbs-sydney/',
+  '/guides/anxiety-therapy-types-sydney/',
   '/faq/',
   '/faq/how-many-sessions-do-i-need-for-anxiety/',
   '/faq/does-medicare-cover-telehealth-psychology/',

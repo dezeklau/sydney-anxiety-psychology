@@ -1,0 +1,461 @@
+---
+import Base from '../../layouts/Base.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "headline": "Anxiety therapy types in Sydney: CBT, ACT, Schema and EMDR explained",
+  "description": "A guide to evidence-based therapy types for anxiety available from Sydney psychologists: what CBT, ACT, Schema therapy and EMDR involve, the evidence behind each, and how to find a therapist who uses them.",
+  "datePublished": "2026-06-11",
+  "dateModified": "2026-06-11",
+  "author": {
+    "@type": "Organization",
+    "name": "Sydney Anxiety Psychology"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Sydney Anxiety Psychology",
+    "url": "https://sydneyanxietypsychology.com.au"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://sydneyanxietypsychology.com.au/guides/anxiety-therapy-types-sydney/"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the most effective therapy for anxiety?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cognitive Behavioural Therapy (CBT) has the strongest body of evidence for anxiety disorders and is endorsed by the Australian Psychological Society and NICE guidelines as a first-line psychological treatment. Acceptance and Commitment Therapy (ACT) has comparable evidence for generalised anxiety and is often preferred by people who have not found CBT helpful. The 'best' therapy depends on the specific anxiety condition, the individual, and the practitioner's training. Most psychologists will adapt the approach to what works for you rather than using a single model rigidly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I find a psychologist in Sydney who uses CBT for anxiety?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "When searching for a psychologist, look at their profile for mentions of their therapeutic approach. Most anxiety-specialising psychologists in Sydney use CBT as a core framework. You can ask directly when enquiring: 'Do you use CBT for anxiety? Are you trained in ACT or other modalities?' Our directory of Sydney anxiety psychologists includes profile notes on each practitioner's approach where this is publicly stated. Telehealth CBT has the same evidence base as in-person CBT, so location need not limit your choices."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Medicare cover anxiety therapy in Sydney?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, with a Mental Health Treatment Plan (MHTP) from your GP, Medicare provides rebates for up to 10 psychology sessions per calendar year. From 1 July 2025, the rebate is $145.25 per session with an endorsed clinical psychologist, or $98.95 with a registered psychologist. The specific therapy type (CBT, ACT, Schema, EMDR) does not affect eligibility for the rebate, provided it is delivered by an AHPRA-registered psychologist under your MHTP."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is EMDR effective for anxiety?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "EMDR (Eye Movement Desensitisation and Reprocessing) has strong evidence primarily for PTSD and trauma-related conditions, where it is a first-line NICE guideline treatment. For anxiety disorders without a trauma basis, the evidence is more limited than for CBT or ACT. For anxiety that is rooted in specific traumatic experiences, EMDR may be highly relevant. A psychologist trained in EMDR can assess whether it is appropriate for your presentation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a psychologist and a therapist in Sydney?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In Australia, 'psychologist' is a legally protected title under the Health Practitioner Regulation National Law. Only those registered with AHPRA can call themselves psychologists. 'Therapist' is not a protected title; it can be used by anyone regardless of their qualifications. When seeking evidence-based treatment for anxiety and access to Medicare rebates, you need an AHPRA-registered psychologist. Our directory lists only AHPRA-registered practitioners."
+      }
+    }
+  ]
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sydneyanxietypsychology.com.au/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://sydneyanxietypsychology.com.au/guides/" },
+    { "@type": "ListItem", "position": 3, "name": "Anxiety therapy types Sydney", "item": "https://sydneyanxietypsychology.com.au/guides/anxiety-therapy-types-sydney/" }
+  ]
+};
+---
+<Base
+  title="Anxiety therapy types in Sydney: CBT, ACT, Schema and EMDR explained"
+  description="What therapy is used for anxiety in Sydney? A plain-English guide to CBT, ACT, Schema therapy and EMDR: what each involves, the evidence behind them, and how to find a psychologist who uses them."
+  schema={[articleSchema, faqSchema, breadcrumbSchema]}
+>
+  <div class="main-content">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/guides/">Guides</a></li>
+          <li aria-current="page">Anxiety therapy types in Sydney</li>
+        </ol>
+      </nav>
+
+      <h1>Anxiety therapy types in Sydney: what works and how to find a therapist</h1>
+
+      <AuthorByline />
+
+      <p class="lead">
+        If you are looking for anxiety treatment in Sydney, you will quickly encounter a range of
+        therapy names: CBT, ACT, Schema therapy, EMDR, mindfulness-based approaches. Understanding
+        what each involves and what the evidence says can help you make a more informed choice about
+        the kind of psychologist you are looking for and what to ask when you contact a practice.
+      </p>
+
+      <div class="crisis-notice">
+        <strong>If you are in crisis:</strong> call Lifeline on <strong>13 11 14</strong> (24/7),
+        Beyond Blue on <strong>1300 22 4636</strong>, or 13YARN on <strong>13 92 76</strong>.
+        This directory is not a crisis service.
+      </div>
+
+      <nav class="toc" aria-label="Contents">
+        <strong>On this page</strong>
+        <ul>
+          <li><a href="#cbt">Cognitive Behavioural Therapy (CBT)</a></li>
+          <li><a href="#act">Acceptance and Commitment Therapy (ACT)</a></li>
+          <li><a href="#schema">Schema therapy</a></li>
+          <li><a href="#emdr">EMDR</a></li>
+          <li><a href="#mindfulness">Mindfulness-based approaches</a></li>
+          <li><a href="#which-approach">Which approach is right for you</a></li>
+          <li><a href="#telehealth">Telehealth anxiety therapy in Sydney</a></li>
+          <li><a href="#medicare">Medicare and cost</a></li>
+          <li><a href="#find">Finding a psychologist in Sydney</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <h2 id="cbt">Cognitive Behavioural Therapy (CBT)</h2>
+
+      <p>
+        CBT is the most researched psychological treatment for anxiety disorders. It has
+        a large body of randomised controlled trials across generalised anxiety disorder (GAD),
+        social anxiety disorder, panic disorder, OCD, health anxiety, and specific phobias.
+        It is endorsed as a first-line treatment by the
+        <a href="https://www.aps.edu.au" target="_blank" rel="noopener">Australian Psychological Society</a>
+        and the UK National Institute for Health and Care Excellence (NICE) guidelines for anxiety.
+      </p>
+
+      <h3>What CBT involves</h3>
+      <p>
+        CBT works by examining the relationship between thoughts, feelings, and behaviours.
+        For anxiety, the core idea is that anxious thoughts (catastrophising, overestimating danger,
+        underestimating coping ability) drive avoidance behaviours, and avoidance in turn maintains
+        the anxiety cycle. CBT sessions typically involve:
+      </p>
+      <ul>
+        <li>Psychoeducation about anxiety: how it works, why it maintains itself</li>
+        <li>Identifying the specific thought patterns driving your anxiety (cognitive restructuring)</li>
+        <li>Gradual exposure to anxiety-provoking situations to reduce avoidance over time</li>
+        <li>Developing practical coping skills to use between sessions</li>
+      </ul>
+      <p>
+        CBT is structured and skills-focused. Sessions are typically 50 to 60 minutes. A standard
+        course is 8 to 16 sessions for most anxiety presentations, though this varies.
+      </p>
+
+      <h3>Evidence base</h3>
+      <p>
+        A 2023 systematic review in JMIR Mental Health (Shaker et al.) confirmed that telehealth
+        CBT for anxiety disorders produces outcomes comparable to in-person CBT across multiple
+        measures including symptom severity and quality of life. This means that telehealth CBT
+        from a Sydney psychologist you access from home is as effective as attending in person.
+      </p>
+
+      <h2 id="act">Acceptance and Commitment Therapy (ACT)</h2>
+
+      <p>
+        ACT (pronounced "act", not initials) is a newer approach within the broader CBT family,
+        developed by Steven Hayes in the 1980s and substantially supported by evidence over the
+        past two decades. Rather than focusing primarily on challenging anxious thoughts, ACT
+        focuses on changing your relationship to those thoughts: accepting that anxiety exists
+        without letting it dictate your behaviour, and committing to actions aligned with your
+        values despite its presence.
+      </p>
+
+      <h3>What ACT involves</h3>
+      <p>
+        ACT sessions typically explore:
+      </p>
+      <ul>
+        <li>Psychological flexibility: the capacity to act effectively even when anxious</li>
+        <li>Defusion techniques: creating distance from anxious thoughts rather than taking them
+          literally or fighting them</li>
+        <li>Acceptance: allowing anxious feelings and sensations to be present without struggle</li>
+        <li>Values clarification: identifying what matters most to you and living in that direction</li>
+        <li>Committed action: behavioural changes guided by values rather than driven by avoidance</li>
+      </ul>
+
+      <p>
+        ACT is often preferred by people who have tried CBT and found the thought-challenging approach
+        felt artificial, or who benefit from a more acceptance-oriented framework. Many Sydney
+        psychologists are trained in both CBT and ACT and will use elements of each based on what
+        is working for you.
+      </p>
+
+      <h3>Evidence base</h3>
+      <p>
+        ACT has strong evidence for generalised anxiety disorder and is supported by the APS
+        Evidence-based Psychological Interventions register. A meta-analysis by Bai et al. (2020)
+        in the Journal of Anxiety Disorders found ACT superior to waitlist control and comparable
+        to traditional CBT across multiple anxiety outcomes.
+      </p>
+
+      <h2 id="schema">Schema therapy</h2>
+
+      <p>
+        Schema therapy, developed by Jeffrey Young, is particularly relevant for people whose
+        anxiety is deeply rooted in early life experiences and longstanding patterns of thinking
+        (schemas) formed in childhood. It integrates CBT techniques with elements drawn from
+        attachment theory, Gestalt therapy, and psychodynamic approaches.
+      </p>
+
+      <h3>What schema therapy involves</h3>
+      <p>
+        Schema therapy identifies core maladaptive schemas (such as abandonment fears, vulnerability,
+        or defectiveness beliefs) that underlie chronic anxiety. Sessions involve:
+      </p>
+      <ul>
+        <li>Identifying your core schemas and understanding how they developed</li>
+        <li>Recognising schema modes (the emotional states and coping patterns that schemas activate)</li>
+        <li>Using experiential techniques (imagery, chair work) to rework the emotional memories
+          tied to schemas, not just the thoughts</li>
+        <li>Building healthier patterns of coping</li>
+      </ul>
+
+      <p>
+        Schema therapy is typically used for longer-term, complex presentations. It is more common
+        for people with long-standing anxiety that has not fully responded to shorter-term CBT
+        or ACT approaches, or where the anxiety is entangled with personality-level patterns.
+        Not all Sydney psychologists are trained in schema therapy; if this is specifically what
+        you are looking for, ask directly about the practitioner's training.
+      </p>
+
+      <h2 id="emdr">EMDR (Eye Movement Desensitisation and Reprocessing)</h2>
+
+      <p>
+        EMDR was originally developed for PTSD treatment and remains primarily evidence-based
+        for trauma-related presentations. In EMDR, the therapist guides you to briefly recall
+        distressing memories or images while simultaneously experiencing bilateral sensory
+        stimulation (typically eye movements, but also taps or tones). This is thought to reduce
+        the emotional charge of traumatic memories.
+      </p>
+
+      <h3>When EMDR is relevant for anxiety</h3>
+      <p>
+        For anxiety that is not rooted in identifiable traumatic experiences, EMDR is not the
+        first-line approach. However, for anxiety disorders that are directly tied to specific
+        traumatic events (for example, a phobia triggered by a past incident, panic disorder
+        following a frightening experience, or health anxiety following a serious illness scare),
+        EMDR may be highly relevant and sometimes preferred over traditional exposure-based CBT.
+      </p>
+      <p>
+        A psychologist trained in EMDR can assess whether your anxiety presentation is a good
+        fit for this approach. EMDR is a specialist technique; not all psychologists offer it,
+        and those who do typically have specific additional training.
+      </p>
+
+      <h2 id="mindfulness">Mindfulness-based approaches</h2>
+
+      <p>
+        Mindfulness-Based Cognitive Therapy (MBCT) and Mindfulness-Based Stress Reduction (MBSR)
+        are structured programmes that train present-moment, non-judgmental awareness of thoughts
+        and sensations. MBCT has strong evidence specifically for preventing depressive relapse,
+        and both approaches are used adjunctively in anxiety treatment. Many psychologists
+        incorporate mindfulness techniques within CBT or ACT without offering a formal MBCT
+        programme.
+      </p>
+      <p>
+        Mindfulness is a skill that can be practised between sessions and often becomes a
+        long-term resource. Most psychologists who work with anxiety will introduce some
+        mindfulness elements regardless of their primary model.
+      </p>
+
+      <h2 id="which-approach">Which therapy approach is right for you</h2>
+
+      <p>
+        In practice, most experienced anxiety psychologists in Sydney do not apply a single
+        model rigidly. They draw from CBT, ACT, and other approaches based on what works
+        for the individual. When you contact a practice, it is reasonable to ask:
+      </p>
+      <ul>
+        <li>"What approach do you mainly use for anxiety?"</li>
+        <li>"Are you trained in ACT as well as CBT?"</li>
+        <li>"How do you tailor treatment to the individual?"</li>
+      </ul>
+      <p>
+        A therapist who can clearly explain their approach and adapt based on your response
+        is more important than one who is trained in any specific technique.
+      </p>
+
+      <p>
+        For specific anxiety conditions, the following guides go deeper:
+      </p>
+      <ul>
+        <li><a href="/guides/generalised-anxiety-disorder-telehealth-psychologist-sydney/">Generalised anxiety disorder (GAD)</a></li>
+        <li><a href="/guides/social-anxiety-telehealth-psychologist-sydney/">Social anxiety disorder</a></li>
+        <li><a href="/guides/panic-disorder-telehealth-psychologist-sydney/">Panic disorder</a></li>
+        <li><a href="/guides/health-anxiety-telehealth-psychologist-sydney/">Health anxiety (hypochondria / illness anxiety)</a></li>
+        <li><a href="/guides/ocd-telehealth-psychologist-sydney/">OCD</a></li>
+        <li><a href="/guides/ptsd-telehealth-psychologist-sydney/">PTSD and trauma</a></li>
+      </ul>
+
+      <h2 id="telehealth">Telehealth anxiety therapy in Sydney</h2>
+
+      <p>
+        All of the therapy approaches described above can be delivered effectively via video call.
+        A 2023 systematic review in JMIR Mental Health confirmed that telehealth CBT for anxiety
+        disorders produces outcomes comparable to in-person delivery. Telehealth is not a compromise
+        on quality; for most anxiety presentations it is clinically equivalent to attending in person.
+      </p>
+      <p>
+        The practical advantages for Sydney residents are significant: no commute to Bondi Junction,
+        Surry Hills, or wherever your practitioner is based; flexibility to see a practitioner
+        located anywhere in NSW; and sessions from the privacy of your own home.
+      </p>
+
+      <h2 id="medicare">Medicare rebates for anxiety therapy in Sydney</h2>
+
+      <p>
+        To access Medicare rebates for psychology sessions, you need a Mental Health Treatment Plan
+        (MHTP) from your GP. This referral allows you to claim rebates for up to 10 sessions per
+        calendar year.
+      </p>
+      <p>
+        From 1 July 2025, the rebate is:
+      </p>
+      <ul>
+        <li><strong>$145.25 per session</strong> with an AHPRA-endorsed clinical psychologist</li>
+        <li><strong>$98.95 per session</strong> with a registered psychologist</li>
+      </ul>
+      <p>
+        The therapy type (CBT, ACT, EMDR) does not affect your eligibility for the Medicare rebate.
+        What matters is that the practitioner is AHPRA-registered and delivering sessions under
+        your MHTP referral. Telehealth sessions attract the same rebate as in-person sessions
+        under the Better Access initiative.
+      </p>
+      <p>
+        For more detail on costs including what to expect after the gap, see our
+        <a href="/guides/cost-telehealth-psychologist-australia/">guide to psychology costs and Medicare</a>.
+        For bulk-billing options, see our
+        <a href="/guides/bulk-billing-psychologist-sydney/">bulk-billing psychologist guide</a>.
+      </p>
+
+      <h2 id="find">Finding an anxiety psychologist in Sydney</h2>
+
+      <p>
+        When you know what kind of therapy you are looking for, you can search our
+        <a href="/directory/">directory of Sydney anxiety psychologists</a> and filter by suburb.
+        Each practitioner profile notes their therapeutic approach where this is publicly stated.
+      </p>
+      <p>
+        If you are in the eastern suburbs, the
+        <a href="/find/anxiety-psychologist-bondi-junction-sydney/">Bondi Junction finder</a>
+        lists practitioners based in or near Bondi Junction, and includes telehealth options if
+        in-person appointments are not available quickly. Our
+        <a href="/guides/anxiety-psychologist-eastern-suburbs-sydney/">eastern suburbs guide</a>
+        covers a broader area including Randwick, Coogee, Edgecliff, and Rose Bay.
+      </p>
+
+      <h2 id="faq">Frequently asked questions</h2>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>What is the most effective therapy for anxiety?</h3>
+          <p>
+            CBT has the strongest overall evidence base for anxiety disorders. ACT is equally
+            effective for many people, particularly generalised anxiety, and is often preferred
+            when thought-challenging feels artificial. Most anxiety psychologists use a combination
+            of approaches tailored to the individual. The quality and fit of the therapeutic
+            relationship matters as much as the specific model.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>How do I find a psychologist in Sydney who uses CBT for anxiety?</h3>
+          <p>
+            Most anxiety-specialising psychologists in Sydney use CBT as their primary or core
+            framework. Ask directly when you enquire: "Do you use CBT for anxiety? Are you also
+            trained in ACT?" Our <a href="/directory/">anxiety psychologist directory</a> includes
+            profile notes on each practitioner's approach where publicly stated.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Does Medicare cover anxiety therapy in Sydney?</h3>
+          <p>
+            Yes. With a GP referral (Mental Health Treatment Plan), Medicare rebates apply to
+            up to 10 psychology sessions per year. From 1 July 2025: $145.25 per session with
+            a clinical psychologist, $98.95 with a registered psychologist. The therapy type
+            does not affect eligibility.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Is EMDR effective for anxiety?</h3>
+          <p>
+            EMDR has strong evidence for PTSD and trauma-related presentations. For anxiety
+            disorders without a trauma basis, CBT and ACT have more evidence. For anxiety
+            that traces directly to traumatic experiences, EMDR may be highly relevant.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What is the difference between a psychologist and a therapist in Sydney?</h3>
+          <p>
+            "Psychologist" is a legally protected AHPRA title. "Therapist" is not protected and
+            can be used by anyone. Only AHPRA-registered psychologists can provide Medicare-rebatable
+            sessions under a Mental Health Treatment Plan. Our directory lists only AHPRA-registered
+            practitioners.
+          </p>
+        </div>
+      </div>
+
+      <div class="cta-box" style="margin-top: 2rem;">
+        <h3>Find an anxiety psychologist in Sydney</h3>
+        <p>
+          Our directory lists AHPRA-registered psychologists in Sydney who specialise in anxiety.
+          All practitioners offer telehealth sessions; many also have in-person availability.
+        </p>
+        <a href="/directory/" class="btn-primary">Browse the directory</a>
+      </div>
+
+      <div class="source-box" style="margin-top: 2.5rem;">
+        <strong>Primary sources and references</strong>
+        <ul>
+          <li>
+            <a href="https://www.aps.edu.au/publications/evidence-based-psychological-interventions" target="_blank" rel="noopener">
+              Australian Psychological Society: Evidence-based psychological interventions in the treatment of mental disorders
+            </a>
+          </li>
+          <li>
+            Shaker NR, et al. (2023). Effectiveness of telehealth cognitive behavioural therapy for anxiety disorders: a systematic review. JMIR Mental Health. DOI: 10.2196/43218
+          </li>
+          <li>
+            Bai Z, et al. (2020). Acceptance and Commitment Therapy (ACT) to reduce depression: a systematic review and meta-analysis. Journal of Affective Disorders. 260:728-737.
+          </li>
+          <li>
+            <a href="https://www.nice.org.uk/guidance/cg113" target="_blank" rel="noopener">
+              NICE CG113: Generalised anxiety disorder and panic disorder in adults
+            </a>
+          </li>
+          <li>
+            <a href="https://www.mbsonline.gov.au" target="_blank" rel="noopener">
+              Medicare Benefits Schedule: psychological therapy items
+            </a>
+          </li>
+          <li>
+            <a href="https://www.ahpra.gov.au" target="_blank" rel="noopener">
+              AHPRA: Psychology Board of Australia
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</Base>

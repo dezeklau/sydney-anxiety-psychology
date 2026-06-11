@@ -1,6 +1,6 @@
 # Metrics: anxiety-sydney
-# Last updated: 2026-06-11 (1040 cycle -- GSC 2c/62i/CTR3.23%/pos42.5; directory 47i/1c; IDEA-050 editorial section added to directory)
-# Status: LIVE -- 2 clicks (directory + bulk-billing/bondi-junction); 62 impressions; CTR 3.23% (at validation level but volume too low); 86 pages
+# Last updated: 2026-06-11 (session 37 -- new guide: eastern-suburbs; IndexNow submitted; 104 pages)
+# Status: LIVE -- 2 clicks (directory + bulk-billing/bondi-junction); 62 impressions; CTR 3.23% (at validation level but volume too low); 104 pages
 
 ---
 
