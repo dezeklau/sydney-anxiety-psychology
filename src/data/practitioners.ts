@@ -603,6 +603,299 @@ export const practitioners: Practitioner[] = [
     publicEmail: null,
     website: "https://www.psychmatters.com.au",
     bookingUrl: null
+  },
+  // --- Added 2026-06-11 (Halaxy-sourced, Derek-approved batch) ---
+  // AHPRA verified this run via AHPRA public register (ahpra.gov.au).
+  // registrationType set to "clinical_psychologist" only where AHPRA shows "Approved area of practice - clinical psychology".
+  // No contact details (phone/email/address) from Halaxy are published. Suburb from AHPRA register (authoritative).
+  {
+    slug: "carol-manns-psychologist-wollongong",
+    name: "Carol Manns",
+    // AHPRA PSY0001306484: Registered, Endorsements: clinical psychology + forensic psychology. Verified 2026-06-11.
+    registrationType: "clinical_psychologist",
+    suburb: "Wollongong",
+    specialties: ["Anxiety", "Depression", "Phobias", "Trauma", "Stress management"],
+    unclaimed: true,
+    source: "https://www.halaxy.com/profile/carol-manns/psychologist/490551",
+    yearsExperience: 19,
+    bio: "Carol Manns is a clinical psychologist (PSY0001306484) practising in Wollongong, NSW, and offering telehealth sessions. With clinical and forensic psychology endorsements and over 19 years of experience, she works with adults experiencing anxiety, depression, phobias, trauma, and stress-related difficulties. Contact the practice to confirm current availability and Medicare billing arrangements.",
+    photoUrl: null,
+    pricing: null,
+    publicEmail: null,
+    website: null,
+    bookingUrl: null
+  },
+  {
+    slug: "susannah-kindred-psychologist-st-leonards",
+    name: "Susannah Kindred",
+    // AHPRA PSY0001816624: Registered, Endorsement: clinical psychology. Verified 2026-06-11.
+    registrationType: "clinical_psychologist",
+    suburb: "St Leonards",
+    specialties: ["Anxiety", "Social anxiety", "Depression", "Stress", "Life transitions"],
+    unclaimed: true,
+    source: "https://www.halaxy.com/profile/susannah-kindred/psychologist/506011",
+    yearsExperience: 13,
+    bio: "Susannah Kindred is a clinical psychologist (PSY0001816624) practising at Kind in Mind in St Leonards, Sydney. She works with adults and young people experiencing anxiety, social anxiety, depression, and the challenges of life transitions. Sessions are available via telehealth. Contact the practice to confirm current availability and Medicare billing arrangements.",
+    photoUrl: null,
+    pricing: null,
+    publicEmail: null,
+    website: null,
+    bookingUrl: null
+  },
+  {
+    slug: "hurryat-faniad-psychologist-auburn",
+    name: "Hurryat Faniad",
+    // AHPRA PSY0001982961: Registered, Endorsements: None (self-claimed clinical on Halaxy — NOT AHPRA-endorsed; title downgraded). Verified 2026-06-11.
+    registrationType: "registered_psychologist",
+    suburb: "Auburn",
+    specialties: ["Anxiety", "Depression", "Stress management", "Multicultural communities"],
+    unclaimed: true,
+    source: "https://www.halaxy.com/profile/hurryat-faniad/psychologist/506381",
+    yearsExperience: null,
+    bio: "Hurryat Faniad is a registered psychologist (PSY0001982961) practising in Auburn (Parramatta area), Sydney. He works with adults experiencing anxiety, depression, and stress, with a background serving multicultural communities. He speaks Hindi in addition to English. Contact the practice to confirm current availability and Medicare billing arrangements.",
+    photoUrl: null,
+    pricing: null,
+    publicEmail: null,
+    website: null,
+    bookingUrl: null
+  },
+  {
+    slug: "milica-kecmanovic-psychologist-waterloo",
+    name: "Dr Milica Kecmanovic",
+    // AHPRA PSY0002034402: Registered, Endorsement: clinical psychology. Verified 2026-06-11.
+    registrationType: "clinical_psychologist",
+    suburb: "Waterloo",
+    specialties: ["Anxiety", "Phobias", "Depression", "Trauma", "Stress"],
+    unclaimed: true,
+    source: "https://www.halaxy.com/profile/dr-milica-kecmanovic/psychologist/514661",
+    yearsExperience: 10,
+    bio: "Dr Milica Kecmanovic is a clinical psychologist (PSY0002034402) practising in Waterloo, Sydney. She works with adults experiencing anxiety, phobias, depression, trauma, and stress-related difficulties using evidence-based approaches. 'Dr' reflects her doctorate in psychology (not a medical degree). Contact the practice to confirm current availability and Medicare billing arrangements.",
+    photoUrl: null,
+    pricing: null,
+    publicEmail: null,
+    website: null,
+    bookingUrl: null
+  },
+  {
+    slug: "michelle-harvey-psychologist-killara",
+    name: "Michelle Harvey",
+    // AHPRA PSY0002035460: Registered, Endorsements: None (self-claimed clinical on Halaxy — NOT AHPRA-endorsed; title downgraded). Verified 2026-06-11.
+    registrationType: "registered_psychologist",
+    suburb: "Killara",
+    specialties: ["Anxiety", "Depression", "Stress management", "Life transitions", "Workers compensation"],
+    unclaimed: true,
+    source: "https://www.halaxy.com/profile/michelle-harvey/psychologist/515841",
+    yearsExperience: null,
+    bio: "Michelle Harvey is a registered psychologist (PSY0002035460) practising in Killara on Sydney's upper North Shore. She works with adults experiencing anxiety, depression, and stress, and has experience with workplace-related psychological presentations. Contact the practice to confirm current availability, Medicare billing, and workers compensation arrangements.",
+    photoUrl: null,
+    pricing: null,
+    publicEmail: null,
+    website: null,
+    bookingUrl: null
+  },
+  {
+    slug: "ewa-nowinska-psychologist-kirribilli",
+    name: "Ewa Nowinska",
+    // AHPRA PSY0002038211: Registered, Endorsements: None. Verified 2026-06-11.
+    registrationType: "registered_psychologist",
+    suburb: "Kirribilli",
+    specialties: ["Anxiety", "Depression", "Trauma", "Stress", "Life transitions"],
+    unclaimed: true,
+    source: "https://www.halaxy.com/profile/ewa-nowinska/psychologist/521951",
+    yearsExperience: null,
+    bio: "Ewa Nowinska is a registered psychologist (PSY0002038211) practising in Kirribilli, Sydney. She works with adults experiencing anxiety, depression, and stress-related concerns, drawing on her European postgraduate training. She speaks Polish in addition to English. Contact the practice to confirm current availability, telehealth options, and Medicare billing arrangements.",
+    photoUrl: null,
+    pricing: null,
+    publicEmail: null,
+    website: null,
+    bookingUrl: null
+  },
+  {
+    slug: "janene-england-psychologist-terrigal",
+    name: "Janene England",
+    // AHPRA PSY0001020280: Registered, Endorsement: clinical psychology. Verified 2026-06-11.
+    registrationType: "clinical_psychologist",
+    suburb: "Terrigal",
+    specialties: ["Anxiety", "OCD", "Depression", "Stress", "Life transitions"],
+    unclaimed: true,
+    source: "https://www.halaxy.com/profile/janene-england/psychologist/543731",
+    yearsExperience: 20,
+    bio: "Janene England is a clinical psychologist (PSY0001020280) with over 20 years of experience, practising in Terrigal on the NSW Central Coast. She works with adults and adolescents experiencing anxiety, OCD, depression, and stress-related difficulties. Telehealth sessions are available across NSW. Contact the practice to confirm current availability and Medicare billing arrangements.",
+    photoUrl: null,
+    pricing: null,
+    publicEmail: null,
+    website: null,
+    bookingUrl: null
+  },
+  {
+    slug: "mitchell-jordan-psychologist-warners-bay",
+    name: "Mitchell Jordan",
+    // AHPRA PSY0001906342: Registered, Endorsements: None. Verified 2026-06-11.
+    registrationType: "registered_psychologist",
+    suburb: "Warners Bay",
+    specialties: ["Anxiety", "Social anxiety", "OCD", "Specific phobias", "Depression"],
+    unclaimed: true,
+    source: "https://www.halaxy.com/profile/mr-mitchell-jordan/psychologist/544491",
+    yearsExperience: null,
+    bio: "Mitchell Jordan is a registered psychologist (PSY0001906342) practising in Warners Bay, NSW. He works with adults experiencing anxiety, social anxiety, OCD, specific phobias, and depression. Telehealth sessions are available. Contact the practice to confirm current availability and Medicare billing arrangements.",
+    photoUrl: null,
+    pricing: null,
+    publicEmail: null,
+    website: null,
+    bookingUrl: null
+  },
+  {
+    slug: "lauren-templeman-psychologist-kellyville-ridge",
+    name: "Lauren Templeman",
+    // AHPRA PSY0001271594: Registered, Endorsements: None (self-claimed clinical on Halaxy — NOT AHPRA-endorsed; title downgraded). Verified 2026-06-11.
+    registrationType: "registered_psychologist",
+    suburb: "Kellyville Ridge",
+    specialties: ["Anxiety", "Panic disorder", "OCD", "Depression", "Stress"],
+    unclaimed: true,
+    source: "https://www.halaxy.com/profile/lauren-templeman/psychologist/546431",
+    yearsExperience: null,
+    bio: "Lauren Templeman is a registered psychologist (PSY0001271594) practising in Kellyville Ridge in Sydney's north-west. She works with adults and young people experiencing anxiety, panic disorder, OCD, and depression. Online sessions are available. Contact the practice to confirm current availability and Medicare billing arrangements.",
+    photoUrl: null,
+    pricing: null,
+    publicEmail: null,
+    website: null,
+    bookingUrl: null
+  },
+  {
+    slug: "kristiina-jacobs-psychologist-leichhardt",
+    name: "Kristiina Jacobs",
+    // AHPRA PSY0001311810: Registered, Endorsements: None (self-claimed clinical on Halaxy — NOT AHPRA-endorsed; title downgraded). Verified 2026-06-11.
+    registrationType: "registered_psychologist",
+    suburb: "Leichhardt",
+    specialties: ["Anxiety", "Depression", "Stress management", "Life transitions", "Trauma"],
+    unclaimed: true,
+    source: "https://www.halaxy.com/profile/mrs-kristiina-jacobs/psychologist/549331",
+    yearsExperience: 25,
+    bio: "Kristiina Jacobs is a registered psychologist (PSY0001311810) with over 25 years of experience, practising in Leichhardt in Sydney's inner west. She works with adults experiencing anxiety, depression, trauma, and the challenges of life transitions. Her background includes clinical psychology training from South Africa. Contact the practice to confirm current availability and Medicare billing arrangements.",
+    photoUrl: null,
+    pricing: null,
+    publicEmail: null,
+    website: null,
+    bookingUrl: null
+  },
+  {
+    slug: "madeleine-clark-psychologist-westmead",
+    name: "Madeleine Clark",
+    // AHPRA PSY0002176494: Registered, Endorsement: clinical psychology. Verified 2026-06-11.
+    registrationType: "clinical_psychologist",
+    suburb: "Westmead",
+    specialties: ["Anxiety", "OCD", "Depression", "Stress", "Life transitions"],
+    unclaimed: true,
+    source: "https://www.halaxy.com/profile/madeleine-clark/psychologist/549381",
+    yearsExperience: 8,
+    bio: "Madeleine Clark is a clinical psychologist (PSY0002176494) practising in Westmead, Sydney. She works with adults experiencing anxiety, OCD, depression, and stress-related difficulties using evidence-based approaches. Telehealth sessions are available. Contact the practice to confirm current availability and Medicare billing arrangements.",
+    photoUrl: null,
+    pricing: null,
+    publicEmail: null,
+    website: null,
+    bookingUrl: null
+  },
+  {
+    slug: "janine-taylor-psychologist-castle-hill",
+    name: "Janine Taylor",
+    // AHPRA PSY0002320647: Registered, Endorsements: None. Verified 2026-06-11.
+    registrationType: "registered_psychologist",
+    suburb: "Castle Hill",
+    specialties: ["Anxiety", "Depression", "Stress management", "Life transitions"],
+    unclaimed: true,
+    source: "https://www.halaxy.com/profile/ms-janine-taylor/psychologist/552821",
+    yearsExperience: null,
+    bio: "Janine Taylor is a registered psychologist (PSY0002320647) practising in Castle Hill in Sydney's north-west. She works with adults experiencing anxiety, depression, and stress, drawing on her South African training background. She speaks Afrikaans in addition to English. Contact the practice to confirm current availability and Medicare billing arrangements.",
+    photoUrl: null,
+    pricing: null,
+    publicEmail: null,
+    website: null,
+    bookingUrl: null
+  },
+  {
+    slug: "dominic-oen-psychologist-bankstown",
+    name: "Dominic Oen",
+    // AHPRA PSY0002032081: Registered, Endorsement: clinical psychology. Verified 2026-06-11.
+    registrationType: "clinical_psychologist",
+    suburb: "Bankstown",
+    specialties: ["Anxiety", "Depression", "Stress", "Trauma", "Life transitions"],
+    unclaimed: true,
+    source: "https://www.halaxy.com/profile/dominic-oen/psychologist/555281",
+    yearsExperience: 10,
+    bio: "Dominic Oen is a clinical psychologist (PSY0002032081) practising in Bankstown, Sydney. He works with adults experiencing anxiety, depression, trauma, and stress-related difficulties using evidence-based methods. Telehealth sessions are available. Contact the practice to confirm current availability and Medicare billing arrangements.",
+    photoUrl: null,
+    pricing: null,
+    publicEmail: null,
+    website: null,
+    bookingUrl: null
+  },
+  {
+    slug: "anna-simpson-psychologist-erina",
+    name: "Anna Simpson",
+    // AHPRA PSY0001409654: Registered, Endorsement: clinical psychology. Verified 2026-06-11.
+    registrationType: "clinical_psychologist",
+    suburb: "Erina",
+    specialties: ["Anxiety", "Depression", "Trauma", "Stress", "Life transitions"],
+    unclaimed: true,
+    source: "https://www.halaxy.com/profile/mrs-anna-simpson/psychologist/564121",
+    yearsExperience: 16,
+    bio: "Anna Simpson is a clinical psychologist (PSY0001409654) practising in Erina on the NSW Central Coast, with telehealth sessions available across NSW. She works with adults experiencing anxiety, depression, trauma, and stress-related concerns. Contact the practice to confirm current availability, telehealth options, and Medicare billing arrangements.",
+    photoUrl: null,
+    pricing: null,
+    publicEmail: null,
+    website: null,
+    bookingUrl: null
+  },
+  {
+    slug: "narissa-fry-psychologist-erina",
+    name: "Narissa Fry",
+    // AHPRA PSY0002266999: Registered, Endorsements: None (self-claimed clinical on Halaxy — NOT AHPRA-endorsed; title downgraded). Verified 2026-06-11.
+    registrationType: "registered_psychologist",
+    suburb: "Erina",
+    specialties: ["Anxiety", "OCD", "Depression", "Stress management"],
+    unclaimed: true,
+    source: "https://www.halaxy.com/profile/narissa-fry/psychologist/564771",
+    yearsExperience: null,
+    bio: "Narissa Fry is a registered psychologist (PSY0002266999) practising in Erina on the NSW Central Coast. She works with adults and young people experiencing anxiety, OCD, and depression. Telehealth sessions are available across NSW. Contact the practice to confirm current availability and Medicare billing arrangements.",
+    photoUrl: null,
+    pricing: null,
+    publicEmail: null,
+    website: null,
+    bookingUrl: null
+  },
+  {
+    slug: "saima-ali-psychologist-bankstown",
+    name: "Saima Ali",
+    // AHPRA PSY0001915196: Registered, Endorsements: None. Verified 2026-06-11.
+    registrationType: "registered_psychologist",
+    suburb: "Bankstown",
+    specialties: ["Anxiety", "Specific phobias", "Depression", "Stress management"],
+    unclaimed: true,
+    source: "https://www.halaxy.com/profile/mrs-saima-ali/psychologist/573511",
+    yearsExperience: null,
+    bio: "Saima Ali is a registered psychologist (PSY0001915196) practising in Bankstown, Sydney. She works with adults experiencing anxiety, specific phobias, depression, and stress-related difficulties. Contact the practice to confirm current availability, telehealth options, and Medicare billing arrangements.",
+    photoUrl: null,
+    pricing: null,
+    publicEmail: null,
+    website: null,
+    bookingUrl: null
+  },
+  {
+    slug: "joyce-ong-psychologist-north-ryde",
+    name: "Joyce Ong",
+    // AHPRA PSY0001815452: Registered, Endorsement: clinical psychology. Verified 2026-06-11.
+    registrationType: "clinical_psychologist",
+    suburb: "North Ryde",
+    specialties: ["Anxiety", "Depression", "Stress management", "Life transitions", "Trauma"],
+    unclaimed: true,
+    source: "https://www.halaxy.com/profile/ms-joyce-ong/psychologist/582031",
+    yearsExperience: 13,
+    bio: "Joyce Ong is a clinical psychologist (PSY0001815452) practising in North Ryde, Sydney. She works with adults experiencing anxiety, depression, trauma, and stress-related difficulties using evidence-based approaches. Telehealth sessions are available. Contact the practice to confirm current availability and Medicare billing arrangements.",
+    photoUrl: null,
+    pricing: null,
+    publicEmail: null,
+    website: null,
+    bookingUrl: null
   }
 ];
 
