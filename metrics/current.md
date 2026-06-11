@@ -1,6 +1,6 @@
 # Metrics: anxiety-sydney
-# Last updated: 2026-06-06 (1930 cycle — 4 FAQ pages added; 82 pages total)
-# Status: LIVE — homepage + /directory/ + /guides/ indexed; interior guides/find pages still unknown or discovered
+# Last updated: 2026-06-11 (1040 cycle -- GSC 2c/62i/CTR3.23%/pos42.5; directory 47i/1c; IDEA-050 editorial section added to directory)
+# Status: LIVE -- 2 clicks (directory + bulk-billing/bondi-junction); 62 impressions; CTR 3.23% (at validation level but volume too low); 86 pages
 
 ---
 
@@ -17,105 +17,53 @@
 - GitHub repo: https://github.com/dezeklau/sydney-anxiety-psychology
 - Vercel: CONNECTED — auto-deploys from GitHub main
 - DNS: POINTING TO VERCEL
-- GSC: CONNECTED — sitemap submitted (66 submitted per sitemap API; sitemap coverage count shows 0 indexed due to GSC lag — URL inspection is authoritative)
+- GSC: CONNECTED — sitemap submitted; multiple pages indexed
 - Plausible: CONNECTED — script live in Base.astro
-- Pages built: 82 (as of 2026-06-06 1930 cycle — added /faq/ section: index + 4 FAQ pages)
-- Pages indexed (via URL inspection, confirmed): 3 — homepage, /directory/, /guides/
-
-### Pages by section (76 total)
-- Homepage: 1
-- Directory: 1 index + 34 practitioner profiles = 35
-- Guides: 1 index + 14 guides = 15
-- Tools: 1 index + 2 tool pages = 3
-- Find (suburb pages): 9
-- Connect: 2 (form + thank-you)
-- For Psychologists: 2 (form + thank-you)
-- About: 1
-- Listing Removal: 1
-- Privacy: 1
+- Pages built: 86
 
 ---
 
 ## Acquisition (organic)
-| Metric | 7d | 30d | Target (Week 4) |
-|--------|-----|-----|-----------------|
-| Organic sessions/day | 0 | 0 | >5 |
-| Top landing pages | — | — | — |
-| Top GSC queries | — | — | — |
-| GSC impressions/day | 0 | 0 | >50 |
-| GSC average position | — | — | <50 |
+| Metric | Current (window ~2026-05-11..2026-06-08) | Target |
+|--------|-----|------|
+| Clicks | 2 total | ≥10/day |
+| Impressions | 62 | >500/day |
+| CTR | 3.23% | >3% (at level) |
+| avg position | 42.5 | <20 |
 
-NOTE: GSC shows 0 impressions/clicks (window 2026-05-05..2026-06-02, 28d). Data still processing — pages only indexed 2026-06-05. No organic impressions expected until Google shows pages in SERPs post-crawl.
+### Top pages (by impressions)
+| Page | Impressions | Clicks |
+|------|------------|--------|
+| /directory/ | 47 | 1 |
+| /guides/bulk-billing-psychologist-sydney/ | 59 | 1 |
+| /find/anxiety-psychologist-bondi-junction-sydney/ | 23 | 1 |
+| / (homepage) | 16 | 0 |
+| /guides/ | 7 | 0 |
+| /guides/social-anxiety-telehealth-psychologist-sydney/ | 9 | 0 |
 
----
-
-## Engagement (Plausible, 30d)
-| Metric | Current | Target |
-|--------|---------|--------|
-| Visitors | 11 (all direct — internal/testing) | — |
-| Pageviews | 54 | — |
-| Bounce rate | 40% | <70% |
-| Avg visit duration | 82s | >90s |
-
-NOTE: All traffic is direct/none. No organic sessions yet.
-
----
-
-## Conversion (Plausible Goals, 30d)
-| Goal | Events | Unique Visitors |
-|------|--------|-----------------|
-| Outbound Link: Click | 3 | 3 |
-| Hero CTA | 2 | 2 |
-| Mid-page CTA | 1 | 1 |
-| Profile – book direct | 1 | 1 |
-| Book CTA clicks/day | ~0.07 | ≥10 (validation) |
-| Page→Book CTR | — | >3% (validation) |
+### Top queries
+- "bulk billing psychologist mental health plan" — 1c/1i, pos 16.0
+- "jessica budge" (practitioner name) — 1c/3i, pos 6.0
+- "anxiety psychologist sydney" — 0c/21i, pos 53.8 (KEY: highest volume, not yet clicking)
+- "anxiety counselling sydney" — 0c/3i, pos 52.3
+- "anxiety therapy bondi junction" — 0c/5i, pos 31.8
+- "anxiety treatment bondi junction" — 0c/4i, pos 29.5
 
 ---
 
-## Rankings (top tracked keywords)
-| Keyword | Position | WoW change | Date first checked |
-|---------|----------|------------|-------------------|
-| telehealth psychologist anxiety Sydney | — | — | — |
-| anxiety psychologist Sydney Medicare | — | — | — |
-| online psychologist anxiety Sydney | — | — | — |
-| generalised anxiety disorder psychologist Sydney | — | — | — |
-| anxiety psychologist Bondi Junction Sydney | — | — | — |
-| anxiety psychologist North Sydney | — | — | — |
+## Plausible (30d)
+- 34 visitors, 95 pageviews, bounce 65%, avg visit 36s
+- All traffic currently direct (no organic sessions yet in Plausible)
+- Goals: Outbound Link: Click (3), Hero CTA (2), Mid-page CTA (1), Profile book direct (1)
 
 ---
 
-## Indexation (GSC URL Inspection, 2026-06-05)
+## What's happening
+- CTR at 3.23% is at validation threshold but total clicks are only 2 in the 4-week window (way too low for 10/day)
+- Binding constraint: external authority (zero backlinks). Positions need to move from avg 42.5 to avg <20 before click volume will grow.
+- "anxiety psychologist sydney" at pos 53.8 with 21 impressions -- this is the primary commercial query. If positions improve to pos 15-20, this alone could contribute multiple clicks/day.
+- IDEA-050 (directory editorial section) added this cycle: adds ~350 words of informational content to directory page to improve match with informational/commercial blend of 'anxiety psychologist sydney' query.
 
-### Priority pages — full crawl status
-| URL | Verdict | Coverage state | Last crawled |
-|-----|---------|---------------|-------------|
-| / (homepage) | PASS | Submitted and indexed | 2026-06-03 |
-| /directory/ | PASS | Submitted and indexed | 2026-06-05 |
-| /guides/ | PASS | Submitted and indexed | 2026-06-05 |
-| /guides/telehealth-anxiety-psychology-sydney/ | NEUTRAL | URL is unknown to Google | never |
-| /guides/how-much-does-a-psychologist-cost-sydney/ | NEUTRAL | URL is unknown to Google | never |
-| /guides/medicare-psychology-data-australia/ | NEUTRAL | Discovered - currently not indexed | never |
-| /find/anxiety-psychologist-north-sydney/ | NEUTRAL | URL is unknown to Google | never |
-| /find/anxiety-psychologist-bondi-junction/ | NEUTRAL | URL is unknown to Google | never |
-
-### vs 2026-06-04 baseline
-| URL | 2026-06-04 status | 2026-06-05 status | Change |
-|-----|------------------|------------------|--------|
-| / | Submitted and indexed | Submitted and indexed | no change |
-| /directory/ | Discovered - currently not indexed | **Submitted and indexed** | IMPROVED |
-| /guides/ | Discovered - currently not indexed | **Submitted and indexed** | IMPROVED |
-| /guides/how-much-does-a-psychologist-cost-sydney/ | Unknown to Google | Unknown to Google | no change |
-| /find/anxiety-psychologist-north-sydney/ | Unknown to Google | Unknown to Google | no change |
-
-### Summary
-| Pages submitted (sitemap) | Pages confirmed indexed (URL inspection) | Last checked |
-|--------------------------|------------------------------------------|-------------|
-| 66 | 3 (/; /directory/; /guides/) | 2026-06-05 |
-
-- /directory/ and /guides/ newly indexed since 2026-06-04 — first movement on interior pages.
-- Interior guides and suburb find pages still unknown/discovered — need external link signal to push crawl budget deeper.
-- Sitemap downloaded by Google: 2026-06-05 01:37 UTC (was 2026-06-04 23:58 UTC for the most recent download before this).
-- IndexNow submitted 2026-06-05: 73 URLs (anxiety site, Session 34).
-
----
+## Rechecks
+- 2026-06-25: Did 'anxiety psychologist sydney' position improve? (IDEA-050 impact)
+- 2026-06-23: Did directory page start receiving more clicks? (IDEA-037 meta CTR + IDEA-050)

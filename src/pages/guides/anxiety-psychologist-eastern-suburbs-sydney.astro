@@ -1,0 +1,220 @@
+---
+import Base from '../../layouts/Base.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "headline": "Finding an Anxiety Psychologist in Sydney's Eastern Suburbs",
+  "description": "A guide for eastern suburbs Sydney residents seeking a psychologist for anxiety. Covers Bondi Junction, Edgecliff, Randwick, Coogee, Vaucluse, and Rose Bay — telehealth options, Medicare pathways, and what to look for in a practitioner.",
+  "datePublished": "2026-06-11",
+  "dateModified": "2026-06-11",
+  "author": {
+    "@type": "Organization",
+    "name": "Sydney Anxiety Psychology"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Sydney Anxiety Psychology",
+    "url": "https://sydneyanxietypsychology.com.au"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://sydneyanxietypsychology.com.au/guides/anxiety-psychologist-eastern-suburbs-sydney/"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I need to find a psychologist physically located in the eastern suburbs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Telehealth psychology — delivered via video — is available from any registered psychologist in NSW, regardless of where they are based. The Medicare rebate is identical for telehealth and in-person sessions (from 1 July 2025: $145.25 with an endorsed clinical psychologist; $98.95 with a registered psychologist). Whether you live in Bondi Junction, Randwick, Coogee, Rose Bay, or Vaucluse, you can access a practitioner based anywhere in NSW via telehealth. That said, our directory does include practitioners with practices in Bondi Junction and Edgecliff who may also offer in-person appointments."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is telehealth psychology effective for anxiety?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, for most people. A 2023 systematic review published in JMIR Mental Health (Shaker et al.) found that telehealth CBT produced outcomes for anxiety disorders comparable to in-person delivery across multiple measures including anxiety symptom severity and quality of life. The therapeutic techniques that make CBT and ACT effective — structured exposure, cognitive restructuring, behavioural activation, skills practice — translate fully to a video session. Some people prefer in-person for reasons of comfort or specific clinical need; that option is also available from eastern suburbs practitioners."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What Medicare rebate applies for psychology sessions in the eastern suburbs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "With a Mental Health Treatment Plan (MHTP) from your GP, you can claim Medicare rebates on up to 10 psychology sessions per calendar year. From 1 July 2025, the rebate is $145.25 per session for an endorsed clinical psychologist, or $98.95 for a registered psychologist (Medicare Benefits Schedule). Sydney's eastern suburbs typically have higher consultation fees than some other areas — $250 to $320 per session is common for private practices in Bondi Junction, Edgecliff, and Randwick. The out-of-pocket gap after the rebate usually falls between $105 and $175. Telehealth sessions attract the same rebate as in-person sessions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a psychologist and a counsellor for anxiety in the eastern suburbs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A psychologist is AHPRA-registered and holds a minimum five-year sequence of accredited training. Registration is legally protected — only those on the AHPRA register may call themselves psychologists. A counsellor is not a regulated title in Australia; counsellors vary widely in training and qualifications. Critically, only AHPRA-registered psychologists can bill Medicare under a Mental Health Treatment Plan. If Medicare rebates matter to you — and for most people they do — you need a psychologist, not a counsellor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long is the typical wait for an anxiety psychologist in the eastern suburbs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wait times at in-person practices in the eastern suburbs — particularly in Bondi Junction and Randwick — are typically four to ten weeks for new patients. This reflects the eastern suburbs' combination of high demand, a demographic that is particularly likely to seek mental health support, and a limited number of practices relative to the population. Telehealth substantially changes this: a practitioner based in Parramatta or the Northern Beaches who offers telehealth may have availability within the week. If you want to be seen quickly, including telehealth-only practitioners in your search widens the pool significantly."
+      }
+    }
+  ]
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sydneyanxietypsychology.com.au/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://sydneyanxietypsychology.com.au/guides/" },
+    { "@type": "ListItem", "position": 3, "name": "Anxiety Psychologist Eastern Suburbs Sydney", "item": "https://sydneyanxietypsychology.com.au/guides/anxiety-psychologist-eastern-suburbs-sydney/" },
+  ]
+};
+---
+<Base
+  title="Anxiety Psychologist Eastern Suburbs Sydney | Telehealth & In-Person Guide"
+  description="Guide for eastern suburbs Sydney residents (Bondi Junction, Edgecliff, Randwick, Coogee, Rose Bay) seeking a psychologist for anxiety. Telehealth, Medicare rebates, and how to find the right practitioner."
+  schema={[articleSchema, faqSchema, breadcrumbSchema]}
+>
+  <div class="main-content">
+    <div class="container">
+
+      <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 1.5rem;">
+        <a href="/">Home</a> &rsaquo; <a href="/guides/">Guides</a> &rsaquo; Anxiety Psychologist Eastern Suburbs Sydney
+      </p>
+
+      <h1>Finding an Anxiety Psychologist in Sydney's Eastern Suburbs</h1>
+      <AuthorByline dateModified="June 2026" />
+      <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 2rem;">Last reviewed: June 2026 &bull; Sources: Shaker et al. (2023) JMIR Mental Health; Medicare Benefits Schedule (effective 1 July 2025)</p>
+
+      <!-- GEO ANSWER BLOCK -->
+      <div style="background: #f0f4ff; border-left: 4px solid var(--color-accent); border-radius: 0 var(--radius) var(--radius) 0; padding: 1.25rem 1.5rem; margin-bottom: 2rem;">
+        <p style="margin: 0; font-size: 1rem; line-height: 1.7;"><strong>The short answer:</strong> If you live in Bondi Junction, Edgecliff, Randwick, Coogee, Rose Bay, Vaucluse, or a surrounding eastern suburb and are looking for a psychologist for anxiety, you have both in-person options at local practices and telehealth access to the full cohort of registered psychologists across NSW — with the same Medicare rebate either way. Our directory includes practitioners with practices in Bondi Junction and Edgecliff specifically.</p>
+      </div>
+
+      <p>Sydney's eastern suburbs — from the CBD-adjacent neighbourhoods of Edgecliff, Double Bay, and Woollahra, through Bondi Junction and Randwick, to the beachside suburbs of Bondi, Coogee, and Bronte, and the clifftop suburbs of Vaucluse, Rose Bay, and Watsons Bay — form one of Sydney's most densely populated coastal corridors. The area has a mix of younger professionals, families, long-term residents, and recent arrivals; a strong café and social culture; and a high level of health literacy. It also has, consistently, some of the longer waiting lists for psychology in metropolitan Sydney.</p>
+
+      <p>This guide explains how to find a psychologist for anxiety in the eastern suburbs, what the wait times look like, how Medicare works, and why telehealth is often the more practical first step even for people who prefer in-person care eventually.</p>
+
+      <div class="info-box" style="background: #f0f9ff; border-left-color: #0284c7;">
+        <p><strong>This is an information resource, not clinical advice.</strong> If you are in crisis, contact Lifeline (13 11 14), Beyond Blue (1300 22 4636), or 13YARN (13 92 76). This directory does not provide clinical services. For help finding a practitioner, see our <a href="/directory/">directory</a>.</p>
+      </div>
+
+      <h2 id="eastern-suburbs-options">Your options for anxiety psychology in the eastern suburbs</h2>
+
+      <p>Residents of the eastern suburbs have three broad pathways to a psychologist for anxiety:</p>
+
+      <h3>In-person practices in the eastern suburbs</h3>
+      <p>A number of psychology practices are based in Bondi Junction and Edgecliff, the two main commercial centres of the eastern suburbs. These practices offer in-person appointments, though new-patient availability tends to be limited. If you prefer in-person sessions from the start, you are most likely to find options in these two hubs rather than at smaller premises in the surrounding suburbs.</p>
+
+      <p>Randwick also has some psychology practices, often clustered near Prince of Wales Hospital and the UNSW campus — particularly relevant for students, hospital staff, and anyone already engaged with services in that precinct.</p>
+
+      <h3>Telehealth from eastern suburbs practitioners</h3>
+      <p>A number of psychologists based in Bondi Junction, Edgecliff, and Randwick also offer telehealth. This gives you the option of a practitioner who knows the area and may have familiarity with the demographic context, but who you can see by video rather than travelling in. This is the best of both worlds for many eastern suburbs residents: local knowledge, flexible scheduling.</p>
+
+      <h3>Telehealth from practitioners across NSW</h3>
+      <p>Because telehealth removes geography as a constraint, you can access the full pool of registered psychologists in NSW. A practitioner in Parramatta, the North Shore, or the Northern Beaches who offers telehealth and has anxiety as a specialty area is just as accessible to a Bondi Junction resident as a local practice. This matters particularly if you have a specific need: a particular therapeutic modality, a practitioner with experience in your cultural background, or an area of specialty (OCD, health anxiety, PTSD) where local supply is thin. The Medicare rebate is identical for telehealth and in-person sessions.</p>
+
+      <h2 id="wait-times">Wait times in the eastern suburbs</h2>
+
+      <p>In-person psychology in the eastern suburbs runs long wait times. New-patient waits of four to ten weeks are common at Bondi Junction and Edgecliff practices. This is not unusual across Sydney, but it does reflect the density of demand relative to supply in the area.</p>
+
+      <p>There are practical ways to reduce the time to your first appointment:</p>
+
+      <ul>
+        <li><strong>Include telehealth in your search</strong> — practitioners offering telehealth often have shorter waits because their effective patient pool is smaller (fewer people find them through local search) and their capacity is not constrained by room availability.</li>
+        <li><strong>Contact multiple practices at once</strong> — don't wait for one response before contacting others. Sending an enquiry to three or four practices simultaneously and taking the first available is far more effective than a sequential queue.</li>
+        <li><strong>Ask to be placed on a cancellation list</strong> — psychology practices often have cancellation slots they fill within a day or two of the appointment. Asking to be added gives you access to these.</li>
+        <li><strong>Be flexible on day and time</strong> — if you can accommodate morning, midday, or evening slots, your available options widen substantially.</li>
+      </ul>
+
+      <p>Our <a href="/guides/psychologist-waitlist-sydney/">waitlist guide</a> covers this in more detail.</p>
+
+      <h2 id="suburb-pages">Eastern suburbs finder pages</h2>
+
+      <p>Our directory includes practitioners with practices in the following eastern suburbs locations, each with their own finder page:</p>
+
+      <ul>
+        <li><a href="/find/anxiety-psychologist-bondi-junction-sydney/">Anxiety psychologist, Bondi Junction</a> — the largest concentration of eastern suburbs practitioners in our directory</li>
+        <li><a href="/find/anxiety-psychologist-edgecliff-sydney/">Anxiety psychologist, Edgecliff</a> — adjacent to Bondi Junction, strong in telehealth practitioners</li>
+        <li><a href="/find/anxiety-psychologist-zetland-sydney/">Anxiety psychologist, Zetland</a> — southern inner city, close to Randwick and Kingsford</li>
+      </ul>
+
+      <p>For Randwick, Coogee, Bronte, Bondi, Rose Bay, Vaucluse, and other eastern suburbs without their own finder page, telehealth practitioners from the full NSW pool are accessible. Filter the <a href="/directory/">main directory</a> by specialty — GAD, social anxiety, panic disorder, OCD, health anxiety, PTSD — to find practitioners who match your presentation.</p>
+
+      <h2 id="what-to-look-for">What to look for in an anxiety psychologist</h2>
+
+      <p>Anxiety is the most common reason people seek psychology in Australia. Most AHPRA-registered psychologists have training in anxiety presentations. When choosing, a few things are worth checking:</p>
+
+      <ul>
+        <li><strong>AHPRA registration status</strong>: Only AHPRA-registered psychologists can bill Medicare under a Mental Health Treatment Plan. You can verify any practitioner's registration at ahpra.gov.au. Our directory lists AHPRA registration for every practitioner.</li>
+        <li><strong>Anxiety listed as a specialty</strong>: Practitioners who list anxiety, GAD, panic disorder, OCD, social anxiety, or health anxiety in their profile have either specialty training or significant experience with these presentations.</li>
+        <li><strong>Therapeutic modality</strong>: CBT and ACT are the most widely researched approaches for anxiety. Schema therapy, EMDR (particularly for trauma-related anxiety), and mindfulness-based approaches may also be relevant depending on your presentation. Your GP can provide guidance if you are unsure which modality is most appropriate for your situation.</li>
+        <li><strong>Fee and gap</strong>: Sydney's eastern suburbs practices typically charge $250–$320 per session. The Medicare rebate (from 1 July 2025: $145.25 for a clinical psychologist, $98.95 for a registered psychologist) leaves an out-of-pocket gap. Confirm the gap before booking.</li>
+        <li><strong>Psychologist vs counsellor</strong>: In the eastern suburbs, as elsewhere in Sydney, there are many counsellors and therapists alongside registered psychologists. Only psychologists can bill Medicare. If Medicare rebates matter to you, confirm AHPRA registration before booking.</li>
+      </ul>
+
+      <h2 id="medicare-pathway">The Medicare pathway for eastern suburbs residents</h2>
+
+      <p>Access to psychology through Medicare works the same way regardless of your suburb. The pathway is:</p>
+
+      <ol>
+        <li>Book an appointment with any GP — including GPs in Bondi Junction, Randwick, Edgecliff, or any other eastern suburbs practice.</li>
+        <li>Ask for a Mental Health Treatment Plan (MHTP) assessment. Your GP assesses whether a plan is appropriate based on your symptoms. You don't need a formal diagnosis; describing how your anxiety is affecting your daily life is enough for your GP to make that assessment.</li>
+        <li>With an MHTP referral, you can claim Medicare on up to 10 psychology sessions per calendar year. Rebates from 1 July 2025: $145.25 for an endorsed clinical psychologist, $98.95 for a registered psychologist.</li>
+        <li>Book with a practitioner who accepts Mental Health Treatment Plan referrals. All practitioners in our directory who are AHPRA-registered accept MHTP referrals unless their profile notes otherwise.</li>
+      </ol>
+
+      <p>For a full explanation of the Mental Health Treatment Plan process, see our <a href="/guides/mental-health-care-plan-sydney/">MHTP guide</a>.</p>
+
+      <h2 id="cost-eastern-suburbs">What does a psychologist cost in the eastern suburbs?</h2>
+
+      <p>Psychology fees in Sydney's eastern suburbs tend to be at the higher end of the Sydney range, reflecting the area's cost profile. Private practice fees of $250 to $320 per session are typical in Bondi Junction, Edgecliff, and Randwick practices. Some practices in beachside suburbs (Bondi, Coogee) charge at the upper end of this range or above it.</p>
+
+      <p>After the Medicare rebate ($145.25 for an endorsed clinical psychologist, $98.95 for a registered psychologist), out-of-pocket costs in the eastern suburbs typically run:</p>
+
+      <ul>
+        <li><strong>With a clinical psychologist</strong>: $105–$175 per session gap payment</li>
+        <li><strong>With a registered psychologist</strong>: $151–$221 per session gap payment</li>
+      </ul>
+
+      <p>A small number of practices offer bulk-billing under a Mental Health Treatment Plan, with no out-of-pocket gap. These are limited and usually have longer wait times. Our <a href="/guides/bulk-billing-psychologist-sydney/">bulk-billing guide</a> covers who is eligible and how to find bulk-billing practitioners in Sydney.</p>
+
+      <p>Telehealth practitioners may charge fees comparable to or slightly lower than eastern suburbs in-person rates, particularly if they are based in lower-cost areas of Sydney. Because telehealth opens the field to all of NSW, you are more likely to find a practitioner whose fees fit your budget than if you restrict the search to the eastern suburbs alone.</p>
+
+      <h2 id="common-presentations">Common anxiety presentations in the eastern suburbs</h2>
+
+      <p>The eastern suburbs has particular demographic concentrations that correlate with specific anxiety presentations:</p>
+
+      <ul>
+        <li><strong>Generalised anxiety disorder (GAD)</strong>: Persistent, wide-ranging worry that is difficult to control. Very common in high-achieving professional environments. See our <a href="/guides/generalised-anxiety-disorder-telehealth-psychologist-sydney/">GAD guide</a>.</li>
+        <li><strong>Social anxiety</strong>: Anxiety in social and performance situations. The eastern suburbs' strong café culture, dense social networks, and appearance-focused subcultures can intensify social anxiety presentations. See our <a href="/guides/social-anxiety-telehealth-psychologist-sydney/">social anxiety guide</a>.</li>
+        <li><strong>Health anxiety</strong>: Preoccupation with illness, medical symptoms, or bodily sensations. Common across Sydney demographics. See our <a href="/guides/health-anxiety-telehealth-psychologist-sydney/">health anxiety guide</a>.</li>
+        <li><strong>Work-related anxiety</strong>: Anxiety arising from or significantly shaped by professional pressures. Particularly common in the eastern suburbs' large cohort of corporate, financial, and media professionals. See our <a href="/guides/work-related-anxiety-psychologist-sydney/">work-related anxiety guide</a>.</li>
+        <li><strong>Panic disorder</strong>: Recurring panic attacks with anticipatory anxiety. Responds well to evidence-based psychological treatment. See our <a href="/guides/panic-disorder-telehealth-psychologist-sydney/">panic disorder guide</a>.</li>
+        <li><strong>Anxiety with depression</strong>: Co-occurring anxiety and depression is the most common combined presentation. See our <a href="/guides/anxiety-depression-telehealth-psychologist-sydney/">anxiety and depression guide</a>.</li>
+      </ul>
+
+      <h2 id="how-to-start">How to get started</h2>
+
+      <p>The most reliable first step is to book with your GP and ask for a Mental Health Treatment Plan. Most eastern suburbs GPs are experienced with this process. You don't need to arrive with a self-diagnosis — describing how your anxiety is affecting your sleep, your relationships, your work, or your day-to-day life gives your GP the information they need to assess whether a plan is appropriate.</p>
+
+      <p>Once you have a referral, use our <a href="/directory/">directory</a> to browse practitioners who list anxiety as a specialty area, accept MHTP referrals, and offer telehealth. For eastern suburbs-specific options, the finder pages above cover Bondi Junction, Edgecliff, and Zetland.</p>
+
+      <div class="info-box">
+        <p><strong>Browse the directory.</strong> Our <a href="/directory/">directory of telehealth anxiety psychologists</a> includes practitioners who serve Sydney's eastern suburbs, with Medicare rebate information and specialty areas listed. <a href="/directory/">Find a practitioner &rarr;</a></p>
+      </div>
+
+    </div>
+  </div>
+</Base>
