@@ -294,8 +294,6 @@ const profilePageSchema = {
             <input type="hidden" name="_next" value="https://sydneyanxietypsychology.com.au/connect/thank-you/" />
             <input type="hidden" name="practitioner_slug" value={p.slug} />
             <input type="hidden" name="practitioner_name" value={p.name} />
-            <!-- Practitioner public email for forwarding (already public -- safe to expose) -->
-            <input type="hidden" name="practitioner_email" value={p.publicEmail || ""} />
             <!-- Honeypot -->
             <input type="text" name="_gotcha" style="display: none;" tabindex="-1" autocomplete="off" />
 
