@@ -101,6 +101,34 @@ export function getStaticPaths() {
 
 const { suburb, suburbPractitioners, nearbyLinks } = Astro.props as SuburbPageData;
 
+// Per-suburb FAQ data. Only defined for suburbs with strong GSC query signal.
+// Bondi Junction: "anxiety therapy bondi junction" pos 32 (6i), "anxiety treatment bondi junction" pos 29.5 (6i)
+interface FAQItem { q: string; a: string; }
+const SUBURB_FAQS: Record<string, FAQItem[]> = {
+  "bondi-junction": [
+    {
+      q: "Is anxiety therapy available in Bondi Junction via telehealth?",
+      a: "Yes. Several psychologists based in Bondi Junction offer telehealth anxiety therapy, meaning you can attend sessions via secure video call from home rather than travelling to the practice. Telehealth attracts the same Medicare rebate as in-person sessions. You can also see any telehealth-based psychologist in our directory regardless of their suburb."
+    },
+    {
+      q: "What is the difference between anxiety therapy and anxiety treatment in Bondi Junction?",
+      a: "Anxiety treatment and anxiety therapy refer to the same thing in this context. Psychologists use evidence-based therapy approaches (most commonly Cognitive Behavioural Therapy, CBT, and Acceptance and Commitment Therapy, ACT) to treat anxiety disorders. A GP Mental Health Treatment Plan and referral is the standard pathway to accessing funded sessions through Medicare."
+    },
+    {
+      q: "How much does anxiety therapy cost in Bondi Junction?",
+      a: "Psychologists in Bondi Junction typically charge $230 to $300 per session. With a Medicare rebate under a GP Mental Health Treatment Plan, you receive $145.25 per session with an endorsed clinical psychologist (MBS item 91167) or $98.95 with a registered psychologist (MBS item 91170), effective 1 July 2025. The out-of-pocket gap depends on the individual practitioner's fee. Telehealth sessions attract the same rebate."
+    },
+    {
+      q: "Can I see an anxiety psychologist in the eastern suburbs without going to Bondi Junction?",
+      a: "Via telehealth, you can see any psychologist in this directory from anywhere in Sydney, including from home in the eastern suburbs. You are not limited to practitioners physically located in Bondi Junction or your immediate suburb. Telehealth psychology uses the same Medicare rebate as in-person sessions."
+    }
+  ]
+};
+
+// Slug is derived from Astro.params; extract suburb slug
+const currentSlug = (Astro.params.suburb as string).replace("anxiety-psychologist-", "").replace("-sydney", "");
+const suburbFAQs = SUBURB_FAQS[currentSlug] || [];
+
 // Build schema
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -127,9 +155,21 @@ const itemListSchema = suburbPractitioners.length > 0 ? {
   }))
 } : null;
 
-const schemas = itemListSchema
-  ? [breadcrumbSchema, itemListSchema]
-  : [breadcrumbSchema];
+const faqSchema = suburbFAQs.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": suburbFAQs.map(item => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": { "@type": "Answer", "text": item.a }
+  }))
+} : null;
+
+const schemas = [
+  breadcrumbSchema,
+  ...(itemListSchema ? [itemListSchema] : []),
+  ...(faqSchema ? [faqSchema] : []),
+];
 
 const hasPractitioners = suburbPractitioners.length > 0;
 const telehealth = practitioners.filter(p => p.suburb === "Sydney (telehealth)");
@@ -298,6 +338,18 @@ const telehealth = practitioners.filter(p => p.suburb === "Sydney (telehealth)")
           <li><a href="/guides/psychologist-waitlist-sydney/">Why there are waiting lists and what to do</a></li>
         </ul>
       </div>
+
+      {suburbFAQs.length > 0 && (
+        <div class="faq" style="margin-top: 2rem;">
+          <h2>Common questions about anxiety therapy in {suburb}</h2>
+          {suburbFAQs.map(item => (
+            <details class="faq__item">
+              <summary class="faq__q">{item.q}</summary>
+              <p class="faq__a">{item.a}</p>
+            </details>
+          ))}
+        </div>
+      )}
 
       <div class="info-box" style="margin-top: 2rem; background: #fff3cd; border-left-color: #ffc107;">
         <strong>Crisis support:</strong> This directory is not a crisis service. If you or someone you know
