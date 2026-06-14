@@ -66,7 +66,7 @@ const breadcrumbSchema = {
 };
 ---
 <Base
-  title="Find a Telehealth Psychologist for Anxiety in Sydney | 34 Listed"
+  title={`Find a Telehealth Psychologist for Anxiety in Sydney | ${practitioners.length} Listed`}
   description="Compare 34 AHPRA-registered psychologists in Sydney offering telehealth for anxiety. See Medicare rebate amounts, specialties, and booking options — free, no sign-up."
   schema={[itemListSchema, breadcrumbSchema]}
 >
@@ -237,6 +237,13 @@ const breadcrumbSchema = {
                   <span style="color: var(--color-accent); font-weight: 500;">Online booking</span>
                 )}
               </div>
+
+              <!-- Bio excerpt (1 sentence) -->
+              {p.bio && (
+                <p style="font-size: 0.84rem; color: var(--color-text-secondary); margin: 0; line-height: 1.55;">
+                  {p.bio.split('. ').slice(0, 2).join('. ').slice(0, 160)}{p.bio.length > 160 ? '…' : '.'}
+                </p>
+              )}
 
               <!-- Specialty chips -->
               <div style="display: flex; flex-wrap: wrap; gap: 0.3rem;">

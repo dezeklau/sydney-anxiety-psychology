@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { practitioners } from '../data/practitioners';
 
 const schema = {
   "@context": "https://schema.org",
@@ -269,21 +270,11 @@ const itemListSchema = {
       </div>
       <p style="font-size: 0.85rem; color: var(--color-text-secondary);">Rebates: Medicare Benefits Schedule, effective 1 July 2025. MBS items 91170 and 91167. <a href="/guides/cost-telehealth-psychologist-australia/">Full cost guide including the GP MHTP process &rarr;</a></p>
 
-      <h2>Anxiety Psychologist Near Me: Why Telehealth Means Anywhere in Sydney</h2>
-      <p>If you have searched for an <strong>anxiety psychologist near me</strong>, telehealth is the practical answer. A video appointment counts as "near me" because:</p>
-      <ul>
-        <li><strong>Same Medicare rebate as in-person.</strong> Under Better Access (MBS items 91170 and 91167), telehealth psychology attracts exactly the same Medicare rebate whether you attend in a clinic or on a video call from home.</li>
-        <li><strong>Your whole suburb, not just your street.</strong> You have access to any AHPRA-registered psychologist in NSW, not just the practices within walking distance. If you live in the eastern suburbs, you can see a specialist in anxiety with availability next week rather than waiting months for a local clinic.</li>
-        <li><strong>No travel, no waiting room.</strong> For many people managing anxiety, the thought of travelling to an unfamiliar clinic adds stress before the appointment even starts. Attending from a familiar space can make the session easier.</li>
-        <li><strong>Continuity if you move.</strong> You do not need to restart with a new practitioner if you change suburbs or temporarily leave Sydney.</li>
-      </ul>
-      <p>The directory below lists psychologists across Sydney who work with anxiety and offer telehealth appointments. You can filter by area, presentation, and fee to find someone who fits.</p>
-
       <h2>Browse the Practitioner Directory</h2>
       <p>The directory lists AHPRA-registered psychologists in Sydney who work with anxiety. Browse by suburb or specialty area, compare fees and experience, or use the finder to be matched with a practitioner directly.</p>
       <div style="background: var(--color-accent-soft); border: 1.5px solid var(--color-accent-light); border-radius: var(--radius-lg); padding: 1.5rem 1.75rem; margin: 1.25rem 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;">
         <div>
-          <strong style="display: block; font-size: 1.05rem; margin-bottom: 0.3rem; color: var(--color-accent-hover);">34 psychologists listed</strong>
+          <strong style="display: block; font-size: 1.05rem; margin-bottom: 0.3rem; color: var(--color-accent-hover);">{practitioners.length} psychologists listed</strong>
           <p style="margin: 0; font-size: 0.92rem; color: var(--color-text-secondary);">Filter by specialty, sort by price or experience, and view full profiles.</p>
         </div>
         <a href="/directory/" class="btn btn--primary plausible-event-name=Homepage+Directory+CTA+Click" style="font-size: 0.97rem; white-space: nowrap;">
@@ -292,45 +283,48 @@ const itemListSchema = {
       </div>
 
       <h2>Guides and Resources</h2>
-      <p>Before your first appointment, these guides answer the questions most people have. <a href="/guides/">Browse all guides &rarr;</a> | <a href="/guides/telehealth-anxiety-psychology-sydney/">Complete guide: telehealth anxiety psychology in Sydney &rarr;</a></p>
-      <ul>
-        <li><a href="/guides/how-to-choose-anxiety-psychologist-telehealth/">How to choose a telehealth psychologist for anxiety</a> (what to look for, therapy approaches explained, questions to ask)</li>
-        <li><a href="/guides/cost-telehealth-psychologist-australia/">How much does a telehealth psychologist cost?</a> (fees, rebates, and how to get a Mental Health Treatment Plan)</li>
-        <li><a href="/guides/mental-health-care-plan-sydney/">Mental Health Care Plan Sydney: how to get one</a> (step-by-step GP appointment guide, what Medicare covers)</li>
-        <li><a href="/guides/bulk-billing-psychologist-sydney/">Bulk billing for psychologists in Sydney</a> (why it is rare, and what low-cost options actually exist)</li>
-        <li><a href="/guides/does-online-therapy-work-for-anxiety/">Does online therapy actually work for anxiety?</a> (what the research says)</li>
-        <li><a href="/guides/ptsd-telehealth-psychologist-sydney/">PTSD and trauma: telehealth psychology in Sydney</a> (PE, CPT, and EMDR via video; safety considerations; Medicare)</li>
-        <li><a href="/guides/anxiety-depression-telehealth-psychologist-sydney/">Anxiety and depression together: telehealth psychology in Sydney</a> (how CBT treats both, what to look for in a psychologist)</li>
-        <li><a href="/guides/how-telehealth-psychology-works/">How telehealth psychology sessions work</a> (technology, privacy, what to expect)</li>
-        <li><a href="/guides/psychologist-waitlist-sydney/">Waitlists and how to be seen sooner</a> (practical steps if you are hitting delays)</li>
-        <li><a href="/guides/clinical-psychologist-vs-registered-psychologist/">Clinical psychologist vs registered psychologist</a> (what the difference means for you)</li>
-        <li><a href="/guides/generalised-anxiety-disorder-telehealth-psychologist-sydney/">Generalised anxiety disorder (GAD): telehealth psychology in Sydney</a> (CBT and ACT for GAD, how to find a specialist)</li>
-        <li><a href="/guides/social-anxiety-telehealth-psychologist-sydney/">Social anxiety: telehealth psychology in Sydney</a> (evidence-based treatment, Medicare coverage)</li>
-        <li><a href="/guides/panic-disorder-telehealth-psychologist-sydney/">Panic disorder: telehealth psychology in Sydney</a> (interoceptive exposure, treatment options)</li>
-        <li><a href="/guides/health-anxiety-telehealth-psychologist-sydney/">Health anxiety: telehealth psychology in Sydney</a> (CBT for illness anxiety, how telehealth helps)</li>
-        <li><a href="/guides/ocd-telehealth-psychologist-sydney/">OCD: telehealth psychology in Sydney</a> (ERP via video, finding a specialist)</li>
-        <li><a href="/guides/agoraphobia-telehealth-psychologist-sydney/">Agoraphobia: telehealth psychology in Sydney</a> (why telehealth is especially suitable, CBT approach)</li>
-        <li><a href="/guides/evening-weekend-psychologist-sydney/">Evening and weekend psychologist appointments in Sydney</a> (how to find out-of-hours telehealth availability)</li>
-        <li><a href="/guides/medicare-psychology-data-australia/">Medicare psychology data: how many Australians access mental health support</a> (ABS and Medicare data analysis)</li>
-        <li><a href="/guides/work-related-anxiety-psychologist-sydney/">Work-related anxiety: finding a telehealth psychologist in Sydney</a> (how CBT and ACT help, Medicare coverage, what to look for)</li>
-        <li><a href="/guides/psychologist-vs-psychiatrist-anxiety-sydney/">Psychologist vs psychiatrist for anxiety in Sydney</a> (training, costs, referral, when each is right)</li>
-        <li><a href="/guides/anxiety-sleep-psychologist-sydney/">Anxiety and sleep problems: telehealth psychology in Sydney</a> (the anxiety-sleep cycle, CBT-I, Medicare access)</li>
-        <li><a href="/guides/anxiety-psychologist-inner-west-sydney/">Anxiety psychologist for Sydney's inner west</a> (Newtown, Glebe, Marrickville, Balmain, Leichhardt: telehealth access and Medicare)</li>
-      </ul>
+      <p>The guides people read most before their first appointment:</p>
+      <div class="pillar-grid" style="grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); margin-bottom: 1.5rem;">
+        <a href="/guides/cost-telehealth-psychologist-australia/" class="pillar-card" style="text-decoration: none;">
+          <span class="pillar-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg></span>
+          <h3 style="margin-top:0;">What does it cost?</h3>
+          <p style="font-size: 0.87rem;">Fees, Medicare rebates, and the out-of-pocket gap — before you book.</p>
+        </a>
+        <a href="/guides/mental-health-care-plan-sydney/" class="pillar-card" style="text-decoration: none;">
+          <span class="pillar-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></span>
+          <h3 style="margin-top:0;">Getting a Mental Health Care Plan</h3>
+          <p style="font-size: 0.87rem;">What to say to your GP, and how to get the Medicare referral you need.</p>
+        </a>
+        <a href="/guides/how-telehealth-psychology-works/" class="pillar-card" style="text-decoration: none;">
+          <span class="pillar-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2" ry="2"/></svg></span>
+          <h3 style="margin-top:0;">How telehealth sessions work</h3>
+          <p style="font-size: 0.87rem;">Technology, privacy, what to expect — if you have never done it before.</p>
+        </a>
+        <a href="/guides/bulk-billing-psychologist-sydney/" class="pillar-card" style="text-decoration: none;">
+          <span class="pillar-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+          <h3 style="margin-top:0;">Bulk billing — what actually exists</h3>
+          <p style="font-size: 0.87rem;">Why it is rare, and what low-cost options are genuinely available in Sydney.</p>
+        </a>
+        <a href="/guides/psychologist-waitlist-sydney/" class="pillar-card" style="text-decoration: none;">
+          <span class="pillar-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+          <h3 style="margin-top:0;">Hitting waitlists?</h3>
+          <p style="font-size: 0.87rem;">Practical steps to be seen sooner, without compromising on the right fit.</p>
+        </a>
+        <a href="/guides/does-online-therapy-work-for-anxiety/" class="pillar-card" style="text-decoration: none;">
+          <span class="pillar-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg></span>
+          <h3 style="margin-top:0;">Does online therapy actually work?</h3>
+          <p style="font-size: 0.87rem;">What the research says about telehealth CBT for anxiety.</p>
+        </a>
+      </div>
+      <p style="font-size: 0.9rem; color: var(--color-text-secondary);">
+        <a href="/guides/">Browse all guides &rarr;</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/guides/telehealth-anxiety-psychology-sydney/">Complete guide: telehealth anxiety psychology in Sydney &rarr;</a>
+      </p>
 
       <h2>Free Tools</h2>
       <p>Two quick tools to answer your cost and eligibility questions before you book. No email required.</p>
       <ul>
         <li><a href="/tools/medicare-rebate-calculator/">Medicare rebate and gap calculator</a> — enter your psychologist's fee and see your exact out-of-pocket cost after Medicare</li>
         <li><a href="/tools/mental-health-care-plan-checker/">Mental Health Care Plan eligibility checker</a> — 5 questions, instant result, personalised next steps</li>
-      </ul>
-
-      <h2>Common Questions</h2>
-      <ul>
-        <li><a href="/faq/how-many-sessions-do-i-need-for-anxiety/">How many sessions do I need for anxiety?</a></li>
-        <li><a href="/faq/does-medicare-cover-telehealth-psychology/">Does Medicare cover telehealth psychology sessions?</a></li>
-        <li><a href="/faq/psychologist-wait-times-sydney/">How long is the wait to see a psychologist in Sydney?</a></li>
-        <li><a href="/faq/psychologist-vs-psychiatrist-sydney/">Psychologist vs psychiatrist for anxiety — what is the difference?</a></li>
       </ul>
 
       <div class="faq">
