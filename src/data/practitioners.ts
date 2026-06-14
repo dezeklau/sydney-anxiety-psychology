@@ -896,6 +896,91 @@ export const practitioners: Practitioner[] = [
     publicEmail: null,
     website: null,
     bookingUrl: null
+  },
+  {
+    slug: "laura-gomez-psychologist-waverley",
+    name: "Laura Gomez",
+    // AHPRA: not verified this run. No clinical self-claim on Halaxy. Conservative title: registered_psychologist. Source: https://www.halaxy.com/profile/laura-gomez/psychologist/613321. Added 2026-06-14.
+    registrationType: "registered_psychologist",
+    suburb: "Waverley",
+    specialties: ["Anxiety", "Panic disorder", "Social anxiety", "Specific phobias", "Depression"],
+    unclaimed: true,
+    source: "https://www.halaxy.com/profile/laura-gomez/psychologist/613321",
+    yearsExperience: null,
+    bio: "Laura Gomez is a registered psychologist practising in Waverley, Sydney. She works with adults experiencing anxiety, panic disorder, social anxiety, and specific phobias, and offers telehealth sessions across NSW. Contact the practice to confirm current availability and Medicare billing arrangements.",
+    photoUrl: null,
+    pricing: null,
+    publicEmail: null,
+    website: null,
+    bookingUrl: null
+  },
+  {
+    slug: "rhonda-murrey-psychologist-waratah",
+    name: "Rhonda Murrey",
+    // AHPRA: not verified this run. Clinical self-claim on Halaxy but unverified. Conservative title: registered_psychologist. Source: https://www.halaxy.com/profile/rhonda-murrey/psychologist/616951. Added 2026-06-14.
+    registrationType: "registered_psychologist",
+    suburb: "Waratah",
+    specialties: ["Anxiety", "Depression", "Stress management"],
+    unclaimed: true,
+    source: "https://www.halaxy.com/profile/rhonda-murrey/psychologist/616951",
+    yearsExperience: null,
+    bio: "Rhonda Murrey is a registered psychologist practising in Waratah, NSW. She works with adults experiencing anxiety and depression, and offers telehealth sessions across NSW. Contact the practice to confirm current availability and Medicare billing arrangements.",
+    photoUrl: null,
+    pricing: null,
+    publicEmail: null,
+    website: null,
+    bookingUrl: null
+  },
+  {
+    slug: "dharani-keyan-psychologist-kensington",
+    name: "Dr Dharani Keyan",
+    // AHPRA: not verified this run. Clinical self-claim on Halaxy but unverified. Conservative title: registered_psychologist. 'Dr' reflects doctorate. Source: https://www.halaxy.com/profile/dr-dharani-keyan/psychologist/617401. Added 2026-06-14.
+    registrationType: "registered_psychologist",
+    suburb: "Kensington",
+    specialties: ["Anxiety", "Depression", "Stress management", "Trauma"],
+    unclaimed: true,
+    source: "https://www.halaxy.com/profile/dr-dharani-keyan/psychologist/617401",
+    yearsExperience: null,
+    bio: "Dr Dharani Keyan is a registered psychologist practising in Kensington, Sydney (UNSW area). She works with adults experiencing anxiety, depression, and trauma-related difficulties, and offers telehealth sessions across NSW. 'Dr' reflects a doctoral qualification, not a medical degree. Contact the practice to confirm current availability and Medicare billing arrangements.",
+    photoUrl: null,
+    pricing: null,
+    publicEmail: null,
+    website: null,
+    bookingUrl: null
+  },
+  {
+    slug: "tanya-doyle-psychologist-calala",
+    name: "Tanya Doyle",
+    // AHPRA: not verified this run. No clinical self-claim on Halaxy. Conservative title: registered_psychologist. Source: https://www.halaxy.com/profile/tanya-doyle-psychologist/psychologist/623931. Added 2026-06-14.
+    registrationType: "registered_psychologist",
+    suburb: "Calala",
+    specialties: ["Anxiety", "Depression", "Stress management"],
+    unclaimed: true,
+    source: "https://www.halaxy.com/profile/tanya-doyle-psychologist/psychologist/623931",
+    yearsExperience: null,
+    bio: "Tanya Doyle is a registered psychologist practising in Calala (Tamworth region), NSW. She works with adults experiencing anxiety and depression, and offers telehealth sessions across NSW. Contact the practice to confirm current availability and Medicare billing arrangements.",
+    photoUrl: null,
+    pricing: null,
+    publicEmail: null,
+    website: null,
+    bookingUrl: null
+  },
+  {
+    slug: "matthew-wade-psychologist-bondi-junction",
+    name: "Matthew Wade",
+    // AHPRA: not verified this run. Clinical self-claim on Halaxy but unverified. Conservative title: registered_psychologist. Source: https://www.halaxy.com/profile/matthew-wade/psychologist/625471. Added 2026-06-14.
+    registrationType: "registered_psychologist",
+    suburb: "Bondi Junction",
+    specialties: ["Anxiety", "Specific phobias", "Depression", "Stress management"],
+    unclaimed: true,
+    source: "https://www.halaxy.com/profile/matthew-wade/psychologist/625471",
+    yearsExperience: null,
+    bio: "Matthew Wade is a registered psychologist practising in Bondi Junction, Sydney. He works with adults experiencing anxiety and specific phobias, and offers telehealth sessions across NSW. Contact the practice to confirm current availability and Medicare billing arrangements.",
+    photoUrl: null,
+    pricing: null,
+    publicEmail: null,
+    website: null,
+    bookingUrl: null
   }
 ];
 
