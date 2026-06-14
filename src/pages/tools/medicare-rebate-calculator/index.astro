@@ -72,8 +72,8 @@ const faqSchema = {
 };
 ---
 <Base
-  title="Medicare Psychology Rebate Calculator — 2025 Rates | Sydney Anxiety Psychology"
-  description="Calculate your exact Medicare rebate and out-of-pocket gap for psychology sessions. Uses 2025 Better Access rebate rates ($98.95 registered / $145.25 clinical psychologist). Free, private, no email required."
+  title="Medicare Psychology Rebate Calculator — 2026 | Sydney Anxiety Psychology"
+  description="Calculate your Medicare rebate and out-of-pocket gap for psychology sessions. Registered psychologist: $98.95 rebate. Clinical psychologist: $145.25. Free, private, instant results."
   schema={[breadcrumbSchema, webAppSchema, faqSchema]}
 >
   <div class="main-content">
@@ -84,8 +84,8 @@ const faqSchema = {
       </p>
 
       <h1>Medicare Psychology Rebate &amp; Gap Calculator</h1>
-      <p style="font-size: 1.05rem; color: var(--color-text-secondary); margin-bottom: 0.5rem;">Enter your psychologist's session fee to see your exact out-of-pocket cost after Medicare. Uses July 2025 Better Access rebate rates.</p>
-      <p style="font-size: 0.82rem; color: var(--color-text-secondary); margin-bottom: 2rem;">Nothing you enter is stored or transmitted. All calculations happen in your browser.</p>
+      <p style="font-size: 1.05rem; color: var(--color-text-secondary); margin-bottom: 0.5rem;">Enter your psychologist's session fee to see your out-of-pocket cost after Medicare. Uses July 2025 Better Access rebate rates (current as of 2026).</p>
+      <p style="font-size: 0.82rem; color: var(--color-text-secondary); margin-bottom: 2rem;">Estimates only — for planning purposes. Nothing you enter is stored or transmitted. All calculations happen in your browser. Verify rebate amounts at <a href="https://www.mbsonline.gov.au" target="_blank" rel="noopener">mbsonline.gov.au</a>.</p>
 
       <!-- CALCULATOR -->
       <div id="calc-app" style="background: #f8fafc; border: 1.5px solid var(--color-border); border-radius: var(--radius-lg); padding: 2rem; margin-bottom: 2rem;">
@@ -123,7 +123,7 @@ const faqSchema = {
 
         <div style="margin-bottom: 1.5rem;">
           <label for="num-sessions" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">
-            3. Number of sessions (optional, for annual savings)
+            3. Number of sessions (optional, for annual cost estimate)
           </label>
           <input
             type="number"
@@ -149,25 +149,70 @@ const faqSchema = {
         <button
           id="calc-btn"
           style="background: var(--color-accent); color: #fff; border: none; border-radius: var(--radius); padding: 0.8rem 2rem; font-size: 1rem; font-weight: 600; cursor: pointer; width: 100%; margin-top: 0.5rem;"
-          aria-label="Calculate my rebate"
+          aria-label="Calculate my rebate estimate"
         >
-          Calculate
+          Calculate estimate
         </button>
       </div>
 
       <!-- RESULTS (hidden until calculated) -->
       <div id="calc-results" style="display: none; background: #fff; border: 2px solid var(--color-accent); border-radius: var(--radius-lg); padding: 2rem; margin-bottom: 2rem;" aria-live="polite" aria-atomic="true">
-        <h2 style="margin-top: 0; font-size: 1.2rem; color: var(--color-accent-hover);">Your results</h2>
+        <h2 style="margin-top: 0; font-size: 1.2rem; color: var(--color-accent-hover);">Your estimate</h2>
         <div id="results-content"></div>
-        <p style="font-size: 0.78rem; color: var(--color-text-secondary); margin-top: 1.5rem; border-top: 1px solid var(--color-border); padding-top: 0.75rem;">Rebate figures: Medicare Benefits Schedule, effective 1 July 2025. MBS items 91170 (registered) and 91167 (clinical). Verify at <a href="https://www.mbsonline.gov.au" target="_blank" rel="noopener">mbsonline.gov.au</a>. This calculator is for informational guidance only — not financial advice.</p>
+
+        <!-- SHAREABLE SUMMARY BOX -->
+        <div id="share-box" style="display:none; margin-top: 1.5rem; background: #f0f4ff; border: 1px solid #c7d2fe; border-radius: var(--radius); padding: 1.25rem;">
+          <p style="font-size: 0.82rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--color-text-secondary); margin: 0 0 0.5rem;">Share this estimate</p>
+          <p id="share-text" style="font-size: 0.95rem; color: var(--color-text); margin: 0 0 0.75rem; line-height: 1.5;"></p>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <button
+              id="copy-btn"
+              style="background: var(--color-accent); color: #fff; border: none; border-radius: var(--radius); padding: 0.5rem 1.1rem; font-size: 0.88rem; font-weight: 600; cursor: pointer;"
+              aria-label="Copy estimate to clipboard"
+            >Copy estimate</button>
+            <a
+              id="share-link"
+              href=""
+              style="background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius); padding: 0.5rem 1.1rem; font-size: 0.88rem; font-weight: 600; color: var(--color-text); text-decoration: none; display: inline-flex; align-items: center;"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Share link</a>
+          </div>
+          <p id="copy-confirm" style="display:none; font-size: 0.82rem; color: #16a34a; margin: 0.5rem 0 0;">Copied to clipboard.</p>
+        </div>
+
+        <p style="font-size: 0.78rem; color: var(--color-text-secondary); margin-top: 1.5rem; border-top: 1px solid var(--color-border); padding-top: 0.75rem;"><strong>These are estimates only</strong> — not financial advice. Actual rebate depends on your practitioner's billing arrangements. Rebate figures from the Medicare Benefits Schedule, effective 1 July 2025 (MBS items 91170 and 91167). Verify at <a href="https://www.mbsonline.gov.au" target="_blank" rel="noopener">mbsonline.gov.au</a>.</p>
       </div>
 
       <script is:inline>
         (function() {
           var REBATES = { registered: 98.95, clinical: 145.25 };
+          var MBS_ITEMS = { registered: '91170', clinical: '91167' };
+          var PSYCH_LABELS = {
+            registered: 'Registered psychologist (MBS item 91170)',
+            clinical: 'Endorsed clinical psychologist (MBS item 91167)'
+          };
 
           function fmt(n) {
             return '$' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+          }
+
+          function firePlausible(eventName, props) {
+            if (typeof window.plausible === 'function') {
+              window.plausible(eventName, { props: props });
+            }
+          }
+
+          function buildShareText(type, fee, gap, rebate, sessions, isBulkBill, hasMhtp) {
+            var psychLabel = type === 'registered' ? 'registered psychologist' : 'endorsed clinical psychologist';
+            if (!hasMhtp) {
+              return 'Without a Mental Health Treatment Plan, no Medicare rebate applies. Get an MHTP from your GP first — it covers up to 10 sessions/year. Calculator: sydneyanxietypsychology.com.au/tools/medicare-rebate-calculator/';
+            }
+            if (isBulkBill) {
+              return 'Bulk billing estimate (' + psychLabel + '): Medicare rebate is ' + fmt(rebate) + '/session. If your psychologist bulk bills, your out-of-pocket is $0. Calculator: sydneyanxietypsychology.com.au/tools/medicare-rebate-calculator/';
+            }
+            var annualNote = sessions > 1 ? ' Over ' + sessions + ' sessions, Medicare saves you an estimated ' + fmt(rebate * sessions) + '.' : '';
+            return 'Medicare rebate estimate (' + psychLabel + '): session fee ' + fmt(fee) + ', Medicare rebate ' + fmt(rebate) + ', estimated out-of-pocket ' + fmt(gap) + '/session.' + annualNote + ' Calculator: sydneyanxietypsychology.com.au/tools/medicare-rebate-calculator/';
           }
 
           function calculate() {
@@ -177,51 +222,89 @@ const faqSchema = {
             var hasMhtp = document.getElementById('has-mhtp').checked;
             var fee = parseFloat(feeRaw);
             var rebate = REBATES[type];
-            var rebateLabel = type === 'registered' ? 'Registered psychologist (item 91170)' : 'Endorsed clinical psychologist (item 91167)';
+            var rebateLabel = PSYCH_LABELS[type];
 
             var resultsEl = document.getElementById('calc-results');
             var contentEl = document.getElementById('results-content');
+            var shareBox = document.getElementById('share-box');
+            var shareTextEl = document.getElementById('share-text');
+            var shareLinkEl = document.getElementById('share-link');
+
+            var isBulkBill = isNaN(fee) || fee === 0 || feeRaw.trim() === '';
+            var gap = isBulkBill ? 0 : Math.max(0, fee - rebate);
+
+            // Build share URL with params
+            var params = new URLSearchParams({
+              type: type,
+              sessions: sessions
+            });
+            if (!isBulkBill && !isNaN(fee) && fee > 0) params.set('fee', fee);
+            if (!hasMhtp) params.set('mhtp', '0');
+            var shareUrl = 'https://sydneyanxietypsychology.com.au/tools/medicare-rebate-calculator/?' + params.toString();
+            shareLinkEl.href = shareUrl;
+
+            // Share text
+            var shareStr = buildShareText(type, fee, gap, rebate, sessions, isBulkBill, hasMhtp);
+            shareTextEl.textContent = shareStr;
+
+            // Fire Plausible Calculator:Run event
+            firePlausible('Calculator:Run', {
+              type: type,
+              hasMhtp: hasMhtp ? 'yes' : 'no',
+              isBulkBill: isBulkBill ? 'yes' : 'no',
+              sessions: String(sessions)
+            });
 
             if (!hasMhtp) {
               contentEl.innerHTML = '<div style="background:#fff3cd;border-left:4px solid #f59e0b;padding:1rem 1.25rem;border-radius:var(--radius);margin-bottom:1rem;"><strong>No Medicare rebate without an MHTP</strong><p style="margin:0.5rem 0 0;">Without a Mental Health Treatment Plan from your GP, no Medicare rebate applies and you pay the full session fee. <a href="/guides/mental-health-care-plan-sydney/">How to get an MHTP &rarr;</a></p></div>';
               if (!isNaN(fee) && fee > 0) {
                 var totalFull = fee * sessions;
-                contentEl.innerHTML += '<table style="width:100%;border-collapse:collapse;font-size:0.95rem;"><tbody><tr><td style="padding:0.6rem 0;border-bottom:1px solid var(--color-border);">Session fee</td><td style="text-align:right;padding:0.6rem 0;border-bottom:1px solid var(--color-border);">' + fmt(fee) + '</td></tr><tr><td style="padding:0.6rem 0;border-bottom:1px solid var(--color-border);">Medicare rebate</td><td style="text-align:right;padding:0.6rem 0;border-bottom:1px solid var(--color-border);">$0.00</td></tr><tr><td style="padding:0.6rem 0;border-bottom:1px solid var(--color-border);font-weight:600;">Out-of-pocket per session</td><td style="text-align:right;padding:0.6rem 0;border-bottom:1px solid var(--color-border);font-weight:600;">' + fmt(fee) + '</td></tr><tr><td style="padding:0.6rem 0;color:var(--color-text-secondary);">Total cost (' + sessions + ' sessions, no MHTP)</td><td style="text-align:right;padding:0.6rem 0;color:var(--color-text-secondary);">' + fmt(totalFull) + '</td></tr></tbody></table>';
+                contentEl.innerHTML += '<table style="width:100%;border-collapse:collapse;font-size:0.95rem;"><tbody><tr><td style="padding:0.6rem 0;border-bottom:1px solid var(--color-border);">Session fee (estimate)</td><td style="text-align:right;padding:0.6rem 0;border-bottom:1px solid var(--color-border);">' + fmt(fee) + '</td></tr><tr><td style="padding:0.6rem 0;border-bottom:1px solid var(--color-border);">Medicare rebate</td><td style="text-align:right;padding:0.6rem 0;border-bottom:1px solid var(--color-border);">$0.00</td></tr><tr><td style="padding:0.6rem 0;border-bottom:1px solid var(--color-border);font-weight:600;">Estimated out-of-pocket per session</td><td style="text-align:right;padding:0.6rem 0;border-bottom:1px solid var(--color-border);font-weight:600;">' + fmt(fee) + '</td></tr><tr><td style="padding:0.6rem 0;color:var(--color-text-secondary);">Estimated total cost (' + sessions + ' sessions, no MHTP)</td><td style="text-align:right;padding:0.6rem 0;color:var(--color-text-secondary);">' + fmt(totalFull) + '</td></tr></tbody></table>';
               }
+              shareBox.style.display = 'block';
               resultsEl.style.display = 'block';
               return;
             }
-
-            var isBulkBill = isNaN(fee) || fee === 0 || feeRaw.trim() === '';
 
             if (isBulkBill) {
-              contentEl.innerHTML = '<div style="background:#f0fdf4;border-left:4px solid #16a34a;padding:1rem 1.25rem;border-radius:var(--radius);margin-bottom:1rem;"><strong>Bulk billing scenario: $0 out-of-pocket</strong><p style="margin:0.5rem 0 0;">If your psychologist bulk bills, they accept the Medicare rebate (' + fmt(rebate) + ') as full payment. You pay nothing. Bulk billing psychology is limited in availability in Sydney. <a href="/guides/bulk-billing-psychologist-sydney/">More about bulk billing &rarr;</a></p></div>';
-              contentEl.innerHTML += '<table style="width:100%;border-collapse:collapse;font-size:0.95rem;"><tbody><tr><td style="padding:0.6rem 0;border-bottom:1px solid var(--color-border);">Psychologist type</td><td style="text-align:right;padding:0.6rem 0;border-bottom:1px solid var(--color-border);">' + rebateLabel + '</td></tr><tr><td style="padding:0.6rem 0;border-bottom:1px solid var(--color-border);">Medicare rebate</td><td style="text-align:right;padding:0.6rem 0;border-bottom:1px solid var(--color-border);">' + fmt(rebate) + '</td></tr><tr><td style="padding:0.6rem 0;font-weight:600;">Out-of-pocket (bulk billed)</td><td style="text-align:right;padding:0.6rem 0;font-weight:600;">$0.00</td></tr></tbody></table>';
+              contentEl.innerHTML = '<div style="background:#f0fdf4;border-left:4px solid #16a34a;padding:1rem 1.25rem;border-radius:var(--radius);margin-bottom:1rem;"><strong>Bulk billing scenario: $0 estimated out-of-pocket</strong><p style="margin:0.5rem 0 0;">If your psychologist bulk bills, they accept the Medicare rebate (' + fmt(rebate) + ') as full payment. You pay nothing. Bulk billing psychology is limited in availability in Sydney. <a href="/guides/bulk-billing-psychologist-sydney/">More about bulk billing &rarr;</a></p></div>';
+              contentEl.innerHTML += '<table style="width:100%;border-collapse:collapse;font-size:0.95rem;"><tbody><tr><td style="padding:0.6rem 0;border-bottom:1px solid var(--color-border);">Psychologist type</td><td style="text-align:right;padding:0.6rem 0;border-bottom:1px solid var(--color-border);">' + rebateLabel + '</td></tr><tr><td style="padding:0.6rem 0;border-bottom:1px solid var(--color-border);">Medicare rebate (estimate)</td><td style="text-align:right;padding:0.6rem 0;border-bottom:1px solid var(--color-border);">' + fmt(rebate) + '</td></tr><tr><td style="padding:0.6rem 0;font-weight:600;">Estimated out-of-pocket (bulk billed)</td><td style="text-align:right;padding:0.6rem 0;font-weight:600;">$0.00</td></tr></tbody></table>';
+              shareBox.style.display = 'block';
               resultsEl.style.display = 'block';
               return;
             }
 
-            var gap = Math.max(0, fee - rebate);
             var totalFee = fee * sessions;
             var totalRebate = Math.min(rebate, fee) * sessions;
             var totalGap = gap * sessions;
             var saving = totalRebate;
 
-            var html = '<table style="width:100%;border-collapse:collapse;font-size:0.95rem;margin-bottom:1rem;">';
+            // Prominent summary callout before the detail table
+            var summaryHtml = '<div style="background:#f0fdf4;border-left:4px solid #16a34a;padding:1rem 1.25rem;border-radius:var(--radius);margin-bottom:1.25rem;">';
+            summaryHtml += '<p style="margin:0;font-size:1rem;line-height:1.6;">';
+            summaryHtml += 'For a <strong>' + (type === 'registered' ? 'registered psychologist' : 'endorsed clinical psychologist') + '</strong> session at <strong>' + fmt(fee) + '</strong>:';
+            summaryHtml += '<br>Estimated Medicare rebate: <strong style="color:#16a34a;">' + fmt(Math.min(rebate, fee)) + '</strong>';
+            summaryHtml += '<br>Estimated out-of-pocket gap: <strong>' + fmt(gap) + ' per session</strong>';
+            summaryHtml += '</p>';
+            summaryHtml += '<p style="margin:0.5rem 0 0;font-size:0.82rem;color:var(--color-text-secondary);">These are estimates only. Your actual gap depends on what your psychologist charges. Rebate from MBS item ' + MBS_ITEMS[type] + ', effective 1 Jul 2025.</p>';
+            summaryHtml += '</div>';
+
+            var html = summaryHtml;
+            html += '<table style="width:100%;border-collapse:collapse;font-size:0.95rem;margin-bottom:1rem;">';
             html += '<tbody>';
             html += '<tr><td style="padding:0.6rem 0;border-bottom:1px solid var(--color-border);">Psychologist type</td><td style="text-align:right;padding:0.6rem 0;border-bottom:1px solid var(--color-border);">' + rebateLabel + '</td></tr>';
-            html += '<tr><td style="padding:0.6rem 0;border-bottom:1px solid var(--color-border);">Full session fee</td><td style="text-align:right;padding:0.6rem 0;border-bottom:1px solid var(--color-border);">' + fmt(fee) + '</td></tr>';
-            html += '<tr><td style="padding:0.6rem 0;border-bottom:1px solid var(--color-border);color:#16a34a;">Medicare rebate</td><td style="text-align:right;padding:0.6rem 0;border-bottom:1px solid var(--color-border);color:#16a34a;">&minus;' + fmt(Math.min(rebate, fee)) + '</td></tr>';
-            html += '<tr style="background:#f8fafc;"><td style="padding:0.75rem 0.5rem;font-weight:700;font-size:1.1rem;">Your out-of-pocket gap</td><td style="text-align:right;padding:0.75rem 0.5rem;font-weight:700;font-size:1.1rem;">' + fmt(gap) + ' per session</td></tr>';
+            html += '<tr><td style="padding:0.6rem 0;border-bottom:1px solid var(--color-border);">Session fee (as entered)</td><td style="text-align:right;padding:0.6rem 0;border-bottom:1px solid var(--color-border);">' + fmt(fee) + '</td></tr>';
+            html += '<tr><td style="padding:0.6rem 0;border-bottom:1px solid var(--color-border);color:#16a34a;">Medicare rebate (estimate)</td><td style="text-align:right;padding:0.6rem 0;border-bottom:1px solid var(--color-border);color:#16a34a;">&minus;' + fmt(Math.min(rebate, fee)) + '</td></tr>';
+            html += '<tr style="background:#f8fafc;"><td style="padding:0.75rem 0.5rem;font-weight:700;font-size:1.1rem;">Estimated out-of-pocket gap</td><td style="text-align:right;padding:0.75rem 0.5rem;font-weight:700;font-size:1.1rem;">' + fmt(gap) + ' per session</td></tr>';
             html += '</tbody></table>';
 
             if (sessions > 1) {
               html += '<div style="background:#f0f4ff;border-radius:var(--radius);padding:1rem 1.25rem;margin-bottom:1rem;">';
-              html += '<p style="font-weight:600;margin:0 0 0.5rem;">Over ' + sessions + ' sessions:</p>';
+              html += '<p style="font-weight:600;margin:0 0 0.5rem;">Annual cost estimate (' + sessions + ' sessions):</p>';
               html += '<table style="width:100%;border-collapse:collapse;font-size:0.9rem;">';
-              html += '<tr><td style="padding:0.4rem 0;">Total cost (no Medicare)</td><td style="text-align:right;">' + fmt(totalFee) + '</td></tr>';
-              html += '<tr><td style="padding:0.4rem 0;color:#16a34a;">Total Medicare saves you</td><td style="text-align:right;color:#16a34a;">&minus;' + fmt(saving) + '</td></tr>';
-              html += '<tr><td style="padding:0.4rem 0;font-weight:700;">Your total out-of-pocket</td><td style="text-align:right;font-weight:700;">' + fmt(totalGap) + '</td></tr>';
+              html += '<tr><td style="padding:0.4rem 0;">Total cost without Medicare</td><td style="text-align:right;">' + fmt(totalFee) + '</td></tr>';
+              html += '<tr><td style="padding:0.4rem 0;color:#16a34a;">Total Medicare saves you (estimate)</td><td style="text-align:right;color:#16a34a;">&minus;' + fmt(saving) + '</td></tr>';
+              html += '<tr><td style="padding:0.4rem 0;font-weight:700;">Estimated total out-of-pocket</td><td style="text-align:right;font-weight:700;">' + fmt(totalGap) + '</td></tr>';
               html += '</table>';
               html += '</div>';
             }
@@ -231,10 +314,38 @@ const faqSchema = {
             }
 
             contentEl.innerHTML = html;
+            shareBox.style.display = 'block';
             resultsEl.style.display = 'block';
           }
 
           document.getElementById('calc-btn').addEventListener('click', calculate);
+
+          // Copy-to-clipboard
+          document.getElementById('copy-btn').addEventListener('click', function() {
+            var text = document.getElementById('share-text').textContent;
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(text).then(function() {
+                var confirm = document.getElementById('copy-confirm');
+                confirm.style.display = 'block';
+                setTimeout(function() { confirm.style.display = 'none'; }, 2500);
+              });
+            } else {
+              // Fallback for older browsers
+              var ta = document.createElement('textarea');
+              ta.value = text;
+              ta.style.position = 'fixed';
+              ta.style.opacity = '0';
+              document.body.appendChild(ta);
+              ta.focus();
+              ta.select();
+              try { document.execCommand('copy'); } catch(e) {}
+              document.body.removeChild(ta);
+              var confirm = document.getElementById('copy-confirm');
+              confirm.style.display = 'block';
+              setTimeout(function() { confirm.style.display = 'none'; }, 2500);
+            }
+            firePlausible('Calculator:ShareCopy', {});
+          });
 
           // Allow Enter key in inputs
           ['session-fee','num-sessions'].forEach(function(id) {
@@ -242,6 +353,26 @@ const faqSchema = {
               if (e.key === 'Enter') calculate();
             });
           });
+
+          // Scroll-depth events (25%, 50%, 75%, 100%)
+          (function() {
+            var fired = {};
+            var thresholds = [25, 50, 75, 100];
+            function onScroll() {
+              var el = document.documentElement;
+              var scrolled = el.scrollTop + window.innerHeight;
+              var total = el.scrollHeight;
+              var pct = Math.round((scrolled / total) * 100);
+              thresholds.forEach(function(t) {
+                if (!fired[t] && pct >= t) {
+                  fired[t] = true;
+                  firePlausible('Scroll:Depth', { depth: t + '%', page: 'medicare-rebate-calculator' });
+                }
+              });
+            }
+            window.addEventListener('scroll', onScroll, { passive: true });
+          })();
+
         })();
       </script>
 
@@ -249,7 +380,7 @@ const faqSchema = {
       <h2>How Medicare Rebates for Psychology Work</h2>
 
       <div class="info-box">
-        <p><strong>The one-sentence answer:</strong> With a Mental Health Treatment Plan from your GP, Medicare pays $98.95 of each registered psychologist session (or $145.25 for a clinical psychologist) and you pay the difference between that rebate and your psychologist's fee — regardless of whether the session is in-person or via telehealth. Medicare Benefits Schedule, effective 1 July 2025.</p>
+        <p><strong>The one-sentence answer:</strong> With a Mental Health Treatment Plan from your GP, Medicare pays an estimated $98.95 of each registered psychologist session (or $145.25 for an endorsed clinical psychologist) and you pay the difference between that rebate and your psychologist's fee — regardless of whether the session is in-person or via telehealth. These are estimates based on Medicare Benefits Schedule rates, effective 1 July 2025.</p>
       </div>
 
       <h3>Key facts</h3>
@@ -257,23 +388,24 @@ const faqSchema = {
         <li><strong>Rebate requires a Mental Health Treatment Plan (MHTP):</strong> Your GP prepares this at a longer appointment. Without it, no Medicare rebate applies and you pay the full fee.</li>
         <li><strong>Same rebate for telehealth and in-person:</strong> MBS items 91170 (registered psychologist, telehealth) and 91167 (clinical psychologist, telehealth) carry the same rebate as their in-person equivalents.</li>
         <li><strong>10 sessions per calendar year:</strong> The 10-session cap runs January to December. Sessions reset on 1 January each year.</li>
-        <li><strong>Bulk billing means $0 out-of-pocket:</strong> Some psychologists accept the Medicare rebate as their full fee. This is uncommon in Sydney for telehealth; most have a gap.</li>
+        <li><strong>Bulk billing means $0 estimated out-of-pocket:</strong> Some psychologists accept the Medicare rebate as their full fee. This is uncommon in Sydney for telehealth; most have a gap.</li>
         <li><strong>Claiming the rebate:</strong> Your psychologist may claim on your behalf (if they bulk bill) or you claim via the Medicare app, myGov, or at a Medicare service centre after paying.</li>
+        <li><strong>Registered vs clinical psychologist:</strong> Both are AHPRA-registered psychologists. "Clinical psychologist" is an additional endorsed title — and carries a higher rebate ($145.25 vs $98.95). Not sure which applies? <a href="/guides/clinical-psychologist-vs-registered-psychologist/">Read the explanation &rarr;</a></li>
       </ul>
 
       <div class="faq">
         <h2>Common Questions</h2>
         <details class="faq__item">
           <summary class="faq__q">What is the Medicare rebate for a psychologist session?</summary>
-          <p class="faq__a">With a Mental Health Treatment Plan, the rebate is <strong>$98.95 per session</strong> for a registered psychologist (MBS item 91170) or <strong>$145.25 per session</strong> for an endorsed clinical psychologist (MBS item 91167). Both apply equally to telehealth and in-person sessions. Rates are from the Medicare Benefits Schedule effective 1 July 2025.</p>
+          <p class="faq__a">With a Mental Health Treatment Plan, the estimated rebate is <strong>$98.95 per session</strong> for a registered psychologist (MBS item 91170) or <strong>$145.25 per session</strong> for an endorsed clinical psychologist (MBS item 91167). Both apply equally to telehealth and in-person sessions. Rates are from the Medicare Benefits Schedule effective 1 July 2025. Verify at <a href="https://www.mbsonline.gov.au" target="_blank" rel="noopener">mbsonline.gov.au</a>.</p>
         </details>
         <details class="faq__item">
           <summary class="faq__q">How do I calculate my gap?</summary>
-          <p class="faq__a">Subtract the Medicare rebate from your psychologist's full session fee. For example: a $220 session minus the $98.95 rebate = $121.05 out-of-pocket. Use the calculator above to get exact figures.</p>
+          <p class="faq__a">Subtract the Medicare rebate from your psychologist's full session fee to get an estimate. For example: a $220 session minus the $98.95 rebate = $121.05 estimated out-of-pocket. Use the calculator above to get your own estimate.</p>
         </details>
         <details class="faq__item">
           <summary class="faq__q">Does Medicare cover telehealth psychology?</summary>
-          <p class="faq__a">Yes. Telehealth psychology sessions attract the same rebate as in-person sessions under the Better Access scheme. There is no difference in coverage or rebate amount.</p>
+          <p class="faq__a">Yes. Telehealth psychology sessions attract the same rebate as in-person sessions under the Better Access scheme. There is no difference in coverage or rebate amount for telehealth.</p>
         </details>
         <details class="faq__item">
           <summary class="faq__q">How many sessions does Medicare cover per year?</summary>
@@ -282,6 +414,10 @@ const faqSchema = {
         <details class="faq__item">
           <summary class="faq__q">Do I need a new plan each year?</summary>
           <p class="faq__a">Yes. Your GP needs to review and renew your Mental Health Treatment Plan at the start of each new year for you to access the next year's 10 sessions.</p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">What is the difference between a registered and clinical psychologist for Medicare?</summary>
+          <p class="faq__a">Both are AHPRA-registered psychologists. An endorsed clinical psychologist has completed additional postgraduate training and practicum requirements. The Medicare rebate differs: $145.25 per session for endorsed clinical (MBS item 91167) versus $98.95 for registered (MBS item 91170). Your out-of-pocket gap depends on both the rebate and what your specific psychologist charges.</p>
         </details>
       </div>
 
