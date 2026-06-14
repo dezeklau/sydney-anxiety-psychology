@@ -3,23 +3,6 @@
   "outputDirectory": "dist",
   "installCommand": "npm install",
   "framework": null,
-  "redirects": [
-    {
-      "source": "http://sydneyanxietypsychology.com.au/(.*)",
-      "destination": "https://sydneyanxietypsychology.com.au/$1",
-      "permanent": true
-    },
-    {
-      "source": "http://www.sydneyanxietypsychology.com.au/(.*)",
-      "destination": "https://sydneyanxietypsychology.com.au/$1",
-      "permanent": true
-    },
-    {
-      "source": "https://www.sydneyanxietypsychology.com.au/(.*)",
-      "destination": "https://sydneyanxietypsychology.com.au/$1",
-      "permanent": true
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",
