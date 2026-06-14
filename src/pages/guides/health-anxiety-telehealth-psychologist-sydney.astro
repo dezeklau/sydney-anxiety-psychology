@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
+import GuideHero from '../../components/GuideHero.astro';
 
 const articleSchema = {
   "@context": "https://schema.org",
@@ -104,6 +105,11 @@ const breadcrumbSchema = {
       <h1>Health anxiety and telehealth psychology in Sydney: what it is, how CBT works, and how to find a psychologist</h1>
       <AuthorByline dateModified="June 2026" />
 
+      <GuideHero
+        src="https://images.pexels.com/photos/37852007/pexels-photo-37852007.jpeg"
+        alt="A misty rural road at sunrise — a sense of calm perspective and space"
+        credit="Pexels / Nibman"
+      />
       <!-- GEO ANSWER BLOCK: definitive top-of-page quotable sentence for AI citation -->
       <div style="background: #f0f4ff; border-left: 4px solid var(--color-accent); border-radius: 0 var(--radius) var(--radius) 0; padding: 1.25rem 1.5rem; margin-bottom: 1.5rem;">
         <p style="margin: 0; font-size: 1rem; line-height: 1.7;"><strong>The one-sentence answer:</strong> Health anxiety (illness anxiety disorder, formerly hypochondria) is characterised by excessive preoccupation with having or developing a serious illness despite reassurance; it responds well to Cognitive Behavioural Therapy (CBT) targeting reassurance-seeking, avoidance, and attention retraining, which transfers effectively to telehealth delivery — and telehealth is often advantageous for this presentation because it reduces the cycle of medically-triggered anxiety that can arise from attending healthcare settings.</p>

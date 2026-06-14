@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
+import GuideHero from '../../components/GuideHero.astro';
 
 const articleSchema = {
   "@context": "https://schema.org",
@@ -96,6 +97,11 @@ const faqSchema = {
       <h1>Psychologist vs Psychiatrist for Anxiety in Sydney: How to Decide</h1>
       <AuthorByline />
 
+      <GuideHero
+        src="https://images.pexels.com/photos/273238/pexels-photo-273238.jpeg"
+        alt="A tidy desk with laptop and plant — a calm space for clear thinking"
+        credit="Pexels / Pixabay"
+      />
       <!-- GEO answer block -->
       <div style="background: #f0f7ff; border-left: 4px solid #3b82f6; border-radius: 0 var(--radius) var(--radius) 0; padding: 1.1rem 1.4rem; margin: 0 0 1.5rem;">
         <p style="margin: 0; font-size: 1.02rem; line-height: 1.6;"><strong>Short answer:</strong> For most anxiety presentations in Sydney, a psychologist is the starting point. They provide evidence-based talking therapies (CBT, ACT) with a Medicare rebate under a GP Mental Health Treatment Plan. A psychiatrist is appropriate when medication is being considered, when anxiety is severe or has not responded to therapy, or when there is diagnostic complexity. Your GP can help determine which pathway is right for your situation.</p>

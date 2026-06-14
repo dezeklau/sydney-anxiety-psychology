@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
+import GuideHero from '../../components/GuideHero.astro';
 
 const articleSchema = {
   "@context": "https://schema.org",
@@ -260,6 +261,11 @@ const geoAnswers = [
 
       <AuthorByline />
 
+      <GuideHero
+        src="https://images.pexels.com/photos/34837328/pexels-photo-34837328.jpeg"
+        alt="A room with warm natural light coming through decorative windows — peaceful and welcoming"
+        credit="Pexels / Ninety Seven Years"
+      />
     </div>
   </div>
 </Base>

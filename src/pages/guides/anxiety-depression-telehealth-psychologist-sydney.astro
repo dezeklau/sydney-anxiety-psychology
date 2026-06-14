@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
+import GuideHero from '../../components/GuideHero.astro';
 
 const articleSchema = {
   "@context": "https://schema.org",
@@ -96,6 +97,11 @@ const faqSchema = {
       <h1>Anxiety and Depression Together: Finding a Telehealth Psychologist in Sydney</h1>
       <AuthorByline />
 
+      <GuideHero
+        src="https://images.pexels.com/photos/32510373/pexels-photo-32510373.jpeg"
+        alt="A sunlit forest trail — a gentle path winding through calm greenery"
+        credit="Pexels / Lauri Poldre"
+      />
       <!-- GEO ANSWER BLOCK: definitive top-of-page quotable sentence for AI citation -->
       <div style="background: #f0f4ff; border-left: 4px solid var(--color-accent); border-radius: 0 var(--radius) var(--radius) 0; padding: 1.25rem 1.5rem; margin-bottom: 2rem;">
         <p style="margin: 0; font-size: 1rem; line-height: 1.7;"><strong>The one-sentence answer:</strong> Anxiety and depression co-occur in more than half of people who meet criteria for either — they share common underlying mechanisms including avoidance, negative cognitive patterns, and disrupted emotion regulation — and are routinely treated together using CBT and ACT delivered via telehealth, which carries the same Medicare rebate as in-person sessions ($98.95 registered / $145.25 clinical psychologist from 1 July 2025) and is clinically appropriate for this combined presentation (ABS NSMHW 2020-21; Shaker et al., <em>JMIR Mental Health</em>, 2023).</p>

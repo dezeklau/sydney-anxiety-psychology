@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import AuthorByline from '../../components/AuthorByline.astro';
+import GuideHero from '../../components/GuideHero.astro';
 
 const articleSchema = {
   "@context": "https://schema.org",
@@ -100,6 +101,11 @@ const breadcrumbSchema = {
 
       <AuthorByline />
 
+      <GuideHero
+        src="https://images.pexels.com/photos/32510373/pexels-photo-32510373.jpeg"
+        alt="A forest trail winding through lush trees — a gentle path forward"
+        credit="Pexels / Lauri Poldre"
+      />
       <p class="lead">
         If you are looking for anxiety treatment in Sydney, you will quickly encounter a range of
         therapy names: CBT, ACT, Schema therapy, EMDR, mindfulness-based approaches. Understanding

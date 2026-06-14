@@ -1,0 +1,71 @@
+---
+/**
+ * GuideHero component — hero image for guide/blog pages.
+ *
+ * Usage:
+ *   <GuideHero
+ *     src="https://images.pexels.com/photos/..."
+ *     alt="Descriptive alt text"
+ *     credit="Pexels / Photographer Name"
+ *   />
+ *
+ * Place immediately after <AuthorByline /> and before the lede paragraph.
+ *
+ * Image sourcing rules:
+ * - Calm nature, warm textures, abstract colours, objects/spaces — NOT faces unless clearly stock
+ * - NO pity imagery: no head-in-hands, no distressed people, no sad-by-window stock
+ * - NO clinical imagery: no stethoscopes, no hospital settings, no therapy couch clichés
+ * - Pexels images: include photographer credit (required by Pexels licence)
+ * - Always include meaningful alt text — describes what's in the image, not keywords
+ *
+ * Page-speed notes:
+ * - Pexels URLs accept ?w=800 for ~100-120KB (good LCP)
+ * - width/height attributes prevent layout shift
+ * - loading="lazy" (not eager) — hero images are below the fold after the H1+byline
+ * - fetchpriority="high" NOT set — this is not the above-fold LCP element
+ */
+
+interface Props {
+  src: string;
+  alt: string;
+  credit?: string;
+}
+
+const { src, alt, credit } = Astro.props;
+
+// Append w=800 to Pexels URLs for optimal file size (~100-120KB)
+// Pexels supports ?w=NNN&auto=compress&cs=tinysrgb
+const optimizedSrc = src.includes('pexels.com')
+  ? src.replace(/\?.*$/, '') + '?auto=compress&cs=tinysrgb&w=800'
+  : src;
+---
+
+<figure class="guide-hero" style="margin: 0 0 2rem 0; padding: 0;">
+  <img
+    src={optimizedSrc}
+    alt={alt}
+    width="800"
+    height="420"
+    loading="lazy"
+    decoding="async"
+    style="
+      width: 100%;
+      height: auto;
+      max-height: 420px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      display: block;
+    "
+  />
+  {credit && (
+    <figcaption style="
+      font-size: 0.75rem;
+      color: var(--color-text-secondary);
+      margin-top: 0.4rem;
+      text-align: right;
+      opacity: 0.7;
+    ">
+      Photo: {credit}
+    </figcaption>
+  )}
+</figure>
